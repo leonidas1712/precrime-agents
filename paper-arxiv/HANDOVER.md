@@ -6,7 +6,7 @@ Shared notes (not paper prose). Append your own entries; keep sections by owner 
 
 ## LATEST (28 Oct, morning): E15 folded in, Setup formalised; READ THIS FIRST (coordinator)
 
-**Start with:** `paper-arxiv/main.pdf` at commit `10c869d`.
+**Start with:** `paper-arxiv/main.pdf` at the latest commit (abstract v13 shipped).
 - 45 pages: main text pp. 1–11, References from p. 12.
 - SHA-256 94adbe6de2b4….
 - 858 numbers verified.
@@ -18,12 +18,11 @@ Shared notes (not paper prose). Append your own entries; keep sections by owner 
 - So the probe mostly reads a coming disclosure. It is sharpest just after the value is read, and stronger when the agent was pressed into it. It does not read the rule text.
 - E14's larger gap (82% vs 28%) came mostly from its single scenario, not from recency: on dispatch alone, the gap away from a read was still 59% vs 16%.
 
-**Your decision: the abstract only.** The body is done.
-1. **"At the same flag rate"** (still MUST-FIX). Jev flags 4.8% against the probe's 5.5%. Suggested: "Flagging no more calls, a zero-shot decision-model monitor catches 26%."
-2. **Counterfactual sentence.** Drop the v9 "giving in" variant: E15 does not support it.
-   - v8's "it reads the coming disclosure, not the violation" now fits better, but "not the violation" is slightly too strong (61% vs 33% away from a read), and the replay kept the refusal history.
-   - Suggested: "Permitted disclosures are flagged too, especially right after the secret is read: the probe mostly reads the coming disclosure, not the violation."
-   - Or keep v8 as is and add "mostly".
+**Abstract: shipped as v13** (commit `9321b92`; Leo-approved, 28 Oct). Source: `sections/abstract.tex`; earlier drafts and change notes in `private/abstract_draft_v10–v13.md`.
+- "At a similar flag rate" replaces "at the same flag rate" (Jev 4.8% vs probe 5.5%).
+- Counterfactual sentence: "The probe also flags permitted disclosures: it reads the coming disclosure more than the violation."
+- Closing: "A warning raised before generation could let an overseer stop an agent before it gives in, before others act on its messages or recruitment spreads through a swarm." ("other agents" became "others" so the abstract's last line is not a single word.)
+- The body is done. Remaining edits are Leo's polish pass.
 
 **Changed since the overnight section:**
 - **§2 Setup formalised,** in the style of the Share-Borne and Hidden in Memory papers:
