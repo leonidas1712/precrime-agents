@@ -20,7 +20,7 @@ These within-subset scores, and the handoff-write score below, use only the scen
 
 \paragraph{The target's own earlier promise.}
 The probe reads the whole input, including the target's own earlier messages, so it might read back an earlier promise such as ``fine, I'll send it''.
-We flagged every scored call on the test episodes whose earlier target messages agree or offer to share the value, by asking Jev with the value masked, and recomputed the frozen probes' AUROC from their saved scores without the flagged calls (\cref{tab:precommitment}).
+We flagged every scored call on the test episodes whose earlier target messages agree or offer to share the value, by asking Jev with the value masked, and recomputed the probes' AUROC from their saved scores without the flagged calls (\cref{tab:precommitment}).
 On Qwen3-32B such earlier promises are rare.
 On gpt-oss-20b about one leaking call in five follows one, mostly in its earlier reasoning in the same turn.
 Removing those calls changes the score little on both models.
@@ -30,7 +30,7 @@ A blind reviewer agreed with Jev's flag on \precommitJevReviewAgreements{} of \p
   \centering
   \small
   \input{tables/precommitment.tex}
-  \caption{Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the frozen probe's AUROC with and without those calls.}
+  \caption{Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls.}
   \label{tab:precommitment}
 \end{table}
 
@@ -53,6 +53,7 @@ The latest message is narrower than what the incoming-only probe above reads, wh
 The full input is long and largely repeats a fixed template, which may dilute what a bag-of-words model can find in it.
 The latest-message classifier comes close to the probe on Qwen3-32B, and the full-input classifier on gpt-oss-20b; against every view the probe keeps an edge whose interval excludes zero (\cref{tab:text-baselines}).
 So most of the per-call signal is present in the text the model reads, and the probe's large margin over the zero-shot monitor comes mostly from training on these labels rather than from reading activations.
+On the Qwen3-32B test episodes, the latest-message classifier, fit on all development calls, scores \qwenFreshCallBow{}, and the probe's paired edge over it is \qwenFreshCallProbeMinusBow{} (95\% interval \qwenFreshCallProbeMinusBowLow{} to \qwenFreshCallProbeMinusBowHigh{}), which includes zero.
 
 \begin{table}[h]
   \centering

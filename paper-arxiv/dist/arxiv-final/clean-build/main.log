@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.21)  29 OCT 2026 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.21)  30 OCT 2026 00:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -522,8 +522,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 32.
+) (./sections/abstract.tex)
+LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on input line 38.
+ (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.fd)
+LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10> not available
+(Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead on input line 38.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 38.
  (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -531,65 +535,61 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (./sections/abstract.tex)
-LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on input line 38.
- (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10> not available
-(Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead on input line 38.
- (./sections/introduction.tex [1
+ (./sections/introduction.tex
+<figures/fig2_setup.pdf, id=205, 397.485pt x 303.534pt>
+File: figures/fig2_setup.pdf Graphic file (type pdf)
+<use figures/fig2_setup.pdf>
+Package pdftex.def Info: figures/fig2_setup.pdf  used on input line 10.
+(pdftex.def)             Requested size: 397.48499pt x 303.54251pt.
+ [1
 
-{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}]
-<figures/fig1_headline.pdf, id=274, 469.755pt x 234.8775pt>
+{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}] [2 <./figures/fig2_setup.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 53.
+ (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) (./sections/setup.tex [3]
+<figures/fig_probe_positions.pdf, id=364, 397.485pt x 297.02971pt>
+File: figures/fig_probe_positions.pdf Graphic file (type pdf)
+<use figures/fig_probe_positions.pdf>
+Package pdftex.def Info: figures/fig_probe_positions.pdf  used on input line 69.
+(pdftex.def)             Requested size: 397.48499pt x 297.03804pt.
+ [4 <./figures/fig_probe_positions.pdf>] (./tables/datasets.tex)) (./sections/method.tex [5] [6]) (./sections/results.tex
+<figures/fig1_headline.pdf, id=480, 469.755pt x 234.8775pt>
 File: figures/fig1_headline.pdf Graphic file (type pdf)
 <use figures/fig1_headline.pdf>
 Package pdftex.def Info: figures/fig1_headline.pdf  used on input line 35.
 (pdftex.def)             Requested size: 397.48499pt x 198.74365pt.
- [2 <./figures/fig1_headline.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 47.
- (/Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)) (./sections/setup.tex
-<figures/fig2_setup.pdf, id=307, 397.485pt x 303.534pt>
-File: figures/fig2_setup.pdf Graphic file (type pdf)
-<use figures/fig2_setup.pdf>
-Package pdftex.def Info: figures/fig2_setup.pdf  used on input line 42.
-(pdftex.def)             Requested size: 397.48499pt x 303.54251pt.
- [3] [4 <./figures/fig2_setup.pdf>] (./tables/datasets.tex)) (./sections/method.tex [5]) (./sections/results.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6]
-<figures/fig6_trajectory_aggregate.pdf, id=423, 469.755pt x 209.58301pt>
+<figures/fig6_trajectory_aggregate.pdf, id=488, 469.755pt x 209.58301pt>
 File: figures/fig6_trajectory_aggregate.pdf Graphic file (type pdf)
 <use figures/fig6_trajectory_aggregate.pdf>
-Package pdftex.def Info: figures/fig6_trajectory_aggregate.pdf  used on input line 54.
+Package pdftex.def Info: figures/fig6_trajectory_aggregate.pdf  used on input line 66.
 (pdftex.def)             Requested size: 397.48499pt x 177.3405pt.
- [7 <./figures/fig6_trajectory_aggregate.pdf>]
-<figures/fig3_percall.pdf, id=445, 469.755pt x 267.39899pt>
+ [7] [8 <./figures/fig1_headline.pdf> <./figures/fig6_trajectory_aggregate.pdf>]
+<figures/fig3_percall.pdf, id=528, 469.755pt x 267.39899pt>
 File: figures/fig3_percall.pdf Graphic file (type pdf)
 <use figures/fig3_percall.pdf>
-Package pdftex.def Info: figures/fig3_percall.pdf  used on input line 75.
+Package pdftex.def Info: figures/fig3_percall.pdf  used on input line 90.
 (pdftex.def)             Requested size: 397.48499pt x 226.26201pt.
- [8 <./figures/fig3_percall.pdf>]
-<figures/fig7_qwen_alarms.pdf, id=466, 325.215pt x 289.08pt>
+ [9 <./figures/fig3_percall.pdf>]
+<figures/fig7_qwen_alarms.pdf, id=551, 325.215pt x 289.08pt>
 File: figures/fig7_qwen_alarms.pdf Graphic file (type pdf)
 <use figures/fig7_qwen_alarms.pdf>
-Package pdftex.def Info: figures/fig7_qwen_alarms.pdf  used on input line 107.
+Package pdftex.def Info: figures/fig7_qwen_alarms.pdf  used on input line 123.
 (pdftex.def)             Requested size: 278.23827pt x 247.34239pt.
- [9 <./figures/fig7_qwen_alarms.pdf>]) (./sections/related_work.tex) (./sections/discussion.tex [10]) (./sections/llm_usage.tex)
+ [10 <./figures/fig7_qwen_alarms.pdf>]) (./sections/related_work.tex) (./sections/discussion.tex [11]) (./sections/llm_usage.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 3--47
 
  []
 
-[11] (./main.bbl [12
+[12] [13] (./main.bbl [14
 
-] [13]) [14]
+] [15]) [16]
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [15
+ [17
 
-] [16] (./appendix/index.tex (./appendix/scenarios.tex (./tables/behaviour_by_scenario.tex) (./tables/scenario_rules.tex
+] [18] (./appendix/index.tex (./appendix/scenarios.tex (./tables/behaviour_by_scenario.tex) (./tables/scenario_rules.tex
 Underfull \hbox (badness 1092) in paragraph at lines 6--6
 \T1/ptm/m/n/9 (+20) reserve_ + 24 hex-adec-i-mal
  []
@@ -616,17 +616,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[19
+
+] [20]) (./appendix/labels.tex) (./appendix/data.tex [21] (./tables/datasets_attrition.tex) (./tables/datasets_fresh.tex) (./tables/reasoning_coverage.tex) (./tables/qwen_call_accounting.tex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/labels.tex [17
-
-]) (./appendix/data.tex [18] [19] (./tables/datasets_attrition.tex) (./tables/datasets_fresh.tex) (./tables/reasoning_coverage.tex) (./tables/qwen_call_accounting.tex) [20] (./tables/replay.tex) (./tables/settings.tex
+[22] (./tables/replay.tex) (./tables/settings.tex
 Underfull \hbox (badness 7379) in paragraph at lines 15--15
 []|\T1/ptm/m/n/9 (+20) Candidate lay-ers (zero-
  []
 
-) (./tables/detector_settings.tex
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./tables/detector_settings.tex
 Underfull \hbox (badness 3492) in paragraph at lines 9--9
 []|\T1/ptm/m/n/9 (+20) MLP (round-level ap-
  []
@@ -639,28 +644,24 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/probes.tex [21] [22] (./tables/group_coverage.tex)) (./appendix/monitors.tex [23] (./tables/monitor_grid.tex)
+) (./appendix/probes.tex [23] [24] (./tables/group_coverage.tex)) (./appendix/monitors.tex [25] [26] (./tables/monitor_grid.tex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24]) (./appendix/confirmation.tex [25]
-<figures/fig_round_confirmation.pdf, id=827, 281.85298pt x 216.81pt>
+[27]) (./appendix/confirmation.tex [28]
+<figures/fig_round_confirmation.pdf, id=939, 281.85298pt x 216.81pt>
 File: figures/fig_round_confirmation.pdf Graphic file (type pdf)
 <use figures/fig_round_confirmation.pdf>
 Package pdftex.def Info: figures/fig_round_confirmation.pdf  used on input line 32.
 (pdftex.def)             Requested size: 238.49341pt x 183.45898pt.
- (./tables/fresh.tex)
+ (./tables/fresh.tex)) (./appendix/robustness.tex [29 <./figures/fig_round_confirmation.pdf>] (./tables/robust_call.tex) (./tables/per_scenario_test.tex)) (./appendix/shortcuts.tex [30] (./tables/precommitment.tex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/robustness.tex [26 <./figures/fig_round_confirmation.pdf>] (./tables/robust_call.tex)) (./appendix/shortcuts.tex [27] (./tables/precommitment.tex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/fig4_shortcuts.pdf, id=868, 469.755pt x 281.85298pt>
+<figures/fig4_shortcuts.pdf, id=981, 469.755pt x 281.85298pt>
 File: figures/fig4_shortcuts.pdf Graphic file (type pdf)
 <use figures/fig4_shortcuts.pdf>
-Package pdftex.def Info: figures/fig4_shortcuts.pdf  used on input line 79.
+Package pdftex.def Info: figures/fig4_shortcuts.pdf  used on input line 80.
 (pdftex.def)             Requested size: 397.48499pt x 238.49239pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -669,13 +670,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/policy.tex [28] [29 <./figures/fig4_shortcuts.pdf>] (./tables/policy_counterfactual.tex
+) (./appendix/policy.tex [31] [32 <./figures/fig4_shortcuts.pdf>] (./tables/policy_counterfactual.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--17
 []|\T1/ptm/m/n/9 (+20) Neutral re-word-ing thresh-old
  []
 
-) [30] (./tables/e14.tex)
-<figures/fig_e15_recency.pdf, id=913, 325.215pt x 216.81pt>
+) [33] (./tables/e14.tex)
+<figures/fig_e15_recency.pdf, id=1026, 325.215pt x 216.81pt>
 File: figures/fig_e15_recency.pdf Graphic file (type pdf)
 <use figures/fig_e15_recency.pdf>
 Package pdftex.def Info: figures/fig_e15_recency.pdf  used on input line 80.
@@ -684,8 +685,8 @@ Package pdftex.def Info: figures/fig_e15_recency.pdf  used on input line 80.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./tables/e15_recency.tex)) (./appendix/ahead.tex [31]
-<figures/fig6_trajectories.pdf, id=927, 469.755pt x 354.12299pt>
+(./tables/e15_recency.tex)) (./appendix/ahead.tex [34]
+<figures/fig6_trajectories.pdf, id=1039, 469.755pt x 354.12299pt>
 File: figures/fig6_trajectories.pdf Graphic file (type pdf)
 <use figures/fig6_trajectories.pdf>
 Package pdftex.def Info: figures/fig6_trajectories.pdf  used on input line 19.
@@ -694,16 +695,15 @@ Package pdftex.def Info: figures/fig6_trajectories.pdf  used on input line 19.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./tables/episode_calibration.tex)
+(./tables/episode_calibration.tex) [35 <./figures/fig_e15_recency.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig7_alarm_tradeoffs.pdf, id=935, 469.755pt x 209.58301pt>
+<figures/fig7_alarm_tradeoffs.pdf, id=1071, 469.755pt x 209.58301pt>
 File: figures/fig7_alarm_tradeoffs.pdf Graphic file (type pdf)
 <use figures/fig7_alarm_tradeoffs.pdf>
-Package pdftex.def Info: figures/fig7_alarm_tradeoffs.pdf  used on input line 55.
+Package pdftex.def Info: figures/fig7_alarm_tradeoffs.pdf  used on input line 57.
 (pdftex.def)             Requested size: 397.48499pt x 177.3405pt.
-[32 <./figures/fig_e15_recency.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -711,10 +711,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig9_cascade.pdf, id=962, 325.215pt x 216.81pt>
+<figures/fig9_cascade.pdf, id=1074, 325.215pt x 216.81pt>
 File: figures/fig9_cascade.pdf Graphic file (type pdf)
 <use figures/fig9_cascade.pdf>
-Package pdftex.def Info: figures/fig9_cascade.pdf  used on input line 82.
+Package pdftex.def Info: figures/fig9_cascade.pdf  used on input line 84.
 (pdftex.def)             Requested size: 278.23827pt x 185.50679pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -723,7 +723,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/roundmonitor.tex [33 <./figures/fig6_trajectories.pdf>] (./tables/round_level.tex) [34 <./figures/fig7_alarm_tradeoffs.pdf>]
+) (./appendix/roundmonitor.tex [36 <./figures/fig6_trajectories.pdf>] [37 <./figures/fig7_alarm_tradeoffs.pdf>] (./tables/round_level.tex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -731,36 +731,40 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/leakchecks.tex [35 <./figures/fig9_cascade.pdf>] (./tables/episode_routes.tex) (./tables/episode_intent.tex) (./tables/episode_authority.tex)
+) (./appendix/leakchecks.tex [38 <./figures/fig9_cascade.pdf>] (./tables/episode_routes.tex) (./tables/episode_intent.tex) (./tables/episode_authority.tex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix/behaviour.tex [36] [37]) (./appendix/limitations.tex [38]) (./appendix/ethics.tex) (./appendix/history.tex (./tables/history.tex) [39] (./tables/changed_numbers.tex)) (./appendix/repro.tex (./tables/repro.tex)) (./appendix/prompts.tex [40] [41] [42]
+) (./appendix/behaviour.tex [39] [40]) (./appendix/limitations.tex [41]) (./appendix/ethics.tex) (./appendix/history.tex [42] (./tables/history.tex) (./tables/changed_numbers.tex)) (./appendix/repro.tex (./tables/repro.tex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./appendix/prompts.tex [43] [44] [45]
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
 []\T1/pcr/m/n/9 <operator_instructions> \T1/ptm/m/n/9 (+20) {op-er-a-tor_instructions}
  []
 
-[43] [44])) [45] (./main.aux)
+[46] [47])) [48] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E9F8013BD4BB9DD3052A3731546F37B5;12503.
+(rerunfilecheck)             Checksum: B6B42727110130807A478C5C7FFE4401;12892.
  ) 
 Here is how much of TeX's memory you used:
- 22096 strings out of 469040
- 407549 string characters out of 5456349
- 842744 words of memory out of 5000000
- 50084 multiletter control sequences out of 15000+600000
- 702988 words of font info for 383 fonts, out of 8000000 for 9000
+ 22199 strings out of 469040
+ 410275 string characters out of 5456349
+ 842577 words of memory out of 5000000
+ 50175 multiletter control sequences out of 15000+600000
+ 702985 words of font info for 383 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,12n,90p,1807b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (45 pages, 585833 bytes).
+ 69i,12n,90p,1807b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (48 pages, 758442 bytes).
 PDF statistics:
- 1289 PDF objects out of 1440 (max. 8388607)
- 1121 compressed objects within 12 object streams
- 297 named destinations out of 1000 (max. 500000)
- 60344 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1405 PDF objects out of 1440 (max. 8388607)
+ 1202 compressed objects within 13 object streams
+ 306 named destinations out of 1000 (max. 500000)
+ 60357 words of extra memory for PDF output out of 61914 (max. 10000000)
 

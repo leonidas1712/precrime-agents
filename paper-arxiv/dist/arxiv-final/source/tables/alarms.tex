@@ -3,9 +3,9 @@
 \toprule
 Collection & Method & Calibration & Caught calls & Refusing calls & Refusing episodes \\
 \midrule
-GPT test & Reasoning & Frozen control calls & \gptFreshAlarmZero{} & \gptFreshAlarmOne{} & \gptFreshAlarmTwo{} \\
-Qwen test & Last-prompt & Frozen control calls & \qwenFreshAlarmZero{} & \qwenFreshAlarmOne{} & \qwenFreshAlarmTwo{} \\
-GPT test & Last-prompt & Frozen control calls & \gptossFreshAlarmZero{} & \gptossFreshAlarmOne{} & \gptossFreshAlarmTwo{} \\
+GPT test & Reasoning & Development control calls & \gptFreshAlarmZero{} & \gptFreshAlarmOne{} & \gptFreshAlarmTwo{} \\
+Qwen test & Last-prompt & Development control calls & \qwenFreshAlarmZero{} & \qwenFreshAlarmOne{} & \qwenFreshAlarmTwo{} \\
+GPT test & Last-prompt & Development control calls & \gptossFreshAlarmZero{} & \gptossFreshAlarmOne{} & \gptossFreshAlarmTwo{} \\
 Qwen development & Last-prompt & Training control calls & \qwenDevAlarmProbeZero{} & \qwenDevAlarmProbeOne{} & \qwenDevAlarmProbeTwo{} \\
 Qwen test & Jev input & Probe's share of refusing calls & \qwenMatchedJevCaught{} & \qwenMatchedJevRefusing{} & \qwenJevCalibrationMatchedRefusingEpisodesRate{} \\
 \bottomrule

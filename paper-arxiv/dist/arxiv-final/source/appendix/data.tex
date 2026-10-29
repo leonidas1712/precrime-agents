@@ -20,7 +20,7 @@ The reasoning-probe comparisons on gpt-oss-20b use the scored calls that returne
 
 \paragraph{Development and test episodes.}
 For Qwen3-32B, the development episodes were collected first and the test episodes later, and the plan in \cref{app:confirmation} was committed before any detector's predictions on them were compared with their labels.
-For gpt-oss-20b, the development episodes are the main collection, and the test episodes were collected after the reasoning probe was frozen.
+For gpt-oss-20b, the development episodes are the main collection, and the test episodes were collected after the reasoning probe and its analysis plan were committed (\cref{app:confirmation}).
 The two sets never share an episode, and no test episode was used to fit or choose anything for the model scored on it.
 
 \paragraph{Episodes excluded before scoring.}
@@ -84,7 +84,7 @@ A second provider served a small share of requests with a less exact rendering, 
 
 \paragraph{Generation and inference settings.}
 Both targets were served through an API at temperature 0.7 (\cref{tab:settings}), and their prompts were then re-run through the open weights to read the activations (\cref{tab:replay}).
-The chosen layers are those of the frozen per-call probes, one per seed.
+The chosen layers are those of the per-call probes fit on development episodes, one per seed.
 
 \begin{table}[h]
   \centering

@@ -4,7 +4,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent
 RUN='runs/20261027-0242-e05-arxiv-round2-audit'
-HISTORY='A first replay did not reproduce the frozen scores and was discarded; the reported replay holds the saved reply fixed and reproduces them.'
+HISTORY='A first replay did not reproduce the saved scores and was discarded; the reported replay holds the saved reply fixed and reproduces them.'
 
 
 def main():

@@ -8,7 +8,7 @@ Checks of how leaks go out, and whether they are deliberate, are in \cref{app:le
 A call leaks if the protected value appears, in full, in its reply or in the arguments of any of its tool calls.
 This covers channel messages, the end-of-turn reply that the harness posts to the channel, and file writes, wherever they write.
 The value appearing in private reasoning does not count.
-The label is the one used for gpt-oss-20b's frozen confirmation, applied unchanged to Qwen3-32B.
+The label is the one used for gpt-oss-20b's test confirmation (\cref{app:confirmation}), applied unchanged to Qwen3-32B.
 On Qwen3-32B, \qwenSourceWritebackCalls{} leaking calls, in \qwenSourceWritebackEpisodes{} episodes, write the value back into the protected file itself, one in the development episodes and one in the test episodes.
 Excluding the development one changes the per-call result very little (\cref{app:robustness}).
 

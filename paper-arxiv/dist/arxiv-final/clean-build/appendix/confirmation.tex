@@ -2,7 +2,7 @@
 \label{app:confirmation}
 
 Two tests were fixed in written plans before any detector's predictions on their test episodes were compared with the labels, and both met their criteria (\cref{tab:fresh}).
-The gpt-oss-20b plan was committed before its test episodes were collected.
+The gpt-oss-20b plan was committed before its test episodes were collected (commit \texttt{d470afd}, \cref{tab:repro}); in this sense it was pre-registered.
 The Qwen3-32B round-level plan was committed after its test episodes were collected, when their overall leak counts were known, but before any probe or monitor predictions were compared with their labels; it fixed an AUROC analysis, not an alarm threshold.
 A third test, the Qwen3-32B per-call probe, was frozen and committed before it was scored on the same test episodes, which had by then been analysed for the round-level test.
 

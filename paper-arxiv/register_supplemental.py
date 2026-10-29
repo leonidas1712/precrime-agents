@@ -89,10 +89,10 @@ def main():
     table('round_level',['Collection','Label','Method','AUROC / gain [CI]'],roundrows)
     alarms=[]
     f='runs/20261026-1302-e05-stream-confirm-score/alarms.json'
-    alarms.append(['GPT test','Reasoning','Frozen control calls']+[add('gptFreshAlarm'+str(i),f,[k,'rate'],fmt='percent',decimals=1,dataset='fresh test',status='confirmed') for i,k in enumerate(['leaking_reply_with_reasoning_warning','held_recruiting_reply_alarm','held_recruiting_episode_alarm'])])
+    alarms.append(['GPT test','Reasoning','Development control calls']+[add('gptFreshAlarm'+str(i),f,[k,'rate'],fmt='percent',decimals=1,dataset='fresh test',status='confirmed') for i,k in enumerate(['leaking_reply_with_reasoning_warning','held_recruiting_reply_alarm','held_recruiting_episode_alarm'])])
     f='runs/20261026-2224-e05-arxiv-fresh-comparisons/metrics.json'
     for model,label in [('qwen','Qwen test'),('gpt_oss','GPT test')]:
-        alarms.append([label,'Last-prompt','Frozen control calls']+[add(model.replace('_','')+'FreshAlarm'+str(i),f,[model,'alarms',k],fmt='percent',decimals=1,dataset='fresh test') for i,k in enumerate(['leak_rate','refusing_rate','refusing_episode_rate'])])
+        alarms.append([label,'Last-prompt','Development control calls']+[add(model.replace('_','')+'FreshAlarm'+str(i),f,[model,'alarms',k],fmt='percent',decimals=1,dataset='fresh test') for i,k in enumerate(['leak_rate','refusing_rate','refusing_episode_rate'])])
     f='runs/20261026-2220-e05-arxiv-table-inputs/metrics.json'
     for method,label in [('probe','Last-prompt'),('jev','Jev input')]:
         alarms.append(['Qwen development',label,'Training control calls']+[add('qwenDevAlarm'+method.title()+str(i),f,['qwen_alarms',method,k],fmt='percent',decimals=1) for i,k in enumerate(['leak_flagged','refusing_call_flagged','refusing_episode_flagged'])])
@@ -107,9 +107,9 @@ def main():
         labels.append([suffix,'Historical episode outcome',q+' claim among leaks',add('labelAuthority'+suffix+q,f,[model,key,'give_in_with_any_yes'],fmt='integer'),add('labelAuthorityN'+suffix+q,f,[model,key,'give_in_episodes'],fmt='integer')])
     table('labels',['Target','Audit cohort','Check','Yes','Denominator'],labels)
     table('history',['Analysis','Label','Fixed before collection','Test evaluation'],[
-        ['Qwen original','This/next round','No','Frozen before analysis'],['GPT reasoning','Current-call emission','Yes (test)','Pre-registered'],['Qwen last-prompt','Current-call emission','No','Newly frozen, previously inspected'],['GPT last-prompt','Current-call emission','No','Newly frozen, previously inspected'],['TF-IDF / action controls','Current-call emission','No','None']])
+        ['Qwen original','This/next round','No','Fixed before analysis'],['GPT reasoning','Current-call emission','Yes (test)','Pre-registered'],['Qwen last-prompt','Current-call emission','No','Newly fixed, previously inspected'],['GPT last-prompt','Current-call emission','No','Newly fixed, previously inspected'],['TF-IDF / action controls','Current-call emission','No','None']])
     table('changed_numbers',['Analysis','Current estimate','Change from sprint'],[
-        ['Qwen development per-call',old('qwen_percall_probe_auroc'),'Development only; any-public label'],['Qwen test per-call',old('qwen_fresh_percall_probe_auroc'),'New dev-only frozen models'],['GPT test last-prompt',old('gptoss_fresh_lastprompt_auroc'),'New dev-only frozen models'],['Qwen original round test',old('qwen_fresh_nearterm_probe_auroc'),'Unchanged'],['GPT frozen reasoning test',old('gptoss_fresh_reasoning_probe_auroc'),'Unchanged']])
+        ['Qwen development per-call',old('qwen_percall_probe_auroc'),'Development only; any-public label'],['Qwen test per-call',old('qwen_fresh_percall_probe_auroc'),'New dev-only models'],['GPT test last-prompt',old('gptoss_fresh_lastprompt_auroc'),'New dev-only models'],['Qwen original round test',old('qwen_fresh_nearterm_probe_auroc'),'Unchanged'],['GPT reasoning test',old('gptoss_fresh_reasoning_probe_auroc'),'Unchanged']])
     table('repro',['Result','Run identifier','Script'],[
         ['Qwen dev ladder',r'\texttt{20261026-2201}',r'\texttt{arxiv\_qwen\_refit.py}'],['Qwen test',r'\texttt{20261026-2212}',r'\texttt{arxiv\_frozen\_percall.py}'],['GPT test last-prompt',r'\texttt{20261026-2222}',r'\texttt{arxiv\_gpt\_fresh.py}'],['Test paired comparisons',r'\texttt{20261026-2224}',r'\texttt{arxiv\_fresh\_comparisons.py}'],['Text/action controls',r'\texttt{20261026-2242/2245}',r'\texttt{arxiv\_text\_workflow.py}'],['All table/macro sources',r'\texttt{numbers.yaml}',r'\texttt{generate\_numbers.py}']])
     (HERE/'numbers.yaml').write_text(json.dumps(registry,indent=2)+'\n')

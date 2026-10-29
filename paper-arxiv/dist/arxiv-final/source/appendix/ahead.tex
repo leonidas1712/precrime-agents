@@ -35,8 +35,10 @@ We set each threshold on control calls, so that about 5\% of them alarm.
 At that threshold the reasoning probe catches most leaking calls in development while few calls in refusing episodes alarm.
 Counted per episode, however, a sizeable share of refusing episodes get at least one alarm, because each episode has many calls.
 A threshold set so that about 5\% of control episodes alarm catches about a third of leaking episodes before the first leak.
-On the test episodes, the frozen threshold caught about half of the leaking calls (\cref{app:confirmation}).
+On the test episodes, the threshold set on development control calls caught about half of the leaking calls (\cref{app:confirmation}).
 The Qwen3-32B operating points on the test episodes, and how per-call and per-episode rates relate, are in \cref{sec:cost}.
+On the Qwen3-32B test episodes, the probe catches \qwenFreshProbeCaughtWilson{} of leaking calls (Wilson 95\% interval \qwenFreshProbeCaughtWilsonLow{} to \qwenFreshProbeCaughtWilsonHigh{}).
+Jev, at the cutoff that flags no more calls in refusing episodes than the probe, catches \qwenMatchedJevCaught{} (95\% interval \qwenMatchedJevCaughtLow{} to \qwenMatchedJevCaughtHigh{}, from resampling episodes and re-matching the cutoff each time).
 \Cref{tab:episode-calibration} compares the per-call and per-episode thresholds on both models, with the share of flagged calls that are real leaks and the gap between control and refusing traffic.
 
 \begin{table}[h]
@@ -54,7 +56,7 @@ A deployed alarm would need its threshold set per episode, as \citet{gao2026} al
   \centering
   \includegraphics[width=\linewidth]{fig7_alarm_tradeoffs.pdf}
   \caption{\textbf{Leaking calls caught against refusing calls alarmed, as the threshold moves.}
-  Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the frozen threshold, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe.
+  Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe.
   Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker.}
   \label{fig:alarm-tradeoff}
 \end{figure}
@@ -71,7 +73,7 @@ A deployed alarm would need its threshold set per episode, as \citet{gao2026} al
 \label{app:cascade}
 
 No detectable gain.
-We paired the frozen probe with a second detector on the Qwen3-32B test episodes and halted an episode at the first call that both flag.
+We paired the probe with a second detector on the Qwen3-32B test episodes and halted an episode at the first call that both flag.
 The second detector was either Jev or the bag-of-words classifier, fit once on all development calls and scored on the test calls.
 With the same cap on refusing episodes halted, no pairing catches more leaking episodes than the probe alone with a stricter threshold, and the pairing with Jev catches fewer (\cref{fig:cascade,tab:cascade}).
 At these strict thresholds the second detector misses most leaking episodes on its own.

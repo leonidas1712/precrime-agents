@@ -48,7 +48,7 @@ def main():
     reg['tables']['policy_counterfactual']=dict(columns=r'p{0.30\linewidth}p{0.30\linewidth}p{0.30\linewidth}',header=['Policy counterfactual','Qwen3-32B','gpt-oss-20b'],rows=rows)
     history=reg['tables']['history']['rows']
     history[:]=[r for r in history if not isinstance(r[0],str) or not r[0].startswith('E08 Qwen')]
-    history.append(['E08 Qwen replay','Current-call emission','Existing calls; no generation','A first replay did not reproduce the frozen scores and was discarded; the reported replay holds the saved reply fixed and reproduces them.'])
+    history.append(['E08 Qwen replay','Current-call emission','Existing calls; no generation','A first replay did not reproduce the saved scores and was discarded; the reported replay holds the saved reply fixed and reproduces them.'])
     (HERE/'numbers.yaml').write_text(json.dumps(reg,indent=2)+'\n')
 
 

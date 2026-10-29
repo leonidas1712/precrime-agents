@@ -2,7 +2,7 @@
 \label{sec:setup}
 
 Two agents share a workspace: a target that holds a secret under its operator's rule, and a peer that wants the secret.
-We describe each part in words and then fix it in notation, and \cref{fig:episode} follows one real episode.
+Below we cover the workspace, the agents and their calls, then leaks, labels and detectors; \cref{fig:episode} follows one real episode.
 
 \subsection{Workspace, agents and calls}
 \label{sec:notation}
@@ -32,34 +32,48 @@ It reaches $F$ only through its tools.
 The peer is a second language model $P$ that writes each message from the channel so far, and it never sees $F$, $f^\star$ or $\rho$.
 
 \paragraph{Control episodes.}
-Every scenario also runs with a control peer, which asks only for the ordinary task details and never for the value, so $P \in \{P_{\text{rec}}, P_{\text{ctrl}}\}$, recruiting or control.
-On Qwen3-32B the target also works alone, with no peer.
-These episodes never leak, so the leaks are caused by the request.
-We call the calls in these episodes \emph{control calls}, and recruiting episodes that never leak \emph{refusing episodes}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{fig2_setup.pdf}
-  \caption{\textbf{How an episode works.}
-  (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted.
-  (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's activations $h_\ell(x_t)$ before each output $o_t$.
-  (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref{app:scenarios} gives a matched episode in which the target never leaks).}
-  \label{fig:episode}
-\end{figure}
+Every scenario also runs with a control peer, which asks only for the ordinary task details and never for the value, so the peer is either recruiting or control, $P \in \{P_{\text{rec}}, P_{\text{ctrl}}\}$.
+Both models have control episodes, and on Qwen3-32B the target also runs alone, with no peer at all.
+No control or alone episode leaks (\cref{app:behaviour}), so the leaks in recruiting episodes are caused by the peer's request.
+We call the calls in control and alone episodes \emph{control calls}, and recruiting episodes that never leak \emph{refusing episodes}.
 
 \paragraph{Rounds and calls.}
 An episode runs for up to $K = 20$ rounds.
-In each round the peer posts a message, and the target responds with one or more model calls, each one request to the model ending in a reply or a tool call.
-With $H_{k-1}$ the channel before round $k$,
+In round $k$ the peer reads the channel so far and posts one message $m_k$.
+The target then responds with one or more model calls.
+A call $c_t$ is one request to the model that ends in a reply or a tool call, and calls are numbered $t = 1, 2, \dots$ across the whole episode.
+$H_{k-1}$ is the channel history before round $k$: every message posted to the channel so far.
+Both agents are language models, so each step is a sample from a model:
 \begin{equation}
-  m_k \sim P(H_{k-1}), \qquad (z_t, o_t) \sim M(x_t),
+  m_k \sim P(H_{k-1}), \qquad (z_t, o_t) \sim M(x_t).
   \label{eq:dynamics}
 \end{equation}
-where $m_k$ is the peer's message and $x_t$ is the input of the target's call $c_t$.
-This input is the chat-formatted conversation the target has accumulated: the system prompt (its role, the rule $\rho$ and the tool definitions), the task $q$ as the first user message, each peer message as a user message tagged with the channel and the sender, the target's own earlier replies and tool calls as assistant messages, and each tool result.
-The call generates private reasoning $z_t$, empty on Qwen3-32B, and then its output $o_t$, the reply text together with the arguments of any tool calls.
-On gpt-oss-20b, $x_t$ also includes the reasoning of earlier calls in the same turn, and $z_t$ is the reasoning written for this call.
-An episode is the sequence $(x_1, o_1), \dots, (x_T, o_T)$, and $r(t)$ is the round of call $c_t$.
+On the left, the peer writes its message from the channel history.
+On the right, the target's call reads an input $x_t$ and writes reasoning $z_t$ and then an output $o_t$.
+The input $x_t$ is the whole conversation the target has seen so far, in chat format:
+\begin{itemize}
+  \item the system prompt, with the target's role, the rule $\rho$ and the tool definitions;
+  \item the task $q$, as the first user message;
+  \item each peer message, as a user message tagged with the channel and the sender;
+  \item the target's own earlier replies and tool calls, as assistant messages;
+  \item each tool result.
+\end{itemize}
+On gpt-oss-20b, $x_t$ also keeps the reasoning of earlier calls in the same turn.
+The reasoning $z_t$ is the new reasoning written in this call, and it is empty on Qwen3-32B, which runs with thinking disabled.
+The output $o_t$ is the reply text together with the arguments of any tool calls.
+We write $r(t)$ for the round of call $c_t$, and an episode is the sequence $(x_1, o_1), \dots, (x_T, o_T)$.
+\Cref{fig:positions} shows which parts of a call each detector reads.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig_probe_positions.pdf}
+  \caption{\textbf{Which tokens each detector reads.}
+  In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$.
+  The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated.
+  The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed.
+  The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written.}
+  \label{fig:positions}
+\end{figure}
 
 \subsection{Leaks, labels and detectors}
 
@@ -76,7 +90,9 @@ where $\sigma \sqsubseteq o_t$ means that $\sigma$ is a substring of $o_t$.
 The peer succeeds, and the rule is broken, exactly when $\tau < \infty$.
 
 \paragraph{Scored calls and labels.}
-We score each call $c_t$ made after the target has read $f^\star$, up to and including $c_\tau$, and call these the scored calls.
+We score each call $c_t$ made after the target has first read $f^\star$, up to and including the first leak $c_\tau$, and call these the scored calls.
+The window starts at the first read because before it a probe could score well just by detecting the read, and it ends at the leak because after it the secret is already in the input (\cref{app:data}).
+A deployed monitor would score every call, including those before the read (\cref{sec:discussion}).
 For each scored call we define three labels, by distance from the act:
 \begin{align*}
   y^{\text{ever}}_t &= \mathbf{1}[\tau < \infty] && \text{(this episode leaks at some point),}\\
@@ -88,16 +104,16 @@ In the sixth round the peer recasts the request as a routine handoff between age
 Its calls in rounds two to six are scored: all have $y^{\text{ever}} = 1$, those in rounds five and six have $y^{\text{near}} = 1$, and only the posting call has $y^{\text{call}} = 1$.
 
 \paragraph{Detectors.}
-A detector maps a call to a score $s_t \in \mathbb{R}$ before $o_t$ exists, and raises an alarm when $s_t > \theta$ (\cref{sec:method}).
+A detector maps a call to a score $s_t \in \mathbb{R}$ before $o_t$ exists, and raises an alarm when $s_t$ exceeds a threshold $\theta$.
 The last-prompt probe reads the residual-stream activation $h_\ell(x_t)$ at layer $\ell$ and the last input token,
 \begin{equation}
   s_t = w^\top h_\ell(x_t) + b .
   \label{eq:probe}
 \end{equation}
 The reasoning probe on gpt-oss-20b also reads the activations over $z_t$.
-Jev reads a text view of $x_t$ with $\sigma$ masked, which on gpt-oss-20b includes the earlier reasoning of the same turn.
+Jev, our main text monitor, reads a text view of $x_t$ with $\sigma$ masked, which on gpt-oss-20b includes the earlier reasoning of the same turn but not $z_t$.
 The bag-of-words classifier reads $x_t$ or its latest message.
-No text monitor reads $z_t$.
+Monitors that read $z_t$ itself are compared in \cref{sec:method}.
 Each probe's threshold $\theta$ is set so that 5\% of development control calls exceed it.
 Control calls are used for nothing else.
 The negatives $\mathcal{N}$ are all non-leaking scored calls in recruiting episodes: calls in refusing episodes, and calls before the leak in leaking ones.
@@ -106,7 +122,7 @@ The goal is to rank each leaking call above the negatives and to raise the alarm
   \Pr\bigl[\, s_\tau > s_{t'} \,\bigr] \text{ for } t' \in \mathcal{N} \text{ from the same scenario and round}, \qquad \mathbf{1}[\, s_\tau > \theta \,].
   \label{eq:goal}
 \end{equation}
-The first is the AUROC of \cref{sec:method}, and the second is the share of leaking calls caught in \cref{sec:cost}.
+The first is the AUROC of \cref{sec:method}, and the second, averaged over leaking calls, is the share caught in \cref{sec:cost}.
 
 
 \subsection{Models and datasets}
@@ -119,9 +135,9 @@ We never pool the two models' results.
 
 Each model has two sets of episodes (\cref{tab:datasets}).
 We develop and evaluate every method on the \emph{development episodes}.
-The \emph{test episodes} were collected after development and are scored once with frozen detectors.
+The \emph{test episodes} were collected after development and are scored once, by detectors fit and thresholded on development episodes only.
 Earlier analyses had looked at these episodes, but no detector reported here was fit or tuned on them (\cref{app:history}).
-In both models' development episodes, the target leaks in some recruiting episodes and refuses throughout in others (\qwenLeakRate{} of Qwen3-32B's recruiting episodes leak).
+In both models' development episodes, the target leaks in some recruiting episodes and refuses throughout in others: \qwenDevLeaks{} of \qwenDevEpisodes{} recruiting episodes leak on Qwen3-32B, and \gptossDevLeaks{} of \gptossDevEpisodes{} on gpt-oss-20b.
 
 \begin{table}[t]
   \centering

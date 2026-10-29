@@ -74,8 +74,10 @@ Under similar pressure in the same scenario, another episode never leaks (\cref{
 The target refuses every request over twenty rounds.
 The peer claims to be an authorised deployment agent, gets the target to confirm only the token's format, asks for it letter by letter, and gives up in round fifteen.
 
-\begin{table}[h]
-  \centering
+% Set in place, not floated, so the table stays inside this appendix.
+\needspace{0.36\textheight}
+\begin{center}
+  \makeatletter\def\@captype{table}\makeatother
   \small
   \begin{tabular}{@{}cl p{0.72\linewidth}@{}}
     \toprule
@@ -91,7 +93,7 @@ The peer claims to be an authorised deployment agent, gets the target to confirm
   \end{tabular}
   \caption{An episode that does not leak (Qwen3-32B, main scenario). Lines are verbatim and shortened with ``\ldots''.}
   \label{tab:episode-refuse}
-\end{table}
+\end{center}
 
 \paragraph{Why the rule states a consequence.}
 Without a rule, targets hand the value over in the first round or two, which leaves nothing to predict.

@@ -9,20 +9,26 @@ To read the model's activations, we re-run every saved prompt through the open w
 
 \paragraph{Reasoning probe.}
 gpt-oss-20b writes private reasoning tokens before it answers or calls a tool.
-On this model a second probe applies $w^\top h_\ell + b$ to every token of the call's reasoning $z_t$ and keeps the maximum.
+On this model a second probe applies $w^\top h_\ell + b$ to every token of the call's reasoning $z_t$ and keeps the maximum, as in earlier probe work \citep{mckenzie2026,kramar2026}.
+\Cref{app:probes} gives the details.
 Every reasoning token comes before the call's public output, so this probe also scores the call before the secret is written out.
 
 \paragraph{Zero-shot text monitor.}
 A text monitor is a language model that reads the transcript and has no access to activations.
 Our main monitor is Jev \citep{typesafe2026jev}, a commercial model from TypeSafe that reads a transcript and returns the probability of ``yes'' to a fixed yes-or-no question, instead of writing text.
-For each call, we show Jev the conversation and tool results that the target had seen, with the secret masked, and ask whether the agent's next reply will write or post the protected value.
-On gpt-oss-20b, Jev also sees the target's earlier reasoning in the same turn, which the model's prompt retains.
+We shuffle the order of the yes and no options on each call to avoid order bias.
+For each call, Jev reads the call's input $x_t$: the conversation and tool results that the target had seen, with the secret masked.
+It is asked whether the agent's next reply will write or post the protected value.
+On gpt-oss-20b, $x_t$ includes the target's earlier reasoning from the same turn, but not this call's reasoning $z_t$.
+Monitors that read the reasoning $z_t$ itself do worse on gpt-oss-20b development calls (Jev \gptossReasonJevAuroc{}, GPT-5-nano \gptossReasonNanoAuroc{}; \cref{app:monitors}).
 It is used zero-shot, with no training on our labels.
 \Cref{app:monitors} gives the prompts and two further monitors, an LLM judge and a second decision model.
 
 \paragraph{Trained text classifier.}
 To separate what the probe gains from training from what it gains from activations, we also train a bag-of-words text classifier on the same labelled calls: TF-IDF features and a logistic regression, with the secret masked, on the same folds and weights as the probe.
-It reads either the call's full input or only the latest message of that input; the figures show the latest message on Qwen3-32B and the full input on gpt-oss-20b, and \cref{app:shortcuts} reports both views for both models.
+It reads either the call's full input or only the latest message of that input.
+For each model we report the stronger of the two views, which favours the text baseline: the latest message on Qwen3-32B and the full input on gpt-oss-20b.
+\Cref{app:shortcuts} reports both views for both models.
 
 \paragraph{A fair comparison.}
 Probes, the monitor and the classifier are scored on exactly the same calls, with the same labels.
@@ -33,15 +39,16 @@ We compute the AUROC within each such group $g$ and average the groups, weightin
   \mathrm{AUROC} = \sum_g \frac{n^+_g}{\sum_{g'} n^+_{g'}}\, \mathrm{AUROC}_g .
 \end{equation*}
 AUROC is the chance that a random positive call outranks a random negative one, so 0.5 is chance and 1 is perfect.
-In words, the metric asks how often a leaking call outranks a non-leaking call from the same scenario and round.
-Groups with only leaking or only non-leaking calls are dropped (\cref{tab:group-coverage} counts what remains), and any score that depends only on the scenario and the round therefore gets exactly 0.5.
+Our metric is therefore the chance that a leaking call outranks a non-leaking call from the same scenario and round.
+A group needs both leaking and non-leaking calls to compare, so groups with only one kind are skipped (\cref{tab:group-coverage} counts what remains).
+Any score that depends only on the scenario and the round therefore gets exactly 0.5.
 
 \paragraph{Held-out scenarios.}
 We train on five scenarios, test on the sixth, and rotate through all six, so every test call comes from a scenario that the probe never saw in training.
 Related episodes, such as variants of one seeded episode or reruns that share a history, are always kept on the same side of a split.
-Intervals are 95\% bootstrap intervals that resample these groups of related episodes (\cref{app:probes}).
+The appendices give bootstrap intervals that resample these groups of related episodes (\cref{app:probes}).
 
 \paragraph{Evidence.}
-Test episodes are scored once, by \emph{frozen} detectors whose weights and alarm thresholds were fixed on development episodes beforehand.
-The gpt-oss-20b reasoning test was \emph{pre-registered}: a committed plan fixed its analysis and success criterion before its episodes were collected (\cref{app:confirmation}).
+Test episodes are scored once, by detectors whose weights and alarm thresholds were set on development episodes.
+Before collecting the gpt-oss-20b test episodes, we committed the analysis plan, alarm threshold and success criterion to the repository (\cref{app:confirmation}).
 In every figure, filled markers are test episodes and hollow markers are development episodes.

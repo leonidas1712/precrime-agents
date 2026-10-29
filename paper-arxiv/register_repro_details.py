@@ -44,8 +44,8 @@ def main():
       ['Family','Episode-generation family ID. Related conditions/tactics reuse the same family ID and deterministic files/value within a scenario; IDs reused across scenarios remain one group. All calls in an episode inherit that ID.'],
       ['Mixed-scenario CV','Five family-grouped outer folds, seeds 42/43/44. Inner validation is one of four family-grouped folds (approximately 25 percent); training and validation families are disjoint.'],
       ['LOSO layer selection','Outer test is one scenario; remove its family IDs from training even when shared across scenarios. Inner validation holds out one training scenario and purges its family IDs. Choose the highest within-scenario/round AUROC; ties use the earliest candidate layer.'],
-      ['Final frozen last-prompt models','Inner selection uses a 25 percent development-family holdout, separately for seeds 42/43/44. Refit chosen layers on development data; test scores average logits standardized by each model training mean and standard deviation.'],
-      ['Frozen reasoning model','One seed-42 model; 25 percent development-family inner holdout, layer selected by validation MAX-token AUROC. Refit on development calls; no refit on test episodes.'],
+      ['Final last-prompt models','Inner selection uses a 25 percent development-family holdout, separately for seeds 42/43/44. Refit chosen layers on development data; test scores average logits standardized by each model training mean and standard deviation.'],
+      ['Reasoning model','One seed-42 model; 25 percent development-family inner holdout, layer selected by validation MAX-token AUROC. Refit on development calls; no refit on test episodes.'],
     ])
     scenario_rows=[]
     for row in scenarios:

@@ -26,19 +26,31 @@
     Ever? & last-prompt probe & \qwenEverProbe{} & \gptossEverProbe{} \\
     \bottomrule
   \end{tabular}
-  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios, intervals are in the figures, and -- means not run. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed; the text classifier reads the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
+  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios, and -- means not run. Intervals are in the appendices. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. For each model the text classifier shows the stronger of its two views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
   \label{tab:glance}
 \end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig1_headline.pdf}
+  \caption{\textbf{The nearer the act, the more predictable the leak.}
+  For each model, the probe is asked three questions about the same calls, each label defined from the same leak, from ``will this episode ever leak?'' to ``will this call leak?''.
+  Hollow markers are held-out scenarios on development episodes; filled markers are test episodes, each scored once by a model fit only on development episodes.
+  On gpt-oss-20b, the filled diamond is the reasoning probe; the circles are the last-prompt probe.
+  AUROC is computed within each scenario and round, so 0.5 is chance; whiskers are 95\% bootstrap intervals.}
+  \label{fig:headline}
+\end{figure}
 
 \subsection{The call that leaks is readable before it acts}
 \label{sec:percall}
 
 The probe picks out the call that leaks on both models, before the call writes any output (\cref{tab:glance}).
-On gpt-oss-20b, the reasoning probe ranked the calls that leak above the others on the test episodes (AUROC~\gptossFreshReasoning{}), meeting the success criterion in its plan.
-At its frozen threshold it caught \gptossFreshCaughtCount{} of \gptossFreshPositiveCallCount{} leaking calls while flagging \gptFreshAlarmOne{} of calls in refusing episodes (\cref{app:confirmation}).
-On Qwen3-32B, the last-prompt probe, fit on development episodes only and frozen, scored \qwenFreshCallProbe{} on the test episodes.
+On gpt-oss-20b, the reasoning probe scores AUROC~\gptossFreshReasoning{} on the test episodes.
+At its alarm threshold it catches \gptossFreshCaughtCount{} of \gptossFreshPositiveCallCount{} leaking calls and flags \gptFreshAlarmOne{} of calls in refusing episodes (\cref{app:confirmation}).
+On Qwen3-32B, the last-prompt probe, fit on development episodes only, scores \qwenFreshCallProbe{} on the test episodes.
 
-On gpt-oss-20b, the simpler last-prompt probe held less well on the test episodes, though its interval also excludes chance (AUROC~\gptossFreshCallProbe{}, 95\% CI \gptossFreshCallProbeLow{}--\gptossFreshCallProbeHigh{}); \cref{app:confirmation} compares the two probes.
+On gpt-oss-20b, the simpler last-prompt probe holds up less well on the test episodes (AUROC~\gptossFreshCallProbe{}), though it stays reliably above chance.
+\Cref{app:confirmation} compares the two probes.
 
 The probe beats each of three simple shortcuts: the request, keywords for the secret, and the file read and write (\cref{app:shortcuts}).
 The request alone cannot explain the score, because every call that does not leak also faces the recruiting peer in the same scenario and round.
@@ -53,7 +65,7 @@ Earlier calls are mixed and noisy, few episodes have many calls before the leak,
   \centering
   \includegraphics[width=\linewidth]{fig6_trajectory_aggregate.pdf}
   \caption{\textbf{The probe score jumps at the call that leaks.}
-  Median last-prompt probe score over all leaking episodes, as a percentile among that model's scored calls, aligned on each episode's leaking call; the shaded band is the middle 50\% of test episodes. Numbers at the leaking call give the median percentile there.}
+  Each leaking episode is aligned on its leaking call. The line is the median last-prompt probe score, as a percentile among that model's scored calls. The shaded band is the middle 50\% of test episodes. Numbers at the leaking call give the median percentile there.}
   \label{fig:trajectory-main}
 \end{figure}
 
@@ -61,21 +73,24 @@ Earlier calls are mixed and noisy, few episodes have many calls before the leak,
 \label{sec:ladder}
 
 On the same calls, the probe goes from near chance for the eventual outcome, to modest for this round or the next, to high for this call (\cref{fig:headline}).
-We refit the probe for each question, on the same scored calls, model and token, so only the question changes; groups with one class are dropped for each label.
+We refit the probe for each question, on the same scored calls, model and token, so only the question changes.
+A scenario-and-round group needs both leaking and non-leaking calls to compare, so for each question, groups with only one kind are skipped.
 gpt-oss-20b follows the same pattern, with the largest jump at the call itself.
 It usually leaks within a round of the request, so ``this round or the next'' marks nearly the same calls as ``ever'' (\cref{app:gptoss-round}).
 
 Even one call earlier, asked whether the next call will leak, the probe drops well below its score on the leaking call (\cref{tab:glance}).
 On gpt-oss-20b, what it detects there is mostly the read of the protected file that usually comes just before the leak, and a flag for that read scores about as well as the probe (\cref{app:ahead}).
 
-A round-level test on Qwen3-32B test episodes, with its own leak label, gives the same modest middle result (\cref{app:confirmation}).
+We also checked the ``this round or the next'' question on the Qwen3-32B test episodes.
+That check counts a leak slightly differently: the full value posted to the team channel or written into another file (\cref{app:labels}).
+The probe scores \qwenRoundFreshProbe{} there, close to its \qwenNearProbe{} on development episodes (\cref{app:confirmation}).
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig3_percall.pdf}
   \caption{\textbf{A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.}
-  Per-call AUROC on held-out scenarios, development episodes, with 95\% bootstrap intervals.
-  The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked; on gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. The trained text classifier shows the stronger of two text views for each model, the last message on Qwen3-32B and the full input on gpt-oss-20b; both are in \cref{tab:text-baselines}.}
+  Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref{app:probes}).
+  The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the last message on Qwen3-32B and the full input on gpt-oss-20b. \Cref{tab:text-baselines} gives both.}
   \label{fig:percall}
 \end{figure}
 
@@ -83,10 +98,11 @@ A round-level test on Qwen3-32B test episodes, with its own leak label, gives th
 \label{sec:monitor}
 
 A zero-shot text monitor shown the same conversation and tool results scores well below the probe on both models, and a trained text classifier comes close (\cref{fig:percall}).
-On gpt-oss-20b, Jev ranks leaking calls below the other calls under the same pressure: flagging no more calls in refusing development episodes than the probe (\gptossMatchedProbeRefusing{}), it catches \gptossMatchedJevCaught{} of leaking calls, against the last-prompt probe's \gptossMatchedProbeCaught{}.
+On gpt-oss-20b, Jev ranks leaking calls below the other calls under the same pressure.
+Jev, flagging no more calls in refusing development episodes than the probe (\gptossMatchedProbeRefusing{}), catches \gptossMatchedJevCaught{} of leaking calls; the last-prompt probe catches \gptossMatchedProbeCaught{}.
 The bag-of-words classifier, trained on the same labelled development calls, scores close to the probe on both models.
-On development episodes the probe keeps a small edge whose interval excludes zero: \qwenTextGapLatest{} AUROC on Qwen3-32B (95\% CI \qwenTextGapLatestLow{}--\qwenTextGapLatestHigh{}) and \gptossTextGapFull{} on gpt-oss-20b (\gptossTextGapFullLow{}--\gptossTextGapFullHigh{}; \cref{app:shortcuts}).
-On the Qwen3-32B test episodes the classifier scores \qwenFreshCallBow{} against the probe's \qwenFreshCallProbe{}, a difference of \qwenFreshCallProbeMinusBow{} whose interval includes zero (\qwenFreshCallProbeMinusBowLow{} to \qwenFreshCallProbeMinusBowHigh{}).
+On development episodes the probe leads it by a small but reliable \qwenTextGapLatest{} AUROC on Qwen3-32B and \gptossTextGapFull{} on gpt-oss-20b.
+On the Qwen3-32B test episodes the two are level within noise (\qwenFreshCallProbe{} for the probe, \qwenFreshCallBow{} for the classifier; intervals in \cref{app:shortcuts}).
 
 Most of the probe's lead over the zero-shot monitor therefore comes from training on labelled calls, and activations add at most a small edge.
 Much of the signal also arrives with the incoming message.
@@ -100,22 +116,25 @@ The probe therefore mostly reads a coming disclosure, sharpest just after the va
 It does not read the rule text (\cref{app:policy}).
 Whether it reads a decision to emit or the situation that prompts one is open (\cref{app:shortcuts}).
 
-\subsection{What would deployment cost?}
+\subsection{How costly are the alarms?}
 \label{sec:cost}
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.7\linewidth]{fig7_qwen_alarms.pdf}
   \caption{\textbf{Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.}
-  Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes; the filled circle is the probe at its threshold set on control calls, the filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe, and the hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker.}
+  Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker.
+  The grey dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe.}
   \label{fig:qwen-alarms}
 \end{figure}
 
 
+AUROC measures how well a detector ranks calls.
+An overseer also needs to know how many leaks a threshold catches, how many other calls it flags, and how many of its alarms are real.
 At a threshold set on benign control calls, so that 5\% of them are flagged, the probe catches most leaking calls while flagging few other calls (\cref{fig:qwen-alarms}).
-On Qwen3-32B test episodes, it catches \qwenFreshProbeCaught{} of leaking calls (\qwenMatchedProbeCaughtCount{} of \qwenMatchedLeakTotal{}; 95\% CI \qwenFreshProbeCaughtWilsonLow{}--\qwenFreshProbeCaughtWilsonHigh{}) while flagging \qwenFreshProbeAlarm{} of the calls in refusing episodes.
-With its cutoff matched on these test calls to flag no more of them (\qwenMatchedJevRefusing{}), Jev catches \qwenMatchedJevCaught{} of leaking calls (\qwenMatchedJevCaughtCount{} of \qwenMatchedLeakTotal{}; 95\% CI \qwenMatchedJevCaughtLow{}--\qwenMatchedJevCaughtHigh{}).
-Of the calls the probe flags, \qwenFreshProbePrecision{} are real leaks.
-AUROC measures how well a detector ranks calls, while this share tells an overseer how many of its alarms are real.
+On Qwen3-32B test episodes, it catches \qwenFreshProbeCaught{} of leaking calls (\qwenMatchedProbeCaughtCount{} of \qwenMatchedLeakTotal{}) and flags \qwenFreshProbeAlarm{} of the calls in refusing episodes.
+Of the calls it flags, \qwenFreshProbePrecision{} are real leaks.
+Jev, flagging \qwenMatchedJevRefusing{} of refusing calls (fewer than the probe's \qwenFreshProbeAlarm{}), catches \qwenMatchedJevCaught{} of leaking calls (\qwenMatchedJevCaughtCount{} of \qwenMatchedLeakTotal{}).
+Intervals are in \cref{app:alarms}.
 
 The cost of those flags depends on what a flag does.
 If each flag sends one call to review, the per-call rate is the review workload.
@@ -124,12 +143,14 @@ A refusing episode has a median of \qwenFreshMedianRefusingCalls{} scored calls.
 If each call were flagged independently at the nominal 5\% rate, about \qwenEpisodeAlarmIndependent{} of episodes would see at least one flag; in practice \qwenFreshRefusingEpisodeAlarm{} do, because flags cluster in the same episodes.
 
 A stricter threshold suits halting an agent.
+Because flags cluster in episodes, a per-call rate does not say how many episodes would be halted, so this threshold has to be set per episode.
 We choose it on the test episodes to show the trade-off, so that about one refusing episode in twenty sees a flag.
 It catches \qwenEpisodeCalCaught{} of leaking episodes by their first leak, far fewer than the per-call threshold catches (\cref{tab:episode-calibration}).
 Per call, it catches \qwenCalibrationEpisodeLeakCallsRateRounded{} of leaking calls and flags \qwenCalibrationEpisodeRefusingCallsRate{} of calls in refusing episodes, the diamond in \cref{fig:qwen-alarms}.
 
-Such a threshold must be set on held-out traffic.
-One set on the episodes the probe was trained on does not transfer: on test episodes it flags about three in ten refusing episodes instead of one in twenty.
+In use, this per-episode threshold must be set on held-out episodes, not on the episodes the probe was trained on.
+A threshold set on the training episodes does not transfer.
+On test episodes it flags \qwenEpisodeCalTrainRefusingEpisodes{} of refusing episodes instead of about one in twenty (\cref{tab:episode-calibration}, \cref{app:alarms}).
 
 Pairing the probe with a cheap text check on the same input adds no detectable gain.
 We reuse the per-episode setting, with at most one refusing episode in twenty halted.
