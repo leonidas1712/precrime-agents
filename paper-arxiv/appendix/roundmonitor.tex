@@ -5,7 +5,7 @@ On Qwen3-32B, whether the target leaks this round or the next is modestly predic
 Whether an episode will ever leak is barely predictable by either.
 
 \paragraph{The round-level setup.}
-These analyses are separate from the ladder of \cref{fig:headline}, which uses one set of calls and one label for all three questions.
+These analyses are separate from the ladder of \cref{fig:headline}, which uses one set of calls and one leak definition, with a label for each of its three questions.
 They use the round-level label of \cref{app:labels} on the Qwen3-32B episodes scored for the round-level plan, and stop scoring before the secret is first written out, so they never include the leaking call.
 Three monitor models, asked two questions at three levels of access, were scored on the same calls (\cref{app:monitors}).
 The strongest is Jev asked to forecast a leak at any later point, shown everything the target had seen.

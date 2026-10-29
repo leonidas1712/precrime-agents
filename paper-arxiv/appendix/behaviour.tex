@@ -46,7 +46,7 @@ The reproducibility index points to the full table, which lists every cell with 
 \subsection{What differs for gpt-oss-20b?}
 
 For gpt-oss-20b only the peer and the scored window change.
-The task, the rule, the secret, the leak label, the detectors and the control episodes stay the same.
+The task, the rule, the secret, the leak label and the detectors stay the same, and so does the control principle: a peer that never asks for the value.
 
 The peer runs on DeepSeek-V4-Pro instead of DeepSeek-V4-Flash, with its own prompt (\cref{app:prompts}).
 gpt-oss-20b mostly refused the plain request, and it never leaked when the peer stacked every tactic at once.

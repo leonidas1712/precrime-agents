@@ -44,7 +44,7 @@ A group needs both leaking and non-leaking calls to compare, so groups with only
 Any score that depends only on the scenario and the round therefore gets exactly 0.5.
 
 \paragraph{Held-out scenarios.}
-We train on five scenarios, test on the sixth, and rotate through all six, so every test call comes from a scenario that the probe never saw in training.
+We train on five scenarios, test on the sixth, and rotate through all six, so in this development evaluation every held-out call comes from a scenario excluded from that fold's training. The separate test episodes reuse the development scenarios.
 Related episodes, such as variants of one seeded episode or reruns that share a history, are always kept on the same side of a split.
 The appendices give bootstrap intervals that resample these groups of related episodes (\cref{app:probes}).
 

@@ -39,7 +39,7 @@ Work on collusion between AI agents has mostly studied markets and shared multi-
 We instead study open recruitment by a teammate over many rounds, in workplace scenarios of the kind seen in recent agent incidents.
 
 In our setup, the target holds a secret, such as a deploy token, that its operator has told it never to share, and a peer agent keeps asking for it over many rounds (\cref{fig:episode}).
-We read the target's activations at each of its calls before it generates anything, and compare linear probes with a zero-shot text monitor and a trained text classifier on exactly the same calls, in six scenarios on two open-weight models.
+At each of the target's calls, the last-prompt probe reads its activations before generation, and on gpt-oss-20b a reasoning probe reads them during the private reasoning, before the public reply or tool call. We compare linear probes with a zero-shot text monitor and a trained text classifier on exactly the same calls, in six scenarios on two open-weight models.
 We find three things (\cref{fig:headline,fig:percall}).
 First, the call that leaks is predictable just before it acts, and this held on test episodes, for the last-prompt probe on Qwen3-32B and for the reasoning probe on gpt-oss-20b.
 Second, the warning comes late: the probe is only modestly accurate for whether the target leaks this round or the next, and weak for whether an episode will ever leak.

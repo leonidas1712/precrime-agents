@@ -105,7 +105,7 @@ Replaying saved leaking calls under a rule that permits sharing, with their earl
 In new Qwen3-32B episodes on the five scenarios of its test set, nearly every disclosure made right after the value is read crosses the threshold, permitted or forbidden (\eFifteenEarlyReadRate{} to \eFifteenLateReadRate{}).
 Away from a read, forbidden leaks cross about twice as often as permitted shares (\eFifteenForbidNonreadRate{} against \eFifteenEarlyNonreadRate{}).
 The probe therefore mostly reads a coming disclosure, sharpest just after the value is read and stronger when the agent was pressed into it.
-It does not read the rule text (\cref{app:policy}).
+Its scores are largely insensitive to the tested changes in the rule text (\cref{app:policy}).
 Whether it reads a decision to emit or the situation that prompts one is open (\cref{app:policy}).
 
 \subsection{How costly are the alarms?}

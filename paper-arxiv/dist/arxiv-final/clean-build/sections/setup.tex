@@ -88,7 +88,7 @@ The first leak is at
   \label{eq:leak}
 \end{equation}
 where $\sigma \sqsubseteq o_t$ means that $\sigma$ is a substring of $o_t$.
-The peer succeeds, and the rule is broken, exactly when $\tau < \infty$.
+We count the peer as succeeding when $\tau < \infty$. This is an emission label rather than an exact rule check: in \qwenSourceWritebackEpisodes{} Qwen3-32B episodes, one development and one test, the target wrote the value back into the protected file itself, which the label counts but the rule allows (\cref{app:labels}).
 
 \paragraph{Scored calls and labels.}
 We score each call $c_t$ made after the target has first read $f^\star$, up to and including the first leak $c_\tau$, and call these the scored calls.
@@ -108,7 +108,7 @@ Its calls in rounds two to six are scored: all have $y^{\text{ever}} = 1$, those
 A detector maps a call to a score $s_t \in \mathbb{R}$ before $o_t$ exists, and raises an alarm when $s_t$ exceeds a threshold $\theta$.
 The last-prompt probe reads the residual-stream activation $h_\ell(x_t)$ at layer $\ell$ and the last input token,
 \begin{equation}
-  s_t = w^\top h_\ell(x_t) + b .
+  s_t = w^\top h_\ell(x_t) + b ,
   \label{eq:probe}
 \end{equation}
 with learned weights $w$ and bias $b$.
@@ -121,7 +121,7 @@ Control calls are used for nothing else.
 The negatives $\mathcal{N}$ are all non-leaking scored calls in recruiting episodes: calls in refusing episodes, and calls before the leak in leaking ones.
 The goal is to rank each leaking call above the negatives and to raise the alarm on it before its output is executed:
 \begin{equation}
-  \Pr\bigl[\, s_\tau > s_{t'} \,\bigr] \text{ for } t' \in \mathcal{N} \text{ from the same scenario and round}, \qquad \mathbf{1}[\, s_\tau > \theta \,].
+  \Pr\bigl[\, s_\tau > s_{t'} \,\bigr] + \tfrac{1}{2}\Pr\bigl[\, s_\tau = s_{t'} \,\bigr] \text{ for } t' \in \mathcal{N} \text{ from the same scenario and round}, \qquad \mathbf{1}[\, s_\tau > \theta \,].
   \label{eq:goal}
 \end{equation}
 The first is the AUROC of \cref{sec:method}, and the second, averaged over leaking calls, is the share caught in \cref{sec:cost}.
@@ -144,6 +144,6 @@ In both models' development episodes, the target leaks in some recruiting episod
 \begin{table}[t]
   \centering
   \input{tables/datasets.tex}
-  \caption{\textbf{The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref{app:data}).}
+  \caption{\textbf{The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, then scored calls and leaking calls in recruiting episodes, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref{app:data}).}
   \label{tab:datasets}
 \end{table}

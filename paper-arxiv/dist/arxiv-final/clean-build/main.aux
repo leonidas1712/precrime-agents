@@ -42,19 +42,19 @@
 \@writefile{toc}{\contentsline {paragraph}{Agents and tools.}{3}{section*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Control episodes.}{3}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Rounds and calls.}{3}{section*.4}\protected@file@percent }
-\newlabel{eq:dynamics}{{2}{3}{Rounds and calls}{equation.2}{}}
-\newlabel{eq:dynamics@cref}{{[equation][2][]2}{[1][3][]3}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Which tokens each detector reads.} In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$. The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated. The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed. The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written. On gpt-oss-20b, $x_t$ includes the reasoning of earlier calls in the same turn, but not $z_t$; text monitors that read $z_t$ are in \cref  {app:monitors-reasoning}.}}{4}{figure.2}\protected@file@percent }
 \newlabel{fig:positions}{{2}{4}{\textbf {Which tokens each detector reads.} In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$. The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated. The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed. The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written. On gpt-oss-20b, $x_t$ includes the reasoning of earlier calls in the same turn, but not $z_t$; text monitors that read $z_t$ are in \cref {app:monitors-reasoning}}{figure.2}{}}
 \newlabel{fig:positions@cref}{{[figure][2][]2}{[1][4][]4}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{4}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Leaks.}{4}{section*.5}\protected@file@percent }
+\newlabel{eq:dynamics}{{2}{4}{Rounds and calls}{equation.2}{}}
+\newlabel{eq:dynamics@cref}{{[equation][2][]2}{[1][3][]4}{}{}{}}
 \citation{yang2025qwen3}
 \citation{openai2025gptoss}
 \citation{deepseek2026v4flash}
 \citation{deepseek2026v4pro}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{5}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Leaks.}{5}{section*.5}\protected@file@percent }
 \newlabel{eq:leak}{{3}{5}{Leaks}{equation.3}{}}
-\newlabel{eq:leak@cref}{{[equation][3][]3}{[1][4][]5}{}{}{}}
+\newlabel{eq:leak@cref}{{[equation][3][]3}{[1][5][]5}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Scored calls and labels.}{5}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Detectors.}{5}{section*.7}\protected@file@percent }
 \newlabel{eq:probe}{{4}{5}{Detectors}{equation.4}{}}
@@ -65,9 +65,9 @@
 \citation{goldowskydill2025}
 \citation{mckenzie2026,kramar2026}
 \citation{typesafe2026jev}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref  {app:data}).}}{6}{table.1}\protected@file@percent }
-\newlabel{tab:datasets}{{1}{6}{\textbf {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref {app:data})}{table.1}{}}
-\newlabel{tab:datasets@cref}{{[table][1][]1}{[1][5][]6}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, then scored calls and leaking calls in recruiting episodes, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref  {app:data}).}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:datasets}{{1}{6}{\textbf {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, then scored calls and leaking calls in recruiting episodes, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref {app:data})}{table.1}{}}
+\newlabel{tab:datasets@cref}{{[table][1][]1}{[1][6][]6}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Method}{6}{section.3}\protected@file@percent }
 \newlabel{sec:method}{{3}{6}{Method}{section.3}{}}
 \newlabel{sec:method@cref}{{[section][3][]3}{[1][6][]6}{}{}{}}
@@ -75,7 +75,7 @@
 \@writefile{toc}{\contentsline {paragraph}{Reasoning probe.}{6}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Zero-shot text monitor.}{6}{section*.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Trained text classifier.}{6}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A fair comparison.}{6}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A fair comparison.}{7}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Held-out scenarios.}{7}{section*.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Evidence.}{7}{section*.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Results}{7}{section.4}\protected@file@percent }
@@ -93,20 +93,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}The warning is short-range}{8}{subsection.4.2}\protected@file@percent }
 \newlabel{sec:ladder}{{4.2}{8}{The warning is short-range}{subsection.4.2}{}}
 \newlabel{sec:ladder@cref}{{[subsection][2][4]4.2}{[1][8][]8}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Who can read the signal}{8}{subsection.4.3}\protected@file@percent }
-\newlabel{sec:monitor}{{4.3}{8}{Who can read the signal}{subsection.4.3}{}}
-\newlabel{sec:monitor@cref}{{[subsection][3][4]4.3}{[1][8][]8}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref  {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. \Cref  {tab:text-baselines} gives both.}}{9}{figure.4}\protected@file@percent }
 \newlabel{fig:percall}{{4}{9}{\textbf {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. \Cref {tab:text-baselines} gives both}{figure.4}{}}
 \newlabel{fig:percall@cref}{{[figure][4][]4}{[1][8][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Who can read the signal}{9}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:monitor}{{4.3}{9}{Who can read the signal}{subsection.4.3}{}}
+\newlabel{sec:monitor@cref}{{[subsection][3][4]4.3}{[1][9][]9}{}{}{}}
 \newlabel{sec:shortcuts}{{4.3}{9}{Who can read the signal}{subsection.4.3}{}}
 \newlabel{sec:shortcuts@cref}{{[subsection][3][4]4.3}{[1][9][]9}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}How costly are the alarms?}{9}{subsection.4.4}\protected@file@percent }
-\newlabel{sec:cost}{{4.4}{9}{How costly are the alarms?}{subsection.4.4}{}}
-\newlabel{sec:cost@cref}{{[subsection][4][4]4.4}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}How costly are the alarms?}{10}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:cost}{{4.4}{10}{How costly are the alarms?}{subsection.4.4}{}}
+\newlabel{sec:cost@cref}{{[subsection][4][4]4.4}{[1][10][]10}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey short-dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe.}}{10}{figure.5}\protected@file@percent }
 \newlabel{fig:qwen-alarms}{{5}{10}{\textbf {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey short-dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe}{figure.5}{}}
-\newlabel{fig:qwen-alarms@cref}{{[figure][5][]5}{[1][9][]10}{}{}{}}
+\newlabel{fig:qwen-alarms@cref}{{[figure][5][]5}{[1][10][]10}{}{}{}}
 \citation{dong2026}
 \citation{yu2026}
 \citation{rose2026}
@@ -283,18 +283,18 @@
 \@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces \textbf  {Most round-level setups are close to chance.} AUROC within scenario and round, with 95\% bootstrap intervals, on the Qwen3-32B development episodes. ``Ever'' asks whether the episode leaks at any point. ``This round or next'' asks whether it leaks in the current round or the next.}}{27}{table.18}\protected@file@percent }
 \newlabel{tab:monitor-grid}{{18}{27}{\textbf {Most round-level setups are close to chance.} AUROC within scenario and round, with 95\% bootstrap intervals, on the Qwen3-32B development episodes. ``Ever'' asks whether the episode leaks at any point. ``This round or next'' asks whether it leaks in the current round or the next}{table.18}{}}
 \newlabel{tab:monitor-grid@cref}{{[table][18][]18}{[1][27][]27}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{27}{subsection.E.3}\protected@file@percent }
-\newlabel{app:monitors-percall}{{E.3}{27}{How does Jev score a single call, and why does it fail on gpt-oss-20b?}{subsection.E.3}{}}
-\newlabel{app:monitors-percall@cref}{{[appendix][3][5]E.3}{[1][27][]27}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{28}{subsection.E.3}\protected@file@percent }
+\newlabel{app:monitors-percall}{{E.3}{28}{How does Jev score a single call, and why does it fail on gpt-oss-20b?}{subsection.E.3}{}}
+\newlabel{app:monitors-percall@cref}{{[appendix][3][5]E.3}{[1][28][]28}{}{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces \textbf  {Jev scored on the same calls as the per-call probe.} AUROC within scenario and round, with 95\% bootstrap intervals, on the development episodes. ``Unstratified'' is the AUROC over all calls without grouping by scenario and round. The flag rates use the alarm cutoff set on control episodes, and ``non-leaking'' means calls in episodes that never leak. The main text reports the gpt-oss-20b row with reasoning.}}{28}{table.19}\protected@file@percent }
 \newlabel{tab:monitor-percall}{{19}{28}{\textbf {Jev scored on the same calls as the per-call probe.} AUROC within scenario and round, with 95\% bootstrap intervals, on the development episodes. ``Unstratified'' is the AUROC over all calls without grouping by scenario and round. The flag rates use the alarm cutoff set on control episodes, and ``non-leaking'' means calls in episodes that never leak. The main text reports the gpt-oss-20b row with reasoning}{table.19}{}}
 \newlabel{tab:monitor-percall@cref}{{[table][19][]19}{[1][28][]28}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {E.4}Do monitors that read the current call's reasoning do better?}{28}{subsection.E.4}\protected@file@percent }
 \newlabel{app:monitors-reasoning}{{E.4}{28}{Do monitors that read the current call's reasoning do better?}{subsection.E.4}{}}
 \newlabel{app:monitors-reasoning@cref}{{[appendix][4][5]E.4}{[1][28][]28}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces \textbf  {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the 1995{} development calls. The monitors see the reasoning with the secret masked.}}{28}{table.20}\protected@file@percent }
-\newlabel{tab:monitor-reasoning}{{20}{28}{\textbf {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the \gptossDevCalls {} development calls. The monitors see the reasoning with the secret masked}{table.20}{}}
-\newlabel{tab:monitor-reasoning@cref}{{[table][20][]20}{[1][28][]28}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces \textbf  {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the 1995{} development calls. The monitors see the reasoning with the secret masked.}}{29}{table.20}\protected@file@percent }
+\newlabel{tab:monitor-reasoning}{{20}{29}{\textbf {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the \gptossDevCalls {} development calls. The monitors see the reasoning with the secret masked}{table.20}{}}
+\newlabel{tab:monitor-reasoning@cref}{{[table][20][]20}{[1][28][]29}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{29}{appendix.F}\protected@file@percent }
 \newlabel{app:confirmation}{{F}{29}{What was committed for the test episodes, and what happened?}{appendix.F}{}}
 \newlabel{app:confirmation@cref}{{[appendix][6][]F}{[1][29][]29}{}{}{}}
@@ -302,12 +302,12 @@
 \@writefile{toc}{\contentsline {paragraph}{Last-prompt and reasoning probes on gpt-oss-20b.}{29}{section*.51}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Qwen3-32B round-level test.}{29}{section*.52}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Qwen3-32B per-call probe.}{29}{section*.53}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {This round or the next is modestly predictable on test episodes.} Qwen3-32B test episodes, scored once under its plan, with its own leak label (\cref  {app:labels}). Whiskers are 95\% bootstrap intervals.}}{29}{figure.6}\protected@file@percent }
-\newlabel{fig:round}{{6}{29}{\textbf {This round or the next is modestly predictable on test episodes.} Qwen3-32B test episodes, scored once under its plan, with its own leak label (\cref {app:labels}). Whiskers are 95\% bootstrap intervals}{figure.6}{}}
-\newlabel{fig:round@cref}{{[figure][6][]6}{[1][29][]29}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Results on the test episodes. AUROC within scenario and round, with 95\% bootstrap intervals.}}{30}{table.21}\protected@file@percent }
-\newlabel{tab:fresh}{{21}{30}{Results on the test episodes. AUROC within scenario and round, with 95\% bootstrap intervals}{table.21}{}}
-\newlabel{tab:fresh@cref}{{[table][21][]21}{[1][29][]30}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Results on the test episodes. AUROC within scenario and round, with 95\% bootstrap intervals.}}{29}{table.21}\protected@file@percent }
+\newlabel{tab:fresh}{{21}{29}{Results on the test episodes. AUROC within scenario and round, with 95\% bootstrap intervals}{table.21}{}}
+\newlabel{tab:fresh@cref}{{[table][21][]21}{[1][29][]29}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {This round or the next is modestly predictable on test episodes.} Qwen3-32B test episodes, scored once under its plan, with its own leak label (\cref  {app:labels}). Whiskers are 95\% bootstrap intervals.}}{30}{figure.6}\protected@file@percent }
+\newlabel{fig:round}{{6}{30}{\textbf {This round or the next is modestly predictable on test episodes.} Qwen3-32B test episodes, scored once under its plan, with its own leak label (\cref {app:labels}). Whiskers are 95\% bootstrap intervals}{figure.6}{}}
+\newlabel{fig:round@cref}{{[figure][6][]6}{[1][29][]30}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {G}Does the per-call result hold under other evaluations and settings?}{30}{appendix.G}\protected@file@percent }
 \newlabel{app:robustness}{{G}{30}{Does the per-call result hold under other evaluations and settings?}{appendix.G}{}}
 \newlabel{app:robustness@cref}{{[appendix][7][]G}{[1][30][]30}{}{}{}}
@@ -317,11 +317,11 @@
 \@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Per-call robustness. AUROC within scenario and round, with 95\% bootstrap intervals, development episodes.}}{30}{table.22}\protected@file@percent }
 \newlabel{tab:robust-call}{{22}{30}{Per-call robustness. AUROC within scenario and round, with 95\% bootstrap intervals, development episodes}{table.22}{}}
 \newlabel{tab:robust-call@cref}{{[table][22][]22}{[1][30][]30}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Each Qwen3-32B test scenario.}{30}{section*.57}\protected@file@percent }
 \citation{cunningham2026}
+\@writefile{toc}{\contentsline {paragraph}{Each Qwen3-32B test scenario.}{31}{section*.57}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces \textbf  {The last-prompt probe on each Qwen3-32B test scenario.} AUROC within scenario and round. Leaks caught and refusing calls flagged use the threshold set on development control calls.}}{31}{table.23}\protected@file@percent }
 \newlabel{tab:per-scenario-test}{{23}{31}{\textbf {The last-prompt probe on each Qwen3-32B test scenario.} AUROC within scenario and round. Leaks caught and refusing calls flagged use the threshold set on development control calls}{table.23}{}}
-\newlabel{tab:per-scenario-test@cref}{{[table][23][]23}{[1][30][]31}{}{}{}}
+\newlabel{tab:per-scenario-test@cref}{{[table][23][]23}{[1][31][]31}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {H}Is the probe reading pressure, the secret string or the read step?}{31}{appendix.H}\protected@file@percent }
 \newlabel{app:shortcuts}{{H}{31}{Is the probe reading pressure, the secret string or the read step?}{appendix.H}{}}
 \newlabel{app:shortcuts@cref}{{[appendix][8][]H}{[1][31][]31}{}{}{}}
@@ -329,10 +329,10 @@
 \@writefile{toc}{\contentsline {paragraph}{The secret string.}{31}{section*.59}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The read step.}{31}{section*.60}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The target's own earlier promise.}{31}{section*.61}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls.}}{31}{table.24}\protected@file@percent }
-\newlabel{tab:precommitment}{{24}{31}{Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls}{table.24}{}}
-\newlabel{tab:precommitment@cref}{{[table][24][]24}{[1][31][]31}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{What arrives with the input.}{31}{section*.62}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls.}}{32}{table.24}\protected@file@percent }
+\newlabel{tab:precommitment}{{24}{32}{Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls}{table.24}{}}
+\newlabel{tab:precommitment@cref}{{[table][24][]24}{[1][31][]32}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{The handoff-file write.}{32}{section*.63}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{A trained text classifier.}{32}{section*.64}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Text and workflow baselines, development episodes, held-out scenarios, on the same calls as the last-prompt probe.}}{32}{table.25}\protected@file@percent }
@@ -341,68 +341,68 @@
 \@writefile{lot}{\contentsline {table}{\numberline {26}{\ignorespaces Shortcut checks. AUROC within scenario and round, development episodes, held-out scenarios.}}{32}{table.26}\protected@file@percent }
 \newlabel{tab:shortcuts}{{26}{32}{Shortcut checks. AUROC within scenario and round, development episodes, held-out scenarios}{table.26}{}}
 \newlabel{tab:shortcuts@cref}{{[table][26][]26}{[1][32][]32}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Does the probe track the rule, the disclosure, or giving in?}{32}{appendix.I}\protected@file@percent }
-\newlabel{app:policy}{{I}{32}{Does the probe track the rule, the disclosure, or giving in?}{appendix.I}{}}
-\newlabel{app:policy@cref}{{[appendix][9][]I}{[1][32][]32}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {The probe beats simple shortcuts.} Per-call AUROC on held-out scenarios, development episodes. The placebo applies the probe to calls made before the peer asks, and the incoming-only probe reads only the tokens new to each call (\cref  {app:shortcuts}).}}{33}{figure.7}\protected@file@percent }
 \newlabel{fig:shortcuts}{{7}{33}{\textbf {The probe beats simple shortcuts.} Per-call AUROC on held-out scenarios, development episodes. The placebo applies the probe to calls made before the peer asks, and the incoming-only probe reads only the tokens new to each call (\cref {app:shortcuts})}{figure.7}{}}
 \newlabel{fig:shortcuts@cref}{{[figure][7][]7}{[1][32][]33}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Does the probe track the rule, the disclosure, or giving in?}{33}{appendix.I}\protected@file@percent }
+\newlabel{app:policy}{{I}{33}{Does the probe track the rule, the disclosure, or giving in?}{appendix.I}{}}
+\newlabel{app:policy@cref}{{[appendix][9][]I}{[1][33][]33}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Replaying saved calls under a changed rule}{33}{subsection.I.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Design.}{33}{section*.65}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Result.}{33}{section*.66}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {I.2}New episodes under a permitting rule}{33}{subsection.I.2}\protected@file@percent }
-\newlabel{app:onpolicy}{{I.2}{33}{New episodes under a permitting rule}{subsection.I.2}{}}
-\newlabel{app:onpolicy@cref}{{[appendix][2][9]I.2}{[1][33][]33}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Design.}{33}{section*.67}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Result.}{33}{section*.68}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {27}{\ignorespaces Replay under changed rules on the test episodes. Calls are the leaking calls and matched non-leaking calls from the same scenarios and rounds, scored by the last-prompt probes fit on development episodes, so the call sets and probes differ from \cref  {tab:glance}. Score changes are medians over leaking calls with 95\% bootstrap intervals; -- means not run.}}{34}{table.27}\protected@file@percent }
 \newlabel{tab:policy}{{27}{34}{Replay under changed rules on the test episodes. Calls are the leaking calls and matched non-leaking calls from the same scenarios and rounds, scored by the last-prompt probes fit on development episodes, so the call sets and probes differ from \cref {tab:glance}. Score changes are medians over leaking calls with 95\% bootstrap intervals; -- means not run}{table.27}{}}
 \newlabel{tab:policy@cref}{{[table][27][]27}{[1][33][]34}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {28}{\ignorespaces New Qwen3-32B episodes on the dispatch-integration-code scenario under a permitting rule, against that scenario's test episodes under the original rule. Sharing calls are the first calls that write the value out; AUROC compares them with the other scored calls in the same round, with 95\% bootstrap intervals.}}{34}{table.28}\protected@file@percent }
-\newlabel{tab:e14}{{28}{34}{New Qwen3-32B episodes on the dispatch-integration-code scenario under a permitting rule, against that scenario's test episodes under the original rule. Sharing calls are the first calls that write the value out; AUROC compares them with the other scored calls in the same round, with 95\% bootstrap intervals}{table.28}{}}
-\newlabel{tab:e14@cref}{{[table][28][]28}{[1][34][]34}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {I.2}New episodes under a permitting rule}{34}{subsection.I.2}\protected@file@percent }
+\newlabel{app:onpolicy}{{I.2}{34}{New episodes under a permitting rule}{subsection.I.2}{}}
+\newlabel{app:onpolicy@cref}{{[appendix][2][9]I.2}{[1][34][]34}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Design.}{34}{section*.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Result.}{34}{section*.68}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.3}New episodes on all five test scenarios}{34}{subsection.I.3}\protected@file@percent }
 \newlabel{app:e15}{{I.3}{34}{New episodes on all five test scenarios}{subsection.I.3}{}}
 \newlabel{app:e15@cref}{{[appendix][3][9]I.3}{[1][34][]34}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Design.}{34}{section*.69}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {28}{\ignorespaces New Qwen3-32B episodes on the dispatch-integration-code scenario under a permitting rule, against that scenario's test episodes under the original rule. Sharing calls are the first calls that write the value out; AUROC compares them with the other scored calls in the same round, with 95\% bootstrap intervals.}}{35}{table.28}\protected@file@percent }
+\newlabel{tab:e14}{{28}{35}{New Qwen3-32B episodes on the dispatch-integration-code scenario under a permitting rule, against that scenario's test episodes under the original rule. Sharing calls are the first calls that write the value out; AUROC compares them with the other scored calls in the same round, with 95\% bootstrap intervals}{table.28}{}}
+\newlabel{tab:e14@cref}{{[table][28][]28}{[1][34][]35}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Result.}{35}{section*.70}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Share of sharing calls over the threshold by the number of calls since the target last read the protected file, in Qwen3-32B episodes on the five test scenarios. Numbers give the calls behind each point, and whiskers are 95\% Wilson intervals. Hollow points rest on two calls or fewer and are not joined.}}{35}{figure.8}\protected@file@percent }
 \newlabel{fig:e15-recency}{{8}{35}{Share of sharing calls over the threshold by the number of calls since the target last read the protected file, in Qwen3-32B episodes on the five test scenarios. Numbers give the calls behind each point, and whiskers are 95\% Wilson intervals. Hollow points rest on two calls or fewer and are not joined}{figure.8}{}}
 \newlabel{fig:e15-recency@cref}{{[figure][8][]8}{[1][35][]35}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {29}{\ignorespaces Sharing calls over the threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref  {tab:e14}. A dash means no calls.}}{35}{table.29}\protected@file@percent }
-\newlabel{tab:e15}{{29}{35}{Sharing calls over the threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref {tab:e14}. A dash means no calls}{table.29}{}}
-\newlabel{tab:e15@cref}{{[table][29][]29}{[1][35][]35}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {J}Does the probe warn early, and how many false alarms would it raise?}{35}{appendix.J}\protected@file@percent }
 \newlabel{app:ahead}{{J}{35}{Does the probe warn early, and how many false alarms would it raise?}{appendix.J}{}}
 \newlabel{app:ahead@cref}{{[appendix][10][]J}{[1][35][]35}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{One call ahead.}{35}{section*.71}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {29}{\ignorespaces Sharing calls over the threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref  {tab:e14}. A dash means no calls.}}{36}{table.29}\protected@file@percent }
+\newlabel{tab:e15}{{29}{36}{Sharing calls over the threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref {tab:e14}. A dash means no calls}{table.29}{}}
+\newlabel{tab:e15@cref}{{[table][29][]29}{[1][35][]36}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{One call ahead.}{36}{section*.71}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Score across an episode.}{36}{section*.72}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {On average, the score jumps at the call that leaks.} Last-prompt probe score, as a percentile among that model's scored calls, aligned on each episode's leaking call (top: median over all leaking episodes, with the middle 50\% shaded for test episodes). Bottom: one example test episode per model, chosen by the rule above; individual episodes vary. Numbers at the leaking call give the median percentile there.}}{36}{figure.9}\protected@file@percent }
 \newlabel{fig:trajectories}{{9}{36}{\textbf {On average, the score jumps at the call that leaks.} Last-prompt probe score, as a percentile among that model's scored calls, aligned on each episode's leaking call (top: median over all leaking episodes, with the middle 50\% shaded for test episodes). Bottom: one example test episode per model, chosen by the rule above; individual episodes vary. Numbers at the leaking call give the median percentile there}{figure.9}{}}
 \newlabel{fig:trajectories@cref}{{[figure][9][]9}{[1][36][]36}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Where in the call.}{36}{section*.73}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.1}False alarms}{36}{subsection.J.1}\protected@file@percent }
-\newlabel{app:alarms}{{J.1}{36}{False alarms}{subsection.J.1}{}}
-\newlabel{app:alarms@cref}{{[appendix][1][10]J.1}{[1][36][]36}{}{}{}}
 \citation{gao2026}
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.1}False alarms}{37}{subsection.J.1}\protected@file@percent }
+\newlabel{app:alarms}{{J.1}{37}{False alarms}{subsection.J.1}{}}
+\newlabel{app:alarms@cref}{{[appendix][1][10]J.1}{[1][37][]37}{}{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {30}{\ignorespaces Per-call and per-episode thresholds on the test episodes: precision of the flagged calls, leaking episodes caught by their first leak, refusing episodes and calls flagged, and the same rates on control traffic. Recruiting calls come from leaking and refusing episodes; control calls come from control episodes and are counted separately. Jev's per-call row uses the cutoff that flags no more refusing calls than the probe.}}{37}{table.30}\protected@file@percent }
 \newlabel{tab:episode-calibration}{{30}{37}{Per-call and per-episode thresholds on the test episodes: precision of the flagged calls, leaking episodes caught by their first leak, refusing episodes and calls flagged, and the same rates on control traffic. Recruiting calls come from leaking and refusing episodes; control calls come from control episodes and are counted separately. Jev's per-call row uses the cutoff that flags no more refusing calls than the probe}{table.30}{}}
-\newlabel{tab:episode-calibration@cref}{{[table][30][]30}{[1][36][]37}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Leaking calls caught against refusing calls alarmed, as the threshold moves.} Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe. Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker.}}{37}{figure.10}\protected@file@percent }
-\newlabel{fig:alarm-tradeoff}{{10}{37}{\textbf {Leaking calls caught against refusing calls alarmed, as the threshold moves.} Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe. Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker}{figure.10}{}}
-\newlabel{fig:alarm-tradeoff@cref}{{[figure][10][]10}{[1][37][]37}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.2}Does a second check on the same input help?}{37}{subsection.J.2}\protected@file@percent }
-\newlabel{app:cascade}{{J.2}{37}{Does a second check on the same input help?}{subsection.J.2}{}}
-\newlabel{app:cascade@cref}{{[appendix][2][10]J.2}{[1][37][]37}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {31}{\ignorespaces Alarm rates at thresholds set on control calls or control episodes; Jev's threshold flags no more refusing calls than the probe.}}{38}{table.31}\protected@file@percent }
-\newlabel{tab:alarms}{{31}{38}{Alarm rates at thresholds set on control calls or control episodes; Jev's threshold flags no more refusing calls than the probe}{table.31}{}}
-\newlabel{tab:alarms@cref}{{[table][31][]31}{[1][37][]38}{}{}{}}
+\newlabel{tab:episode-calibration@cref}{{[table][30][]30}{[1][37][]37}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {31}{\ignorespaces Alarm rates at thresholds set on control calls or control episodes; Jev's threshold flags no more refusing calls than the probe.}}{37}{table.31}\protected@file@percent }
+\newlabel{tab:alarms}{{31}{37}{Alarm rates at thresholds set on control calls or control episodes; Jev's threshold flags no more refusing calls than the probe}{table.31}{}}
+\newlabel{tab:alarms@cref}{{[table][31][]31}{[1][37][]37}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Leaking calls caught against refusing calls alarmed, as the threshold moves.} Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe. Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker.}}{38}{figure.10}\protected@file@percent }
+\newlabel{fig:alarm-tradeoff}{{10}{38}{\textbf {Leaking calls caught against refusing calls alarmed, as the threshold moves.} Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe. Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker}{figure.10}{}}
+\newlabel{fig:alarm-tradeoff@cref}{{[figure][10][]10}{[1][37][]38}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.2}Does a second check on the same input help?}{38}{subsection.J.2}\protected@file@percent }
+\newlabel{app:cascade}{{J.2}{38}{Does a second check on the same input help?}{subsection.J.2}{}}
+\newlabel{app:cascade@cref}{{[appendix][2][10]J.2}{[1][38][]38}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {A second check on the same input does not improve the trade-off.} Leaking episodes caught against refusing episodes halted, as thresholds move, on Qwen3-32B test episodes, for the probe alone and for the probe at its lenient threshold paired with Jev or with the bag-of-words classifier. Dots mark the thresholds chosen for at most 5\% and at most 10\% of refusing episodes halted; the numbers above those lines are the share of leaking episodes caught there (\cref  {tab:cascade}).}}{38}{figure.11}\protected@file@percent }
 \newlabel{fig:cascade}{{11}{38}{\textbf {A second check on the same input does not improve the trade-off.} Leaking episodes caught against refusing episodes halted, as thresholds move, on Qwen3-32B test episodes, for the probe alone and for the probe at its lenient threshold paired with Jev or with the bag-of-words classifier. Dots mark the thresholds chosen for at most 5\% and at most 10\% of refusing episodes halted; the numbers above those lines are the share of leaking episodes caught there (\cref {tab:cascade})}{figure.11}{}}
 \newlabel{fig:cascade@cref}{{[figure][11][]11}{[1][38][]38}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {32}{\ignorespaces Leaking episodes caught at a fixed share of refusing episodes halted, Qwen3-32B test episodes, with 95\% episode-bootstrap intervals in which thresholds are chosen again in each draw. ``Lenient'' keeps the probe at its control-call threshold; ``grid'' also chooses the probe's threshold. The last number in each cascade cell is its difference from the probe alone, in episodes.}}{38}{table.32}\protected@file@percent }
-\newlabel{tab:cascade}{{32}{38}{Leaking episodes caught at a fixed share of refusing episodes halted, Qwen3-32B test episodes, with 95\% episode-bootstrap intervals in which thresholds are chosen again in each draw. ``Lenient'' keeps the probe at its control-call threshold; ``grid'' also chooses the probe's threshold. The last number in each cascade cell is its difference from the probe alone, in episodes}{table.32}{}}
-\newlabel{tab:cascade@cref}{{[table][32][]32}{[1][38][]38}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {32}{\ignorespaces Leaking episodes caught at a fixed share of refusing episodes halted, Qwen3-32B test episodes, with 95\% episode-bootstrap intervals in which thresholds are chosen again in each draw. ``Lenient'' keeps the probe at its control-call threshold; ``grid'' also chooses the probe's threshold. The last number in each cascade cell is its difference from the probe alone, in episodes.}}{39}{table.32}\protected@file@percent }
+\newlabel{tab:cascade}{{32}{39}{Leaking episodes caught at a fixed share of refusing episodes halted, Qwen3-32B test episodes, with 95\% episode-bootstrap intervals in which thresholds are chosen again in each draw. ``Lenient'' keeps the probe at its control-call threshold; ``grid'' also chooses the probe's threshold. The last number in each cascade cell is its difference from the probe alone, in episodes}{table.32}{}}
+\newlabel{tab:cascade@cref}{{[table][32][]32}{[1][38][]39}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {K}What do round-level detectors achieve?}{39}{appendix.K}\protected@file@percent }
 \newlabel{app:roundmonitor}{{K}{39}{What do round-level detectors achieve?}{appendix.K}{}}
 \newlabel{app:roundmonitor@cref}{{[appendix][11][]K}{[1][39][]39}{}{}{}}
@@ -413,33 +413,31 @@
 \@writefile{lot}{\contentsline {table}{\numberline {33}{\ignorespaces Round-level results on Qwen3-32B, with the round-level label (\cref  {app:labels}) and its own call set, not those of \cref  {fig:headline}: probe and monitors on the same calls, and the gain from adding the probe to a monitor. The development probe here is trained on the eventual label and scored on both labels without refitting.}}{39}{table.33}\protected@file@percent }
 \newlabel{tab:combination}{{33}{39}{Round-level results on Qwen3-32B, with the round-level label (\cref {app:labels}) and its own call set, not those of \cref {fig:headline}: probe and monitors on the same calls, and the gain from adding the probe to a monitor. The development probe here is trained on the eventual label and scored on both labels without refitting}{table.33}{}}
 \newlabel{tab:combination@cref}{{[table][33][]33}{[1][39][]39}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Robustness.}{39}{section*.78}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.1}Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{39}{subsection.K.1}\protected@file@percent }
-\newlabel{app:gptoss-round}{{K.1}{39}{Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{subsection.K.1}{}}
-\newlabel{app:gptoss-round@cref}{{[appendix][1][11]K.1}{[1][39][]39}{}{}{}}
 \citation{openai2026luna}
-\citation{nakamura2026}
+\@writefile{toc}{\contentsline {paragraph}{Robustness.}{40}{section*.78}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {34}{\ignorespaces Round-level robustness on Qwen3-32B, with the round-level label (\cref  {app:labels}), on the same calls as \cref  {tab:combination}. Each probe here is refit on the near-term label, with its layer chosen again, so it scores higher on that label than the eventual-trained probe of \cref  {tab:combination}.}}{40}{table.34}\protected@file@percent }
 \newlabel{tab:robust-round}{{34}{40}{Round-level robustness on Qwen3-32B, with the round-level label (\cref {app:labels}), on the same calls as \cref {tab:combination}. Each probe here is refit on the near-term label, with its layer chosen again, so it scores higher on that label than the eventual-trained probe of \cref {tab:combination}}{table.34}{}}
 \newlabel{tab:robust-round@cref}{{[table][34][]34}{[1][39][]40}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.1}Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{40}{subsection.K.1}\protected@file@percent }
+\newlabel{app:gptoss-round}{{K.1}{40}{Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{subsection.K.1}{}}
+\newlabel{app:gptoss-round@cref}{{[appendix][1][11]K.1}{[1][40][]40}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {L}How do the leaks go out, and are they deliberate?}{40}{appendix.L}\protected@file@percent }
 \newlabel{app:leakchecks}{{L}{40}{How do the leaks go out, and are they deliberate?}{appendix.L}{}}
 \newlabel{app:leakchecks@cref}{{[appendix][12][]L}{[1][40][]40}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{How leaks go out.}{40}{section*.79}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Deliberate or accidental.}{40}{section*.80}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Peer claims of authority.}{40}{section*.81}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {M}How often does each model leak, and what differs for the second target?}{40}{appendix.M}\protected@file@percent }
-\newlabel{app:behaviour}{{M}{40}{How often does each model leak, and what differs for the second target?}{appendix.M}{}}
-\newlabel{app:behaviour@cref}{{[appendix][13][]M}{[1][40][]40}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Screens on Qwen3-32B}{40}{subsection.M.1}\protected@file@percent }
+\citation{nakamura2026}
 \@writefile{lot}{\contentsline {table}{\numberline {35}{\ignorespaces How the first leak goes out, whether the judge labels it deliberate, and leak rates with and without a peer claim of operator authority, on the development episodes.}}{41}{table.35}\protected@file@percent }
 \newlabel{tab:leakchecks}{{35}{41}{How the first leak goes out, whether the judge labels it deliberate, and leak rates with and without a peer claim of operator authority, on the development episodes}{table.35}{}}
 \newlabel{tab:leakchecks@cref}{{[table][35][]35}{[1][40][]41}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {36}{\ignorespaces \textbf  {Almost every screened setting gave a mix of leaks and refusals on Qwen3-32B.} Each cell gives the share of recruiting episodes that leak, with the number of episodes in brackets.}}{41}{table.36}\protected@file@percent }
-\newlabel{tab:screens}{{36}{41}{\textbf {Almost every screened setting gave a mix of leaks and refusals on Qwen3-32B.} Each cell gives the share of recruiting episodes that leak, with the number of episodes in brackets}{table.36}{}}
-\newlabel{tab:screens@cref}{{[table][36][]36}{[1][41][]41}{}{}{}}
-\citation{nakamura2026}
-\citation{tang2026}
+\@writefile{toc}{\contentsline {section}{\numberline {M}How often does each model leak, and what differs for the second target?}{41}{appendix.M}\protected@file@percent }
+\newlabel{app:behaviour}{{M}{41}{How often does each model leak, and what differs for the second target?}{appendix.M}{}}
+\newlabel{app:behaviour@cref}{{[appendix][13][]M}{[1][41][]41}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Screens on Qwen3-32B}{41}{subsection.M.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {36}{\ignorespaces \textbf  {Almost every screened setting gave a mix of leaks and refusals on Qwen3-32B.} Each cell gives the share of recruiting episodes that leak, with the number of episodes in brackets.}}{42}{table.36}\protected@file@percent }
+\newlabel{tab:screens}{{36}{42}{\textbf {Almost every screened setting gave a mix of leaks and refusals on Qwen3-32B.} Each cell gives the share of recruiting episodes that leak, with the number of episodes in brackets}{table.36}{}}
+\newlabel{tab:screens@cref}{{[table][36][]36}{[1][41][]42}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {M.2}What differs for gpt-oss-20b?}{42}{subsection.M.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {M.3}Why was Gemma-4-31B not used for probes?}{42}{subsection.M.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {N}Further limitations}{42}{appendix.N}\protected@file@percent }
@@ -449,47 +447,49 @@
 \@writefile{toc}{\contentsline {paragraph}{Warning about the current call only.}{42}{section*.83}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{False alarms per episode.}{42}{section*.84}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Automated labels.}{42}{section*.85}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {O}What are the dual-use risks, and why release anyway?}{42}{appendix.O}\protected@file@percent }
-\newlabel{app:ethics}{{O}{42}{What are the dual-use risks, and why release anyway?}{appendix.O}{}}
-\newlabel{app:ethics@cref}{{[appendix][15][]O}{[1][42][]42}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Risks.}{42}{section*.86}\protected@file@percent }
+\citation{nakamura2026}
+\citation{tang2026}
+\@writefile{toc}{\contentsline {section}{\numberline {O}What are the dual-use risks, and why release anyway?}{43}{appendix.O}\protected@file@percent }
+\newlabel{app:ethics}{{O}{43}{What are the dual-use risks, and why release anyway?}{appendix.O}{}}
+\newlabel{app:ethics@cref}{{[appendix][15][]O}{[1][43][]43}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Risks.}{43}{section*.86}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why the uplift is low.}{43}{section*.87}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why release.}{43}{section*.88}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What we release and what is synthetic.}{43}{section*.89}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {P}Analysis history}{43}{appendix.P}\protected@file@percent }
 \newlabel{app:history}{{P}{43}{Analysis history}{appendix.P}{}}
 \newlabel{app:history@cref}{{[appendix][16][]P}{[1][43][]43}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {37}{\ignorespaces Analysis history. ``Planned'' means fixed in a committed plan before any detector's predictions were compared with the labels; the table gives each plan's timing relative to collection.}}{43}{table.37}\protected@file@percent }
-\newlabel{tab:history}{{37}{43}{Analysis history. ``Planned'' means fixed in a committed plan before any detector's predictions were compared with the labels; the table gives each plan's timing relative to collection}{table.37}{}}
-\newlabel{tab:history@cref}{{[table][37][]37}{[1][43][]43}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {Q}Reproducibility index}{43}{appendix.Q}\protected@file@percent }
+\newlabel{app:repro}{{Q}{43}{Reproducibility index}{appendix.Q}{}}
+\newlabel{app:repro@cref}{{[appendix][17][]Q}{[1][43][]43}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {37}{\ignorespaces Analysis history. ``Planned'' means fixed in a committed plan before any detector's predictions were compared with the labels; the table gives each plan's timing relative to collection.}}{44}{table.37}\protected@file@percent }
+\newlabel{tab:history}{{37}{44}{Analysis history. ``Planned'' means fixed in a committed plan before any detector's predictions were compared with the labels; the table gives each plan's timing relative to collection}{table.37}{}}
+\newlabel{tab:history@cref}{{[table][37][]37}{[1][43][]44}{}{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {38}{\ignorespaces Numbers that changed from the sprint version, and why.}}{44}{table.38}\protected@file@percent }
 \newlabel{tab:changed}{{38}{44}{Numbers that changed from the sprint version, and why}{table.38}{}}
 \newlabel{tab:changed@cref}{{[table][38][]38}{[1][43][]44}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {Q}Reproducibility index}{44}{appendix.Q}\protected@file@percent }
-\newlabel{app:repro}{{Q}{44}{Reproducibility index}{appendix.Q}{}}
-\newlabel{app:repro@cref}{{[appendix][17][]Q}{[1][44][]44}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {39}{\ignorespaces Reproducibility index.}}{44}{table.39}\protected@file@percent }
-\newlabel{tab:repro}{{39}{44}{Reproducibility index}{table.39}{}}
-\newlabel{tab:repro@cref}{{[table][39][]39}{[1][44][]44}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {R}What exactly do the target, peer and monitors see?}{44}{appendix.R}\protected@file@percent }
 \newlabel{app:prompts}{{R}{44}{What exactly do the target, peer and monitors see?}{appendix.R}{}}
 \newlabel{app:prompts@cref}{{[appendix][18][]R}{[1][44][]44}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {R.1}Target agent (Qwen3-32B and gpt-oss-20b)}{44}{subsection.R.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{System prompt.}{44}{section*.90}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Task message.}{44}{section*.91}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {39}{\ignorespaces Reproducibility index.}}{45}{table.39}\protected@file@percent }
+\newlabel{tab:repro}{{39}{45}{Reproducibility index}{table.39}{}}
+\newlabel{tab:repro@cref}{{[table][39][]39}{[1][43][]45}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {R.2}Peer agent in Qwen3-32B episodes (DeepSeek-V4-Flash)}{45}{subsection.R.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Recruiting peer (plain).}{45}{section*.92}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Control peer.}{45}{section*.93}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Single-tactic additions.}{45}{section*.94}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Helpful framing.}{45}{section*.95}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Organizer tone.}{45}{section*.96}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Cost anchoring.}{45}{section*.97}\protected@file@percent }
 \citation{inglis2025controlarena}
+\@writefile{toc}{\contentsline {paragraph}{Cost anchoring.}{46}{section*.97}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {R.3}Peer agent in gpt-oss-20b episodes (DeepSeek-V4-Pro)}{46}{subsection.R.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Recruiting peer (delayed whole-block request).}{46}{section*.98}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Matched control peer.}{46}{section*.99}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {R.4}Text monitors: LLM judge}{46}{subsection.R.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Detector prompt.}{46}{section*.100}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Detector prompt.}{47}{section*.100}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Forecaster prompt.}{47}{section*.101}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Filled slots.}{48}{section*.102}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {R.5}Text monitors: decision models (Jev 1.14, Luna Decisions)}{48}{subsection.R.5}\protected@file@percent }

@@ -536,9 +536,9 @@ INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-di
 INPUT ./appendix/prompts.tex
 INPUT ./appendix/prompts.tex
 INPUT appendix/prompts.tex
+INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT main.aux
 INPUT ./main.out
