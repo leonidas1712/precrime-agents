@@ -27,8 +27,8 @@
 \citation{saraogi2026before}
 \citation{jia2026window}
 \citation{fish2026,lin2025,nakamura2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {How an episode works.} (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted. (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's activations $h_\ell (x_t)$ before each output $o_t$. (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref  {app:scenarios} gives a matched episode in which the target never leaks).}}{2}{figure.1}\protected@file@percent }
-\newlabel{fig:episode}{{1}{2}{\textbf {How an episode works.} (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted. (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's activations $h_\ell (x_t)$ before each output $o_t$. (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref {app:scenarios} gives a matched episode in which the target never leaks)}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {How an episode works.} (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted. (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's internal activations before each output. (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref  {app:scenarios} gives a matched episode in which the target never leaks).}}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:episode}{{1}{2}{\textbf {How an episode works.} (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted. (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's internal activations before each output. (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref {app:scenarios} gives a matched episode in which the target never leaks)}{figure.1}{}}
 \newlabel{fig:episode@cref}{{[figure][1][]1}{[1][1][]2}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Setup}{3}{section.2}\protected@file@percent }
 \newlabel{sec:setup}{{2}{3}{Setup}{section.2}{}}
@@ -42,18 +42,18 @@
 \@writefile{toc}{\contentsline {paragraph}{Agents and tools.}{3}{section*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Control episodes.}{3}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Rounds and calls.}{3}{section*.4}\protected@file@percent }
+\newlabel{eq:dynamics}{{2}{3}{Rounds and calls}{equation.2}{}}
+\newlabel{eq:dynamics@cref}{{[equation][2][]2}{[1][3][]3}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Which tokens each detector reads.} In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$. The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated. The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed. The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written. On gpt-oss-20b, $x_t$ includes the reasoning of earlier calls in the same turn, but not $z_t$; text monitors that read $z_t$ are in \cref  {app:monitors-reasoning}.}}{4}{figure.2}\protected@file@percent }
 \newlabel{fig:positions}{{2}{4}{\textbf {Which tokens each detector reads.} In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$. The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated. The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed. The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written. On gpt-oss-20b, $x_t$ includes the reasoning of earlier calls in the same turn, but not $z_t$; text monitors that read $z_t$ are in \cref {app:monitors-reasoning}}{figure.2}{}}
 \newlabel{fig:positions@cref}{{[figure][2][]2}{[1][4][]4}{}{}{}}
-\newlabel{eq:dynamics}{{2}{4}{Rounds and calls}{equation.2}{}}
-\newlabel{eq:dynamics@cref}{{[equation][2][]2}{[1][3][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Leaks.}{4}{section*.5}\protected@file@percent }
 \citation{yang2025qwen3}
 \citation{openai2025gptoss}
 \citation{deepseek2026v4flash}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{5}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Leaks.}{5}{section*.5}\protected@file@percent }
 \newlabel{eq:leak}{{3}{5}{Leaks}{equation.3}{}}
-\newlabel{eq:leak@cref}{{[equation][3][]3}{[1][5][]5}{}{}{}}
+\newlabel{eq:leak@cref}{{[equation][3][]3}{[1][4][]5}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Scored calls and labels.}{5}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Detectors.}{5}{section*.7}\protected@file@percent }
 \newlabel{eq:probe}{{4}{5}{Detectors}{equation.4}{}}
@@ -64,8 +64,8 @@
 \citation{goldowskydill2025}
 \citation{mckenzie2026,kramar2026}
 \citation{typesafe2026jev}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret, up to and including the call that leaks (\cref  {app:data}).}}{6}{table.1}\protected@file@percent }
-\newlabel{tab:datasets}{{1}{6}{\textbf {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret, up to and including the call that leaks (\cref {app:data})}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref  {app:data}).}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:datasets}{{1}{6}{\textbf {The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref {app:data})}{table.1}{}}
 \newlabel{tab:datasets@cref}{{[table][1][]1}{[1][5][]6}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Method}{6}{section.3}\protected@file@percent }
 \newlabel{sec:method}{{3}{6}{Method}{section.3}{}}
@@ -95,14 +95,17 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Who can read the signal}{8}{subsection.4.3}\protected@file@percent }
 \newlabel{sec:monitor}{{4.3}{8}{Who can read the signal}{subsection.4.3}{}}
 \newlabel{sec:monitor@cref}{{[subsection][3][4]4.3}{[1][8][]8}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref  {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the last message on Qwen3-32B and the full input on gpt-oss-20b. \Cref  {tab:text-baselines} gives both.}}{9}{figure.4}\protected@file@percent }
-\newlabel{fig:percall}{{4}{9}{\textbf {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the last message on Qwen3-32B and the full input on gpt-oss-20b. \Cref {tab:text-baselines} gives both}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref  {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. \Cref  {tab:text-baselines} gives both.}}{9}{figure.4}\protected@file@percent }
+\newlabel{fig:percall}{{4}{9}{\textbf {A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.} Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref {app:probes}). The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. \Cref {tab:text-baselines} gives both}{figure.4}{}}
 \newlabel{fig:percall@cref}{{[figure][4][]4}{[1][8][]9}{}{}{}}
 \newlabel{sec:shortcuts}{{4.3}{9}{Who can read the signal}{subsection.4.3}{}}
 \newlabel{sec:shortcuts@cref}{{[subsection][3][4]4.3}{[1][9][]9}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}How costly are the alarms?}{9}{subsection.4.4}\protected@file@percent }
 \newlabel{sec:cost}{{4.4}{9}{How costly are the alarms?}{subsection.4.4}{}}
 \newlabel{sec:cost@cref}{{[subsection][4][4]4.4}{[1][9][]9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey short-dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe.}}{10}{figure.5}\protected@file@percent }
+\newlabel{fig:qwen-alarms}{{5}{10}{\textbf {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey short-dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe}{figure.5}{}}
+\newlabel{fig:qwen-alarms@cref}{{[figure][5][]5}{[1][9][]10}{}{}{}}
 \citation{dong2026}
 \citation{yu2026}
 \citation{rose2026}
@@ -113,27 +116,24 @@
 \citation{gao2026}
 \citation{sharma2025constitutional,cunningham2026}
 \citation{mckenzie2026,kramar2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe.}}{10}{figure.5}\protected@file@percent }
-\newlabel{fig:qwen-alarms}{{5}{10}{\textbf {Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.} Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes. The filled circle is the probe at its threshold set on control calls. The filled square is Jev at the cutoff that flags no more calls in refusing episodes than the probe. The hollow diamond is the stricter per-episode threshold, plotted at its per-call rates. Labels give the share of leaking calls caught and of refusing-episode calls flagged at each marker. The grey dashed line is the trained text classifier, reading the latest message, on the same test calls; at the same flag rate it catches fewer leaks than the probe}{figure.5}{}}
-\newlabel{fig:qwen-alarms@cref}{{[figure][5][]5}{[1][9][]10}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Related work}{10}{section.5}\protected@file@percent }
-\newlabel{sec:related}{{5}{10}{Related work}{section.5}{}}
-\newlabel{sec:related@cref}{{[section][5][]5}{[1][10][]10}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Probes on agents under attack.}{10}{section*.15}\protected@file@percent }
 \citation{radev2026}
 \citation{tao2026}
 \citation{tang2026}
 \citation{fish2026,lin2025,nakamura2026}
 \citation{cunningham2026}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Related work}{11}{section.5}\protected@file@percent }
+\newlabel{sec:related}{{5}{11}{Related work}{section.5}{}}
+\newlabel{sec:related@cref}{{[section][5][]5}{[1][11][]11}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Probes on agents under attack.}{11}{section*.15}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Early warning.}{11}{section*.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Spread, sustained pressure and filters.}{11}{section*.17}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Monitors and persuasion between agents.}{11}{section*.18}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{11}{section.6}\protected@file@percent }
 \newlabel{sec:discussion}{{6}{11}{Discussion}{section.6}{}}
 \newlabel{sec:discussion@cref}{{[section][6][]6}{[1][11][]11}{}{}{}}
-\@writefile{toc}{\contentsline {paragraph}{Narrow setting.}{11}{section*.20}\protected@file@percent }
 \citation{greenblatt2026incident}
-\@writefile{toc}{\contentsline {paragraph}{Few confirmed leaking calls.}{12}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Narrow setting.}{12}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Few leaking test calls on gpt-oss-20b.}{12}{section*.21}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What the probe reads is open.}{12}{section*.22}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{An untuned text monitor.}{12}{section*.23}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Future work.}{12}{section*.24}\protected@file@percent }
@@ -290,8 +290,8 @@
 \@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces \textbf  {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the 1995{} development calls. The monitors see the reasoning with the secret masked.}}{27}{table.19}\protected@file@percent }
 \newlabel{tab:monitor-reasoning}{{19}{27}{\textbf {Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the \gptossDevCalls {} development calls. The monitors see the reasoning with the secret masked}{table.19}{}}
 \newlabel{tab:monitor-reasoning@cref}{{[table][19][]19}{[1][27][]27}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {F}What was frozen for the test episodes, and what happened?}{27}{appendix.F}\protected@file@percent }
-\newlabel{app:confirmation}{{F}{27}{What was frozen for the test episodes, and what happened?}{appendix.F}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{27}{appendix.F}\protected@file@percent }
+\newlabel{app:confirmation}{{F}{27}{What was committed for the test episodes, and what happened?}{appendix.F}{}}
 \newlabel{app:confirmation@cref}{{[appendix][6][]F}{[1][27][]27}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{gpt-oss-20b reasoning probe.}{27}{section*.50}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Last-prompt and reasoning probes on gpt-oss-20b.}{27}{section*.51}\protected@file@percent }

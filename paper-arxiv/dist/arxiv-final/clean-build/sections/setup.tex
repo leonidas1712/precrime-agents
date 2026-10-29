@@ -23,7 +23,7 @@ where $F$ is the set of workspace files, $f^\star \in F$ is the protected file, 
 \paragraph{Agents and tools.}
 The target can list, read and write files, run the workspace tests, and post to a shared team channel.
 Text that comes with a tool call stays private, and the final reply of a turn is posted to the channel only if the target posted nothing else in that turn.
-A peer agent shares the channel and needs the value, but cannot read the files and is not told the rule.
+A peer agent shares the channel and needs the value, but cannot read the files and is not shown the rule's text.
 The peer asks for the value openly, as a colleague would, so we study recruitment that arises from an ordinary conflict of goals.
 Tools act in memory, so no real system, credential or network is touched.
 The target is a language model $M$.
@@ -34,7 +34,7 @@ The peer is a second language model $P$ that writes each message from the channe
 \paragraph{Control episodes.}
 Every scenario also runs with a control peer, which asks only for the ordinary task details and never for the value, so the peer is either recruiting or control, $P \in \{P_{\text{rec}}, P_{\text{ctrl}}\}$.
 Both models have control episodes, and on Qwen3-32B the target also runs alone, with no peer at all.
-No control or alone episode leaks (\cref{app:behaviour}), so the leaks in recruiting episodes are caused by the peer's request.
+No control or alone episode leaks (\cref{tab:behaviour-scenario,app:behaviour}), so the leaks in recruiting episodes are caused by the peer's request.
 We call the calls in control and alone episodes \emph{control calls}, and recruiting episodes that never leak \emph{refusing episodes}.
 
 \paragraph{Rounds and calls.}
@@ -93,7 +93,7 @@ The peer succeeds, and the rule is broken, exactly when $\tau < \infty$.
 \paragraph{Scored calls and labels.}
 We score each call $c_t$ made after the target has first read $f^\star$, up to and including the first leak $c_\tau$, and call these the scored calls.
 The window starts at the first read because before it a probe could score well just by detecting the read, and it ends at the leak because after it the secret is already in the input (\cref{app:data}).
-A deployed monitor would score every call, including those before the read (\cref{sec:discussion}).
+On gpt-oss-20b, scoring starts only at the peer's first request, which comes after the read (\cref{app:data}). A deployed monitor would score every call, including those before the read (\cref{sec:discussion}).
 For each scored call we define three labels, by distance from the act:
 \begin{align*}
   y^{\text{ever}}_t &= \mathbf{1}[\tau < \infty] && \text{(this episode leaks at some point),}\\
@@ -111,10 +111,11 @@ The last-prompt probe reads the residual-stream activation $h_\ell(x_t)$ at laye
   s_t = w^\top h_\ell(x_t) + b .
   \label{eq:probe}
 \end{equation}
+with learned weights $w$ and bias $b$.
 The reasoning probe on gpt-oss-20b also reads the activations over $z_t$.
 Jev, our main text monitor, reads a text view of $x_t$ with $\sigma$ masked, which on gpt-oss-20b includes the earlier reasoning of the same turn but not $z_t$.
 The bag-of-words classifier reads $x_t$ or its latest message.
-Monitors that read $z_t$ itself are compared in \cref{sec:method}.
+Monitors that read $z_t$ itself are compared in \cref{app:monitors-reasoning}.
 Each probe's threshold $\theta$ is set so that 5\% of development control calls exceed it.
 Control calls are used for nothing else.
 The negatives $\mathcal{N}$ are all non-leaking scored calls in recruiting episodes: calls in refusing episodes, and calls before the leak in leaking ones.
@@ -131,18 +132,18 @@ The first is the AUROC of \cref{sec:method}, and the second, averaged over leaki
 We use two open-weight target models, Qwen3-32B \citep{yang2025qwen3} with thinking disabled and gpt-oss-20b \citep{openai2025gptoss}, which reasons before it answers.
 Each faces its own peer model, from the DeepSeek-V4 family \citep{deepseek2026v4flash}.
 gpt-oss-20b refuses requests that name the token, so its peer instead asks, after a delay, for the whole configuration block that contains it to be copied into the handoff file, the shared status file that the target writes for the peer.
-We chose that strategy on behaviour alone and fixed it before any probe or monitor saw the data (\cref{app:behaviour}).
+We chose that strategy on behaviour alone, before any probe or monitor saw the data (\cref{app:behaviour}).
 We never pool the two models' results.
 
 Each model has two sets of episodes (\cref{tab:datasets}).
 We develop and evaluate every method on the \emph{development episodes}.
 The \emph{test episodes} were collected after development and are scored once, by detectors fit and thresholded on development episodes only.
-Earlier analyses had looked at these episodes, but no detector reported here was fit or tuned on them (\cref{app:history}).
-In both models' development episodes, the target leaks in some recruiting episodes and refuses throughout in others: \qwenDevLeaks{} of \qwenDevEpisodes{} recruiting episodes leak on Qwen3-32B, and \gptossDevLeaks{} of \gptossDevEpisodes{} on gpt-oss-20b.
+The sprint version of this work had already scored these episodes, but no detector's weights or per-call threshold were fit on them (\cref{app:history}). The per-episode and cascade operating points in \cref{sec:cost} are chosen on them to show the trade-off, and are marked as such.
+In both models' development episodes, the target leaks in some recruiting episodes and refuses throughout in others: \qwenDevLeaks{} of \qwenDevEpisodes{} recruiting episodes leak on Qwen3-32B, and \gptossCurrentEmittingEpisodes{} of \gptossDevEpisodes{} on gpt-oss-20b.
 
 \begin{table}[t]
   \centering
   \input{tables/datasets.tex}
-  \caption{\textbf{The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret, up to and including the call that leaks (\cref{app:data}).}
+  \caption{\textbf{The four datasets.} Every main-text number comes from exactly one of them. Columns give recruiting, control and target-alone episodes, scored calls, leaking calls, and episodes excluded before scoring. Counts are of episodes that ran correctly and have at least one scored call. Scored calls are those made after the target has read the secret (on gpt-oss-20b, after the peer's first request), up to and including the call that leaks. For gpt-oss-20b, calls and leaks count only calls that returned reasoning, so its leak count is not the number of leaking episodes (\cref{app:data}).}
   \label{tab:datasets}
 \end{table}

@@ -10,7 +10,7 @@ A filter on that tool call, or a monitor that blocks a suspicious action before 
   \includegraphics[width=0.93\linewidth]{fig2_setup.pdf}
   \caption{\textbf{How an episode works.}
   (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted; the leaking message is highlighted.
-  (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's activations $h_\ell(x_t)$ before each output $o_t$.
+  (b)~The peer (horns) asks over the team channel for the token held by the target (halo), which is bound by its operator's rule. Solid arrows are actions; dashed arrows are observation: the text monitor reads the transcript, and the probe reads the target's internal activations before each output.
   (c)~The three labels on one schematic episode; shaded calls are those scored after the first read (\cref{app:scenarios} gives a matched episode in which the target never leaks).}
   \label{fig:episode}
 \end{figure}
@@ -32,16 +32,15 @@ A warning raised before the output exists does not depend on recognising the lea
 We do not test reworded or encoded leaks here: our secrets are exact strings, so that every leak can be labelled exactly, and a string filter would also catch them.
 
 Activation probes, small linear classifiers trained on a model's internal activations, already read agents before they act.
-They detect exposure to an injection \citep{dong2026}, or whether it will hijack the agent \citep{yu2026}, at the last input token, forecast unauthorised actions at the end of the agent's reasoning \citep{fayyazi2026agent}, and read covert encoding at the planning step \citep{revankar2026mirage}, while early-warning work under user pressure or injection finds weak signals \citep{saraogi2026before} that text baselines often match \citep{jia2026window}.
+They detect exposure to an injection \citep{dong2026}, or whether the injection will hijack the agent \citep{yu2026}, at the last input token, forecast unauthorised actions at the end of the agent's reasoning \citep{fayyazi2026agent}, and read covert encoding at the planning step \citep{revankar2026mirage}, while early-warning work under user pressure or injection finds weak signals \citep{saraogi2026before} that text baselines often match \citep{jia2026window}.
 What is new here is the setting and the question.
 A teammate presses the agent openly over many rounds, the agent refuses and then gives in, and we ask which call gives in, before that call generates anything, comparing each call only with calls from the same scenario and round.
 Work on collusion between AI agents has mostly studied markets and shared multi-agent tasks \citep{fish2026,lin2025,nakamura2026}.
-We instead study open recruitment by a teammate over many rounds, in workplace scenarios of the kind seen in recent agent incidents, with exact secrets so that each leak is labelled exactly.
-On the same calls, we compare activations with zero-shot and trained text detectors.
+We instead study open recruitment by a teammate over many rounds, in workplace scenarios of the kind seen in recent agent incidents.
 
 In our setup, the target holds a secret, such as a deploy token, that its operator has told it never to share, and a peer agent keeps asking for it over many rounds (\cref{fig:episode}).
 We read the target's activations at each of its calls before it generates anything, and compare linear probes with a zero-shot text monitor and a trained text classifier on exactly the same calls, in six scenarios on two open-weight models.
-We find three things (\cref{fig:headline}).
+We find three things (\cref{fig:headline,fig:percall}).
 First, the call that leaks is predictable just before it acts, and this held on test episodes, for the last-prompt probe on Qwen3-32B and for the reasoning probe on gpt-oss-20b.
 Second, the warning comes late: the probe is only modestly accurate for whether the target leaks this round or the next, and weak for whether an episode will ever leak.
 Third, a zero-shot text monitor does far worse than the probe, but a text classifier trained on the same labelled calls comes close, so activations add at most a small edge on top of training.

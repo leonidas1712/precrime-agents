@@ -6,8 +6,8 @@
 \contentsline {paragraph}{Agents and tools.}{3}{section*.2}%
 \contentsline {paragraph}{Control episodes.}{3}{section*.3}%
 \contentsline {paragraph}{Rounds and calls.}{3}{section*.4}%
-\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{5}{subsection.2.2}%
-\contentsline {paragraph}{Leaks.}{5}{section*.5}%
+\contentsline {subsection}{\numberline {2.2}Leaks, labels and detectors}{4}{subsection.2.2}%
+\contentsline {paragraph}{Leaks.}{4}{section*.5}%
 \contentsline {paragraph}{Scored calls and labels.}{5}{section*.6}%
 \contentsline {paragraph}{Detectors.}{5}{section*.7}%
 \contentsline {subsection}{\numberline {2.3}Models and datasets}{5}{subsection.2.3}%
@@ -24,14 +24,14 @@
 \contentsline {subsection}{\numberline {4.2}The warning is short-range}{8}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Who can read the signal}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}How costly are the alarms?}{9}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Related work}{10}{section.5}%
-\contentsline {paragraph}{Probes on agents under attack.}{10}{section*.15}%
+\contentsline {section}{\numberline {5}Related work}{11}{section.5}%
+\contentsline {paragraph}{Probes on agents under attack.}{11}{section*.15}%
 \contentsline {paragraph}{Early warning.}{11}{section*.16}%
 \contentsline {paragraph}{Spread, sustained pressure and filters.}{11}{section*.17}%
 \contentsline {paragraph}{Monitors and persuasion between agents.}{11}{section*.18}%
 \contentsline {section}{\numberline {6}Discussion}{11}{section.6}%
-\contentsline {paragraph}{Narrow setting.}{11}{section*.20}%
-\contentsline {paragraph}{Few confirmed leaking calls.}{12}{section*.21}%
+\contentsline {paragraph}{Narrow setting.}{12}{section*.20}%
+\contentsline {paragraph}{Few leaking test calls on gpt-oss-20b.}{12}{section*.21}%
 \contentsline {paragraph}{What the probe reads is open.}{12}{section*.22}%
 \contentsline {paragraph}{An untuned text monitor.}{12}{section*.23}%
 \contentsline {paragraph}{Future work.}{12}{section*.24}%
@@ -66,7 +66,7 @@
 \contentsline {subsection}{\numberline {E.2}How well does each round-level setup rank the calls?}{25}{subsection.E.2}%
 \contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{26}{subsection.E.3}%
 \contentsline {subsection}{\numberline {E.4}Do monitors that read the current call's reasoning do better?}{27}{subsection.E.4}%
-\contentsline {section}{\numberline {F}What was frozen for the test episodes, and what happened?}{27}{appendix.F}%
+\contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{27}{appendix.F}%
 \contentsline {paragraph}{gpt-oss-20b reasoning probe.}{27}{section*.50}%
 \contentsline {paragraph}{Last-prompt and reasoning probes on gpt-oss-20b.}{27}{section*.51}%
 \contentsline {paragraph}{Qwen3-32B round-level test.}{28}{section*.52}%

@@ -3,7 +3,7 @@
 
 An overseer cannot tell early which episode will leak, but it can tell which call is about to.
 The probe is best read as a detector of a coming disclosure: it fires most strongly when the value has just been read, and more strongly when the agent was pressed into it.
-It does not read the rule text, so a disclosure right after a read is flagged even where it is allowed (\cref{app:onpolicy}).
+It does not read the rule text, so a disclosure right after a read is flagged even where it is allowed (\cref{app:e15}).
 This suggests a cascade, as in production classifier systems \citep{cunningham2026}, in which a cheap probe or trained text classifier runs on every call with two thresholds.
 A lenient per-call threshold escalates a call before it acts; it fires often, costs little per alarm, and catches most leaks.
 The escalation should go to a reviewer with different information, such as a human, a stronger model, or a check on the drafted reply before it executes, because a second check on the same input adds little (\cref{sec:cost}).
@@ -24,8 +24,8 @@ We score only calls made after the target first reads the protected file, where 
 A deployed monitor would run on every call, and the \qwenPreReadCalls{} Qwen3-32B test calls before that read (\qwenPreReadShare{} of calls) could add false alarms we have not measured.
 Settings with several peers, recruited agents that recruit others, or paraphrased leaks are untested.
 
-\paragraph{Few confirmed leaking calls.}
-The gpt-oss-20b test covers one probe on one model, and its test episodes hold few leaking calls, so its interval is wide (\cref{app:confirmation}).
+\paragraph{Few leaking test calls on gpt-oss-20b.}
+On gpt-oss-20b, the committed test covers one probe, and its test episodes hold few leaking calls (\gptossFreshLeaks{}), so its interval is wide (\cref{app:confirmation}).
 
 \paragraph{What the probe reads is open.}
 The signal may reflect what has just arrived in the input (\cref{sec:shortcuts}), and our results are correlational.
