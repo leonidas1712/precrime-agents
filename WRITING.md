@@ -162,6 +162,11 @@ paper-arxiv/
 - Put `\iclrfinalcopy` before `\begin{document}`. This shows the author name and removes line numbers and the "Under review" header.
 - **Do not modify the style files,** margins, font sizes or spacing. Use no `\vspace` hacks to squeeze content. If it does not fit, cut words.
 - Use `natbib` citations: `\citet{}` when the authors are part of the sentence, `\citep{}` otherwise.
+- **Every bibliography entry must be checked against its live source before release:** it must exist, and its title, authors (order and spelling), year and ID must match. Each must support the claim it is cited for.
+- **Every entry needs a working link:** a `url` field (`https://arxiv.org/abs/<id>` for arXiv papers) or a DOI. An arXiv ID alone prints without a link.
+- **Date arXiv-only papers by their first arXiv version.** For a published version, give the venue and its year.
+- **Never write a venue status you cannot verify,** such as "under review at X". Write "Unpublished manuscript" instead.
+- **Before release, delete uncited entries,** and check that no month field prints as a raw number.
 - Use `booktabs` for tables (`\toprule`, `\midrule`, `\bottomrule`), with no vertical rules.
 - Use `cleveref` (`\cref{}`) for references to figures, tables, sections and appendices.
 - Start the appendix with `\appendix` after the references.
