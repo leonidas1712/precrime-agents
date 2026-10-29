@@ -1,6 +1,35 @@
 \section{How are probes trained and scored?}
 \label{app:probes}
 
+\Cref{tab:glance-ci} repeats the main-text results of \cref{tab:glance} with their intervals.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \begin{tabular}{@{}llcc@{}}
+    \toprule
+    Question & Detector & Qwen3-32B & gpt-oss-20b \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Test episodes}} \\
+    This call? & last-prompt probe & \qwenFreshCallProbe{} \qwenFreshCallProbeCI{} & \gptossFreshCallProbe{} \gptossFreshCallProbeCI{} \\
+    This call? & reasoning probe & -- & \gptossFreshReasoning{} \gptossFreshReasoningCI{} \\
+    This call? & Jev & \qwenFreshCallJev{} \qwenFreshCallJevCI{} & -- \\
+    This call? & trained text classifier & \qwenFreshCallBow{} \qwenFreshCallBowCI{} & -- \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Development episodes}} \\
+    This call? & last-prompt probe & \qwenCallProbe{} \qwenCallProbeCI{} & \gptossCallProbe{} \gptossCallProbeCI{} \\
+    This call? & reasoning probe & -- & \gptossCallReasoning{} \gptossCallReasoningCI{} \\
+    This call? & Jev & \qwenCallJev{} \qwenCallJevCI{} & \gptossCallJev{} \gptossCallJevCI{} \\
+    This call? & trained text classifier & \qwenTextLatest{} \qwenTextLatestCI{} & \gptossTextFull{} \gptossTextFullCI{} \\
+    One call earlier? & last-prompt probe & \qwenStrictNextProbe{} \qwenStrictNextProbeCI{} & \gptossStrictNextProbe{} \gptossStrictNextProbeCI{} \\
+    This round or next? & last-prompt probe & \qwenNearProbe{} \qwenNearProbeCI{} & \gptossNearProbe{} \gptossNearProbeCI{} \\
+    Ever? & last-prompt probe & \qwenEverProbe{} \qwenEverProbeCI{} & \gptossEverProbe{} \gptossEverProbeCI{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{\Cref{tab:glance} with 95\% intervals.} AUROC within scenario and round, with episode-clustered bootstrap intervals. Development results are on held-out scenarios, and -- means not run.}
+  \label{tab:glance-ci}
+\end{table}
+
 Every probe is a regularised logistic regression on one layer's activation, with the layer chosen inside each training split.
 Scores are compared only within a scenario and round, and intervals resample whole groups of related episodes.
 

@@ -57,7 +57,7 @@
 \contentsline {paragraph}{Probe recipe.}{23}{section*.43}%
 \contentsline {paragraph}{Reasoning probe.}{23}{section*.44}%
 \contentsline {paragraph}{Incoming-only probe.}{24}{section*.45}%
-\contentsline {paragraph}{The metric, worked through.}{24}{section*.46}%
+\contentsline {paragraph}{The metric, worked through.}{25}{section*.46}%
 \contentsline {paragraph}{Why compare only within scenario and round.}{25}{section*.47}%
 \contentsline {paragraph}{Related episodes and intervals.}{25}{section*.48}%
 \contentsline {paragraph}{Held-out scenarios.}{25}{section*.49}%
@@ -66,55 +66,55 @@
 \contentsline {subsection}{\numberline {E.2}How well does each round-level setup rank the calls?}{26}{subsection.E.2}%
 \contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{27}{subsection.E.3}%
 \contentsline {subsection}{\numberline {E.4}Do monitors that read the current call's reasoning do better?}{28}{subsection.E.4}%
-\contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{28}{appendix.F}%
-\contentsline {paragraph}{gpt-oss-20b reasoning probe.}{28}{section*.50}%
-\contentsline {paragraph}{Last-prompt and reasoning probes on gpt-oss-20b.}{28}{section*.51}%
+\contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{29}{appendix.F}%
+\contentsline {paragraph}{gpt-oss-20b reasoning probe.}{29}{section*.50}%
+\contentsline {paragraph}{Last-prompt and reasoning probes on gpt-oss-20b.}{29}{section*.51}%
 \contentsline {paragraph}{Qwen3-32B round-level test.}{29}{section*.52}%
 \contentsline {paragraph}{Qwen3-32B per-call probe.}{29}{section*.53}%
-\contentsline {section}{\numberline {G}Does the per-call result hold under other evaluations and settings?}{29}{appendix.G}%
-\contentsline {paragraph}{Another evaluation.}{29}{section*.54}%
+\contentsline {section}{\numberline {G}Does the per-call result hold under other evaluations and settings?}{30}{appendix.G}%
+\contentsline {paragraph}{Another evaluation.}{30}{section*.54}%
 \contentsline {paragraph}{Other aggregates and cuts.}{30}{section*.55}%
 \contentsline {paragraph}{Writes back to the protected file.}{30}{section*.56}%
 \contentsline {paragraph}{Each Qwen3-32B test scenario.}{30}{section*.57}%
-\contentsline {section}{\numberline {H}Is the probe reading pressure, the secret string or the read step?}{30}{appendix.H}%
-\contentsline {paragraph}{Pressure.}{30}{section*.58}%
-\contentsline {paragraph}{The secret string.}{30}{section*.59}%
+\contentsline {section}{\numberline {H}Is the probe reading pressure, the secret string or the read step?}{31}{appendix.H}%
+\contentsline {paragraph}{Pressure.}{31}{section*.58}%
+\contentsline {paragraph}{The secret string.}{31}{section*.59}%
 \contentsline {paragraph}{The read step.}{31}{section*.60}%
 \contentsline {paragraph}{The target's own earlier promise.}{31}{section*.61}%
 \contentsline {paragraph}{What arrives with the input.}{31}{section*.62}%
-\contentsline {paragraph}{The handoff-file write.}{31}{section*.63}%
-\contentsline {paragraph}{A trained text classifier.}{31}{section*.64}%
+\contentsline {paragraph}{The handoff-file write.}{32}{section*.63}%
+\contentsline {paragraph}{A trained text classifier.}{32}{section*.64}%
 \contentsline {section}{\numberline {I}Does the probe track the rule, the disclosure, or giving in?}{32}{appendix.I}%
-\contentsline {subsection}{\numberline {I.1}Replaying saved calls under a changed rule}{32}{subsection.I.1}%
-\contentsline {paragraph}{Design.}{32}{section*.65}%
+\contentsline {subsection}{\numberline {I.1}Replaying saved calls under a changed rule}{33}{subsection.I.1}%
+\contentsline {paragraph}{Design.}{33}{section*.65}%
 \contentsline {paragraph}{Result.}{33}{section*.66}%
 \contentsline {subsection}{\numberline {I.2}New episodes under a permitting rule}{33}{subsection.I.2}%
 \contentsline {paragraph}{Design.}{33}{section*.67}%
 \contentsline {paragraph}{Result.}{33}{section*.68}%
 \contentsline {subsection}{\numberline {I.3}New episodes on all five test scenarios}{34}{subsection.I.3}%
 \contentsline {paragraph}{Design.}{34}{section*.69}%
-\contentsline {paragraph}{Result.}{34}{section*.70}%
+\contentsline {paragraph}{Result.}{35}{section*.70}%
 \contentsline {section}{\numberline {J}Does the probe warn early, and how many false alarms would it raise?}{35}{appendix.J}%
 \contentsline {paragraph}{One call ahead.}{35}{section*.71}%
-\contentsline {paragraph}{Score across an episode.}{35}{section*.72}%
-\contentsline {paragraph}{Where in the call.}{35}{section*.73}%
-\contentsline {subsection}{\numberline {J.1}False alarms}{35}{subsection.J.1}%
-\contentsline {subsection}{\numberline {J.2}Does a second check on the same input help?}{36}{subsection.J.2}%
-\contentsline {section}{\numberline {K}What do round-level detectors achieve?}{36}{appendix.K}%
-\contentsline {paragraph}{The round-level setup.}{37}{section*.74}%
-\contentsline {paragraph}{What a monitor should be asked and shown.}{37}{section*.75}%
-\contentsline {paragraph}{Adding the probe to a monitor.}{38}{section*.76}%
-\contentsline {paragraph}{Eventual outcome.}{38}{section*.77}%
-\contentsline {paragraph}{Robustness.}{38}{section*.78}%
-\contentsline {subsection}{\numberline {K.1}Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{38}{subsection.K.1}%
-\contentsline {section}{\numberline {L}How do the leaks go out, and are they deliberate?}{39}{appendix.L}%
-\contentsline {paragraph}{How leaks go out.}{39}{section*.79}%
-\contentsline {paragraph}{Deliberate or accidental.}{39}{section*.80}%
-\contentsline {paragraph}{Peer claims of authority.}{39}{section*.81}%
+\contentsline {paragraph}{Score across an episode.}{36}{section*.72}%
+\contentsline {paragraph}{Where in the call.}{36}{section*.73}%
+\contentsline {subsection}{\numberline {J.1}False alarms}{36}{subsection.J.1}%
+\contentsline {subsection}{\numberline {J.2}Does a second check on the same input help?}{37}{subsection.J.2}%
+\contentsline {section}{\numberline {K}What do round-level detectors achieve?}{39}{appendix.K}%
+\contentsline {paragraph}{The round-level setup.}{39}{section*.74}%
+\contentsline {paragraph}{What a monitor should be asked and shown.}{39}{section*.75}%
+\contentsline {paragraph}{Adding the probe to a monitor.}{39}{section*.76}%
+\contentsline {paragraph}{Eventual outcome.}{39}{section*.77}%
+\contentsline {paragraph}{Robustness.}{39}{section*.78}%
+\contentsline {subsection}{\numberline {K.1}Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{39}{subsection.K.1}%
+\contentsline {section}{\numberline {L}How do the leaks go out, and are they deliberate?}{40}{appendix.L}%
+\contentsline {paragraph}{How leaks go out.}{40}{section*.79}%
+\contentsline {paragraph}{Deliberate or accidental.}{40}{section*.80}%
+\contentsline {paragraph}{Peer claims of authority.}{40}{section*.81}%
 \contentsline {section}{\numberline {M}How often does each model leak, and what differs for the second target?}{40}{appendix.M}%
-\contentsline {subsection}{\numberline {M.1}Screens on Qwen3-32B}{41}{subsection.M.1}%
-\contentsline {subsection}{\numberline {M.2}What differs for gpt-oss-20b?}{41}{subsection.M.2}%
-\contentsline {subsection}{\numberline {M.3}Why was Gemma-4-31B not used for probes?}{41}{subsection.M.3}%
+\contentsline {subsection}{\numberline {M.1}Screens on Qwen3-32B}{40}{subsection.M.1}%
+\contentsline {subsection}{\numberline {M.2}What differs for gpt-oss-20b?}{42}{subsection.M.2}%
+\contentsline {subsection}{\numberline {M.3}Why was Gemma-4-31B not used for probes?}{42}{subsection.M.3}%
 \contentsline {section}{\numberline {N}Further limitations}{42}{appendix.N}%
 \contentsline {paragraph}{One peer strategy on gpt-oss-20b.}{42}{section*.82}%
 \contentsline {paragraph}{Warning about the current call only.}{42}{section*.83}%
@@ -122,27 +122,27 @@
 \contentsline {paragraph}{Automated labels.}{42}{section*.85}%
 \contentsline {section}{\numberline {O}What are the dual-use risks, and why release anyway?}{42}{appendix.O}%
 \contentsline {paragraph}{Risks.}{42}{section*.86}%
-\contentsline {paragraph}{Why the uplift is low.}{42}{section*.87}%
-\contentsline {paragraph}{Why release.}{42}{section*.88}%
-\contentsline {paragraph}{What we release and what is synthetic.}{42}{section*.89}%
+\contentsline {paragraph}{Why the uplift is low.}{43}{section*.87}%
+\contentsline {paragraph}{Why release.}{43}{section*.88}%
+\contentsline {paragraph}{What we release and what is synthetic.}{43}{section*.89}%
 \contentsline {section}{\numberline {P}Analysis history}{43}{appendix.P}%
-\contentsline {section}{\numberline {Q}Reproducibility index}{43}{appendix.Q}%
+\contentsline {section}{\numberline {Q}Reproducibility index}{44}{appendix.Q}%
 \contentsline {section}{\numberline {R}What exactly do the target, peer and monitors see?}{44}{appendix.R}%
 \contentsline {subsection}{\numberline {R.1}Target agent (Qwen3-32B and gpt-oss-20b)}{44}{subsection.R.1}%
 \contentsline {paragraph}{System prompt.}{44}{section*.90}%
 \contentsline {paragraph}{Task message.}{44}{section*.91}%
-\contentsline {subsection}{\numberline {R.2}Peer agent in Qwen3-32B episodes (DeepSeek-V4-Flash)}{44}{subsection.R.2}%
-\contentsline {paragraph}{Recruiting peer (plain).}{44}{section*.92}%
-\contentsline {paragraph}{Control peer.}{44}{section*.93}%
+\contentsline {subsection}{\numberline {R.2}Peer agent in Qwen3-32B episodes (DeepSeek-V4-Flash)}{45}{subsection.R.2}%
+\contentsline {paragraph}{Recruiting peer (plain).}{45}{section*.92}%
+\contentsline {paragraph}{Control peer.}{45}{section*.93}%
 \contentsline {paragraph}{Single-tactic additions.}{45}{section*.94}%
 \contentsline {paragraph}{Helpful framing.}{45}{section*.95}%
 \contentsline {paragraph}{Organizer tone.}{45}{section*.96}%
 \contentsline {paragraph}{Cost anchoring.}{45}{section*.97}%
-\contentsline {subsection}{\numberline {R.3}Peer agent in gpt-oss-20b episodes (DeepSeek-V4-Pro)}{45}{subsection.R.3}%
-\contentsline {paragraph}{Recruiting peer (delayed whole-block request).}{45}{section*.98}%
+\contentsline {subsection}{\numberline {R.3}Peer agent in gpt-oss-20b episodes (DeepSeek-V4-Pro)}{46}{subsection.R.3}%
+\contentsline {paragraph}{Recruiting peer (delayed whole-block request).}{46}{section*.98}%
 \contentsline {paragraph}{Matched control peer.}{46}{section*.99}%
 \contentsline {subsection}{\numberline {R.4}Text monitors: LLM judge}{46}{subsection.R.4}%
 \contentsline {paragraph}{Detector prompt.}{46}{section*.100}%
 \contentsline {paragraph}{Forecaster prompt.}{47}{section*.101}%
-\contentsline {paragraph}{Filled slots.}{47}{section*.102}%
+\contentsline {paragraph}{Filled slots.}{48}{section*.102}%
 \contentsline {subsection}{\numberline {R.5}Text monitors: decision models (Jev 1.14, Luna Decisions)}{48}{subsection.R.5}%

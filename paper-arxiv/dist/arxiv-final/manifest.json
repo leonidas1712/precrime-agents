@@ -1,5 +1,5 @@
 {
-  "archive_sha256": "d2dddbae9e6d354775bacc56432e6ba60d339edb01e24bc2a15c4d6b110b33e9",
+  "archive_sha256": "64f82a31867d13e259b255e148dc4cd4db09f93a4f07e6b986edec19f7801715",
   "files": {
     "appendix/ahead.tex": "dc881ae9ec61adb3e79348cbd54548c9d2269d0db98c7bc0ef79fd5984738b3c",
     "appendix/behaviour.tex": "1bd4b0d2f62db1f865805bdee6d04d8bbc625a2510fd2cf9a9518894422ed546",
@@ -13,7 +13,7 @@
     "appendix/limitations.tex": "eb664402b9b362c5dd0e70a0e4fcde0f1efd9737e8d6df712a80a1001d2d781f",
     "appendix/monitors.tex": "d7f637a8e1c739dd1db68707fa5bf17e45b278597d023535d38822c07f25e529",
     "appendix/policy.tex": "038c9be69663e5732950929e2ab9b1be79bb04e55bcd700bf57806a96350b201",
-    "appendix/probes.tex": "b205aec58bc01f2c849562fe183c8bf3c22c1211d1ec67580a7fa8313ea9b391",
+    "appendix/probes.tex": "1dc9b0a519118cf2c78c63df2971c18ed7361cd32da74aacfed898325b945baf",
     "appendix/prompts.tex": "f1b1401f61fc7c5f07e1b205cca69b9c75a48fda072bc7b36103198fe4e46a67",
     "appendix/repro.tex": "cfa2f715ac7fd4a3c595db7ef85c5fae065d5f204fe676c90b17d648043dd197",
     "appendix/robustness.tex": "81e5b9c00264150b70d378d3e656b6f5ae5bd267d66a8a9e252f3f103663c288",
@@ -50,7 +50,7 @@
     "sections/llm_usage.tex": "6f9f1003695c353f5e5c0dd415a61e95c3f2ba05eb24359887709e7f79a5b6c7",
     "sections/method.tex": "69d948dd0192b99011831eda7f9569605575e93b04c48cfc0125c1cdd6e36ebe",
     "sections/related_work.tex": "502b24d9fcb2d82fd10eec764a3dc022ef8ef6b82118540308de6347b5762b87",
-    "sections/results.tex": "6cb5d32b8372db8959cebbd20e54dc961a12d7765f8f715e62112be77d0010b2",
+    "sections/results.tex": "8b2521c349c91db35362e6e0f7c2b196e091309eb972adc92d879ce337be9da7",
     "sections/setup.tex": "2d4910ea1915b3d930430563e4345f39e363a9fcb0a038ff4fc78ee16c7671f4",
     "tables/alarms.tex": "22735c7108cd24b59047393860ed34a13f5b4d9ae730d781f95f145e26c1d1dd",
     "tables/behaviour_by_scenario.tex": "eaea4a3e0a3b21e13eaa4c5f6c9328b6f8b587cf5835fa9516a0f0a958efeac7",
@@ -87,8 +87,8 @@
     "template_hashes.json": "c5f6f69773fd7b57e6d4419a5a2f82ea6447e8f0015bf47b06f693b7c3b43c62",
     "title.tex": "c206584356a02f0edc6f8b805162820e973237473c4d407fd59e6f78ba9bedf7"
   },
-  "local_pdf_sha256": "94c66a43d42f22ec583194efc6a60df84c673a95e2d15c3bad4163a5072e5e47",
-  "packaged_pdf_sha256": "063d6bfe9b88a43ef937aad2d0d0b6c8ee5397a182a1b510e7f082be1c8236a8",
+  "local_pdf_sha256": "eb283242f0deeae77fa3b119329fd8f8481b0630dc965724a6803e9300de1d4f",
+  "packaged_pdf_sha256": "d934848c5347438e550fff0de0faa77b4470ff7db8060cd3046271104199644b",
   "clean_build_text_matches": true,
   "viewer_check": "pending: both PDFs require a real-viewer check"
 }

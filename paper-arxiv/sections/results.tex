@@ -26,7 +26,7 @@
     Ever? & last-prompt probe & \qwenEverProbe{} & \gptossEverProbe{} \\
     \bottomrule
   \end{tabular}
-  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios, and -- means not run. Intervals are in the appendices. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. For each model the text classifier shows the stronger of its two views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
+  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios, and -- means not run. \Cref{tab:glance-ci} gives the same results with intervals. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. For each model the text classifier shows the stronger of its two views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
   \label{tab:glance}
 \end{table}
 
