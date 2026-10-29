@@ -2,14 +2,14 @@
 \label{sec:method}
 
 \paragraph{Probes.}
-A probe is a logistic regression on the target's residual stream, the running internal representation that each layer reads and writes.
+A probe is a logistic regression on the target's residual stream, the running internal representation that each layer reads and writes \citep{goldowskydill2025}.
 The last-prompt probe reads the activation at the last token of the model's input for that call, just before the model starts to write, so it scores a call before the call generates anything (\cref{eq:probe}).
-We choose the layer inside each training split, using only training episodes, and weight leaking and non-leaking calls equally within each round \citep[following][]{goldowskydill2025}.
+We choose the layer inside each training split, using only training episodes, and weight leaking and non-leaking calls equally within each round.
 To read the model's activations, we re-run every saved prompt through the open weights, which reproduces the served replies closely (\cref{app:data}).
 
 \paragraph{Reasoning probe.}
 gpt-oss-20b writes private reasoning tokens before it answers or calls a tool.
-On this model a second probe applies $w^\top h_\ell + b$ to every token of the call\'s reasoning $z_t$ and keeps the maximum.
+On this model a second probe applies $w^\top h_\ell + b$ to every token of the call's reasoning $z_t$ and keeps the maximum.
 Every reasoning token comes before the call's public output, so this probe also scores the call before the secret is written out.
 
 \paragraph{Zero-shot text monitor.}

@@ -11,7 +11,7 @@ Closest to our question, \citet{saraogi2026before} read hidden states each turn 
 \citet{fayyazi2026agent} forecast unauthorised agent actions from internal states and from text, and find that text monitors often match the internal states.
 \citet{jia2026window} branch injected agents from identical states and find that early probes do not reliably beat text baselines.
 \citet{gao2026} combines an activation monitor with outcome forecasts on AgentDojo.
-Production classifiers score a model's output as it streams \citep{sharma2025constitutional,cunningham2026,mckenzie2026,kramar2026}, and our reasoning probe borrows their maximum over tokens.
+Production classifiers score a model's output as it streams \citep{sharma2025constitutional,cunningham2026}, and activation probes often combine token scores with a maximum \citep{mckenzie2026,kramar2026}, which our reasoning probe borrows.
 We find the same weak signal far from the act, and a strong one at the call itself, in a setting where the pressure comes from a peer.
 
 \paragraph{Spread, sustained pressure and filters.}
@@ -19,6 +19,6 @@ Work on spreading prompts and multi-turn attacks studies how pressure reaches an
 We sit between the two: like the exposure probes above, our per-call probe reads the call's input under sustained pressure, before the call generates anything.
 
 \paragraph{Monitors and persuasion between agents.}
-Monitors that see agents' messages catch more coordinated sabotage \citep{radev2026}, and persuasion between agents has been measured from text and outcomes \citep{tao2026}, as has yielding to sustained multi-turn pressure \citep{tang2026}.
+Monitors that see agents' messages catch more coordinated sabotage \citep{radev2026}, and coordinated persuasion attacks between agents have been detected from their messages \citep{tao2026}. Yielding to sustained multi-turn pressure has also been measured \citep{tang2026}.
 Our setting complements studies of collusion in markets and in shared multi-agent tasks \citep{fish2026,lin2025,nakamura2026} by examining the harmful act itself, an agent with tools, files and a credential breaking its operator's rule, as a step toward deployment-like settings.
 We add the persuaded agent's activations and score probes, a zero-shot monitor and a trained text classifier on exactly the same calls.

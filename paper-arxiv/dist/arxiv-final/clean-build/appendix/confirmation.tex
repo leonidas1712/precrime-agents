@@ -11,7 +11,7 @@ Before the test episodes were collected, we committed the probe's layer, chosen 
 The success criterion was a lower 95\% bound above 0.5 on the per-call AUROC.
 The lower bound was \gptossFreshReasoningLow{}, well above the 0.5 criterion.
 With few leaking calls, the interval is wide.
-At the frozen threshold the probe caught \gptossFreshCaught{} of the leaking calls (binomial 95\% interval \gptossFreshCaughtCI{}), fewer than in development, while alarming on \gptossFreshRefusingAlarm{} of calls in refusing episodes and in \gptossFreshRefusingEpisodeAlarm{} of refusing episodes (\cref{tab:fresh}).
+At the frozen threshold the probe caught \gptossFreshCaught{} of the leaking calls (binomial 95\% interval \gptossFreshCaughtCI{}), fewer than in development, while alarming on \gptFreshAlarmOne{} of calls in refusing episodes and in \gptossFreshRefusingEpisodeAlarm{} of refusing episodes (\cref{tab:fresh}).
 
 \paragraph{Last-prompt and reasoning probes on gpt-oss-20b.}
 On development episodes the last-prompt probe and the reasoning probe score about the same, so most of the signal is present before the model starts to reason.

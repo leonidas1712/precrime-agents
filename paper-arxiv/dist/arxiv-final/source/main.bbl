@@ -53,10 +53,10 @@ Arya Fayyazi, Mehdi Kamal, and Massoud Pedram.
 \newblock arXiv preprint arXiv:2610.17301, 2026.
 \newblock URL \url{https://arxiv.org/abs/2610.17301}.
 
-\bibitem[Fish et~al.(2026)Fish, Gonczarowski, and Shorrer]{fish2026}
+\bibitem[Fish et~al.(2024)Fish, Gonczarowski, and Shorrer]{fish2026}
 Sara Fish, Yannai~A. Gonczarowski, and Ran~I. Shorrer.
 \newblock Algorithmic collusion by large language models.
-\newblock arXiv preprint arXiv:2404.00806, 2026.
+\newblock arXiv preprint arXiv:2404.00806, 2024.
 \newblock URL \url{https://arxiv.org/abs/2404.00806}.
 \newblock First version 2024; accepted to EC 2026.
 
@@ -100,10 +100,10 @@ Rogan Inglis, Ollie Matthews, Tyler Tracy, Oliver Makins, Tom Catling, Asa Coope
 \newblock GitHub repository, 2025.
 \newblock URL \url{https://github.com/UKGovernmentBEIS/control-arena}.
 
-\bibitem[Ippolito et~al.(2023)Ippolito, Tram{\`e}r, Nasr, Zhang, Jagielski, Lee, Choquette-Choo, and Carlini]{ippolito2023verbatim}
+\bibitem[Ippolito et~al.(2022)Ippolito, Tram{\`e}r, Nasr, Zhang, Jagielski, Lee, Choquette-Choo, and Carlini]{ippolito2023verbatim}
 Daphne Ippolito, Florian Tram{\`e}r, Milad Nasr, Chiyuan Zhang, Matthew Jagielski, Katherine Lee, Christopher~A. Choquette-Choo, and Nicholas Carlini.
 \newblock Preventing verbatim memorization in language models gives a false sense of privacy.
-\newblock arXiv preprint arXiv:2210.17546, 2023.
+\newblock arXiv preprint arXiv:2210.17546, 2022.
 
 \bibitem[Jia et~al.(2026)Jia, Liu, Chong, Yang, Chen, Liang, Li, Lu, Xu, Zheng, Zhang, Huang, Zhang, Qi, Lin, and Peng]{jia2026window}
 Haoxuan Jia, Yang Liu, Bin Chong, Yingguang Yang, Yancheng Chen, Jiayu Liang, Qian Li, Hanning Lu, Kefu Xu, Hao Zheng, Chongyang Zhang, Yulin Huang, Jianshen Zhang, Yongzhi Qi, Yunuo Lin, and Hao Peng.
@@ -117,10 +117,10 @@ János Kramár, Joshua Engels, Zheng Wang, Bilal Chughtai, Rohin Shah, Neel Nand
 \newblock arXiv preprint arXiv:2601.11516, 2026.
 \newblock URL \url{https://arxiv.org/abs/2601.11516}.
 
-\bibitem[Lin et~al.(2025)Lin, Ojha, Cai, and Chen]{lin2025}
+\bibitem[Lin et~al.(2024)Lin, Ojha, Cai, and Chen]{lin2025}
 Ryan~Y. Lin, Siddhartha Ojha, Kevin Cai, and Maxwell~F. Chen.
 \newblock Strategic collusion of {LLM} agents: Market division in multi-commodity competitions.
-\newblock arXiv preprint arXiv:2410.00031, 2025.
+\newblock arXiv preprint arXiv:2410.00031, 2024.
 \newblock URL \url{https://arxiv.org/abs/2410.00031}.
 
 \bibitem[Liu et~al.(2024)Liu, Jia, Geng, Jia, and Gong]{liu2024formalizing}
@@ -129,10 +129,10 @@ Yupei Liu, Yuqi Jia, Runpeng Geng, Jinyuan Jia, and Neil~Zhenqiang Gong.
 \newblock In \emph{33rd {USENIX} Security Symposium ({USENIX} Security 24)}, pp.\  1831--1847, Philadelphia, PA, 2024. {USENIX} Association.
 \newblock URL \url{https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei}.
 
-\bibitem[McKenzie et~al.(2026)McKenzie, Pawar, Blandfort, Bankes, Krueger, Lubana, and Krasheninnikov]{mckenzie2026}
+\bibitem[McKenzie et~al.(2025)McKenzie, Pawar, Blandfort, Bankes, Krueger, Lubana, and Krasheninnikov]{mckenzie2026}
 Alex McKenzie, Urja Pawar, Phil Blandfort, William Bankes, David Krueger, Ekdeep~Singh Lubana, and Dmitrii Krasheninnikov.
 \newblock Detecting high-stakes interactions with activation probes.
-\newblock arXiv preprint arXiv:2506.10805, 2026.
+\newblock arXiv preprint arXiv:2506.10805, 2025.
 \newblock URL \url{https://arxiv.org/abs/2506.10805}.
 
 \bibitem[Nakamura et~al.(2026)Nakamura, Kumar, Das, Abdelnabi, Mahmud, Fioretto, Zilberstein, and Bagdasarian]{nakamura2026}
@@ -248,9 +248,9 @@ Xijie Zeng and Frank Rudzicz.
 \newblock arXiv preprint arXiv:2605.27593, 2026.
 \newblock URL \url{https://arxiv.org/abs/2605.27593}.
 
-\bibitem[Zhang et~al.(2024)Zhang, Carlini, and Ippolito]{zhang2024extraction}
+\bibitem[Zhang et~al.(2023)Zhang, Carlini, and Ippolito]{zhang2024extraction}
 Yiming Zhang, Nicholas Carlini, and Daphne Ippolito.
 \newblock Effective prompt extraction from language models.
-\newblock arXiv preprint arXiv:2307.06865, 2024.
+\newblock arXiv preprint arXiv:2307.06865, 2023.
 
 \end{thebibliography}

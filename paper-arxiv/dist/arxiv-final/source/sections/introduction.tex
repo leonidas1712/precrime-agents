@@ -7,7 +7,7 @@ A filter on that tool call, or a monitor that blocks a suspicious action before 
 
 The hard cases look different.
 The leak can go out as an ordinary message that other agents read at once: on our development episodes, most Qwen3-32B leaks go straight to the shared team channel, and \qwenRouteFinalReplyShare{} are the agent's plain end-of-turn reply, which a filter on tool calls never sees (\cref{app:leakchecks}).
-The request comes openly from a teammate, so it is not an injection hidden in data \citep{liu2024formalizing,debenedetti2024agentdojo}, and the pressure can build over many rounds, as in multi-turn attacks whose steps each look harmless \citep{russinovich2024crescendo,tang2026}.
+The request comes openly from a teammate, so it is not an injection hidden in data \citep{liu2024formalizing,debenedetti2024agentdojo}, and the pressure can build over many rounds, as in multi-turn attacks whose steps each look harmless \citep{russinovich2024crescendo} and in sustained pushback that wears down a model's correct answers \citep{tang2026}.
 Compromised agents can pass an attack on to others \citep{cohen2024morris,pulipaka2026shareborne}, as in the 2026 OpenAI--Hugging Face incident, where evaluation agents attacked production infrastructure \citep{openai2026huggingface} and some pressed others to join \citep{greenblatt2026incident}.
 The rule is often the operator's own, such as keeping one credential private, which guardian models built on fixed harm categories do not cover \citep{hoover2025dynaguard}.
 Agents also leak in action even when they state the norm correctly \citep{shao2024privacylens}.
