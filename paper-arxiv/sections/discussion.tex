@@ -17,7 +17,7 @@ We list the main limitations in order of how much each could change our conclusi
 
 \paragraph{Narrow setting.}
 We test two models, six scenarios built from one task template, one peer and one target per episode, and synthetic tools and secrets.
-Leaks are exact strings, which an output filter would catch; the probe matters most where no string filter can match, as with paraphrased or encoded leaks.
+Leaks are exact strings, which an output filter would catch. We did not test reworded or encoded leaks, where a filter that matches text fails and a probe would matter most.
 Qwen3-32B ran with its reasoning switched off.
 On gpt-oss-20b, leaks are whole-block copies made soon after the peer's request, so they may reflect careless copying as much as giving in (\cref{app:limitations}).
 We score only calls made after the target first reads the protected file, where a leak is possible.

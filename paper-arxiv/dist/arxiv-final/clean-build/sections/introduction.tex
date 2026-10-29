@@ -29,10 +29,10 @@ Small rewordings and translation evade verbatim filters \citep{ippolito2023verba
 Output-only censorship is impossible in principle under invertible encodings \citep{glukhov2023censorship}.
 Encoded exfiltration that evades output-only detection stays legible in activations \citep{revankar2026mirage}.
 A warning raised before the output exists does not depend on recognising the leak in the text.
-Our secrets are exact strings, so here a string filter would also work; we use them so that every leak can be labelled exactly, and a probe matters where a filter cannot.
+We do not test reworded or encoded leaks here: our secrets are exact strings, so that every leak can be labelled exactly, and a string filter would also catch them.
 
 Activation probes, small linear classifiers trained on a model's internal activations, already read agents before they act.
-They detect exposure to an injection at the last input token \citep{dong2026,yu2026}, forecast unauthorised actions at the end of the agent's reasoning \citep{fayyazi2026agent}, and read covert encoding at the planning step \citep{revankar2026mirage}, while early-warning work under user pressure or injection finds weak signals that text baselines often match \citep{saraogi2026before,jia2026window}.
+They detect exposure to an injection \citep{dong2026}, or whether it will hijack the agent \citep{yu2026}, at the last input token, forecast unauthorised actions at the end of the agent's reasoning \citep{fayyazi2026agent}, and read covert encoding at the planning step \citep{revankar2026mirage}, while early-warning work under user pressure or injection finds weak signals \citep{saraogi2026before} that text baselines often match \citep{jia2026window}.
 What is new here is the setting and the question.
 A teammate presses the agent openly over many rounds, the agent refuses and then gives in, and we ask which call gives in, before that call generates anything, comparing each call only with calls from the same scenario and round.
 Work on collusion between AI agents has mostly studied markets and shared multi-agent tasks \citep{fish2026,lin2025,nakamura2026}.

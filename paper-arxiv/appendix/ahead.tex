@@ -1,6 +1,14 @@
 \section{Does the probe warn early, and how many false alarms would it raise?}
 \label{app:ahead}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{fig6_trajectory_aggregate.pdf}
+  \caption{\textbf{The probe score jumps at the call that leaks.}
+  Each leaking episode is aligned on its leaking call. The line is the median last-prompt probe score, as a percentile among that model's scored calls. The shaded band is the middle 50\% of test episodes. Numbers at the leaking call give the median percentile there.}
+  \label{fig:trajectory-main}
+\end{figure}
+
 The probe warns about the call that leaks, not earlier ones.
 At a threshold set for few false alarms per call, many refusing episodes still get at least one alarm (\cref{tab:alarms}).
 

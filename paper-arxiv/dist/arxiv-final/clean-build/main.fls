@@ -335,10 +335,6 @@ INPUT ./figures/fig1_headline.pdf
 INPUT ./figures/fig1_headline.pdf
 INPUT ./figures/fig1_headline.pdf
 INPUT ./figures/fig1_headline.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
 INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./figures/fig3_percall.pdf
@@ -470,6 +466,10 @@ INPUT tables/e15_recency.tex
 INPUT ./appendix/ahead.tex
 INPUT ./appendix/ahead.tex
 INPUT appendix/ahead.tex
+INPUT ./figures/fig6_trajectory_aggregate.pdf
+INPUT ./figures/fig6_trajectory_aggregate.pdf
+INPUT ./figures/fig6_trajectory_aggregate.pdf
+INPUT ./figures/fig6_trajectory_aggregate.pdf
 INPUT ./figures/fig6_trajectories.pdf
 INPUT ./figures/fig6_trajectories.pdf
 INPUT ./figures/fig6_trajectories.pdf

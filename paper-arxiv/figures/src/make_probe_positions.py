@@ -50,9 +50,9 @@ def main():
     segs = [  # key, bold name ('|' breaks lines), description, width (in), fill, edge
         ('sys', 'System prompt', 'role, operator\'s rule, tool definitions', 0.98, ZERO_BG, MUTED),
         ('task', 'Task', 'first user message', 0.52, ZERO_BG, MUTED),
-        ('hist', 'History', 'earlier messages; own replies and tool calls; tool results',
+        ('hist', 'History', 'channel $H_{k-1}$, own replies, tool calls and results',
          1.15, HIST_BG, MUTED),
-        ('peer', 'Latest|peer|message', '', 0.62, NEW_BG, NEW_DK),
+        ('peer', 'Latest|peer|message|$m_k$', '', 0.62, NEW_BG, NEW_DK),
         ('tools', 'Tool|results', '', 0.55, NEW_BG, NEW_DK),
         ('z', 'Reasoning|$z_t$', 'gpt-oss-20b only', 0.67, RSN_BG, RSN),
         ('o', 'Output|$o_t$', 'reply or tool call', 0.58, TARGET_BG, TARGET_DK),
@@ -113,6 +113,15 @@ def main():
                    ha='center', va='center')
             yy -= step
 
+    # leak marker: the output o_t is where a leak is counted
+    from make_setup import LEAK, LEAK_DK
+    ox0, ox1 = X['o']
+    tag = 'LEAK?'
+    tw_ = c.width(tag, FS_SMALL, 'bold') + 0.12
+    tcx, tcy = (ox0 + ox1) / 2, seg_top + 0.085   # tag sits on the box's top edge
+    rbox(c, tcx - tw_ / 2, tcy - 0.075, tw_, 0.15, LEAK, LEAK_DK, lw=0.7, r=0.04, z=8)
+    c.text(tcx, tcy, tag, size=FS_SMALL, weight='bold', ha='center', va='center', zorder=12)
+
     # token ruler under the segments: one cell per (schematic) token
     tok_h = 0.085
     tok_y = seg_bot - 0.06 - tok_h
@@ -127,6 +136,12 @@ def main():
         for cx, w in cells[key]:
             c.add(Rectangle((cx + 0.007, tok_y), w - 0.014, tok_h, fc=fc, ec='#B9C1CB',
                             lw=0.4, zorder=3))
+
+    lbl = 'leak = secret $\\sigma$ appears here'
+    lw_lbl = c.width(lbl.replace('$', '').replace('\\sigma', 'σ'), FS_SMALL)
+    assert ox1 - lw_lbl > gen_x + 0.05, (ox1 - lw_lbl, gen_x)
+    c.text(ox1, tok_y - 0.075, lbl, size=FS_SMALL, color=LEAK_DK,
+           ha='right', va='center', zorder=10)
 
     # ------------------------------------------------------------ detector rows
     row_h = 0.19
@@ -203,9 +218,9 @@ def main():
 
     # 2. incoming-only probe: every token new since the previous call
     y = rows_y[1]
-    header(y, 'Incoming-only probe', 'gpt-oss-20b; exploratory', INC)
+    header(y, 'Incoming-only probe', 'gpt-oss-20b', INC)
     band(*new_span, y, INC_BG, INC, hatch='//////')
-    note(new_span[0] - 0.07, y, 'score each new token, running average over about 16 tokens, take the max', INC)
+    note(new_span[0] - 0.07, y, 'per new token, running average over ~16 tokens, then max', INC)
     lead(new_span[1], gen_x - 0.05, y, INC)
     ready(gen_x, y, INC)
 
@@ -243,7 +258,7 @@ def main():
     header(y, 'Output filter', 'for contrast', FILT)
     band(*X['o'], y, '#F4F4F4', FILT, hatch='xxxx')
     lead(gen_x - 0.05, X['o'][0], y, FILT)
-    note(gen_x - 0.10, y, 'matches the secret once it is written', FILT)
+    note(gen_x - 0.10, y, 'matches $\\sigma$ in $o_t$ once it is written', FILT)
     ready(end_x, y, FILT, marker='s')
 
     # legend for the availability markers

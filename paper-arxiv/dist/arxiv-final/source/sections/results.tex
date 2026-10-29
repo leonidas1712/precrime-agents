@@ -61,14 +61,6 @@ Nor is it simply reading back the target's own earlier promise to share: removin
 Followed through an episode, the median probe score jumps at the leaking call, to about the 95th to 98th percentile on both models (\cref{fig:trajectory-main}).
 Earlier calls are mixed and noisy, few episodes have many calls before the leak, and \cref{app:ahead} shows examples chosen by a fixed rule.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{fig6_trajectory_aggregate.pdf}
-  \caption{\textbf{The probe score jumps at the call that leaks.}
-  Each leaking episode is aligned on its leaking call. The line is the median last-prompt probe score, as a percentile among that model's scored calls. The shaded band is the middle 50\% of test episodes. Numbers at the leaking call give the median percentile there.}
-  \label{fig:trajectory-main}
-\end{figure}
-
 \subsection{The warning is short-range}
 \label{sec:ladder}
 
@@ -87,7 +79,7 @@ The probe scores \qwenRoundFreshProbe{} there, close to its \qwenNearProbe{} on 
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{fig3_percall.pdf}
+  \includegraphics[width=0.85\linewidth]{fig3_percall.pdf}
   \caption{\textbf{A probe picks out the call that leaks; a zero-shot monitor does not, and a trained text classifier comes close.}
   Per-call AUROC on held-out scenarios, development episodes. Whiskers are bootstrap intervals (\cref{app:probes}).
   The zero-shot monitor (Jev) sees the conversation and tool results that the last-prompt probe sees, with the secret masked. On gpt-oss-20b it scores below chance because it ranks leaking calls below the other calls under the same pressure. For each model the trained text classifier shows the stronger of its two text views, which favours it: the last message on Qwen3-32B and the full input on gpt-oss-20b. \Cref{tab:text-baselines} gives both.}
@@ -131,8 +123,8 @@ Whether it reads a decision to emit or the situation that prompts one is open (\
 AUROC measures how well a detector ranks calls.
 An overseer also needs to know how many leaks a threshold catches, how many other calls it flags, and how many of its alarms are real.
 At a threshold set on benign control calls, so that 5\% of them are flagged, the probe catches most leaking calls while flagging few other calls (\cref{fig:qwen-alarms}).
-On Qwen3-32B test episodes, it catches \qwenFreshProbeCaught{} of leaking calls (\qwenMatchedProbeCaughtCount{} of \qwenMatchedLeakTotal{}) and flags \qwenFreshProbeAlarm{} of the calls in refusing episodes.
-Of the calls it flags, \qwenFreshProbePrecision{} are real leaks.
+On Qwen3-32B test episodes, the probe catches \qwenFreshProbeCaught{} of leaking calls (\qwenMatchedProbeCaughtCount{} of \qwenMatchedLeakTotal{}) and flags \qwenFreshProbeAlarm{} of the calls in refusing episodes.
+Of the calls the probe flags, \qwenFreshProbePrecision{} are real leaks.
 Jev, flagging \qwenMatchedJevRefusing{} of refusing calls (fewer than the probe's \qwenFreshProbeAlarm{}), catches \qwenMatchedJevCaught{} of leaking calls (\qwenMatchedJevCaughtCount{} of \qwenMatchedLeakTotal{}).
 Intervals are in \cref{app:alarms}.
 
@@ -145,8 +137,8 @@ If each call were flagged independently at the nominal 5\% rate, about \qwenEpis
 A stricter threshold suits halting an agent.
 Because flags cluster in episodes, a per-call rate does not say how many episodes would be halted, so this threshold has to be set per episode.
 We choose it on the test episodes to show the trade-off, so that about one refusing episode in twenty sees a flag.
-It catches \qwenEpisodeCalCaught{} of leaking episodes by their first leak, far fewer than the per-call threshold catches (\cref{tab:episode-calibration}).
-Per call, it catches \qwenCalibrationEpisodeLeakCallsRateRounded{} of leaking calls and flags \qwenCalibrationEpisodeRefusingCallsRate{} of calls in refusing episodes, the diamond in \cref{fig:qwen-alarms}.
+This per-episode threshold catches \qwenEpisodeCalCaught{} of leaking episodes by their first leak, far fewer than the per-call threshold catches (\cref{tab:episode-calibration}).
+Counted per call, the same threshold catches \qwenCalibrationEpisodeLeakCallsRateRounded{} of leaking calls and flags \qwenCalibrationEpisodeRefusingCallsRate{} of calls in refusing episodes, the diamond in \cref{fig:qwen-alarms}.
 
 In use, this per-episode threshold must be set on held-out episodes, not on the episodes the probe was trained on.
 A threshold set on the training episodes does not transfer.

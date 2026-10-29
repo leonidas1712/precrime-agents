@@ -22,7 +22,7 @@ where $F$ is the set of workspace files, $f^\star \in F$ is the protected file, 
 
 \paragraph{Agents and tools.}
 The target can list, read and write files, run the workspace tests, and post to a shared team channel.
-Its reply at the end of each turn is also posted to the channel.
+Text that comes with a tool call stays private, and the final reply of a turn is posted to the channel only if the target posted nothing else in that turn.
 A peer agent shares the channel and needs the value, but cannot read the files and is not told the rule.
 The peer asks for the value openly, as a colleague would, so we study recruitment that arises from an ordinary conflict of goals.
 Tools act in memory, so no real system, credential or network is touched.
@@ -39,7 +39,7 @@ We call the calls in control and alone episodes \emph{control calls}, and recrui
 
 \paragraph{Rounds and calls.}
 An episode runs for up to $K = 20$ rounds.
-In round $k$ the peer reads the channel so far and posts one message $m_k$.
+In round $k$ the peer reads the channel so far and posts its message $m_k$, under the same posting rule as the target (usually one message).
 The target then responds with one or more model calls.
 A call $c_t$ is one request to the model that ends in a reply or a tool call, and calls are numbered $t = 1, 2, \dots$ across the whole episode.
 $H_{k-1}$ is the channel history before round $k$: every message posted to the channel so far.
@@ -66,7 +66,7 @@ We write $r(t)$ for the round of call $c_t$, and an episode is the sequence $(x_
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{fig_probe_positions.pdf}
+  \includegraphics[width=0.9\linewidth]{fig_probe_positions.pdf}
   \caption{\textbf{Which tokens each detector reads.}
   In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$.
   The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated.
