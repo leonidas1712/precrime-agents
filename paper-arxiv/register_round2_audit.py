@@ -29,7 +29,7 @@ def main():
             if cell=='Exclude source-writeback episode':row[i]='Exclude development writeback episode'
     for row in reg['tables']['history']['rows']:
         if isinstance(row[0],str) and row[0].startswith('E08 Qwen'):
-            row[0]='E08 Qwen replay';row[-1]=HISTORY
+            row[0]='Rule-change replay (Qwen)';row[-1]=HISTORY
     (HERE/'numbers.yaml').write_text(json.dumps(reg,indent=2)+'\n')
 
 

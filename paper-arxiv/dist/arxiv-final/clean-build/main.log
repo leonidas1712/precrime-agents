@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.21)  30 OCT 2026 01:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.21)  30 OCT 2026 01:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,7 +648,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26] (./tables/monitor_grid.tex) [27]) (./appendix/confirmation.tex [28]
-<figures/fig_round_confirmation.pdf, id=956, 281.85298pt x 216.81pt>
+<figures/fig_round_confirmation.pdf, id=957, 281.85298pt x 216.81pt>
 File: figures/fig_round_confirmation.pdf Graphic file (type pdf)
 <use figures/fig_round_confirmation.pdf>
 Package pdftex.def Info: figures/fig_round_confirmation.pdf  used on input line 32.
@@ -662,7 +662,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./appendix/shortcuts.tex [30] (./tables/precommitment.tex) [31]
-<figures/fig4_shortcuts.pdf, id=1012, 469.755pt x 281.85298pt>
+<figures/fig4_shortcuts.pdf, id=1013, 469.755pt x 281.85298pt>
 File: figures/fig4_shortcuts.pdf Graphic file (type pdf)
 <use figures/fig4_shortcuts.pdf>
 Package pdftex.def Info: figures/fig4_shortcuts.pdf  used on input line 80.
@@ -681,19 +681,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [33 <./figures/fig4_shortcuts.pdf>] (./tables/e14.tex) [34]
-<figures/fig_e15_recency.pdf, id=1060, 325.215pt x 216.81pt>
+<figures/fig_e15_recency.pdf, id=1061, 325.215pt x 216.81pt>
 File: figures/fig_e15_recency.pdf Graphic file (type pdf)
 <use figures/fig_e15_recency.pdf>
 Package pdftex.def Info: figures/fig_e15_recency.pdf  used on input line 80.
 (pdftex.def)             Requested size: 278.23827pt x 185.50679pt.
  (./tables/e15_recency.tex)) (./appendix/ahead.tex [35 <./figures/fig_e15_recency.pdf>]
-<figures/fig6_trajectories.pdf, id=1088, 469.755pt x 354.12299pt>
+<figures/fig6_trajectories.pdf, id=1089, 469.755pt x 354.12299pt>
 File: figures/fig6_trajectories.pdf Graphic file (type pdf)
 <use figures/fig6_trajectories.pdf>
 Package pdftex.def Info: figures/fig6_trajectories.pdf  used on input line 20.
 (pdftex.def)             Requested size: 397.48499pt x 299.64426pt.
  (./tables/episode_calibration.tex) [36 <./figures/fig6_trajectories.pdf>]
-<figures/fig7_alarm_tradeoffs.pdf, id=1114, 469.755pt x 209.58301pt>
+<figures/fig7_alarm_tradeoffs.pdf, id=1115, 469.755pt x 209.58301pt>
 File: figures/fig7_alarm_tradeoffs.pdf Graphic file (type pdf)
 <use figures/fig7_alarm_tradeoffs.pdf>
 Package pdftex.def Info: figures/fig7_alarm_tradeoffs.pdf  used on input line 58.
@@ -703,7 +703,7 @@ Package pdftex.def Info: figures/fig7_alarm_tradeoffs.pdf  used on input line 58
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [37 <./figures/fig7_alarm_tradeoffs.pdf>]
-<figures/fig9_cascade.pdf, id=1131, 325.215pt x 216.81pt>
+<figures/fig9_cascade.pdf, id=1132, 325.215pt x 216.81pt>
 File: figures/fig9_cascade.pdf Graphic file (type pdf)
 <use figures/fig9_cascade.pdf>
 Package pdftex.def Info: figures/fig9_cascade.pdf  used on input line 85.
@@ -758,10 +758,10 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  69i,12n,90p,1807b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/leo/collusion-research-followup/paper-arxiv/.tools/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (49 pages, 757136 bytes).
+Output written on main.pdf (49 pages, 757243 bytes).
 PDF statistics:
- 1439 PDF objects out of 1440 (max. 8388607)
- 1235 compressed objects within 13 object streams
+ 1440 PDF objects out of 1440 (max. 8388607)
+ 1236 compressed objects within 13 object streams
  309 named destinations out of 1000 (max. 500000)
  60360 words of extra memory for PDF output out of 61914 (max. 10000000)
 

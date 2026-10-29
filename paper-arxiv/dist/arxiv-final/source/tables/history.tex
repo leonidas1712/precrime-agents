@@ -7,7 +7,7 @@ Qwen original & This/next round & No & Fixed before analysis \\
 GPT reasoning & Current-call emission & Yes (test) & Pre-registered \\
 Qwen last-prompt & Current-call emission & No & Newly fixed, previously inspected \\
 GPT last-prompt & Current-call emission & No & Newly fixed, previously inspected \\
-TF-IDF / action controls & Current-call emission & No & None \\
-E08 Qwen replay & Current-call emission & Existing calls; no generation & A first replay did not reproduce the saved scores and was discarded; the reported replay holds the saved reply fixed and reproduces them. \\
+TF-IDF / action controls & Current-call emission & No & Qwen latest-message classifier scored once on test; others none \\
+Rule-change replay (Qwen) & Current-call emission & Existing calls; no generation & A first replay did not reproduce the saved scores and was discarded; the reported replay holds the saved reply fixed and reproduces them. \\
 \bottomrule
 \end{tabular}

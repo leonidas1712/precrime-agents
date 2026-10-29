@@ -36,7 +36,7 @@ These replayed prompts still contain the agent's earlier refusals, which the nex
 \paragraph{Design.}
 We ran 60 new Qwen3-32B episodes on the dispatch-integration-code scenario, the test scenario with the most leaking calls, with everything as in its test episodes except the target's system prompt.
 Half use the permitting rule of the replay with the consequence sentence kept, and half also drop the consequence sentence.
-One incomplete episode per arm is excluded, as in the paper.
+One incomplete episode per arm is excluded, as in the main episodes.
 A sharing call is the first call whose output contains the value, and the last-prompt probe and threshold, both set on development episodes, score every call from the first read of the protected file to that call, with no refitting.
 
 \paragraph{Result.}
