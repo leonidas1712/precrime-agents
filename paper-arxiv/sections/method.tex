@@ -9,7 +9,7 @@ To read the model's activations, we re-run every saved prompt through the open w
 
 \paragraph{Reasoning probe.}
 gpt-oss-20b writes private reasoning tokens before it answers or calls a tool.
-On this model a second probe applies $w^\top h_\ell + b$ to every token of the call\'s reasoning $z_t$ and keeps the maximum.
+On this model a second probe applies $w^\top h_\ell + b$ to every token of the call's reasoning $z_t$ and keeps the maximum.
 Every reasoning token comes before the call's public output, so this probe also scores the call before the secret is written out.
 
 \paragraph{Zero-shot text monitor.}
