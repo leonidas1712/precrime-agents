@@ -16,6 +16,12 @@ The reasoning probe uses the same recipe, with every reasoning token carrying it
 Each call's weight is split equally across its tokens, so long reasoning does not dominate training.
 A call's score is its maximum token score; the mean is reported as a check (\cref{app:robustness}).
 
+\paragraph{Incoming-only probe.}
+The incoming-only probe reads the tokens that are new since the target's previous call, at layer 18 of gpt-oss-20b.
+In training, its per-token scores are averaged over sliding 16-token windows before the loss, following \citet{cunningham2026}.
+In scoring, each token's score is replaced by a running average that gives weight $2/17$ to the newest token and lets older tokens fade, which spans about 16 tokens.
+A call's score is the maximum of this running average over its incoming tokens.
+
 \paragraph{The metric, worked through.}
 Suppose one scenario-and-round group holds a leaking call scored 0.8 and two other calls scored 0.5 and 0.9.
 The leaking call outranks one of the two, so the group's AUROC is 0.5.

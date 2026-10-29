@@ -4289,6 +4289,201 @@
       "key": "eFifteenLatePreAskShares",
       "source": "runs/20261028-1039-e15-giving-in-scaleup/results.json",
       "sha256": "e1916ed158feed77e5d201357f810b3288f6abae49f649bcd3fe1179602a8394"
+    },
+    {
+      "key": "qwenTestScenDispatchCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenDispatchLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenDispatchAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenDispatchCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenDispatchRefusingCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenDispatchRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffRefusingCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenHandoffRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementRefusingCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenProcurementRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityRefusingCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenCapacityRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutRefusingCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenRolloutRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAllCalls",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAllLeaks",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAllAuroc",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAllCaught",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAllRefusingShare",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAurocMin",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "qwenTestScenAurocMax",
+      "source": "paper-arxiv/derived_per_scenario.json",
+      "sha256": "93ae44c71377c2fc370cba2cd8d21ed91e33f9fd01a04e34ec5f10ed114ec342"
+    },
+    {
+      "key": "gptossReasonJevAuroc",
+      "source": "runs/20261026-0740-e06-reasoning-prefix-jev/metrics.json",
+      "sha256": "1a1ddc8ee7b5f0ae2a62c34a802840161a29ccaf56b1f7f8da0f79ee2cb1f73a"
+    },
+    {
+      "key": "gptossReasonNanoAuroc",
+      "source": "runs/20261026-0756-e06-reasoning-prefix-nano/metrics.json",
+      "sha256": "db3657c610b64949646db63c75fcf3d94c9c9df7c1420bbdd6a6b23528493a80"
     }
   ],
   "pending": []

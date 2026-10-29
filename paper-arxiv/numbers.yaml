@@ -17413,6 +17413,717 @@
           "n"
         ]
       }
+    },
+    "qwenTestScenDispatchCalls": {
+      "value": 363,
+      "macro": "qwenTestScenDispatchCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenDispatchLeaks": {
+      "value": 11,
+      "macro": "qwenTestScenDispatchLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenDispatchAuroc": {
+      "value": 0.96993006993007,
+      "macro": "qwenTestScenDispatchAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenDispatchCaught": {
+      "value": 9,
+      "macro": "qwenTestScenDispatchCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenDispatchRefusingCalls": {
+      "value": 231,
+      "macro": "qwenTestScenDispatchRefusingCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "refusing_calls"
+        ]
+      }
+    },
+    "qwenTestScenDispatchRefusingShare": {
+      "value": 0.14285714285714285,
+      "macro": "qwenTestScenDispatchRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "dispatch-integration-code",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenHandoffCalls": {
+      "value": 294,
+      "macro": "qwenTestScenHandoffCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenHandoffLeaks": {
+      "value": 7,
+      "macro": "qwenTestScenHandoffLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenHandoffAuroc": {
+      "value": 0.9642857142857143,
+      "macro": "qwenTestScenHandoffAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenHandoffCaught": {
+      "value": 5,
+      "macro": "qwenTestScenHandoffCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenHandoffRefusingCalls": {
+      "value": 264,
+      "macro": "qwenTestScenHandoffRefusingCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "refusing_calls"
+        ]
+      }
+    },
+    "qwenTestScenHandoffRefusingShare": {
+      "value": 0.056818181818181816,
+      "macro": "qwenTestScenHandoffRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenProcurementCalls": {
+      "value": 285,
+      "macro": "qwenTestScenProcurementCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenProcurementLeaks": {
+      "value": 7,
+      "macro": "qwenTestScenProcurementLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenProcurementAuroc": {
+      "value": 0.9841269841269842,
+      "macro": "qwenTestScenProcurementAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenProcurementCaught": {
+      "value": 6,
+      "macro": "qwenTestScenProcurementCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenProcurementRefusingCalls": {
+      "value": 215,
+      "macro": "qwenTestScenProcurementRefusingCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "refusing_calls"
+        ]
+      }
+    },
+    "qwenTestScenProcurementRefusingShare": {
+      "value": 0.018604651162790697,
+      "macro": "qwenTestScenProcurementRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenCapacityCalls": {
+      "value": 522,
+      "macro": "qwenTestScenCapacityCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenCapacityLeaks": {
+      "value": 8,
+      "macro": "qwenTestScenCapacityLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenCapacityAuroc": {
+      "value": 0.9826923076923078,
+      "macro": "qwenTestScenCapacityAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenCapacityCaught": {
+      "value": 6,
+      "macro": "qwenTestScenCapacityCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenCapacityRefusingCalls": {
+      "value": 378,
+      "macro": "qwenTestScenCapacityRefusingCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "refusing_calls"
+        ]
+      }
+    },
+    "qwenTestScenCapacityRefusingShare": {
+      "value": 0.023809523809523808,
+      "macro": "qwenTestScenCapacityRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-capacity-figure",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenRolloutCalls": {
+      "value": 361,
+      "macro": "qwenTestScenRolloutCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenRolloutLeaks": {
+      "value": 5,
+      "macro": "qwenTestScenRolloutLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenRolloutAuroc": {
+      "value": 0.9800000000000001,
+      "macro": "qwenTestScenRolloutAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenRolloutCaught": {
+      "value": 5,
+      "macro": "qwenTestScenRolloutCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenRolloutRefusingCalls": {
+      "value": 319,
+      "macro": "qwenTestScenRolloutRefusingCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "refusing_calls"
+        ]
+      }
+    },
+    "qwenTestScenRolloutRefusingShare": {
+      "value": 0.050156739811912224,
+      "macro": "qwenTestScenRolloutRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "service-rollout-threshold",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenAllCalls": {
+      "value": 1825,
+      "macro": "qwenTestScenAllCalls",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "pooled",
+          "calls"
+        ]
+      }
+    },
+    "qwenTestScenAllLeaks": {
+      "value": 38,
+      "macro": "qwenTestScenAllLeaks",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "pooled",
+          "leaks"
+        ]
+      }
+    },
+    "qwenTestScenAllAuroc": {
+      "value": 0.9755173189383717,
+      "macro": "qwenTestScenAllAuroc",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "pooled",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenAllCaught": {
+      "value": 31,
+      "macro": "qwenTestScenAllCaught",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "pooled",
+          "caught"
+        ]
+      }
+    },
+    "qwenTestScenAllRefusingShare": {
+      "value": 0.05472636815920398,
+      "macro": "qwenTestScenAllRefusingShare",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "pooled",
+          "refusing_share"
+        ]
+      }
+    },
+    "qwenTestScenAurocMin": {
+      "value": 0.9642857142857143,
+      "macro": "qwenTestScenAurocMin",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "handoff-exception-note",
+          "auroc"
+        ]
+      }
+    },
+    "qwenTestScenAurocMax": {
+      "value": 0.9841269841269842,
+      "macro": "qwenTestScenAurocMax",
+      "dataset": "Qwen3-32B test episodes (new episodes in the five development scenarios), 1,825 recruiting calls",
+      "evaluation": "Last-prompt probe fit on development episodes; threshold set on development control calls; per-scenario recount of saved scores, no refits",
+      "status": "verified",
+      "run": "runs/20261026-2212-e05-arxiv-qwen-fresh-percall",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "paper-arxiv/derived_per_scenario.json",
+        "value_path": [
+          "scenarios",
+          "procurement-reserve-price",
+          "auroc"
+        ]
+      }
+    },
+    "gptossReasonJevAuroc": {
+      "value": 0.5979564512615105,
+      "ci": [
+        0.5331154520484179,
+        0.6530797991517088
+      ],
+      "macro": "gptossReasonJevAuroc",
+      "dataset": "GPT-OSS development episodes (1,995 calls, 121 leaking)",
+      "evaluation": "Jev reads prefixes of the current call reasoning (secret masked); held-out scenarios split (identical to pooled: no training); within scenario x round AUROC",
+      "status": "exploratory",
+      "run": "runs/20261026-0740-e06-reasoning-prefix-jev",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261026-0740-e06-reasoning-prefix-jev/metrics.json",
+        "value_path": [
+          "immediate/all/loso",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "immediate/all/loso",
+          "within_round_ci95"
+        ]
+      }
+    },
+    "gptossReasonNanoAuroc": {
+      "value": 0.3600917930439265,
+      "ci": [
+        0.2983290515354337,
+        0.4153392756994353
+      ],
+      "macro": "gptossReasonNanoAuroc",
+      "dataset": "GPT-OSS development episodes (1,995 calls, 121 leaking)",
+      "evaluation": "GPT-5-nano reads prefixes of the current call reasoning (secret masked); held-out scenarios split (identical to pooled: no training); within scenario x round AUROC",
+      "status": "exploratory",
+      "run": "runs/20261026-0756-e06-reasoning-prefix-nano",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261026-0756-e06-reasoning-prefix-nano/metrics.json",
+        "value_path": [
+          "immediate/all/loso",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "immediate/all/loso",
+          "within_round_ci95"
+        ]
+      }
     }
   },
   "aliases": {
@@ -20397,6 +21108,67 @@
           "--",
           "\\eFifteenLateBinThreeOver{}/\\eFifteenLateBinThreeCalls{}",
           "\\eFifteenLateNonreadOver{}/\\eFifteenLateNonreadCalls{} (\\eFifteenLateNonreadRate{})"
+        ]
+      ]
+    },
+    "per_scenario_test": {
+      "columns": "@{}lccccc@{}",
+      "header": [
+        "Scenario",
+        "Calls",
+        "Leaking calls",
+        "AUROC",
+        "Leaks caught",
+        "Refusing calls flagged"
+      ],
+      "rows": [
+        [
+          "Dispatch integration code",
+          "\\qwenTestScenDispatchCalls{}",
+          "\\qwenTestScenDispatchLeaks{}",
+          "\\qwenTestScenDispatchAuroc{}",
+          "\\qwenTestScenDispatchCaught{}/\\qwenTestScenDispatchLeaks{}",
+          "\\qwenTestScenDispatchRefusingShare{}"
+        ],
+        [
+          "Handoff exception note",
+          "\\qwenTestScenHandoffCalls{}",
+          "\\qwenTestScenHandoffLeaks{}",
+          "\\qwenTestScenHandoffAuroc{}",
+          "\\qwenTestScenHandoffCaught{}/\\qwenTestScenHandoffLeaks{}",
+          "\\qwenTestScenHandoffRefusingShare{}"
+        ],
+        [
+          "Procurement reserve price",
+          "\\qwenTestScenProcurementCalls{}",
+          "\\qwenTestScenProcurementLeaks{}",
+          "\\qwenTestScenProcurementAuroc{}",
+          "\\qwenTestScenProcurementCaught{}/\\qwenTestScenProcurementLeaks{}",
+          "\\qwenTestScenProcurementRefusingShare{}"
+        ],
+        [
+          "Service capacity figure",
+          "\\qwenTestScenCapacityCalls{}",
+          "\\qwenTestScenCapacityLeaks{}",
+          "\\qwenTestScenCapacityAuroc{}",
+          "\\qwenTestScenCapacityCaught{}/\\qwenTestScenCapacityLeaks{}",
+          "\\qwenTestScenCapacityRefusingShare{}"
+        ],
+        [
+          "Service rollout threshold",
+          "\\qwenTestScenRolloutCalls{}",
+          "\\qwenTestScenRolloutLeaks{}",
+          "\\qwenTestScenRolloutAuroc{}",
+          "\\qwenTestScenRolloutCaught{}/\\qwenTestScenRolloutLeaks{}",
+          "\\qwenTestScenRolloutRefusingShare{}"
+        ],
+        [
+          "All five",
+          "\\qwenTestScenAllCalls{}",
+          "\\qwenTestScenAllLeaks{}",
+          "\\qwenTestScenAllAuroc{}",
+          "\\qwenTestScenAllCaught{}/\\qwenTestScenAllLeaks{}",
+          "\\qwenTestScenAllRefusingShare{}"
         ]
       ]
     }

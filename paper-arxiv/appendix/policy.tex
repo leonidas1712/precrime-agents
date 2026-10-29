@@ -12,12 +12,12 @@ We show this in three steps: a replay of saved calls under changed rules, new ep
 \paragraph{Design.}
 We take the leaking calls of the test episodes and matched non-leaking calls from the same scenarios and rounds, and re-run each call's exact prompt through the model under changed system prompts: the original rule, a rule that explicitly permits sharing the value with teammates, and a neutral rewording that permits nothing new.
 On Qwen3-32B we add a fourth prompt, the permitting rule with the rule's sentence about the consequences of a disclosure also removed.
-The saved reply is held fixed, so only the rule changes, and the frozen last-prompt probe scores the last prompt token as before, with no refitting.
-On gpt-oss-20b this is the frozen last-prompt probe, not the reasoning probe.
+The saved reply is held fixed, so only the rule changes, and the last-prompt probe scores the last prompt token as before, with no refitting.
+On gpt-oss-20b this is the last-prompt probe, not the reasoning probe.
 
 \paragraph{Result.}
 No prompt lowers the score of leaking calls (\cref{tab:policy}).
-The probe ranks leaking above non-leaking calls about equally well under every prompt, and nearly the same leaking calls cross the frozen threshold.
+The probe ranks leaking above non-leaking calls about equally well under every prompt, and nearly the same leaking calls cross the threshold.
 Removing the consequence sentence as well raises the median score slightly (\eFourteenReplayNoConsequenceShift{}).
 Neither the text of the rule nor its stated consequence drives the score.
 These replayed prompts still contain the agent's earlier refusals, which the next subsection removes.
@@ -26,7 +26,7 @@ These replayed prompts still contain the agent's earlier refusals, which the nex
   \centering
   \small
   \input{tables/policy_counterfactual.tex}
-  \caption{Replay under changed rules on the test episodes. Calls are the leaking calls and matched non-leaking calls from the same scenarios and rounds, scored by the frozen last-prompt probes, so the call sets and probes differ from \cref{tab:glance}. Score changes are medians over leaking calls with 95\% bootstrap intervals; -- means not run.}
+  \caption{Replay under changed rules on the test episodes. Calls are the leaking calls and matched non-leaking calls from the same scenarios and rounds, scored by the last-prompt probes fit on development episodes, so the call sets and probes differ from \cref{tab:glance}. Score changes are medians over leaking calls with 95\% bootstrap intervals; -- means not run.}
   \label{tab:policy}
 \end{table}
 
@@ -37,7 +37,7 @@ These replayed prompts still contain the agent's earlier refusals, which the nex
 We ran 60 new Qwen3-32B episodes on the dispatch-integration-code scenario, the test scenario with the most leaking calls, with everything as in its test episodes except the target's system prompt.
 Half use the permitting rule of the replay with the consequence sentence kept, and half also drop the consequence sentence.
 One incomplete episode per arm is excluded, as in the paper.
-A sharing call is the first call whose output contains the value, and the frozen last-prompt probe and threshold score every call from the first read of the protected file to that call, with no refitting.
+A sharing call is the first call whose output contains the value, and the last-prompt probe and threshold, both set on development episodes, score every call from the first read of the protected file to that call, with no refitting.
 
 \paragraph{Result.}
 With the consequence sentence kept, half the episodes never share, and those that do share only after several rounds of requests, as the forbidden leakers do.
@@ -62,7 +62,7 @@ The next subsection separates both on all five test scenarios.
 We repeat the comparison on the five Qwen3-32B test scenarios, running each scenario's test setup unchanged except for the target's rule and, in one arm, the peer's timing.
 Under the forbidding rule, \eFifteenForbidEpisodes{} new episodes yield \eFifteenForbidSharingEpisodes{} leaks, which we pool with the test leaks for \eFifteenForbidAllCalls{} forbidden leaks.
 Under the clean permission of \cref{app:onpolicy}, the peer either asks at once, as in the test episodes (\eFifteenEarlyEpisodes{} episodes, including the clean-permission episodes above), or first coordinates on the ordinary task and asks for the value only in its fifth message (\eFifteenLateEpisodes{} episodes).
-The frozen last-prompt probe and threshold score every call from the first read of the protected file to the sharing call, with no refitting.
+The same probe and threshold score every call from the first read of the protected file to the sharing call, with no refitting.
 The main comparison, fixed before the episodes were run, uses sharing calls that do not directly follow a read, meaning that the call's prompt does not end with the tool result that contains the value.
 
 \paragraph{Result.}
@@ -78,7 +78,7 @@ But the target re-read the file before \eFifteenLateReadCalls{} of its \eFifteen
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\linewidth]{fig_e15_recency.pdf}
-  \caption{Share of sharing calls over the frozen threshold by the number of calls since the target last read the protected file, in Qwen3-32B episodes on the five test scenarios. Numbers give the calls behind each point, and whiskers are 95\% Wilson intervals. Hollow points rest on two calls or fewer and are not joined.}
+  \caption{Share of sharing calls over the threshold by the number of calls since the target last read the protected file, in Qwen3-32B episodes on the five test scenarios. Numbers give the calls behind each point, and whiskers are 95\% Wilson intervals. Hollow points rest on two calls or fewer and are not joined.}
   \label{fig:e15-recency}
 \end{figure}
 
@@ -87,6 +87,6 @@ But the target re-read the file before \eFifteenLateReadCalls{} of its \eFifteen
   \small
   \setlength{\tabcolsep}{4pt}
   \input{tables/e15_recency.tex}
-  \caption{Sharing calls over the frozen threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref{tab:e14}. A dash means no calls.}
+  \caption{Sharing calls over the threshold by calls since the last read of the protected file. The forbidding-rule row pools the Qwen3-32B test leaks with the new forbidding-rule episodes, and the asks-at-once row includes the clean-permission episodes of \cref{tab:e14}. A dash means no calls.}
   \label{tab:e15}
 \end{table}

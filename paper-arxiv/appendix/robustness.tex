@@ -24,3 +24,17 @@ On Qwen3-32B, excluding the one development episode whose leak is a write back i
   \caption{Per-call robustness. AUROC within scenario and round, with 95\% bootstrap intervals, development episodes.}
   \label{tab:robust-call}
 \end{table}
+
+\paragraph{Each Qwen3-32B test scenario.}
+Every test scenario scores between \qwenTestScenAurocMin{} and \qwenTestScenAurocMax{} (\cref{tab:per-scenario-test}).
+Each holds only \qwenTestScenRolloutLeaks{} to \qwenTestScenDispatchLeaks{} leaking calls, so the per-scenario numbers are noisy.
+The test episodes are new episodes in the scenarios used for development, not new scenarios.
+The last column is the share of calls in refusing episodes, recruiting episodes with no leaking call, that the probe flags at the threshold set on development control calls.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/per_scenario_test.tex}
+  \caption{\textbf{The last-prompt probe on each Qwen3-32B test scenario.} AUROC within scenario and round. Leaks caught and refusing calls flagged use the threshold set on development control calls.}
+  \label{tab:per-scenario-test}
+\end{table}

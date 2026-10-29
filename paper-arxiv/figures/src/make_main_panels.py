@@ -14,6 +14,24 @@ OUT = ROOT / 'paper-arxiv/figures'
 TRAJECTORY = ROOT / 'runs/20261026-2254-e05-arxiv-score-trajectories/metrics.json'
 ALARMS = ROOT / 'runs/20261028-0120-e13-alarm-tradeoffs-matched'
 EPISODE = ROOT / 'runs/20261027-0049-e05-arxiv-episode-calibration-descriptive/metrics.json'
+BOW = ROOT / 'runs/20261028-0228-e12-bow-test-auroc/bow_scores.csv.gz'
+BOW_COLOR = '#9A9A9A'
+
+
+def bow_curve():
+    """Trained bag-of-words classifier on the same Qwen test calls; same rows and refusing-episode denominator as the probe curve."""
+    import gzip
+    with gzip.open(BOW, 'rt') as f:
+        calls = list(csv.DictReader(f))
+    episode = lambda r: r['row_id'].split('::')[0]
+    leaking = {episode(r) for r in calls if r['label'] == '1'}
+    pos = [float(r['bow']) for r in calls if r['label'] == '1']
+    neg = [float(r['bow']) for r in calls if r['label'] == '0' and episode(r) not in leaking]
+    assert (len(pos), len(neg)) == (38, 1407)  # matches the probe operating point's rows
+    curve = [(1.0, 1.0)]
+    for t in sorted(set(pos + neg)):
+        curve.append((sum(v > t for v in neg) / len(neg), sum(v > t for v in pos) / len(pos)))
+    return curve
 
 
 def save(fig, stem, sources, rows):
@@ -77,10 +95,19 @@ def alarms():
         prefix = 'qwenMatchedProbe' if name == 'Last-prompt probe' else 'qwenMatchedJev'
         text = (paper_number(prefix+'Caught', op['leaking_call_alarm']) + ' caught\n'
                 + paper_number(prefix+'Refusing', op['refusing_call_alarm']) + ' flagged')
-        # Probe label sits between its curve and Jev's; Jev's sits just right of its square.
-        xy = (.135, .935) if name == 'Last-prompt probe' else (.12, .30)
-        ax.text(*xy, text, ha='left', va='top' if name == 'Last-prompt probe' else 'center',
-                fontsize=LABEL_SIZE, color=color, linespacing=1.1)
+        if name == 'Last-prompt probe':
+            # Probe label sits in the empty band below the curves, joined to its dot by a thin leader.
+            ax.annotate(text, (op['refusing_call_alarm'], op['leaking_call_alarm']), xytext=(.56, .66),
+                        ha='left', va='center', fontsize=LABEL_SIZE, color=color, linespacing=1.1,
+                        arrowprops=dict(arrowstyle='-', color='#888888', lw=.6, shrinkA=2, shrinkB=5))
+        else:
+            # Jev's label sits just right of its square.
+            ax.text(.12, .30, text, ha='left', va='center', fontsize=LABEL_SIZE, color=color, linespacing=1.1)
+    bow = bow_curve()
+    ax.plot([x for x, _ in bow], [y for _, y in bow], color=BOW_COLOR, ls=(0, (2.2, 1.6)), lw=1.4,
+            label='Trained text classifier', zorder=1.5)
+    rows.extend(dict(panel='Qwen: fresh episodes', detector='Trained text classifier (bag of words)',
+                     threshold_offset='', leaks_caught=y, refusing_alarm=x) for x, y in bow)
     episode = json.loads(EPISODE.read_text())['qwen_probe']
     assert episode['calibration_status'] == 'descriptive_fresh_refusing_calibration'
     point = episode['episode_calibrated']
@@ -99,7 +126,8 @@ def alarms():
            xlabel='Calls in refusing episodes flagged', ylabel='Leaking calls caught')
     ax.xaxis.set_major_formatter(PercentFormatter(1)); ax.yaxis.set_major_formatter(PercentFormatter(1))
     ax.grid(alpha=.15)
-    fig.legend(loc='lower center', bbox_to_anchor=(.5,.15), ncol=2, frameon=False, fontsize=9)
+    fig.legend(loc='lower center', bbox_to_anchor=(.5,.15), ncol=3, frameon=False, fontsize=8.5,
+               handlelength=1.8, columnspacing=1.0, handletextpad=.5)
     fig.legend(handles=[
         Line2D([], [], marker='o', color='#555555', ls='none',
                label='Filled: probe at control-call threshold; Jev flagging no more calls'),
@@ -111,7 +139,7 @@ def alarms():
                      threshold_offset=episode['episode_threshold']-episode['original_threshold'],
                      leaks_caught=point['leaking_calls']['rate'],
                      refusing_alarm=point['refusing_calls']['rate']))
-    save(fig, 'fig7_qwen_alarms', [ALARMS/'curves.csv', ALARMS/'metrics.json', EPISODE], rows)
+    save(fig, 'fig7_qwen_alarms', [ALARMS/'curves.csv', ALARMS/'metrics.json', EPISODE, BOW], rows)
 
 
 if __name__ == '__main__':

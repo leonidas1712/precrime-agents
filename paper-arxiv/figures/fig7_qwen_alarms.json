@@ -2,7 +2,8 @@
   "sources": {
     "runs/20261028-0120-e13-alarm-tradeoffs-matched/curves.csv": "1a2d69964869c0fdc484ecdb95566c3e71047626ad9dd3e20b87df1b2a7aeb1c",
     "runs/20261028-0120-e13-alarm-tradeoffs-matched/metrics.json": "f299b24ab8ead16be52d13b01f999362801db764d98b19008533f03c04e05bf0",
-    "runs/20261027-0049-e05-arxiv-episode-calibration-descriptive/metrics.json": "a409b566635bc24919208fae7d8a99105cb4a1bef25a1f3b15bbbe92f3a60692"
+    "runs/20261027-0049-e05-arxiv-episode-calibration-descriptive/metrics.json": "a409b566635bc24919208fae7d8a99105cb4a1bef25a1f3b15bbbe92f3a60692",
+    "runs/20261028-0228-e12-bow-test-auroc/bow_scores.csv.gz": "71e3ffe22381acfa74930bc91444f61bda4854ee775968f33e80ef5125cb00ef"
   },
   "transformation": "Select existing panels; no new scores, fits, thresholds or aggregation.",
   "width_inches": 4.5,

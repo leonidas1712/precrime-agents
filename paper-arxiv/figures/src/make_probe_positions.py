@@ -205,7 +205,7 @@ def main():
     y = rows_y[1]
     header(y, 'Incoming-only probe', 'gpt-oss-20b; exploratory', INC)
     band(*new_span, y, INC_BG, INC, hatch='//////')
-    note(new_span[0] - 0.07, y, 'score each new token, average over 16 tokens, take the max', INC)
+    note(new_span[0] - 0.07, y, 'score each new token, running average over about 16 tokens, take the max', INC)
     lead(new_span[1], gen_x - 0.05, y, INC)
     ready(gen_x, y, INC)
 
@@ -231,8 +231,10 @@ def main():
     header(y, 'Text classifier', 'trained bag of words; both models', TXT)
     band(*prompt_span, y, 'white', TXT, ls=(0, (1, 1.3)))
     note(prompt_span[0] + 0.10, y, 'full $x_t$, secret masked', TXT, ha='left')
-    note(X['peer'][0] - 0.07, y, 'or the latest message only \u2192', TXT)
+    # Variant: only the latest peer message, drawn over that segment and labelled above it.
     band(*X['peer'], y, TXT_BG, TXT, lw=0.8, z=5)
+    pmid = sum(X['peer']) / 2
+    note(pmid, y + head, 'or the latest message only', TXT, ha='center')
     lead(prompt_span[1], gen_x - 0.05, y, TXT)
     ready(gen_x, y, TXT, marker='s')
 

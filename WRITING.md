@@ -39,7 +39,7 @@ These are checkable. An editor should be able to mark each one pass or fail.
 
 ### Numbers
 4. **At most one number per claim in the main text.** Put the headline number in the sentence. Put supporting numbers in a figure, a table or the appendix.
-5. **Give confidence intervals only for headline numbers.** Everywhere else in prose, the point estimate is enough. Intervals go in figures and tables.
+5. **No confidence intervals in main-text prose.** Give point estimates and link to the appendix section that prints the intervals. An exception needs a stated reason. Figures may show whiskers.
 6. **At most three numbers in the abstract.**
 7. **Round to two decimal places.** Use percentages for rates.
 8. **Do not report counts in prose.** Refer to datasets by name (§4). Counts live in one table.
@@ -49,6 +49,7 @@ These are checkable. An editor should be able to mark each one pass or fail.
 10. **No more than about six defined terms in the main text.** If you need a seventh, drop or merge one.
 11. **No invented terms when an ordinary phrase works.** Write "the call that leaks", not a coined label.
 12. **Name things by what they are, not by internal codes.** No experiment IDs, run folders, label letters (A, B, C), access-level codes (L1–L4) or file names in the main text. In the appendix, these appear only in the reproducibility index (§5).
+12a. **Banned padding words (author's request, 30 Oct 2026).** Never write "frozen", "freeze" or "pre-registered" in the main text. State once, in Method, what was fixed before the test data were collected, then report results plainly ("the probe scores AUROC 0.91 on the test episodes"). The details, including the commit, belong in one appendix section.
 
 ### Sentences
 13. **Keep sentences under about 30 words.** Split anything longer.

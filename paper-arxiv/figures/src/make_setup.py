@@ -54,6 +54,7 @@ mpl.rcParams.update({
     'font.sans-serif': ['Arial', 'DejaVu Sans'],
     'pdf.fonttype': 42, 'ps.fonttype': 42,
     'savefig.bbox': None,
+    'mathtext.fontset': 'dejavusans',
 })
 
 
@@ -321,7 +322,6 @@ def panel_b(c, x0, x1, ytop, ybot):
     c.text(pcx, yl, 'Peer', weight='bold', color=PEER_DK, ha='center', va='center')
     c.text(pcx, yl - 0.13, 'asks for the token', size=FS_SMALL, ha='center', va='center')
     c.text(tcx, yl, 'Target', weight='bold', color=TARGET_DK, ha='center', va='center')
-    c.text(tcx, yl - 0.13, 'holds the token', size=FS_SMALL, ha='center', va='center')
 
     # team channel between them: the peer's message on top, the target's reply below
     chx0, chx1 = pcx + 0.40, tcx - 0.40
@@ -337,23 +337,31 @@ def panel_b(c, x0, x1, ytop, ybot):
     arrow(c, (pcx + hx, up), (chx0, up), color=PEER_DK)
     arrow(c, (chx1, up), (tcx - hx, up), color=PEER_DK)
     arrow(c, (tcx - hx, dn), (chx1, dn), color=TARGET_DK)
+    arrow(c, (chx0, dn), (pcx + hx, dn), color=TARGET_DK)  # target's messages reach the peer
 
-    # operator rule and private file: what binds the target and what it holds
-    iy = yl - 0.52
-    sx = chx0 + 0.52
-    fx = sx + 0.68
-    gx0_, gx1_ = sx - 0.37, fx + 0.37
-    gh = 0.58
-    rbox(c, gx0_, iy - gh / 2, gx1_ - gx0_, gh, '#F4F8FC', TARGET_DK, lw=0.6, r=0.05,
-         z=1, ls=(0, (2, 2)))
-    scroll(c, sx - 0.09, iy - 0.01, 0.18, 0.24, PAPER_BG, '#9C7A3C')
-    c.text(sx, iy - 0.12, 'operator rule:', size=FS_SMALL, ha='center', va='center')
-    c.text(sx, iy - 0.24, 'never share it', size=FS_SMALL, style='italic',
-           ha='center', va='center')
-    document(c, fx - 0.09, iy - 0.01, 0.18, 0.24, 'white', TARGET_DK)
-    lock(c, fx + 0.07, iy + 0.03, 0.10, TARGET_DK)
-    c.text(fx, iy - 0.12, 'private file', size=FS_SMALL, ha='center', va='center')
-    c.text(fx, iy - 0.24, '+ mock tools', size=FS_SMALL, ha='center', va='center')
+    # what only the target has: the operator's rule and the workspace behind its tools
+    bx0, bx1 = chx0 + 0.16, x1 - 0.16          # clear of the monitor and probe arrows
+    btop, bbot = yl - 0.12, ybot + 0.46 + 0.10
+    rbox(c, bx0, bbot, bx1 - bx0, btop - bbot, '#F4F8FC', TARGET_DK, lw=0.8, r=0.05, z=2)
+    tail = [(tcx - 0.07, btop - 0.005), (tcx, btop + 0.045), (tcx + 0.07, btop - 0.005)]
+    c.add(Polygon(tail, closed=True, fc='#F4F8FC', ec=TARGET_DK, lw=0.8,
+                  joinstyle='round', zorder=1))
+    c.add(Polygon(tail, closed=True, fc='#F4F8FC', ec='none', zorder=3))  # hide seam
+    c.text(bx0 + 0.07, btop - 0.09, 'Target only, never the peer', size=FS_SMALL, weight='bold',
+           color=TARGET_DK, va='center')
+    tx = bx0 + 0.33
+    r1, r2 = btop - 0.26, btop - 0.53
+    scroll(c, bx0 + 0.09, r1 - 0.11, 0.15, 0.20, PAPER_BG, '#9C7A3C')
+    c.text(tx, r1 + 0.045, r"operator's rule $\rho$:", size=FS_SMALL, va='center')
+    c.text(tx, r1 - 0.075, 'never share the token', size=FS_SMALL, style='italic',
+           va='center')
+    document(c, bx0 + 0.09, r2 - 0.11, 0.15, 0.20, 'white', TARGET_DK)
+    lock(c, bx0 + 0.22, r2 - 0.07, 0.085, TARGET_DK)
+    c.text(tx, r2 + 0.045, r'mock tools reach files $F$;', size=FS_SMALL, va='center')
+    c.text(tx, r2 - 0.075, r'token in private file $f^{\star}$', size=FS_SMALL, va='center')
+    for t in (c.ax.texts[-1], c.ax.texts[-2], c.ax.texts[-4], c.ax.texts[-5]):
+        bb = t.get_window_extent(c.renderer)
+        assert bb.x1 / c.fig.dpi < bx1 - 0.04, t.get_text()
 
     # observers (dashed green arrows: they read, they do not act)
     oh, oy = 0.46, ybot

@@ -66,7 +66,7 @@ We score every setup on the same calls: all calls in the Qwen3-32B development e
 The labels are the round-level labels of the confirmation plan (\cref{app:labels}).
 Text monitors have no fitted parameters, so their score on held-out scenarios equals their score on all calls.
 
-On the test episodes, the frozen plan scored a subset of setups fixed in advance.
+On the test episodes, the confirmation plan scored a subset of setups fixed in advance.
 The subset holds all six Jev setups, plus GPT-5-nano with both questions, shown the target's actions and the peer's messages.
 We left out Luna Decisions because it scored at chance as a forecaster on the development episodes.
 \Cref{app:confirmation} reports those scores.
@@ -122,4 +122,35 @@ The reasoning raises Jev's score but leaves its ranking inverted.
   \end{tabular}
   \caption{\textbf{Jev scored on the same calls as the per-call probe.} AUROC within scenario and round, with 95\% bootstrap intervals, on the development episodes. ``Unstratified'' is the AUROC over all calls without grouping by scenario and round. The flag rates use the alarm cutoff set on control episodes, and ``non-leaking'' means calls in episodes that never leak. The main text reports the gpt-oss-20b row with reasoning.}
   \label{tab:monitor-percall}
+\end{table}
+
+\subsection{Do monitors that read the current call's reasoning do better?}
+\label{app:monitors-reasoning}
+
+No.
+The monitors above read the input $x_t$ to a call; here Jev and GPT-5-nano read the reasoning $z_t$ that gpt-oss-20b writes in the call itself, before its reply.
+Each monitor sees growing prefixes of that reasoning, cut at five evenly spaced points and at its end, and answers the per-call question.
+If the reasoning writes out the secret, everything from that point on is replaced by a fixed placeholder, so the monitor cannot answer by spotting the value.
+A call's score is its highest score over the prefixes.
+We use the same \gptossDevCalls{} development calls and labels as the reasoning probe; the monitors have no fitted parameters, so their held-out-scenario score equals their score on all calls.
+
+Both monitors rank leaking calls poorly (\cref{tab:monitor-reasoning}).
+Jev scores \gptossReasonJevAuroc{} and GPT-5-nano scores below chance, at \gptossReasonNanoAuroc{}.
+The reasoning probe, which reads the same reasoning tokens, scores \gptossCallReasoning{}.
+The signal is present in the reasoning, but these monitors do not read it from the text.
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    Detector reading the call's reasoning $z_t$ & AUROC \\
+    \midrule
+    Jev 1.14 & \gptossReasonJevAuroc{} \gptossReasonJevAurocCI{} \\
+    GPT-5-nano & \gptossReasonNanoAuroc{} \gptossReasonNanoAurocCI{} \\
+    Reasoning probe & \gptossCallReasoning{} \gptossCallReasoningCI{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the \gptossDevCalls{} development calls. The monitors see the reasoning with the secret masked.}
+  \label{tab:monitor-reasoning}
 \end{table}
