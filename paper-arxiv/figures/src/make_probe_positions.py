@@ -50,8 +50,8 @@ def main():
     segs = [  # key, bold name ('|' breaks lines), description, width (in), fill, edge
         ('sys', 'System prompt', 'role, operator\'s rule, tool definitions', 0.98, ZERO_BG, MUTED),
         ('task', 'Task', 'first user message', 0.52, ZERO_BG, MUTED),
-        ('hist', 'History', 'channel $H_{k-1}$, own replies, tool calls and results',
-         1.15, HIST_BG, MUTED),
+        ('hist', 'History', 'channel $H_{k-1}$, own replies, tool calls, results, earlier reasoning (gpt-oss)',
+         1.35, HIST_BG, MUTED),
         ('peer', 'Latest|peer|message|$m_k$', '', 0.62, NEW_BG, NEW_DK),
         ('tools', 'Tool|results', '', 0.55, NEW_BG, NEW_DK),
         ('z', 'Reasoning|$z_t$', 'gpt-oss-20b only', 0.67, RSN_BG, RSN),
