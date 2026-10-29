@@ -1,0 +1,6 @@
+{
+  "source": "paper-arxiv/figures/src/make_probe_positions.py",
+  "width_inches": 5.5,
+  "height_inches": 4.11,
+  "note": "schematic of one model call: token segments of x_t, z_t, o_t and the positions each detector reads; token counts are illustrative, not data"
+}
