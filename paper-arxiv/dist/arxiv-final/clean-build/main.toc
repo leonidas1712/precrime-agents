@@ -64,7 +64,7 @@
 \contentsline {section}{\numberline {E}What do the text monitors see, and how are they asked?}{26}{appendix.E}%
 \contentsline {subsection}{\numberline {E.1}Which monitors, questions and levels of access do we use?}{26}{subsection.E.1}%
 \contentsline {subsection}{\numberline {E.2}How well does each round-level setup rank the calls?}{26}{subsection.E.2}%
-\contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{28}{subsection.E.3}%
+\contentsline {subsection}{\numberline {E.3}How does Jev score a single call, and why does it fail on gpt-oss-20b?}{27}{subsection.E.3}%
 \contentsline {subsection}{\numberline {E.4}Do monitors that read the current call's reasoning do better?}{28}{subsection.E.4}%
 \contentsline {section}{\numberline {F}What was committed for the test episodes, and what happened?}{29}{appendix.F}%
 \contentsline {paragraph}{gpt-oss-20b reasoning probe.}{29}{section*.50}%
@@ -75,7 +75,7 @@
 \contentsline {paragraph}{Another evaluation.}{30}{section*.54}%
 \contentsline {paragraph}{Other aggregates and cuts.}{30}{section*.55}%
 \contentsline {paragraph}{Writes back to the protected file.}{30}{section*.56}%
-\contentsline {paragraph}{Each Qwen3-32B test scenario.}{31}{section*.57}%
+\contentsline {paragraph}{Each Qwen3-32B test scenario.}{30}{section*.57}%
 \contentsline {section}{\numberline {H}Is the probe reading pressure, the secret string or the read step?}{31}{appendix.H}%
 \contentsline {paragraph}{Pressure.}{31}{section*.58}%
 \contentsline {paragraph}{The secret string.}{31}{section*.59}%
@@ -84,28 +84,28 @@
 \contentsline {paragraph}{What arrives with the input.}{31}{section*.62}%
 \contentsline {paragraph}{The handoff-file write.}{32}{section*.63}%
 \contentsline {paragraph}{A trained text classifier.}{32}{section*.64}%
-\contentsline {section}{\numberline {I}Does the probe track the rule, the disclosure, or giving in?}{33}{appendix.I}%
+\contentsline {section}{\numberline {I}Does the probe track the rule, the disclosure, or giving in?}{32}{appendix.I}%
 \contentsline {subsection}{\numberline {I.1}Replaying saved calls under a changed rule}{33}{subsection.I.1}%
 \contentsline {paragraph}{Design.}{33}{section*.65}%
 \contentsline {paragraph}{Result.}{33}{section*.66}%
-\contentsline {subsection}{\numberline {I.2}New episodes under a permitting rule}{34}{subsection.I.2}%
-\contentsline {paragraph}{Design.}{34}{section*.67}%
-\contentsline {paragraph}{Result.}{34}{section*.68}%
+\contentsline {subsection}{\numberline {I.2}New episodes under a permitting rule}{33}{subsection.I.2}%
+\contentsline {paragraph}{Design.}{33}{section*.67}%
+\contentsline {paragraph}{Result.}{33}{section*.68}%
 \contentsline {subsection}{\numberline {I.3}New episodes on all five test scenarios}{34}{subsection.I.3}%
 \contentsline {paragraph}{Design.}{34}{section*.69}%
 \contentsline {paragraph}{Result.}{35}{section*.70}%
 \contentsline {section}{\numberline {J}Does the probe warn early, and how many false alarms would it raise?}{35}{appendix.J}%
-\contentsline {paragraph}{One call ahead.}{36}{section*.71}%
+\contentsline {paragraph}{One call ahead.}{35}{section*.71}%
 \contentsline {paragraph}{Score across an episode.}{36}{section*.72}%
 \contentsline {paragraph}{Where in the call.}{36}{section*.73}%
-\contentsline {subsection}{\numberline {J.1}False alarms}{37}{subsection.J.1}%
+\contentsline {subsection}{\numberline {J.1}False alarms}{36}{subsection.J.1}%
 \contentsline {subsection}{\numberline {J.2}Does a second check on the same input help?}{38}{subsection.J.2}%
-\contentsline {section}{\numberline {K}What do round-level detectors achieve?}{39}{appendix.K}%
+\contentsline {section}{\numberline {K}What do round-level detectors achieve?}{38}{appendix.K}%
 \contentsline {paragraph}{The round-level setup.}{39}{section*.74}%
 \contentsline {paragraph}{What a monitor should be asked and shown.}{39}{section*.75}%
 \contentsline {paragraph}{Adding the probe to a monitor.}{39}{section*.76}%
 \contentsline {paragraph}{Eventual outcome.}{39}{section*.77}%
-\contentsline {paragraph}{Robustness.}{40}{section*.78}%
+\contentsline {paragraph}{Robustness.}{39}{section*.78}%
 \contentsline {subsection}{\numberline {K.1}Why is round-level prediction near chance on gpt-oss-20b with a channel-only label?}{40}{subsection.K.1}%
 \contentsline {section}{\numberline {L}How do the leaks go out, and are they deliberate?}{40}{appendix.L}%
 \contentsline {paragraph}{How leaks go out.}{40}{section*.79}%
@@ -146,3 +146,4 @@
 \contentsline {paragraph}{Forecaster prompt.}{47}{section*.101}%
 \contentsline {paragraph}{Filled slots.}{48}{section*.102}%
 \contentsline {subsection}{\numberline {R.5}Text monitors: decision models (Jev 1.14, Luna Decisions)}{48}{subsection.R.5}%
+\contentsline {subsection}{\numberline {R.6}Text monitors: per-call questions (Jev)}{49}{subsection.R.6}%

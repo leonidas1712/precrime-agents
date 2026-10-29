@@ -15,7 +15,7 @@ At the frozen threshold the probe caught \gptossFreshCaught{} of the leaking cal
 
 \paragraph{Last-prompt and reasoning probes on gpt-oss-20b.}
 On development episodes the last-prompt probe and the reasoning probe score about the same, so most of the signal is present before the model starts to reason.
-On the test episodes the reasoning probe scored higher than the last-prompt probe on the same calls, and the last-prompt probe caught fewer leaking calls at its threshold (\cref{tab:fresh}); with few leaking calls, the gap in AUROC is within noise.
+On the test episodes the reasoning probe scored higher than the last-prompt probe on the same calls, and the last-prompt probe caught fewer leaking calls at its threshold (\cref{tab:fresh,tab:alarms}); with few leaking calls, the gap in AUROC is within noise.
 
 \paragraph{Qwen3-32B round-level test.}
 The plan fixed the near-term label of \cref{app:labels}, the probe (one logistic model per seed trained on all development recruiting calls), and two text monitors chosen in advance.

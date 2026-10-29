@@ -70,7 +70,7 @@ We write $r(t)$ for the round of call $c_t$, and an episode is the sequence $(x_
   \caption{\textbf{Which tokens each detector reads.}
   In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$.
   The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated.
-  The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, so its score is ready before $o_t$ is executed.
+  The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$, during the private reasoning, so its score is ready before the public reply or tool call $o_t$.
   The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written.
   On gpt-oss-20b, $x_t$ includes the reasoning of earlier calls in the same turn, but not $z_t$; text monitors that read $z_t$ are in \cref{app:monitors-reasoning}.}
   \label{fig:positions}

@@ -47,7 +47,7 @@ Jev, at the cutoff that flags no more calls in refusing episodes than the probe,
   \footnotesize
   \setlength{\tabcolsep}{3pt}
   \input{tables/episode_calibration.tex}
-  \caption{Per-call and per-episode thresholds on the test episodes: precision of the flagged calls, leaking episodes caught by their first leak, refusing episodes and calls flagged, and the same rates on control traffic. Recruiting calls come from leaking and refusing episodes; control calls come from control episodes and are counted separately. Jev's per-call row uses the cutoff that flags no more refusing calls than the probe.}
+  \caption{Per-call and per-episode thresholds on the test episodes: precision of the flagged calls, leaking episodes caught by their first leak, refusing episodes and calls flagged, and the same rates on control traffic. Recruiting calls come from leaking and refusing episodes; control calls come from control episodes and are counted separately. Jev's per-call row uses the cutoff that flags no more refusing calls than the probe. Precision counts every flagged recruiting call, including calls before the leak in leaking episodes, so its denominator is not the sum of the other columns.}
   \label{tab:episode-calibration}
 \end{table}
 A deployed alarm would need its threshold set per episode, as \citet{gao2026} also argues.
