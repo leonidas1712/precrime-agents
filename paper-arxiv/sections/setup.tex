@@ -130,7 +130,7 @@ The first is the AUROC of \cref{sec:method}, and the second, averaged over leaki
 \subsection{Models and datasets}
 
 We use two open-weight target models, Qwen3-32B \citep{yang2025qwen3} with thinking disabled and gpt-oss-20b \citep{openai2025gptoss}, which reasons before it answers.
-Each faces its own peer model, from the DeepSeek-V4 family \citep{deepseek2026v4flash}.
+Each faces its own peer model, from the DeepSeek-V4 family: DeepSeek-V4-Flash for Qwen3-32B \citep{deepseek2026v4flash} and DeepSeek-V4-Pro for gpt-oss-20b \citep{deepseek2026v4pro}.
 gpt-oss-20b refuses requests that name the token, so its peer instead asks, after a delay, for the whole configuration block that contains it to be copied into the handoff file, the shared status file that the target writes for the peer.
 We chose that strategy on behaviour alone, before any probe or monitor saw the data (\cref{app:behaviour}).
 We never pool the two models' results.

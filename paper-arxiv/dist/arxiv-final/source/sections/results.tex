@@ -58,7 +58,7 @@ On gpt-oss-20b, keyword rules that look for the secret's words in the model's re
 A flag for ``the protected file was just read'' scores well on its own, but the probe beats it on both models, and on gpt-oss-20b the probe still separates leaks among the calls that write the handoff file.
 Nor is it simply reading back the target's own earlier promise to share: removing the calls that follow such a promise changes the score little on both models (\cref{app:shortcuts}).
 
-Followed through an episode, the median probe score jumps at the leaking call, to about the 95th to 98th percentile on both models (\cref{fig:trajectory-main}).
+Followed through an episode, the median probe score jumps at the leaking call, to about the 95th to 98th percentile on both models (\cref{fig:trajectories}).
 Earlier calls are mixed and noisy, few episodes have many calls before the leak, and \cref{app:ahead} shows examples chosen by a fixed rule.
 
 \subsection{The warning is short-range}

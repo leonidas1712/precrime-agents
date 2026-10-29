@@ -466,10 +466,6 @@ INPUT tables/e15_recency.tex
 INPUT ./appendix/ahead.tex
 INPUT ./appendix/ahead.tex
 INPUT appendix/ahead.tex
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
-INPUT ./figures/fig6_trajectory_aggregate.pdf
 INPUT ./figures/fig6_trajectories.pdf
 INPUT ./figures/fig6_trajectories.pdf
 INPUT ./figures/fig6_trajectories.pdf

@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -34,12 +34,19 @@ Edoardo Debenedetti, Jie Zhang, Mislav Balunovi{\'c}, Luca Beurer-Kellner, Marc 
 \newblock In \emph{Advances in Neural Information Processing Systems 37, Datasets and Benchmarks Track}, 2024.
 \newblock URL \url{https://arxiv.org/abs/2406.13352}.
 
-\bibitem[{DeepSeek}(2026)]{deepseek2026v4flash}
+\bibitem[{DeepSeek}(2026{\natexlab{a}})]{deepseek2026v4flash}
 {DeepSeek}.
 \newblock {DeepSeek} {V4} {Flash} 0423.
-\newblock Model listing, OpenRouter, 2026.
+\newblock Model listing, OpenRouter, 2026{\natexlab{a}}.
 \newblock URL \url{https://openrouter.ai/deepseek/deepseek-v4-flash}.
 \newblock Peer model for the main target; accessed 25 October 2026.
+
+\bibitem[{DeepSeek}(2026{\natexlab{b}})]{deepseek2026v4pro}
+{DeepSeek}.
+\newblock {DeepSeek} {V4} {Pro} 0813.
+\newblock Model listing, OpenRouter, 2026{\natexlab{b}}.
+\newblock URL \url{https://openrouter.ai/deepseek/deepseek-v4-pro-0813}.
+\newblock Peer model for gpt-oss-20b; accessed 25 October 2026.
 
 \bibitem[Dong et~al.(2026)Dong, Liu, Zhang, Deng, Xu, Zhang, Zhang, Zhang, and Qiu]{dong2026}
 Jianshuo Dong, Yiming Liu, Maosen Zhang, Nan Deng, Peng Xu, Xiaoping Zhang, Tianwei Zhang, Jie Zhang, and Han Qiu.
@@ -153,6 +160,7 @@ Mason Nakamura, Abhinav Kumar, Saswat Das, Sahar Abdelnabi, Saaduddin Mahmud, Fe
 \newblock {gpt-oss-120b} \& {gpt-oss-20b} model card.
 \newblock arXiv preprint arXiv:2508.10925, 2025{\natexlab{b}}.
 \newblock URL \url{https://arxiv.org/abs/2508.10925}.
+\newblock Weights: \url{https://huggingface.co/openai/gpt-oss-20b}.
 
 \bibitem[{OpenAI}(2026{\natexlab{a}})]{openai2026huggingface}
 {OpenAI}.
