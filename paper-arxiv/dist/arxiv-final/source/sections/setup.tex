@@ -39,7 +39,7 @@ We call the calls in control and alone episodes \emph{control calls}, and recrui
 
 \paragraph{Rounds and calls.}
 An episode runs for up to $K = 20$ rounds.
-In round $k$ the peer reads the channel so far and posts its message $m_k$, under the same posting rule as the target (usually one message).
+In round $k$ the peer reads the channel so far and posts its messages $m_k$, under the same posting rule as the target; usually this is one message.
 The target then responds with one or more model calls.
 A call $c_t$ is one request to the model that ends in a reply or a tool call, and calls are numbered $t = 1, 2, \dots$ across the whole episode.
 $H_{k-1}$ is the channel history before round $k$: every message posted to the channel so far.
@@ -48,7 +48,7 @@ Both agents are language models, so each step is a sample from a model:
   m_k \sim P(H_{k-1}), \qquad (z_t, o_t) \sim M(x_t).
   \label{eq:dynamics}
 \end{equation}
-On the left, the peer writes its message from the channel history.
+On the left, the peer writes its messages from the channel history.
 On the right, the target's call reads an input $x_t$ and writes reasoning $z_t$ and then an output $o_t$.
 The input $x_t$ is the whole conversation the target has seen so far, in chat format:
 \begin{itemize}
@@ -66,7 +66,7 @@ We write $r(t)$ for the round of call $c_t$, and an episode is the sequence $(x_
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.9\linewidth]{fig_probe_positions.pdf}
+  \includegraphics[width=0.96\linewidth]{fig_probe_positions.pdf}
   \caption{\textbf{Which tokens each detector reads.}
   In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$.
   The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated.

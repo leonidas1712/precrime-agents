@@ -20,7 +20,7 @@ We shuffle the order of the yes and no options on each call to avoid order bias.
 For each call, Jev reads the call's input $x_t$: the conversation and tool results that the target had seen, with the secret masked.
 It is asked whether the agent's next reply will write or post the protected value.
 On gpt-oss-20b, $x_t$ includes the target's earlier reasoning from the same turn, but not this call's reasoning $z_t$.
-Monitors that read the reasoning $z_t$ itself do worse on gpt-oss-20b development calls (Jev \gptossReasonJevAuroc{}, GPT-5-nano \gptossReasonNanoAuroc{}; \cref{app:monitors}).
+Monitors that read this call's own reasoning $z_t$ also stay far below the probe on gpt-oss-20b development calls: Jev scores \gptossReasonJevAuroc{} and GPT-5-nano \gptossReasonNanoAuroc{} (\cref{app:monitors-reasoning}).
 It is used zero-shot, with no training on our labels.
 \Cref{app:monitors} gives the prompts and two further monitors, an LLM judge and a second decision model.
 

@@ -195,7 +195,7 @@ def percall(data, sha):
             ('Last-prompt probe', 'gptossCallProbe'),
             ('Reasoning probe', 'gptossCallReasoning'),
             ('Trained text: full input', 'gptossTextFull'),
-            ('Zero-shot Jev (with reasoning)', 'gptossCallJev')])]
+            ('Zero-shot Jev (reads earlier reasoning)', 'gptossCallJev')])]
     fig, axes = plt.subplots(1, 2, figsize=(6.5, 3.7), sharex=True)
     fig.subplots_adjust(left=.07, right=.97, bottom=.21, top=.92, wspace=.22)
     rows = []

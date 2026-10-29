@@ -99,7 +99,7 @@ With the same-turn reasoning, reversed Jev scores \gptossCallJevReversed{} \gpto
 That interval lies wholly below the probe's interval of \gptossCallProbeCI{}.
 Without the same-turn reasoning, the probe beats reversed Jev by \gptossCallProbeMinusJevNoReasoningReversed{} \gptossCallProbeMinusJevNoReasoningReversedCI{}.
 
-We ran Jev on gpt-oss-20b in two versions, and the main text reports the version with reasoning.
+We ran Jev on gpt-oss-20b in two versions that read the call's input, and the main text reports the one that reads earlier reasoning. A third setup, which reads the current call's own reasoning $z_t$, is in \cref{app:monitors-reasoning}.
 gpt-oss-20b keeps its earlier reasoning from the same turn in its prompt, so the last-prompt probe can read it.
 The main version includes that reasoning, so it matches the probe's input more closely.
 In the main version, Jev reads the conversation as text in gpt-oss-20b's own chat format, Harmony, rather than as the raw request messages.
@@ -116,8 +116,8 @@ The reasoning raises Jev's score but leaves its ranking inverted.
     \midrule
     Qwen3-32B & \qwenCallJev{} \qwenCallJevCI{} & \qwenCallJevUnstratified{} & \qwenCallJevLeakFlagged{} & \qwenCallJevRefusingFlagged{} & \qwenCallProbeMinusJev{} \qwenCallProbeMinusJevCI{} \\
     gpt-oss-20b & & & & & \\
-    \quad with reasoning (main) & \gptossCallJev{} \gptossCallJevCI{} & \gptossCallJevUnstratified{} & \gptossCallJevLeakFlagged{} & \gptossCallJevRefusingFlagged{} & \gptossCallProbeMinusJev{} \gptossCallProbeMinusJevCI{} \\
-    \quad without reasoning & \gptossCallJevNoReasoning{} \gptossCallJevNoReasoningCI{} & \gptossCallJevNoReasoningUnstratified{} & \gptossCallJevNoReasoningLeakFlagged{} & \gptossCallJevNoReasoningRefusingFlagged{} & \gptossCallProbeMinusJevNoReasoning{} \gptossCallProbeMinusJevNoReasoningCI{} \\
+    \quad earlier reasoning (main) & \gptossCallJev{} \gptossCallJevCI{} & \gptossCallJevUnstratified{} & \gptossCallJevLeakFlagged{} & \gptossCallJevRefusingFlagged{} & \gptossCallProbeMinusJev{} \gptossCallProbeMinusJevCI{} \\
+    \quad no reasoning & \gptossCallJevNoReasoning{} \gptossCallJevNoReasoningCI{} & \gptossCallJevNoReasoningUnstratified{} & \gptossCallJevNoReasoningLeakFlagged{} & \gptossCallJevNoReasoningRefusingFlagged{} & \gptossCallProbeMinusJevNoReasoning{} \gptossCallProbeMinusJevNoReasoningCI{} \\
     \bottomrule
   \end{tabular}
   \caption{\textbf{Jev scored on the same calls as the per-call probe.} AUROC within scenario and round, with 95\% bootstrap intervals, on the development episodes. ``Unstratified'' is the AUROC over all calls without grouping by scenario and round. The flag rates use the alarm cutoff set on control episodes, and ``non-leaking'' means calls in episodes that never leak. The main text reports the gpt-oss-20b row with reasoning.}
