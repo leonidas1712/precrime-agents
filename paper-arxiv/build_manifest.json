@@ -1,6 +1,6 @@
 {
   "command": "latexmk -pdf main.tex",
-  "pdf_sha256": "7dc86714d1052f8f754a803171801e3469f0ae66cf8c4a82cef1f1b1aa9d446b",
+  "pdf_sha256": "62f2bf141cdb17989fc9c5e8b6c4725b095a68552cf894201934297c062d7e82",
   "inputs": {
     "appendix/ahead.tex": "f50b4bce02f2ff856fba3c8f5b2fa85b549a3d656f9df9e58015a3eaf65e6d08",
     "appendix/behaviour.tex": "1bd4b0d2f62db1f865805bdee6d04d8bbc625a2510fd2cf9a9518894422ed546",
@@ -16,7 +16,7 @@
     "appendix/policy.tex": "dcd4c0461cda61fcc0cc2bc450764fd86e314a2f1b47259caa4e6aa597a0e7f4",
     "appendix/probes.tex": "449ce169528a3dd6ed002613cfe472fb5aca67762963df63dc91c98463cae4aa",
     "appendix/prompts.tex": "f1b1401f61fc7c5f07e1b205cca69b9c75a48fda072bc7b36103198fe4e46a67",
-    "appendix/repro.tex": "74b6b070bbc8b855dd0a7a0128fafa767af69a3b25b3452683a4f8956d5effd9",
+    "appendix/repro.tex": "cfa2f715ac7fd4a3c595db7ef85c5fae065d5f204fe676c90b17d648043dd197",
     "appendix/robustness.tex": "b15d0782bda964d36caed247bce50de7241399cf7b9f2d81b60717fa8ad41694",
     "appendix/roundmonitor.tex": "8876598cfe055b48ecfed3beea1ae5fd693a7fbba443952e9431b8be2904c3f2",
     "appendix/scenarios.tex": "365101c097ff803b166a15f40df7765f06de27e70068b6ee0591d29756f6c22a",
@@ -35,7 +35,7 @@
     "figures/fig_round_confirmation.pdf": "f8c7961761cb71c0f7a1a484325f0c646aa60fa64f1b4cd50f976379f0f60591",
     "iclr2027_conference.sty": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6",
     "main.bbl": "9270b46b56124ff8f163cc808cedf3f83e4d68d75153cc5a43324dabdc21c09a",
-    "main.tex": "638baa73392eab0bb52aa69274978b52850583022e9fe4f6949ce8eb1714697b",
+    "main.tex": "a22eda63d21fbc6edec201aa885ca23a6dd95de1cce86380dd2b9c45fb0b229f",
     "math_commands.tex": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9",
     "natbib.sty": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
     "numbers.tex": "22f697526d4e6d7fb67716ceae3e14bd8a91af32c8adc349a974e5aea96a5ab4",
