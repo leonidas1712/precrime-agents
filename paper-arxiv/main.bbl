@@ -16,11 +16,13 @@ Diogo Almeida.
 Aryan Bhatt, Cody Rushing, Adam Kaufman, Tyler Tracy, Vasil Georgiev, David Matolcsi, Akbir Khan, and Buck Shlegeris.
 \newblock {Ctrl-Z}: Controlling {AI} agents via resampling.
 \newblock arXiv preprint arXiv:2504.10374, 2025.
+\newblock URL \url{https://arxiv.org/abs/2504.10374}.
 
 \bibitem[Cohen et~al.(2024)Cohen, Bitton, and Nassi]{cohen2024morris}
 Stav Cohen, Ron Bitton, and Ben Nassi.
 \newblock Here comes the {AI} worm: Unleashing zero-click worms that target {GenAI}-powered applications.
 \newblock arXiv preprint arXiv:2403.02817, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.02817}.
 
 \bibitem[Cunningham et~al.(2026)Cunningham, Wei, Wang, Persic, Peng, Abderrachid, Agarwal, Chen, Cohen, Dau, Dimitriev, Gilson, Howard, Hua, Kaplan, Leike, Lin, Liu, Mikulik, Mittapalli, O'Hara, Pan, Saxena, Silverstein, Song, Yu, Zhou, Perez, and Sharma]{cunningham2026}
 Hoagy Cunningham, Jerry Wei, Zihan Wang, Andrew Persic, Alwin Peng, Jordan Abderrachid, Raj Agarwal, Bobby Chen, Austin Cohen, Andy Dau, Alek Dimitriev, Rob Gilson, Logan Howard, Yijin Hua, Jared Kaplan, Jan Leike, Mu~Lin, Christopher Liu, Vladimir Mikulik, Rohit Mittapalli, Clare O'Hara, Jin Pan, Nikhil Saxena, Alex Silverstein, Yue Song, Xunjie Yu, Giulio Zhou, Ethan Perez, and Mrinank Sharma.
@@ -83,6 +85,7 @@ Xueping Gao.
 David Glukhov, Ilia Shumailov, Yarin Gal, Nicolas Papernot, and Vardan Papyan.
 \newblock {LLM} censorship: A machine learning challenge or a computer security problem?
 \newblock arXiv preprint arXiv:2307.10719, 2023.
+\newblock URL \url{https://arxiv.org/abs/2307.10719}.
 
 \bibitem[Goldowsky-Dill et~al.(2025)Goldowsky-Dill, Chughtai, Heimersheim, and Hobbhahn]{goldowskydill2025}
 Nicholas Goldowsky-Dill, Bilal Chughtai, Stefan Heimersheim, and Marius Hobbhahn.
@@ -100,6 +103,7 @@ Ryan Greenblatt, Ajeya Cotra, and Hjalmar Wijk.
 Monte Hoover, Vatsal Baherwani, Neel Jain, Khalid Saifullah, Joseph Vincent, Chirag Jain, Melissa~Kazemi Rad, C.~Bayan Bruss, Ashwinee Panda, and Tom Goldstein.
 \newblock {DynaGuard}: A dynamic guardian model with user-defined policies.
 \newblock arXiv preprint arXiv:2509.02563, 2025.
+\newblock URL \url{https://arxiv.org/abs/2509.02563}.
 
 \bibitem[Inglis et~al.(2025)Inglis, Matthews, Tracy, Makins, Catling, Cooper~Stickland, Faber-Espensen, O'Connell, Heller, Brandao, Hanson, Mani, Korbak, Michelfeit, Bansal, Bark, Canal, Griffin, Stehlik, Wang, and Cooney]{inglis2025controlarena}
 Rogan Inglis, Ollie Matthews, Tyler Tracy, Oliver Makins, Tom Catling, Asa Cooper~Stickland, Rasmus Faber-Espensen, Daniel O'Connell, Myles Heller, Miguel Brandao, Adam Hanson, Arathi Mani, Tomek Korbak, Jan Michelfeit, Dishank Bansal, Tomas Bark, Chris Canal, Charlie Griffin, Mojmir Stehlik, Jasmine Wang, and Alan Cooney.
@@ -111,6 +115,7 @@ Rogan Inglis, Ollie Matthews, Tyler Tracy, Oliver Makins, Tom Catling, Asa Coope
 Daphne Ippolito, Florian Tram{\`e}r, Milad Nasr, Chiyuan Zhang, Matthew Jagielski, Katherine Lee, Christopher~A. Choquette-Choo, and Nicholas Carlini.
 \newblock Preventing verbatim memorization in language models gives a false sense of privacy.
 \newblock arXiv preprint arXiv:2210.17546, 2022.
+\newblock URL \url{https://arxiv.org/abs/2210.17546}.
 
 \bibitem[Jia et~al.(2026)Jia, Liu, Chong, Yang, Chen, Liang, Li, Lu, Xu, Zheng, Zhang, Huang, Zhang, Qi, Lin, and Peng]{jia2026window}
 Haoxuan Jia, Yang Liu, Bin Chong, Yingguang Yang, Yancheng Chen, Jiayu Liang, Qian Li, Hanning Lu, Kefu Xu, Hao Zheng, Chongyang Zhang, Yulin Huang, Jianshen Zhang, Yongzhi Qi, Yunuo Lin, and Hao Peng.
@@ -191,6 +196,7 @@ Nikolay Radev, Lennart Haas, Benjamin Arnav, and Pablo Bernabeu-Pérez.
 Pratibha Revankar, Kargi Chauhan, Jihye Kim, Sadiba~Nusrat Nur, Vincent Siu, and Chenguang Wang.
 \newblock {MIRAGE}: A polarity-flipping encoding subspace in {LLM} agents.
 \newblock arXiv preprint arXiv:2606.10304, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.10304}.
 
 \bibitem[Rose et~al.(2026)Rose, Cullen, Abdelnabi, Torr, Kaplowitz, and de~Witt]{rose2026}
 Aaron Rose, Carissa Cullen, Sahar Abdelnabi, Philip Torr, Brandon~Gary Kaplowitz, and Christian~Schroeder de~Witt.
@@ -202,6 +208,7 @@ Aaron Rose, Carissa Cullen, Sahar Abdelnabi, Philip Torr, Brandon~Gary Kaplowitz
 Mark Russinovich, Ahmed Salem, and Ronen Eldan.
 \newblock Great, now write an article about that: The {Crescendo} multi-turn {LLM} jailbreak attack.
 \newblock arXiv preprint arXiv:2404.01833, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.01833}.
 
 \bibitem[Saraogi et~al.(2026)Saraogi, Padia, D'Avola, Shah, and Alikhani]{saraogi2026before}
 Utkarsh Saraogi, Soham Padia, Tomas D'Avola, Vedant Shah, and Malihe Alikhani.
@@ -213,6 +220,7 @@ Utkarsh Saraogi, Soham Padia, Tomas D'Avola, Vedant Shah, and Malihe Alikhani.
 Yijia Shao, Tianshi Li, Weiyan Shi, Yanchen Liu, and Diyi Yang.
 \newblock {PrivacyLens}: Evaluating privacy norm awareness of language models in action.
 \newblock arXiv preprint arXiv:2409.00138, 2024.
+\newblock URL \url{https://arxiv.org/abs/2409.00138}.
 
 \bibitem[Sharma et~al.(2025)Sharma, Tong, Mu, Wei, Kruthoff, Goodfriend, Ong, Peng, Agarwal, Anil, Askell, Bailey, Benton, Bluemke, Bowman, Christiansen, Cunningham, Dau, Gopal, Gilson, Graham, Howard, Kalra, Lee, Lin, Lofgren, Mosconi, O'Hara, Olsson, Petrini, Rajani, Saxena, Silverstein, Singh, Sumers, Tang, Troy, Weisser, Zhong, Zhou, Leike, Kaplan, and Perez]{sharma2025constitutional}
 Mrinank Sharma, Meg Tong, Jesse Mu, Jerry Wei, Jorrit Kruthoff, Scott Goodfriend, Euan Ong, Alwin Peng, Raj Agarwal, Cem Anil, Amanda Askell, Nathan Bailey, Joe Benton, Emma Bluemke, Samuel~R. Bowman, Eric Christiansen, Hoagy Cunningham, Andy Dau, Anjali Gopal, Rob Gilson, Logan Graham, Logan Howard, Nimit Kalra, Taesung Lee, Kevin Lin, Peter Lofgren, Francesco Mosconi, Clare O'Hara, Catherine Olsson, Linda Petrini, Samir Rajani, Nikhil Saxena, Alex Silverstein, Tanya Singh, Theodore Sumers, Leonard Tang, Kevin~K. Troy, Constantin Weisser, Ruiqi Zhong, Giulio Zhou, Jan Leike, Jared Kaplan, and Ethan Perez.
@@ -260,5 +268,6 @@ Xijie Zeng and Frank Rudzicz.
 Yiming Zhang, Nicholas Carlini, and Daphne Ippolito.
 \newblock Effective prompt extraction from language models.
 \newblock arXiv preprint arXiv:2307.06865, 2023.
+\newblock URL \url{https://arxiv.org/abs/2307.06865}.
 
 \end{thebibliography}
