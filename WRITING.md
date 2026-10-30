@@ -35,7 +35,7 @@ These are checkable. An editor should be able to mark each one pass or fail.
 ### Claims
 1. **Every paragraph opens with its claim, in one plain sentence.** The rest of the paragraph supports it. A reader skimming only first sentences should get the paper.
 2. **Every paragraph in Results maps to an entry in the claims list (§7).** If it serves no claim, cut it or move it to the appendix.
-3. **Mark confirmed vs exploratory by structure, not sentence by sentence.** See §4.
+3. **Show evidence status by which data a number comes from, never by status words.** See §4.4.
 
 ### Numbers
 4. **At most one number per claim in the main text.** Put the headline number in the sentence. Put supporting numbers in a figure, a table or the appendix.
@@ -76,7 +76,7 @@ This is the problem that produced most of the hedging in the sprint version. The
 ### 4.1 Name a small number of datasets, once
 Define the datasets in the Setup section, in one short paragraph plus one figure or small table. Give each a plain name. For example:
 - the **development episodes** (everything collected during the sprint),
-- the **fresh test episodes** (collected after the analysis plan was frozen), one set per model.
+- the **test episodes** (collected after the analysis choices were written down), one set per model.
 
 Use at most three or four named datasets in the main text. Every number in the paper belongs to exactly one of them. Refer to them only by name. All counts go in a single table, in the main text if small or in the appendix.
 
@@ -91,20 +91,16 @@ The same goes for label definitions. If the two models use different definitions
 Rules for recomputation:
 - Recompute from saved scores and activations. This is reanalysis, not new experiments.
 - Save every recomputation as a new run folder. Never overwrite an existing result.
-- Never change a pre-registered confirmation result. If a confirmation set was scored on a specific call set, report that number as it was.
+- Never change a result that was scored under a committed plan. If a confirmation set was scored on a specific call set, report that number as it was.
 - Record every recomputed number, and what it replaced, in the analysis-history appendix.
 
-### 4.4 Mark evidence status by structure
-Every claim has one of two statuses, recorded in the claims list:
-- **Confirmed:** tested on fresh episodes under a plan fixed in advance.
-- **Exploratory:** found on the development episodes, including analyses designed after earlier results.
+### 4.4 Show evidence status by structure, not words
+The main text never labels results with status words ("frozen", "pre-registered", "exploratory", "post hoc", "confirmatory"); see rule 12a. Readers learn a result's standing from **which data it comes from**, which the text states plainly ("on the test episodes", "on the development episodes"), and from:
+1. **One procedural sentence in Method** saying what was decided before the test data were collected, e.g. "Before collecting the gpt-oss-20b test episodes, we committed the analysis plan, threshold and success criterion to the repository (App F)."
+2. **A visual convention in figures,** explained once in the first results caption, e.g. filled markers for test episodes and hollow markers for development episodes.
+3. **The analysis-history appendix (§4.6),** which says, once and completely, which analyses were planned before which data and which were added after seeing results.
 
-Show the status in three places only:
-1. **One sentence in Method:** "Some analyses were designed after we saw earlier results. We label these exploratory, and we confirm the main one on fresh episodes."
-2. **Section structure in Results:** confirmed findings first, then a clearly titled subsection for exploratory findings.
-3. **A visual convention in figures,** explained once in the first figure's caption. For example, filled markers for confirmed results and hollow markers for exploratory ones.
-
-Inside an exploratory subsection, do not repeat "post hoc" or "exploratory" in individual sentences.
+The claims list may keep an internal status field; it never reaches the prose.
 
 ### 4.5 Keep provenance in the numbers registry, not in sentences
 Agents hedge partly because inline qualifiers are the only place they can record where a number came from. Give provenance a proper home instead.
@@ -117,7 +113,7 @@ qwen_percall_probe_auroc:
   ci: [0.93, 0.97]
   dataset: development episodes
   evaluation: held-out scenarios
-  status: exploratory
+  dataset_role: development   # internal only; never printed
   run: runs/20261026-1237-e05-qwen-percall
 ```
 
@@ -214,7 +210,7 @@ Follow these steps in order.
 **Step 1. Claims list.** Write `docs/claims.md` with three to five claims. For each claim, record:
 - the claim in one plain sentence,
 - its headline number, as a `numbers.yaml` key,
-- its status, confirmed or exploratory,
+- which data it rests on (test or development episodes; internal note, never printed as a status word),
 - the dataset and evaluation it uses,
 - the figure that shows it,
 - the one caveat that must travel with it, if any.
@@ -359,7 +355,7 @@ Before calling any draft done, confirm:
 | 1. Introduction | Why this matters, the question, the answer in one paragraph, a headline figure, contributions as a short list | 1.5 pages |
 | 2. Setup | The scenario, the roles, what counts as a leak, the named datasets, short formal definitions, one worked example | 1.5 pages |
 | 3. Method | Probes and text monitors in plain terms, how they are compared fairly, how results are confirmed | 1 page |
-| 4. Results | One subsection per claim, confirmed first, then exploratory | 3–4 pages |
+| 4. Results | One subsection per claim, test-episode results first | 3–4 pages |
 | 5. Related work | Where this sits, in contrasts rather than lists | 0.5–1 page |
 | 6. Discussion and limitations | What it means for oversight, where it does not apply, limitations ordered by impact | 1 page |
 | Appendix | Organised by question, ending with the analysis history and the reproducibility index | Unlimited |
