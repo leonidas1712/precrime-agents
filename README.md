@@ -4,7 +4,9 @@
 
 Leonidas Raghav · 2026
 
-[**Paper (PDF)**](paper-arxiv/main.pdf) · **arXiv:** *link coming soon* · [**Citation**](#citation)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.40588-b31b1b.svg)](https://arxiv.org/abs/2610.40588)
+
+[**Paper (arXiv)**](https://arxiv.org/abs/2610.40588) · [**PDF**](https://arxiv.org/pdf/2610.40588) · [**Citation**](#citation)
 
 ---
 
@@ -155,11 +157,14 @@ AI coding agents wrote most of the code and ran the experiments under the author
 
 ```bibtex
 @misc{raghav2026precrime,
-  title  = {Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In},
-  author = {Raghav, Leonidas},
-  year   = {2026},
-  note   = {arXiv preprint},
-  url    = {https://github.com/leonidas1712/precrime-agents}
+  title         = {Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In},
+  author        = {Raghav, Leonidas},
+  year          = {2026},
+  eprint        = {2610.40588},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  doi           = {10.48550/arXiv.2610.40588},
+  url           = {https://arxiv.org/abs/2610.40588}
 }
 ```
 
