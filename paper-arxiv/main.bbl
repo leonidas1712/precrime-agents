@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,6 +18,12 @@ Aryan Bhatt, Cody Rushing, Adam Kaufman, Tyler Tracy, Vasil Georgiev, David Mato
 \newblock arXiv preprint arXiv:2504.10374, 2025.
 \newblock URL \url{https://arxiv.org/abs/2504.10374}.
 
+\bibitem[Chauhan \& Revankar(2026)Chauhan and Revankar]{chauhan2026caught}
+Kargi Chauhan and Pratibha Revankar.
+\newblock Caught in the act(ivation): Toward pre-output and multi-turn detection of credential exfiltration by {LLM} agents.
+\newblock arXiv preprint arXiv:2606.04141, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.04141}.
+
 \bibitem[Cohen et~al.(2024)Cohen, Bitton, and Nassi]{cohen2024morris}
 Stav Cohen, Ron Bitton, and Ben Nassi.
 \newblock Here comes the {AI} worm: Unleashing zero-click worms that target {GenAI}-powered applications.
@@ -29,6 +35,12 @@ Hoagy Cunningham, Jerry Wei, Zihan Wang, Andrew Persic, Alwin Peng, Jordan Abder
 \newblock Constitutional classifiers++: Efficient production-grade defenses against universal jailbreaks.
 \newblock arXiv preprint arXiv:2601.04603, 2026.
 \newblock URL \url{https://arxiv.org/abs/2601.04603}.
+
+\bibitem[Das \& Fioretto(2026)Das and Fioretto]{das2026neurofilter}
+Saswat Das and Ferdinando Fioretto.
+\newblock {NeuroFilter}: Activation-based guardrails for privacy-conscious {LLM} agents.
+\newblock arXiv preprint arXiv:2601.14660, 2026.
+\newblock URL \url{https://arxiv.org/abs/2601.14660}.
 
 \bibitem[Debenedetti et~al.(2024)Debenedetti, Zhang, Balunovi{\'c}, Beurer-Kellner, Fischer, and Tram{\`e}r]{debenedetti2024agentdojo}
 Edoardo Debenedetti, Jie Zhang, Mislav Balunovi{\'c}, Luca Beurer-Kellner, Marc Fischer, and Florian Tram{\`e}r.
@@ -49,6 +61,13 @@ Edoardo Debenedetti, Jie Zhang, Mislav Balunovi{\'c}, Luca Beurer-Kellner, Marc 
 \newblock Model listing, OpenRouter, 2026{\natexlab{b}}.
 \newblock URL \url{https://openrouter.ai/deepseek/deepseek-v4-pro-0813}.
 \newblock Peer model for gpt-oss-20b; accessed 25 October 2026.
+
+\bibitem[Dong et~al.(2025)Dong, Zhang, Yan, Zhong, Wei, Xu, Huang, Zhang, and Qiu]{dong2025leak}
+Jianshuo Dong, Yutong Zhang, Liu Yan, Zhenyu Zhong, Tao Wei, Ke~Xu, Minlie Huang, Chao Zhang, and Han Qiu.
+\newblock ``{I}'ve decided to leak'': Probing internals behind prompt leakage intents.
+\newblock In \emph{Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing}, pp.\  21318--21348. Association for Computational Linguistics, 2025.
+\newblock \doi{10.18653/v1/2025.emnlp-main.1082}.
+\newblock URL \url{https://aclanthology.org/2025.emnlp-main.1082}.
 
 \bibitem[Dong et~al.(2026)Dong, Liu, Zhang, Deng, Xu, Zhang, Zhang, Zhang, and Qiu]{dong2026}
 Jianshuo Dong, Yiming Liu, Maosen Zhang, Nan Deng, Peng Xu, Xiaoping Zhang, Tianwei Zhang, Jie Zhang, and Han Qiu.
@@ -72,7 +91,7 @@ Sara Fish, Yannai~A. Gonczarowski, and Ran~I. Shorrer.
 \bibitem[Fomin et~al.(2026)Fomin, David, and LeVi]{fomin2026}
 Max Fomin, Elad David, and Amit LeVi.
 \newblock Internal-state probes read the situation, not the action: Three negative results for pre-action misalignment monitoring.
-\newblock arXiv preprint arXiv:2606.30449, 2026.
+\newblock In \emph{ICML 2026 Workshop on Agents in the Wild: Safety, Security, and Beyond}, 2026.
 \newblock URL \url{https://arxiv.org/abs/2606.30449}.
 
 \bibitem[Gao(2026)]{gao2026}
@@ -111,11 +130,12 @@ Rogan Inglis, Ollie Matthews, Tyler Tracy, Oliver Makins, Tom Catling, Asa Coope
 \newblock GitHub repository, 2025.
 \newblock URL \url{https://github.com/UKGovernmentBEIS/control-arena}.
 
-\bibitem[Ippolito et~al.(2022)Ippolito, Tram{\`e}r, Nasr, Zhang, Jagielski, Lee, Choquette-Choo, and Carlini]{ippolito2023verbatim}
+\bibitem[Ippolito et~al.(2023)Ippolito, Tram{\`e}r, Nasr, Zhang, Jagielski, Lee, Choquette-Choo, and Carlini]{ippolito2023verbatim}
 Daphne Ippolito, Florian Tram{\`e}r, Milad Nasr, Chiyuan Zhang, Matthew Jagielski, Katherine Lee, Christopher~A. Choquette-Choo, and Nicholas Carlini.
-\newblock Preventing verbatim memorization in language models gives a false sense of privacy.
-\newblock arXiv preprint arXiv:2210.17546, 2022.
-\newblock URL \url{https://arxiv.org/abs/2210.17546}.
+\newblock Preventing generation of verbatim memorization in language models gives a false sense of privacy.
+\newblock In \emph{Proceedings of the 16th International Natural Language Generation Conference}, pp.\  28--53. Association for Computational Linguistics, 2023.
+\newblock \doi{10.18653/v1/2023.inlg-main.3}.
+\newblock URL \url{https://aclanthology.org/2023.inlg-main.3}.
 
 \bibitem[Jia et~al.(2026)Jia, Liu, Chong, Yang, Chen, Liang, Li, Lu, Xu, Zheng, Zhang, Huang, Zhang, Qi, Lin, and Peng]{jia2026window}
 Haoxuan Jia, Yang Liu, Bin Chong, Yingguang Yang, Yancheng Chen, Jiayu Liang, Qian Li, Hanning Lu, Kefu Xu, Hao Zheng, Chongyang Zhang, Yulin Huang, Jianshen Zhang, Yongzhi Qi, Yunuo Lin, and Hao Peng.
@@ -144,8 +164,9 @@ Yupei Liu, Yuqi Jia, Runpeng Geng, Jinyuan Jia, and Neil~Zhenqiang Gong.
 \bibitem[McKenzie et~al.(2025)McKenzie, Pawar, Blandfort, Bankes, Krueger, Lubana, and Krasheninnikov]{mckenzie2026}
 Alex McKenzie, Urja Pawar, Phil Blandfort, William Bankes, David Krueger, Ekdeep~Singh Lubana, and Dmitrii Krasheninnikov.
 \newblock Detecting high-stakes interactions with activation probes.
-\newblock arXiv preprint arXiv:2506.10805, 2025.
-\newblock URL \url{https://arxiv.org/abs/2506.10805}.
+\newblock In \emph{Advances in Neural Information Processing Systems 38}, pp.\  127556--127594, 2025.
+\newblock \doi{10.52202/085713-4249}.
+\newblock URL \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/b9501301a7a0f99e57406cc901f4e3ce-Abstract-Conference.html}.
 
 \bibitem[Nakamura et~al.(2026)Nakamura, Kumar, Das, Abdelnabi, Mahmud, Fioretto, Zilberstein, and Bagdasarian]{nakamura2026}
 Mason Nakamura, Abhinav Kumar, Saswat Das, Sahar Abdelnabi, Saaduddin Mahmud, Ferdinando Fioretto, Shlomo Zilberstein, and Eugene Bagdasarian.
@@ -204,11 +225,17 @@ Aaron Rose, Carissa Cullen, Sahar Abdelnabi, Philip Torr, Brandon~Gary Kaplowitz
 \newblock arXiv preprint arXiv:2604.01151, 2026.
 \newblock URL \url{https://arxiv.org/abs/2604.01151}.
 
-\bibitem[Russinovich et~al.(2024)Russinovich, Salem, and Eldan]{russinovich2024crescendo}
+\bibitem[Russinovich et~al.(2025)Russinovich, Salem, and Eldan]{russinovich2024crescendo}
 Mark Russinovich, Ahmed Salem, and Ronen Eldan.
 \newblock Great, now write an article about that: The {Crescendo} multi-turn {LLM} jailbreak attack.
-\newblock arXiv preprint arXiv:2404.01833, 2024.
-\newblock URL \url{https://arxiv.org/abs/2404.01833}.
+\newblock In \emph{34th {USENIX} Security Symposium ({USENIX} Security 25)}, pp.\  2421--2440. {USENIX} Association, 2025.
+\newblock URL \url{https://www.usenix.org/conference/usenixsecurity25/presentation/russinovich}.
+
+\bibitem[Sadhu et~al.(2026)Sadhu, Sengupta, Sankarapu, and Seth]{sadhu2026compliance}
+Saisab Sadhu, Aadit Sengupta, Vinay~Kumar Sankarapu, and Pratinav Seth.
+\newblock What do compliance detectors read? an audit of activation probes and guard models.
+\newblock arXiv preprint arXiv:2608.16852, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.16852}.
 
 \bibitem[Saraogi et~al.(2026)Saraogi, Padia, D'Avola, Shah, and Alikhani]{saraogi2026before}
 Utkarsh Saraogi, Soham Padia, Tomas D'Avola, Vedant Shah, and Malihe Alikhani.
@@ -219,8 +246,9 @@ Utkarsh Saraogi, Soham Padia, Tomas D'Avola, Vedant Shah, and Malihe Alikhani.
 \bibitem[Shao et~al.(2024)Shao, Li, Shi, Liu, and Yang]{shao2024privacylens}
 Yijia Shao, Tianshi Li, Weiyan Shi, Yanchen Liu, and Diyi Yang.
 \newblock {PrivacyLens}: Evaluating privacy norm awareness of language models in action.
-\newblock arXiv preprint arXiv:2409.00138, 2024.
-\newblock URL \url{https://arxiv.org/abs/2409.00138}.
+\newblock In \emph{Advances in Neural Information Processing Systems 37, Datasets and Benchmarks Track}, pp.\  89373--89407, 2024.
+\newblock \doi{10.52202/079017-2837}.
+\newblock URL \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/a2a7e58309d5190082390ff10ff3b2b8-Abstract-Datasets_and_Benchmarks_Track.html}.
 
 \bibitem[Sharma et~al.(2025)Sharma, Tong, Mu, Wei, Kruthoff, Goodfriend, Ong, Peng, Agarwal, Anil, Askell, Bailey, Benton, Bluemke, Bowman, Christiansen, Cunningham, Dau, Gopal, Gilson, Graham, Howard, Kalra, Lee, Lin, Lofgren, Mosconi, O'Hara, Olsson, Petrini, Rajani, Saxena, Silverstein, Singh, Sumers, Tang, Troy, Weisser, Zhong, Zhou, Leike, Kaplan, and Perez]{sharma2025constitutional}
 Mrinank Sharma, Meg Tong, Jesse Mu, Jerry Wei, Jorrit Kruthoff, Scott Goodfriend, Euan Ong, Alwin Peng, Raj Agarwal, Cem Anil, Amanda Askell, Nathan Bailey, Joe Benton, Emma Bluemke, Samuel~R. Bowman, Eric Christiansen, Hoagy Cunningham, Andy Dau, Anjali Gopal, Rob Gilson, Logan Graham, Logan Howard, Nimit Kalra, Taesung Lee, Kevin Lin, Peter Lofgren, Francesco Mosconi, Clare O'Hara, Catherine Olsson, Linda Petrini, Samir Rajani, Nikhil Saxena, Alex Silverstein, Tanya Singh, Theodore Sumers, Leonard Tang, Kevin~K. Troy, Constantin Weisser, Ruiqi Zhong, Giulio Zhou, Jan Leike, Jared Kaplan, and Ethan Perez.
@@ -264,10 +292,10 @@ Xijie Zeng and Frank Rudzicz.
 \newblock arXiv preprint arXiv:2605.27593, 2026.
 \newblock URL \url{https://arxiv.org/abs/2605.27593}.
 
-\bibitem[Zhang et~al.(2023)Zhang, Carlini, and Ippolito]{zhang2024extraction}
+\bibitem[Zhang et~al.(2024)Zhang, Carlini, and Ippolito]{zhang2024extraction}
 Yiming Zhang, Nicholas Carlini, and Daphne Ippolito.
 \newblock Effective prompt extraction from language models.
-\newblock arXiv preprint arXiv:2307.06865, 2023.
-\newblock URL \url{https://arxiv.org/abs/2307.06865}.
+\newblock In \emph{First Conference on Language Modeling ({COLM})}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=0o95CVdNuz}.
 
 \end{thebibliography}
