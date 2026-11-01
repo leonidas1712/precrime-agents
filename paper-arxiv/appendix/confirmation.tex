@@ -18,8 +18,8 @@ On development episodes the last-prompt probe and the reasoning probe score abou
 On the test episodes the reasoning probe scored higher than the last-prompt probe on the same calls, and the last-prompt probe caught fewer leaking calls at its threshold (\cref{tab:fresh,tab:alarms}); with few leaking calls, the gap in AUROC is within noise.
 
 \paragraph{Qwen3-32B round-level test.}
-The plan fixed the near-term label of \cref{app:labels}, the probe (one logistic model per seed trained on all development recruiting calls), and two text monitors chosen in advance.
-Its criteria were a probe interval above 0.5, and a gain above 0 from adding the probe to the weaker of the two monitors.
+The plan fixed the near-term label of \cref{app:labels}, the probe (one logistic model per seed trained on all development recruiting calls), and two primary text monitors among the eight setups it scored (\cref{app:monitors-grid}): Jev asked to forecast and shown everything the target saw, and GPT-5-nano asked to detect and shown the target's actions and the peer's messages.
+Its criteria were a probe interval above 0.5, and a gain above 0 from adding the probe to the weaker of the two primary monitors, GPT-5-nano.
 Both were met (\cref{fig:round}).
 The plan expected no gain from adding the probe to the stronger monitor, and there was none that was clearly above zero (\cref{app:roundmonitor}).
 

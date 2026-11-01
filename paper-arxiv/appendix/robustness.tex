@@ -2,7 +2,7 @@
 \label{app:robustness}
 
 Yes.
-On development episodes, cross-validation that mixes scenarios, the mean instead of the maximum over reasoning tokens, dropping reasoning after the secret is first mentioned, adding calls with no reasoning, and excluding writes back to the protected file all give a similar ranking (\cref{tab:robust-call}).
+On development episodes, mixed-scenario cross-validation, the mean instead of the maximum over reasoning tokens, dropping reasoning after the secret is first mentioned, adding calls with no reasoning, and excluding writes back to the protected file all give a similar ranking (\cref{tab:robust-call}).
 
 \paragraph{Another evaluation.}
 Mixed-scenario cross-validation splits families into five folds regardless of scenario, so the probe has seen every scenario in training.
@@ -11,6 +11,7 @@ Because it compares scores from different fitted models within one group, it can
 
 \paragraph{Other aggregates and cuts.}
 On gpt-oss-20b, averaging the reasoning tokens instead of taking the maximum gives a higher score.
+The plan committed before the test episodes were collected specified the maximum (\cref{app:confirmation}), so the reported score is the lower of the two.
 Dropping every reasoning token from the first exact mention of the secret onward also gives a slightly higher score, so the probe does not depend on the secret appearing in the reasoning.
 Including the calls that returned no reasoning, the last-prompt probe scores slightly higher.
 
