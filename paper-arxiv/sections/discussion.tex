@@ -7,7 +7,7 @@ Its scores are largely insensitive to the tested changes in the rule text, so a 
 This suggests a cascade, as in production classifier systems \citep{cunningham2026}, in which a cheap probe or trained text classifier runs on every call with two thresholds.
 A lenient per-call threshold escalates a call before it acts; it fires often, costs little per alarm, and catches most leaks.
 The escalation should go to a reviewer with different information, such as a human, a stronger model, or a check on the drafted reply before it executes, because a second check on the same input adds little (\cref{sec:cost}).
-A strict per-episode threshold halts the agent and should fire rarely, so that a benign agent is seldom interrupted, and it must be set on held-out benign traffic rather than on the episodes the detector was trained on (\cref{sec:cost}).
+A strict per-episode threshold halts the agent and should fire rarely, so that an agent that refuses is seldom interrupted, and it must be set on held-out refusing episodes rather than on the episodes the detector was trained on (\cref{sec:cost}).
 Further from the act the signal fades, so our results do not support warnings rounds ahead.
 The same per-call signal is also readable without activations: a cheap text classifier trained on labelled calls recovers most of it, far above a zero-shot monitor, which matters for agents whose weights an overseer cannot inspect.
 Whether that holds outside templated scenarios like ours is open.
