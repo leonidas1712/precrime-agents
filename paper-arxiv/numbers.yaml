@@ -18728,7 +18728,7 @@
         ],
         [
           "GPT-OSS",
-          "Last-prompt / pooled",
+          "Last-prompt / mixed scenarios",
           {
             "key": "gptoss_robust_matched_immediate_pooled",
             "ci": true
@@ -19535,7 +19535,7 @@
       ],
       "rows": [
         [
-          "Qwen dev ladder",
+          "Qwen development ladder",
           "\\texttt{20261026-2201}",
           "\\texttt{arxiv\\_qwen\\_refit.py}"
         ],
@@ -19565,22 +19565,22 @@
           "\\texttt{generate\\_numbers.py}"
         ],
         [
-          "qwen original",
+          "Qwen original",
           "\\texttt{99d82de}",
           "Plan before analysis"
         ],
         [
-          "gpt reasoning",
+          "GPT reasoning",
           "\\texttt{d470afd}",
           "Plan before collection"
         ],
         [
-          "qwen new last prompt",
+          "Qwen new last-prompt",
           "\\texttt{f7a2995}",
           "Weights before new scoring"
         ],
         [
-          "gpt new last prompt",
+          "GPT new last-prompt",
           "\\texttt{2b05b71}",
           "Weights before new scoring"
         ]
