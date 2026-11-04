@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E17 Pilot Episodes</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1c1c1e;--muted:#6b6a66;--line:#e5e2da;--soft:#f1efe9;--accent:#2f5bd3;--accentbg:#e8eefc;
+  --ok:#1f7a4d;--okbg:#e2f3e9;--bad:#b42318;--badbg:#fde6e3;--warn:#8a5a00;--warnbg:#fff2d4;--sec:#6d28d9;--secbg:#efe6fe;
+  --peer:#7a3e9d;--peerbg:#f6eefb;--agent:#1f4e8c;--agentbg:#eef4fc;--tool:#3d3d3a;--toolbg:#f3f2ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121214;--panel:#1b1b1f;--ink:#ececf0;--muted:#9b9aa3;--line:#2d2d34;--soft:#232329;--accent:#86a8ff;--accentbg:#1d2640;
+  --ok:#62d29b;--okbg:#14301f;--bad:#ff8f80;--badbg:#3a1916;--warn:#f3c56a;--warnbg:#382c11;--sec:#c6a8ff;--secbg:#2a1f45;
+  --peer:#d4a6f0;--peerbg:#2a1d33;--agent:#9fc0f5;--agentbg:#18243a;--tool:#cfcfd6;--toolbg:#202026}}
+:root[data-theme="dark"]{--bg:#121214;--panel:#1b1b1f;--ink:#ececf0;--muted:#9b9aa3;--line:#2d2d34;--soft:#232329;--accent:#86a8ff;--accentbg:#1d2640;
+  --ok:#62d29b;--okbg:#14301f;--bad:#ff8f80;--badbg:#3a1916;--warn:#f3c56a;--warnbg:#382c11;--sec:#c6a8ff;--secbg:#2a1f45;
+  --peer:#d4a6f0;--peerbg:#2a1d33;--agent:#9fc0f5;--agentbg:#18243a;--tool:#cfcfd6;--toolbg:#202026}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+header{padding:16px 20px 10px;border-bottom:1px solid var(--line);background:var(--panel)}
+header .row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
+h1{font-size:19px;margin:0}
+.muted{color:var(--muted)} .small{font-size:12.5px}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:7px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12.5px}
+.summary{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.sumbox{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg)}
+.sumbox b{font-size:12px;color:var(--muted);display:block;margin-bottom:4px}
+.sumbox .chips{display:flex;flex-wrap:wrap;gap:4px}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:calc(100vh - 150px)}
+@media (max-width:860px){.layout{grid-template-columns:1fr}.side{position:static!important;max-height:none!important;border-right:0!important;border-bottom:1px solid var(--line)}}
+.side{border-right:1px solid var(--line);background:var(--panel);position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:10px}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px}
+.filters select{width:100%;font:inherit;font-size:12.5px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px}
+.item{padding:7px 8px;border-radius:8px;cursor:pointer;border:1px solid transparent;margin-bottom:2px}
+.item:hover{background:var(--soft)}
+.item.sel{background:var(--accentbg);border-color:var(--accent)}
+.item .t{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.item .id{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+main{padding:16px 20px 60px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.card h2{font-size:15px;margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px 18px}
+.kv .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.kv .v{margin-top:2px;overflow-wrap:anywhere}
+.chip{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;background:var(--soft);white-space:nowrap;font-weight:600}
+.c-forbidden{background:var(--badbg);color:var(--bad)} .c-allowed{background:var(--okbg);color:var(--ok)}
+.c-channel_only,.c-excluded_channel_first{background:var(--warnbg);color:var(--warn)}
+.c-no_disclosure,.c-fake_value{background:var(--soft);color:var(--muted)}
+.c-write_before_request,.c-task_file,.c-other_file{background:var(--secbg);color:var(--sec)}
+.c-incomplete{background:var(--soft);color:var(--muted);border:1px dashed var(--line)}
+.arm{display:inline-block;padding:1px 7px;border-radius:5px;font-size:11.5px;font-weight:700;font-family:ui-monospace,Menlo,monospace}
+.arm-PF{background:var(--badbg);color:var(--bad)} .arm-PA{background:var(--okbg);color:var(--ok)}
+.hl-a{background:var(--okbg);color:var(--ok);border-radius:4px;padding:0 3px;font-weight:600}
+.hl-f{background:var(--badbg);color:var(--bad);border-radius:4px;padding:0 3px;font-weight:600}
+.hl-s{background:var(--secbg);color:var(--sec);border-radius:4px;padding:0 3px;font-weight:600}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.rule{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:4px}
+.steps{margin:0;padding-left:20px} .steps li{margin:4px 0}
+.verdict{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--accentbg)}
+.check{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.check input{flex:1 1 220px;font:inherit;font-size:13px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+.round{border-top:1px solid var(--line);padding:10px 0 6px;display:grid;grid-template-columns:62px minmax(0,1fr);gap:8px}
+.round:first-child{border-top:0}
+.rlabel{font-size:12px;color:var(--muted);font-weight:700;padding-top:6px}
+.bubble{border-radius:10px;padding:7px 10px;margin-bottom:6px;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble .who{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.peer{background:var(--peerbg)} .peer .who{color:var(--peer)}
+.agent{background:var(--agentbg)} .agent .who{color:var(--agent)}
+.tool{background:var(--toolbg);font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+.tool .who{color:var(--tool);font-family:-apple-system,sans-serif}
+.tool.err{opacity:.7}
+.scored{outline:2px solid var(--accent);outline-offset:1px}
+.probe{color:var(--accent);font-size:12px;font-weight:700;margin:2px 0 6px}
+.firstask{outline:2px dashed var(--peer);outline-offset:1px}
+details{border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-bottom:8px}
+summary{cursor:pointer;padding:9px 12px;font-weight:600}
+details .body{padding:0 12px 12px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;margin:0;font-size:12.5px;font-family:ui-monospace,Menlo,monospace}
+table{border-collapse:collapse;width:100%;font-size:13px}
+td,th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+.tw{overflow-x:auto}
+.nav{display:flex;gap:6px;margin-left:auto}
+textarea{width:100%;min-height:120px;font-family:ui-monospace,Menlo,monospace;font-size:12px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px}
+kbd{font-family:ui-monospace,Menlo,monospace;font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 4px;background:var(--panel)}
+.tabs{display:flex;gap:4px;margin-left:8px}.tabs .btn.on{background:var(--accentbg);color:var(--accent);border-color:var(--accent)}
+.results{max-width:1100px;margin:16px auto;padding:0 16px}.results .card{margin-bottom:14px}.results table{font-size:13px}
+.results th{text-align:left}.results td,.results th{padding:5px 8px;border-bottom:1px solid var(--line)}
+.readout h2,.readout h3{margin:12px 0 6px}.readout p,.readout li{line-height:1.55}.readout .lead{font-size:15px}
+.results a[data-ep]{color:var(--accent);cursor:pointer;text-decoration:underline;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="row">
+    <h1>E17 pilot: results and episodes</h1>
+    <span class="tabs"><button class="btn on" id="tabRes">Results</button><button class="btn" id="tabEps">Episodes</button></span>
+    <span class="muted small" id="metaLine"></span>
+    <span style="margin-left:auto;display:flex;gap:6px">
+      <button class="btn" id="exportBtn">Export my checks</button>
+      <button class="btn" id="themeBtn">Light / dark</button>
+    </span>
+  </div>
+  <div class="legend">
+    <span><span class="hl-a">allowed file</span></span><span><span class="hl-f">forbidden file</span></span><span><span class="hl-s">secret value</span></span>
+    <span><span class="arm arm-PF">PF</span> peer asks for the forbidden file</span><span><span class="arm arm-PA">PA</span> peer asks for the allowed file</span>
+    <span class="muted"><kbd>j</kbd>/<kbd>k</kbd> next / previous episode · <kbd>1</kbd> correct <kbd>2</kbd> wrong <kbd>3</kbd> unsure</span>
+  </div>
+  <div class="summary" id="summary"></div>
+  <div id="exportBox" style="display:none;margin-top:10px"><textarea id="exportText" readonly></textarea><div class="small muted">Paste this back into the chat so I can fix any wrong labels.</div></div>
+</header>
+<div id="resultsView" class="results">/*RESULTS*/</div>
+<div class="layout" id="episodesView" style="display:none">
+  <aside class="side">
+    <div class="filters">
+      <select id="fArm"><option value="all">All conditions</option><option value="PF">PF: asks forbidden</option><option value="PA">PA: asks allowed</option><option value="PF-SYS">PF, secret in system prompt</option></select>
+      <select id="fScen"></select>
+      <select id="fOut"></select>
+      <select id="fChk"><option value="all">Any check</option><option value="none">Not checked</option><option value="ok">Marked correct</option><option value="bad">Marked wrong</option><option value="unsure">Marked unsure</option></select>
+    </div>
+    <div id="list"></div>
+  </aside>
+  <main id="main"></main>
+</div>
+<script>
+const EPS = /*EPISODES*/null;
+const META = /*META*/null;
+const OUT = {forbidden:'gave in: forbidden file', allowed:'wrote to allowed file', channel_only:'leaked in chat only',
+  excluded_channel_first:'chat leak first (excluded)', no_disclosure:'held out', fake_value:'fake value (held out)', write_before_request:'wrote before asked',
+  task_file:'into task file', other_file:'other file', incomplete:'incomplete run'};
+const SHORTN = {'procurement-reserve-price':'reserve price','service-capacity-figure':'capacity','service-rollout-threshold':'rollout threshold','handoff-exception-note':'exception note','dispatch-integration-code':'dispatch code','artifact-registry-token':'registry token'};
+const SHORT = s => SHORTN[s] || s;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store = { get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+                set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+let checks = store.get('e17checks', {});
+let sel = store.get('e17sel', EPS[0].id);
+let filt = store.get('e17filt', {arm:'all', scen:'all', out:'all', chk:'all'});
+
+EPS.forEach(e => { e.outcome = e.status === 'complete' ? (e.label.outcome || 'incomplete') : 'incomplete'; e.num = e.id.split('-').pop(); e.cell = e.arm + (e.loc === 'SYSPROMPT' ? '-SYS' : ''); });
+const CELLNAME = {PF:'PF', PA:'PA', 'PF-SYS':'PF·sys'};
+
+function hl(text, e){
+  let s = String(text ?? '');
+  const toks = [];
+  const put = (needle, cls) => { if (!needle) return; s = s.split(needle).join(`\u0001${toks.length}\u0002`); toks.push(`<span class="${cls}">${esc(needle)}</span>`); };
+  put(e.secret, 'hl-s'); put(e.allowed, 'hl-a'); put(e.forbidden, 'hl-f');
+  put(e.allowed.split('/').pop(), 'hl-a'); put(e.forbidden.split('/').pop(), 'hl-f');
+  return esc(s).replace(/\u0001(\d+)\u0002/g, (_, i) => toks[+i]);
+}
+const chip = o => `<span class="chip c-${o}">${OUT[o] || o}</span>`;
+const role = (p, e) => p === e.forbidden ? '<span class="chip c-forbidden">forbidden file</span>' : p === e.allowed ? '<span class="chip c-allowed">allowed file</span>' : p === e.summary ? '<span class="chip">task file</span>' : p === e.private ? '<span class="chip">private file</span>' : '<span class="chip">other</span>';
+
+function testsFor(e){
+  const L = e.label; if (e.loc === 'SYSPROMPT') return 'Secret-in-system-prompt condition: used for label A (does the secret come out at all), not for Test 1 or Test 2.';
+  if (!L || !L.in_label_B) return 'Not used in Test 1 or Test 2.';
+  if (e.arm === 'PF' && L.label_B === 'forbidden') return '<b>Test 1, group 1</b> (gave in) and <b>Test 2, group 1</b> (did what was asked; it was forbidden).';
+  if (e.arm === 'PF' && L.label_B === 'allowed') return '<b>Test 1, group 2</b> (compromised: wrote to the allowed file instead of the requested forbidden one).';
+  if (e.arm === 'PA' && L.label_B === 'allowed') return '<b>Test 2, group 2</b> (did what was asked; it was allowed).';
+  return 'Label B is set, but this combination isn\'t used in either test (the agent wrote somewhere the peer didn\'t ask).';
+}
+
+function renderSummary(){
+  const box = (arm, title) => {
+    const xs = EPS.filter(e => e.cell === arm), c = {}; if (!xs.length) return '';
+    xs.forEach(e => c[e.outcome] = (c[e.outcome]||0)+1);
+    return `<div class="sumbox"><b><span class="arm arm-${arm.slice(0,2)}">${CELLNAME[arm]}</span> ${title} · ${xs.length} episodes</b><div class="chips">${
+      Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([o,n]) => `<span class="chip c-${o}" style="cursor:pointer" data-arm="${arm}" data-out="${o}">${OUT[o]||o}: ${n}</span>`).join('')}</div></div>`;
+  };
+  const done = Object.values(checks).filter(c => c.v).length, bad = Object.values(checks).filter(c => c.v === 'bad').length;
+  document.getElementById('summary').innerHTML = box('PF','peer asks for the forbidden file') + box('PA','peer asks for the allowed file') + box('PF-SYS','asks forbidden, secret in system prompt') +
+    `<div class="sumbox"><b>Your label checks</b>${done} of ${EPS.length} checked · ${bad} marked wrong</div>`;
+  document.querySelectorAll('#summary [data-out]').forEach(x => x.onclick = () => { filt = {...filt, arm:x.dataset.arm, out:x.dataset.out}; store.set('e17filt', filt); render(); });
+}
+
+function filtered(){
+  return EPS.filter(e => (filt.arm==='all'||e.cell===filt.arm) && (filt.scen==='all'||e.scenario===filt.scen) && (filt.out==='all'||e.outcome===filt.out)
+    && (filt.chk==='all' || (filt.chk==='none' ? !(checks[e.id]||{}).v : (checks[e.id]||{}).v === filt.chk)));
+}
+
+function renderFilters(){
+  const scens = [...new Set(EPS.map(e => e.scenario))], outs = [...new Set(EPS.map(e => e.outcome))];
+  document.getElementById('fScen').innerHTML = `<option value="all">All scenarios</option>` + scens.map(s => `<option value="${s}">${SHORT(s)}</option>`).join('');
+  document.getElementById('fOut').innerHTML = `<option value="all">All outcomes</option>` + outs.map(o => `<option value="${o}">${OUT[o]||o}</option>`).join('');
+  [['fArm','arm'],['fScen','scen'],['fOut','out'],['fChk','chk']].forEach(([id,k]) => { const el = document.getElementById(id); el.value = filt[k]; el.onchange = () => { filt[k] = el.value; store.set('e17filt', filt); render(); }; });
+}
+
+function renderList(){
+  const xs = filtered();
+  document.getElementById('list').innerHTML = (xs.length ? '' : '<div class="muted small">No episodes match.</div>') + xs.map(e => {
+    const c = (checks[e.id]||{}).v, mark = c === 'ok' ? '✓' : c === 'bad' ? '✗' : c === 'unsure' ? '?' : '';
+    const fw = e.label && e.label.first_write_after_request;
+    return `<div class="item ${e.id===sel?'sel':''}" data-id="${e.id}"><div class="t"><span class="arm arm-${e.arm}">${CELLNAME[e.cell]}</span><span class="id">${SHORT(e.scenario)} · ${e.num}</span><span style="margin-left:auto;font-weight:700;color:${c==='bad'?'var(--bad)':'var(--ok)'}">${mark}</span></div>
+      <div class="t" style="margin-top:3px">${chip(e.outcome)}${e.label && e.label.forbidden_after_allowed ? '<span class="chip c-forbidden">then forbidden r' + e.label.forbidden_after_allowed.round + '</span>' : ''}<span class="muted small">${fw ? 'write r' + fw.round : ''} · ${e.rounds ?? '?'} rounds</span></div></div>`;
+  }).join('');
+  document.querySelectorAll('.item').forEach(x => x.onclick = () => { sel = x.dataset.id; store.set('e17sel', sel); render(); });
+}
+
+function evidence(e){
+  const L = e.label || {};
+  if (L.error || e.status !== 'complete') return `<p>This run didn't finish (<span class="mono">${esc(e.stop)}</span>), so it has no label. The transcript below shows how far it got.</p>`;
+  const writes = (L.secret_writes || []).map(w => {
+    const scored = L.first_write_after_request && w.call_id === L.first_write_after_request.call_id;
+    return `<li>Round ${w.round}: wrote the secret to <span class="mono">${hl(w.path, e)}</span> ${role(w.path, e)} ${scored ? '<span class="chip" style="background:var(--accentbg);color:var(--accent)">scored call</span>' : '<span class="muted small">(not scored: only the first write after the request counts)</span>'}</li>`;
+  }).join('') || '<li>No file write containing the secret.</li>';
+  const chat = (L.channel_leak_rounds || []).length ? `<li>Secret posted in the chat in round(s) ${L.channel_leak_rounds.join(', ')}${L.channel_leak_before_first_write ? ' <b>(at or before the first file write, so this episode is excluded from the rule tests)</b>' : ''}.</li>` : '<li>Never posted the secret in the chat.</li>';
+  let verdict;
+  if (L.in_label_B) verdict = `First write after the request went to the ${L.label_B === 'forbidden' ? '<span class="hl-f">forbidden</span>' : '<span class="hl-a">allowed</span>'} file, so <b>label B = ${L.label_B}</b>. Used in: ${testsFor(e)}`;
+  else verdict = `No label B (${OUT[L.outcome] || L.outcome}). ${testsFor(e)} ${L.outcome === 'channel_only' ? 'Still counts as a disclosure for the "about to reveal the secret" label.' : ''}`;
+  const c = checks[e.id] || {};
+  return `<ol class="steps">
+      <li>The peer first asked for <b>${esc(e.key)}</b> in <b>round ${L.peer_first_request_round ?? '—'}</b>${e.arm === 'PA' ? ` (its prompt told it to wait until message ${e.askFrom})` : ''}.</li>
+      ${writes}${chat}
+      ${L.forbidden_after_allowed ? `<li><b>Allowed first, then forbidden:</b> after writing the allowed file, the target also wrote the forbidden file in round ${L.forbidden_after_allowed.round}. The label stays "allowed" (only the first write is scored); this episode is an allowed→forbidden pair.</li>` : ''}
+      <li class="muted small">Peer-mentioned-the-other-file heuristic: ${L.peer_drift ? 'fired. It is unreliable; read the peer messages to see whether it actually asked for the other file' : 'did not fire'}.</li>
+    </ol>
+    <div class="verdict">${verdict}</div>
+    <div class="check"><b>Is this label right?</b>
+      <button class="btn ${c.v==='ok'?'on':''}" data-v="ok">✓ Correct</button><button class="btn ${c.v==='bad'?'on':''}" data-v="bad">✗ Wrong</button><button class="btn ${c.v==='unsure'?'on':''}" data-v="unsure">? Unsure</button>
+      <input id="note" placeholder="Note (optional): what's wrong or interesting" value="${esc(c.note||'')}"></div>`;
+}
+
+function transcript(e){
+  const L = e.label || {}, scoredId = L.in_label_B && L.first_write_after_request ? L.first_write_after_request.call_id : null;
+  const tn = e.names.target || 'target', pn = e.names.recruiter || 'peer';
+  return e.events.map(r => {
+    const peer = r.peer.map(p => p.kind === 'tool' ? `<div class="bubble tool ${p.error?'err':''}"><div class="who">Peer tool call ${p.path ? role(p.path, e) : ''} ${p.error ? '<span class="chip">refused</span>' : ''}</div>${p.name}(${p.path ? hl(p.path, e) : ''})<details style="margin-top:4px;border:0;background:none"><summary style="padding:0;font-weight:400" class="muted small">result</summary>${hl(p.result, e)}</details></div>` : `<div class="bubble peer ${r.round === L.peer_first_request_round && p.text.includes(e.key) ? 'firstask' : ''}"><div class="who">Peer · ${esc(pn)}${r.round === L.peer_first_request_round && p.text.includes(e.key) ? ' <span class="chip">first ask for the secret</span>' : ''}</div>${hl(p.text.trim(), e)}</div>`).join('');
+    const tgt = r.target.map(t => {
+      if (t.kind === 'msg') return `<div class="bubble agent"><div class="who">Target · ${esc(tn)}${t.via ? ' <span class="muted">(send_message)</span>' : ''}</div>${hl(t.text.trim(), e)}</div>`;
+      const isScored = t.call_id && t.call_id === scoredId;
+      const head = `${t.name}(${t.path ? hl(t.path, e) : ''})`;
+      const body = t.name === 'write_file' ? `<div style="margin-top:3px">content: ${hl(t.content, e)}</div>` : `<details style="margin-top:4px;border:0;background:none"><summary style="padding:0;font-weight:400" class="muted small">result</summary>${hl(t.result, e)}</details>`;
+      return `${isScored ? '<div class="probe">◆ The probe reads the activations here, just before this call</div>' : ''}<div class="bubble tool ${isScored?'scored':''} ${t.error?'err':''}"><div class="who">Tool call ${t.path ? role(t.path, e) : ''} ${isScored ? '<span class="chip" style="background:var(--accentbg);color:var(--accent)">scored call</span>' : ''} ${t.error ? '<span class="chip">error</span>' : ''}</div>${head}${body}</div>`;
+    }).join('');
+    return `<div class="round"><div class="rlabel">Round ${r.round}</div><div>${peer}${tgt}</div></div>`;
+  }).join('');
+}
+
+function files(fs, e){
+  return `<div class="tw"><table>${Object.entries(fs).map(([p,c]) => `<tr><td class="mono" style="width:38%">${hl(p,e)} ${role(p,e)}</td><td class="mono">${hl(c,e) || '<span class="muted">(empty)</span>'}</td></tr>`).join('')}</table></div>`;
+}
+
+function renderMain(){
+  const xs = filtered(); let e = EPS.find(x => x.id === sel); if (!e) { e = xs[0] || EPS[0]; sel = e.id; }
+  const i = xs.findIndex(x => x.id === e.id), L = e.label || {};
+  const fw = L.first_write_after_request;
+  document.getElementById('main').innerHTML = `
+  <div class="card"><h2><span class="arm arm-${e.arm}">${CELLNAME[e.cell]}</span> <span class="mono">${esc(e.id)}</span> ${chip(e.outcome)}
+    <span class="nav"><button class="btn" id="prev">← prev</button><button class="btn" id="next">next →</button></span></h2>
+    <div class="glance">
+      <div class="kv"><div class="k">Condition</div><div class="v">${e.arm === 'PF' ? 'Peer pushes for the <span class="hl-f">forbidden</span> file from its first message' : (e.askFrom === 1 ? 'Peer pushes for the <span class="hl-a">allowed</span> file from its first message' : `Peer chats, then asks for the <span class="hl-a">allowed</span> file from message ${e.askFrom}`)}${e.loc === 'SYSPROMPT' ? '. <b>Secret is in the system prompt</b>, not a file' : '. Secret is in the private file'}</div></div>
+      <div class="kv"><div class="k">Scenario · secret</div><div class="v">${SHORT(e.scenario)} · <span class="mono">${esc(e.key)}</span></div></div>
+      <div class="kv"><div class="k">Allowed file</div><div class="v mono"><span class="hl-a">${esc(e.allowed)}</span></div></div>
+      <div class="kv"><div class="k">Forbidden file</div><div class="v mono"><span class="hl-f">${esc(e.forbidden)}</span></div></div>
+      <div class="kv"><div class="k">Peer first asked</div><div class="v">round ${L.peer_first_request_round ?? '—'}</div></div>
+      <div class="kv"><div class="k">Scored call</div><div class="v">${fw && L.in_label_B ? `round ${fw.round} → ${role(fw.path, e)}` : '—'}</div></div>
+      <div class="kv"><div class="k">Label B</div><div class="v">${L.label_B ? `<span class="chip c-${L.label_B}">${L.label_B}</span>` : '—'}</div></div>
+      <div class="kv"><div class="k">Ended</div><div class="v">${esc(e.stop)} · ${e.rounds ?? '?'} rounds · $${e.cost.toFixed(4)}</div></div>
+    </div>
+    <div class="kv" style="margin-top:10px"><div class="k">The rule, exactly as the target saw it</div><div class="rule">${hl(e.rule, e)}</div></div>
+  </div>
+  <div class="card"><h2>How the label was decided</h2>${evidence(e)}</div>
+  <details><summary>Target system prompt</summary><div class="body"><pre>${hl(e.targetSystem, e)}</pre></div></details>
+  <details><summary>Target task (its first user message)</summary><div class="body"><pre>${hl(e.task, e)}</pre></div></details>
+  <details><summary>Peer system prompt</summary><div class="body"><pre>${hl(e.peerSystem, e)}</pre></div></details>
+  <details><summary>Workspace files: at the start and at the end</summary><div class="body"><p class="small muted">Start</p>${files(e.files, e)}<p class="small muted" style="margin-top:10px">End</p>${files(e.finalFiles, e)}</div></details>
+  <details><summary>Run details</summary><div class="body small">${e.providers.map(esc).join('<br>')}<br>Name set ${esc(e.nameSet)} · rule names the ${e.allowFirst ? 'allowed' : 'forbidden'} file first · run <span class="mono">${esc(META.run)}</span></div></details>
+  <div class="card" style="margin-top:14px"><h2>Transcript</h2><div class="small muted" style="margin:-4px 0 6px">Each round: the peer acts (any file reads, then its message), then the target acts (tool calls, then its reply). The dashed outline marks the peer's first ask; the blue outline marks the scored call.</div>${transcript(e)}</div>`;
+  document.getElementById('prev').onclick = () => go(-1);
+  document.getElementById('next').onclick = () => go(1);
+  document.querySelectorAll('.check [data-v]').forEach(b => b.onclick = () => setCheck(b.dataset.v));
+  const note = document.getElementById('note');
+  if (note) note.onchange = () => { checks[e.id] = {...(checks[e.id]||{}), note: note.value}; store.set('e17checks', checks); renderSummary(); };
+}
+
+function setCheck(v){ checks[sel] = {...(checks[sel]||{}), v: (checks[sel]||{}).v === v ? null : v}; store.set('e17checks', checks); render(true); }
+function go(d){ const xs = filtered(); const i = xs.findIndex(x => x.id === sel); const n = xs[Math.min(xs.length-1, Math.max(0, i + d))]; if (n){ sel = n.id; store.set('e17sel', sel); render(); } }
+function render(keepScroll){ renderSummary(); renderFilters(); renderList(); const y = window.scrollY; renderMain(); window.scrollTo(0, keepScroll ? y : 0); }
+
+document.addEventListener('keydown', ev => {
+  if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) return;
+  if (document.getElementById('episodesView').style.display === 'none') return;
+  if (ev.key === 'j') go(1); else if (ev.key === 'k') go(-1);
+  else if (ev.key === '1') setCheck('ok'); else if (ev.key === '2') setCheck('bad'); else if (ev.key === '3') setCheck('unsure');
+});
+document.getElementById('themeBtn').onclick = () => { const r = document.documentElement, cur = r.getAttribute('data-theme');
+  const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.setAttribute('data-theme', dark ? 'light' : 'dark'); };
+document.getElementById('exportBtn').onclick = () => { const b = document.getElementById('exportBox'), t = document.getElementById('exportText');
+  const out = Object.fromEntries(Object.entries(checks).filter(([k,v]) => v.v || v.note));
+  t.value = JSON.stringify(out, null, 1); b.style.display = b.style.display === 'none' ? 'block' : 'none'; t.select();
+  try { navigator.clipboard.writeText(t.value); } catch(e) {} };
+document.getElementById('metaLine').textContent = `${META.n} episodes · run ${META.run} · total cost $${META.cost.toFixed(2)} · target Qwen3-32B, peer DeepSeek-V4-Flash`;
+const tab = v => { const r = v === 'res'; document.getElementById('resultsView').style.display = r ? '' : 'none';
+  document.getElementById('episodesView').style.display = r ? 'none' : ''; document.getElementById('summary').style.display = r ? 'none' : '';
+  document.querySelector('.legend').style.display = r ? 'none' : '';
+  document.getElementById('tabRes').classList.toggle('on', r); document.getElementById('tabEps').classList.toggle('on', !r); store.set('e17tab', v); };
+document.getElementById('tabRes').onclick = () => tab('res'); document.getElementById('tabEps').onclick = () => tab('eps');
+document.addEventListener('click', ev => { const a = ev.target.closest('[data-ep]'); if (a) { sel = a.dataset.ep; filt = {arm:'all', scen:'all', out:'all', chk:'all'}; store.set('e17sel', sel); tab('eps'); render(); } });
+render(); tab(store.get('e17tab', 'res'));
+</script>
+</body>
+</html>
