@@ -101,9 +101,14 @@ def main(run_dir, pilot1_dir=None):
         from pilot_report import compute, html as results_html
     run_dir = Path(run_dir)
     out = OUT if run_dir.name.endswith('e17-pilot') else ROOT / f'private/crossed/E17_{run_dir.name.split("-e17-")[-1].upper()}_VIEWER.html'
-    eps = [episode(p) for p in sorted((run_dir / 'episodes').glob('*.json')) if '.attempt' not in p.name]
-    meta = {'run': run_dir.name, 'n': len(eps), 'cost': sum(x['cost'] for x in eps)}
-    readout_file = ROOT / f'private/crossed/{run_dir.name}_readout.html'   # hand-written interpretation, optional
+    dirs = [run_dir]
+    if '-e17-main' in run_dir.name and pilot1_dir:   # full main run: show both stages' episodes
+        dirs.append(Path(pilot1_dir))
+        out = ROOT / 'private/crossed/E17_MAIN_VIEWER.html'
+    eps = [episode(p) for d in dirs for p in sorted((d / 'episodes').glob('*.json')) if '.attempt' not in p.name]
+    meta = {'run': ' + '.join(d.name for d in dirs), 'n': len(eps), 'cost': sum(x['cost'] for x in eps)}
+    readout_file = ROOT / f'private/crossed/{out.stem}_readout.html' if len(dirs) > 1 else \
+        ROOT / f'private/crossed/{run_dir.name}_readout.html'   # hand-written interpretation, optional
     readout = readout_file.read_text() if readout_file.exists() else ''
     results = results_html(compute(run_dir, pilot1_dir), readout)
     safe = lambda obj: json.dumps(obj).replace('</', '<\\/')

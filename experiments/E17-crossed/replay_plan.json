@@ -1,0 +1,18 @@
+{
+  "experiment": "E17",
+  "status": "frozen_before_gpu",
+  "written": "2026-11-05, before any E17 activation exists",
+  "payload": "replay_payload.py over runs/20261105-0042-e17-main-stage1 + runs/20261105-1223-e17-main-stage2: 423 forwards (271 PF forbidden, 47 PF compromise, 105 PA allowed), 421,614 prompt tokens",
+  "model": {
+    "name": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "precision": "bf16",
+    "mode": "prefill_only",
+    "layers": [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 63]
+  },
+  "activation": "Render the saved request with replay.render(..., 'from-request') (reasoning off, as in the run). Save the residual stream at the last prompt token at every listed layer. No reply tokens, no frozen probe.",
+  "headline_layer": 48,
+  "headline_layer_reason": "the layer the paper's Qwen3-32B last-prompt probe uses; fixed here so the layer is not chosen on E17 test data. Other layers are a secondary sweep.",
+  "gpu": {"type": "A100-80GB", "benchmark_calls": 12, "full_timeout_seconds": 3000},
+  "budget": {"modal_cap_usd": 2.0}
+}

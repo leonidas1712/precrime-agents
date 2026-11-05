@@ -29,7 +29,7 @@ ROOT = HERE.parents[1]
 MOCK_DIR = ROOT / 'private/crossed/mock_runs'
 APPROVED = {'pilot': 'Leo, 3 Nov 2026 (chat)', 'pilot2': 'Leo, 4 Nov 2026 (chat)',
             'check4': 'Leo, 4 Nov 2026 (chat)',
-            'main:1': 'Leo, 5 Nov 2026 (chat)'}  # main stage 2: not approved
+            'main:1': 'Leo, 5 Nov 2026 (chat)', 'main:2': 'Leo, 5 Nov 2026 (chat)'}
 
 # The harness asks scenarios.score_episode whether the main action happened (for early stop).
 # v1's scorer reads the secret from the private file, which the SYSPROMPT arm doesn't have, so route E17 here.

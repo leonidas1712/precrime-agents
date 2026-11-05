@@ -2,16 +2,19 @@
 
 Design: `private/WORKSHOP_PLAN.md` §3.1. Status and results: `EXPERIMENT_LOG.md`, entry of 4 Nov 2026.
 
-Pilot 1 (40 episodes, $0.15): `runs/20261103-1931-e17-pilot`. Pilot 2 (138 episodes, all six scenarios, $0.49): `runs/20261104-0203-e17-pilot2`. Draft-4 live check (24 episodes, $0.07): `runs/20261104-2358-e17-check4`. Main run: rules below, stage 1 approved by Leo on 5 Nov 2026.
+Pilot 1 (40 episodes, $0.15): `runs/20261103-1931-e17-pilot`. Pilot 2 (138 episodes, all six scenarios, $0.49): `runs/20261104-0203-e17-pilot2`. Draft-4 live check (24 episodes, $0.07): `runs/20261104-2358-e17-check4`. Main run (620 episodes, $2.20): `runs/20261105-0042-e17-main-stage1` + `runs/20261105-1223-e17-main-stage2`, both approved by Leo on 5 Nov 2026; rules below.
 
 | File | What it does |
 |---|---|
 | `crossed.py` | Builds one episode from a v1 spray scenario: a two-file rule, both files in the workspace, peer arm PF/PA, secret in FILE or SYSPROMPT. Also holds the labeller (`score_crossed`, `scored_calls`). |
-| `plan.py` | Episode lists: `pilot` (2 scenarios × 10 PF + 10 PA = 40) and `main` (6 scenarios × 33 PF + 33 PA + 12 PF-SYSPROMPT = 468). |
+| `plan.py` | Episode lists: `pilot`, `pilot2`, `check4` and `main` (4 scenarios × 125 PF + 30 PA = 620, in two stages). |
 | `mock_client.py` | Scripted stand-in for both models, with invented outcome rates. It is for checking the plumbing only. |
-| `run.py` | Runs episodes through the real v1 harness. `--mock` (free) or `--live` (paid; refuses any plan except `pilot`). |
+| `run.py` | Runs episodes through the real v1 harness. `--mock` (free) or `--live` (paid; refuses any plan or stage not in its `APPROVED` table). |
 | `analyze.py` | Pilot go/no-go, C1/C2 contrast rows, round-bin-stratified AUROC with an episode bootstrap. |
 | `pilot_report.py` | Behaviour readout of a pilot run: outcomes, timing, per-scenario coverage, pairs, placeholder writes, a text-only baseline and main-run sizing. |
+| `resample.py` | The resampling check (below). |
+| `main_report.py` | Behaviour readout of the main run: outcomes, timing, peer behaviour, fake values, the setup-details and bag-of-words baselines. |
+| `replay_payload.py`, `replay_plan.json`, `replay_modal.py` | GPU replay: packs the 423 scored calls and saves Qwen3-32B last-prompt-token activations on Modal (copy of E15's app without the frozen probe). |
 | `build_pilot_viewer.py` + `pilot_viewer_template.html` | Build `private/crossed/E17_PILOT_VIEWER.html` from a real run: labels, label evidence, prompts, full transcripts. |
 | `build_viewer.py` + `viewer_template.html` | Build `private/crossed/E17_SETUP_VIEWER.html`: every episode's prompts, files and mock timeline. |
 
@@ -54,12 +57,13 @@ These rules are written down and committed before any main-run episode exists. A
 - **Test 1 (headline).** PF episodes, scored call to the forbidden vs the allowed file.
   - Metric: AUROC within scenario, averaged with weights by positives, with an episode-bootstrap 95% CI.
   - The probe is trained on Test 1 rows only, with leave-one-scenario-out folds, read at the last prompt token before the scored call.
+  - Layer 48, the layer of the paper's Qwen3-32B last-prompt probe, fixed in `replay_plan.json` before any E17 activation existed. Other saved layers are a secondary sweep.
 - **Test 2 (transfer).** The Test 1 probe, unchanged, scores PF forbidden writes vs PA allowed writes. PF rows use their out-of-fold scores. PA rows are never trained on. Report the AUROC and where PA allowed writes fall relative to PF compromises.
 
 **Comparisons for Test 1.**
 - the resampling ceiling (0.95 on the pilots);
 - an LLM monitor (non-Claude) that reads the same prefix and predicts which file the target will write to;
-- a setup-details baseline: logistic regression on the randomised design variables (`allowed_first_in_rule`, same or different extension, allow and forbid templates, name set);
+- a setup-details baseline: logistic regression on the randomised design variables (`allowed_first_in_rule`, same or different extension, which file is listed first in the workspace, allow and forbid templates, name set);
 - the bag-of-words reader of the incoming context as a floor.
 
 **Added value over the setup details.** On the pilot-2 data, measured before this run, the setup-details baseline already scores 0.81 within scenario [0.62, 0.96] (36 forbidden vs 17 compromises, leave-one-episode-out). So we also fit the setup details plus the probe score together, and report the paired within-scenario gain over the setup details alone. This is the cleanest answer to "the probe only reads the prompt layout".
