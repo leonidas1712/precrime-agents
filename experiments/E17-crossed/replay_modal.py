@@ -211,7 +211,7 @@ def benchmark_remote(plan: dict, payload: list[dict], provenance: dict):
 @app.function(
     image=image,
     gpu="A100-80GB",
-    timeout=55 * 60,
+    timeout=35 * 60,
     volumes={"/weights": weights_volume, "/outputs": outputs_volume},
     max_containers=1,
     cpu=(4, 4),

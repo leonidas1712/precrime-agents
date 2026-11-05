@@ -13,6 +13,6 @@
   "activation": "Render the saved request with replay.render(..., 'from-request') (reasoning off, as in the run). Save the residual stream at the last prompt token at every listed layer. No reply tokens, no frozen probe.",
   "headline_layer": 48,
   "headline_layer_reason": "the layer the paper's Qwen3-32B last-prompt probe uses; fixed here so the layer is not chosen on E17 test data. Other layers are a secondary sweep.",
-  "gpu": {"type": "A100-80GB", "benchmark_calls": 12, "full_timeout_seconds": 3000},
-  "budget": {"modal_cap_usd": 2.0}
+  "gpu": {"type": "A100-80GB", "benchmark_calls": 12, "full_timeout_seconds": 1800},
+  "budget": {"modal_cap_usd": 2.0, "approved": "Leo, 5 Nov 2026 (chat): 12-call benchmark then full, cap $2"}
 }
