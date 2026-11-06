@@ -8,7 +8,7 @@ to runs/index.jsonl. See docs/workflow.md.
     run.dir / "episodes"      # write outputs here
     run.result(acceptance=0.4) # headline numbers, saved at exit
 
-`python -m collusion.runs [--exp E01] [--status finished] [--tag sweep1]` prints the index.
+`python -m collusion.runs [--exp E01] [--status finished] [--tag sweep1] [--limit 20]` prints the index.
 """
 
 from __future__ import annotations
@@ -173,7 +173,12 @@ def load_index() -> list[dict]:
         return []
     rows: dict[str, dict] = {}
     for line in INDEX.read_text().splitlines():
-        e = json.loads(line)
+        if not line.strip():
+            continue
+        try:
+            e = json.loads(line)
+        except json.JSONDecodeError:  # a line cut short by a crash mid-write
+            continue
         row = rows.setdefault(e["id"], {"id": e["id"], "experiment": e["experiment"], "tags": e.get("tags", [])})
         if e["event"] == "start":
             row.update(started=e["time"], status="running")
@@ -190,6 +195,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--status")
     p.add_argument("--tag")
     p.add_argument("--since", help="YYYYMMDD")
+    p.add_argument("--limit", type=int, help="show only the last N matching runs")
     a = p.parse_args(argv)
     rows = load_index()
     if a.exp:
@@ -200,6 +206,8 @@ def main(argv: list[str] | None = None) -> None:
         rows = [r for r in rows if a.tag in r["tags"]]
     if a.since:
         rows = [r for r in rows if r["id"][:8] >= a.since]
+    if a.limit:
+        rows = rows[-a.limit:]
     for r in rows:
         res = " ".join(f"{k}={v}" for k, v in (r.get("results") or {}).items())
         print(f"{r['id']:40s} {r['experiment']:6s} {r['status']:9s} {','.join(r['tags']):15s} {res}")

@@ -51,7 +51,7 @@ Every script that produces results starts with one call to a small run helper in
 - **`log.txt`:** everything the script printed.
 - **Outputs as they are produced,** so a crash keeps whatever finished.
 
-Run folder names get a short random suffix if needed, so runs started at the same minute never collide. The helper also appends one line to `runs/index.jsonl` when a run starts and when it ends: ID, experiment, status, tags, headline numbers. `python -m collusion.runs` prints the index as a table you can filter by experiment, tag, status or date. That table is the "what has been happening" view, and it works with many parallel jobs and no coordination.
+Run folder names get a short random suffix if needed, so runs started at the same minute never collide. The helper also appends one line to `runs/index.jsonl` when a run starts and when it ends: ID, experiment, status, tags, headline numbers. `python -m collusion.runs` prints the index as a table you can filter by experiment, tag, status or date; `--limit N` keeps only the last N rows. Blank or half-written lines in the index (from a run killed mid-write) are skipped. That table is the "what has been happening" view, and it works with many parallel jobs and no coordination.
 
 **What gets committed:**
 - `meta.json`, small results and figures, so readers of the public repo can trace every number.
