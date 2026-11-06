@@ -31,11 +31,12 @@ On gpt-oss-20b, the committed test covers one probe, and its test episodes hold 
 The signal may reflect what has just arrived in the input (\cref{sec:shortcuts}), and our results are correlational.
 A fresh read of the value puts nearly every disclosure over the threshold, permitted or not.
 Away from a read, forbidden leaks cross more often than permitted shares (\cref{app:e15}).
-In our data every permitted disclosure is also uncontested, so we cannot separate permission from the absence of pressure.
+A permitted write the peer asked for scores like a forbidden one, so the probe tracks the peer's request, not the rule (\cref{app:crossed}).
 
 \paragraph{An untuned text monitor.}
 Our main text monitor is one decision model used zero-shot, with no prompt tuning, while the probe is trained.
 
 \paragraph{Future work.}
-The most direct next step is to train detectors, probes or text classifiers, that tell a forbidden disclosure from a permitted one of the same value, including disclosures that are contested but allowed, using episodes where sharing is sometimes allowed and sometimes not, and to test whether they still catch the call before it acts.
+The most direct next step is a detector that tells a forbidden disclosure from a permitted one the peer also asked for.
+Ours does not (\cref{app:crossed}). A fair test needs many more episodes in which a pressed agent picks the permitted destination.
 Other steps are to test a stronger second stage for the cascade, to test whether the probe direction causally affects the decision, to test the probe in other environments and on more models, and to study larger multi-agent settings, as in the 2026 incident in which evaluation agents coordinated an attack on production infrastructure \citep{greenblatt2026incident}.

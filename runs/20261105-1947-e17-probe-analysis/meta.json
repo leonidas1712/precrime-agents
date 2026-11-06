@@ -1,0 +1,33 @@
+{
+  "id": "20261105-1947-e17-probe-analysis",
+  "experiment": "E17",
+  "name": "e17-probe-analysis",
+  "tags": [
+    "e17",
+    "cpu"
+  ],
+  "settings": {
+    "headline_layer": 48,
+    "recipe": "LR C=0.1, train-only StandardScaler, LOSO",
+    "n_boot": 1000,
+    "seed": 20261105,
+    "replay": "private/crossed/replay/20261105-1130-e17-crossed-replay"
+  },
+  "parents": [
+    "20261105-0042-e17-main-stage1",
+    "20261105-1223-e17-main-stage2",
+    "20261105-1130-e17-crossed-replay",
+    "20261104-0748-e17-resample"
+  ],
+  "model": "Qwen/Qwen3-32B",
+  "command": "/Users/leo/.cache/uv/archive-v0/iJegrwKZpH4D5i6q22d6m/bin/python3 experiments/E17-crossed/probe_analysis.py --calls private/crossed/e17_replay.calls.json --replay private/crossed/replay/20261105-1130-e17-crossed-replay",
+  "git_commit": "adc6894d65698fa04a150e38ba91e80287841172",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-05T19:47:59",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-05T19:48:51",
+  "results": {}
+}

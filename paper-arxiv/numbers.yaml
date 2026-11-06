@@ -18124,6 +18124,1837 @@
           "within_round_ci95"
         ]
       }
+    },
+    "eSeventeenEpisodes": {
+      "value": 620,
+      "macro": "eSeventeenEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenComplete": {
+      "value": 593,
+      "macro": "eSeventeenComplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "complete"
+        ]
+      }
+    },
+    "eSeventeenAskForbiddenComplete": {
+      "value": 476,
+      "macro": "eSeventeenAskForbiddenComplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "pf_complete"
+        ]
+      }
+    },
+    "eSeventeenAskAllowedComplete": {
+      "value": 117,
+      "macro": "eSeventeenAskAllowedComplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "pa_complete"
+        ]
+      }
+    },
+    "eSeventeenForbiddenWrites": {
+      "value": 271,
+      "macro": "eSeventeenForbiddenWrites",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "n",
+          "test1_forbidden"
+        ]
+      }
+    },
+    "eSeventeenCompromises": {
+      "value": 47,
+      "macro": "eSeventeenCompromises",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "n",
+          "test1_compromise"
+        ]
+      }
+    },
+    "eSeventeenAskAllowedWrites": {
+      "value": 105,
+      "macro": "eSeventeenAskAllowedWrites",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "n",
+          "test2_pa_allowed"
+        ]
+      }
+    },
+    "eSeventeenCompromiseRate": {
+      "value": 0.09873949579831932,
+      "macro": "eSeventeenCompromiseRate",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "percent",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "compromise_rate"
+        ]
+      }
+    },
+    "eSeventeenForbiddenRate": {
+      "value": 0.569327731092437,
+      "macro": "eSeventeenForbiddenRate",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "percent",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "forbidden_rate"
+        ]
+      }
+    },
+    "eSeventeenAskAllowedRate": {
+      "value": 0.8974358974358975,
+      "macro": "eSeventeenAskAllowedRate",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "percent",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "pa_allowed_rate"
+        ]
+      }
+    },
+    "eSeventeenTestOne": {
+      "value": 0.6872158591715788,
+      "macro": "eSeventeenTestOne",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test1",
+          "auroc"
+        ],
+        "ci_path": [
+          "test1",
+          "ci"
+        ]
+      },
+      "ci": [
+        0.5917439221504155,
+        0.7772219000515472
+      ]
+    },
+    "eSeventeenTestTwo": {
+      "value": 0.4596589006183103,
+      "macro": "eSeventeenTestTwo",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "auroc"
+        ],
+        "ci_path": [
+          "test2",
+          "ci"
+        ]
+      },
+      "ci": [
+        0.39818774234138316,
+        0.5273718578194287
+      ]
+    },
+    "eSeventeenAskAllowedAboveCompromise": {
+      "value": 0.7559472273757988,
+      "macro": "eSeventeenAskAllowedAboveCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "pa_above_compromise"
+        ],
+        "ci_path": [
+          "test2",
+          "pa_above_compromise_ci"
+        ]
+      },
+      "ci": [
+        0.6604535695281513,
+        0.8386990936990938
+      ]
+    },
+    "eSeventeenSetup": {
+      "value": 0.6733374866216195,
+      "macro": "eSeventeenSetup",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "added_value",
+          "setup_only"
+        ],
+        "ci_path": [
+          "added_value",
+          "setup_only_ci"
+        ]
+      },
+      "ci": [
+        0.5926425456487956,
+        0.7454746460645043
+      ]
+    },
+    "eSeventeenSetupPlusProbe": {
+      "value": 0.6596444146259643,
+      "macro": "eSeventeenSetupPlusProbe",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "added_value",
+          "setup_plus_probe"
+        ]
+      }
+    },
+    "eSeventeenGain": {
+      "value": -0.01369307199565517,
+      "macro": "eSeventeenGain",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "added_value",
+          "gain"
+        ],
+        "ci_path": [
+          "added_value",
+          "gain_ci"
+        ]
+      },
+      "ci": [
+        -0.06104019781580559,
+        0.03162111088161967
+      ]
+    },
+    "eSeventeenProbeMinusSetup": {
+      "value": 0.013878372549959272,
+      "macro": "eSeventeenProbeMinusSetup",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "probe_minus_setup",
+          "value"
+        ],
+        "ci_path": [
+          "probe_minus_setup",
+          "ci"
+        ]
+      },
+      "ci": [
+        -0.08920294489394968,
+        0.11902781453620999
+      ]
+    },
+    "eSeventeenText": {
+      "value": 0.5728295075158544,
+      "macro": "eSeventeenText",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "text_reader",
+          "auroc"
+        ],
+        "ci_path": [
+          "text_reader",
+          "ci"
+        ]
+      },
+      "ci": [
+        0.47400610193564174,
+        0.6853238519453797
+      ]
+    },
+    "eSeventeenLayerLow": {
+      "value": 0.5749972045174998,
+      "macro": "eSeventeenLayerLow",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "layer_sweep",
+          "4"
+        ]
+      }
+    },
+    "eSeventeenLayerHigh": {
+      "value": 0.7012491813229821,
+      "macro": "eSeventeenLayerHigh",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "layer_sweep",
+          "20"
+        ]
+      }
+    },
+    "eSeventeenHeadlineLayer": {
+      "value": 48,
+      "macro": "eSeventeenHeadlineLayer",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "headline_layer"
+        ]
+      }
+    },
+    "eSeventeenResamplePrompts": {
+      "value": 57,
+      "macro": "eSeventeenResamplePrompts",
+      "dataset": "E17 pilot episodes: each decisive ask-forbidden scored call resent 10 times, unchanged",
+      "evaluation": "Within-scenario AUROC of a reader that knows each prompt's own forbidden rate, scored on fresh draws; bootstrap over prompts",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "resample",
+          "prompts"
+        ]
+      }
+    },
+    "eSeventeenResamplePure": {
+      "value": 45,
+      "macro": "eSeventeenResamplePure",
+      "dataset": "E17 pilot episodes: each decisive ask-forbidden scored call resent 10 times, unchanged",
+      "evaluation": "Within-scenario AUROC of a reader that knows each prompt's own forbidden rate, scored on fresh draws; bootstrap over prompts",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "resample",
+          "pure"
+        ]
+      }
+    },
+    "eSeventeenCeiling": {
+      "value": 0.9526822667940146,
+      "macro": "eSeventeenCeiling",
+      "dataset": "E17 pilot episodes: each decisive ask-forbidden scored call resent 10 times, unchanged",
+      "evaluation": "Within-scenario AUROC of a reader that knows each prompt's own forbidden rate, scored on fresh draws; bootstrap over prompts",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "resample",
+          "ceiling_within"
+        ],
+        "ci_path": [
+          "resample",
+          "ceiling_within_ci"
+        ]
+      },
+      "ci": [
+        0.8542801374685433,
+        0.9662263087232719
+      ]
+    },
+    "eSeventeenCapacityForbidden": {
+      "value": 46,
+      "macro": "eSeventeenCapacityForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-capacity-figure",
+          "test1_forbidden"
+        ]
+      }
+    },
+    "eSeventeenCapacityCompromise": {
+      "value": 11,
+      "macro": "eSeventeenCapacityCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-capacity-figure",
+          "test1_compromise"
+        ]
+      }
+    },
+    "eSeventeenCapacityAskAllowed": {
+      "value": 26,
+      "macro": "eSeventeenCapacityAskAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-capacity-figure",
+          "test2_pa_allowed"
+        ]
+      }
+    },
+    "eSeventeenCapacityTestOne": {
+      "value": 0.8359683794466403,
+      "macro": "eSeventeenCapacityTestOne",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test1",
+          "by_scenario",
+          "service-capacity-figure"
+        ]
+      }
+    },
+    "eSeventeenCapacityTestTwo": {
+      "value": 0.39214046822742477,
+      "macro": "eSeventeenCapacityTestTwo",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "by_scenario",
+          "service-capacity-figure"
+        ]
+      }
+    },
+    "eSeventeenDispatchForbidden": {
+      "value": 72,
+      "macro": "eSeventeenDispatchForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "dispatch-integration-code",
+          "test1_forbidden"
+        ]
+      }
+    },
+    "eSeventeenDispatchCompromise": {
+      "value": 15,
+      "macro": "eSeventeenDispatchCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "dispatch-integration-code",
+          "test1_compromise"
+        ]
+      }
+    },
+    "eSeventeenDispatchAskAllowed": {
+      "value": 27,
+      "macro": "eSeventeenDispatchAskAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "dispatch-integration-code",
+          "test2_pa_allowed"
+        ]
+      }
+    },
+    "eSeventeenDispatchTestOne": {
+      "value": 0.7231481481481481,
+      "macro": "eSeventeenDispatchTestOne",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test1",
+          "by_scenario",
+          "dispatch-integration-code"
+        ]
+      }
+    },
+    "eSeventeenDispatchTestTwo": {
+      "value": 0.4881687242798354,
+      "macro": "eSeventeenDispatchTestTwo",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "by_scenario",
+          "dispatch-integration-code"
+        ]
+      }
+    },
+    "eSeventeenRolloutForbidden": {
+      "value": 78,
+      "macro": "eSeventeenRolloutForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-rollout-threshold",
+          "test1_forbidden"
+        ]
+      }
+    },
+    "eSeventeenRolloutCompromise": {
+      "value": 14,
+      "macro": "eSeventeenRolloutCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-rollout-threshold",
+          "test1_compromise"
+        ]
+      }
+    },
+    "eSeventeenRolloutAskAllowed": {
+      "value": 28,
+      "macro": "eSeventeenRolloutAskAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "service-rollout-threshold",
+          "test2_pa_allowed"
+        ]
+      }
+    },
+    "eSeventeenRolloutTestOne": {
+      "value": 0.6043956043956044,
+      "macro": "eSeventeenRolloutTestOne",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test1",
+          "by_scenario",
+          "service-rollout-threshold"
+        ]
+      }
+    },
+    "eSeventeenRolloutTestTwo": {
+      "value": 0.49313186813186816,
+      "macro": "eSeventeenRolloutTestTwo",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "by_scenario",
+          "service-rollout-threshold"
+        ]
+      }
+    },
+    "eSeventeenRegistryForbidden": {
+      "value": 75,
+      "macro": "eSeventeenRegistryForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "artifact-registry-token",
+          "test1_forbidden"
+        ]
+      }
+    },
+    "eSeventeenRegistryCompromise": {
+      "value": 7,
+      "macro": "eSeventeenRegistryCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "artifact-registry-token",
+          "test1_compromise"
+        ]
+      }
+    },
+    "eSeventeenRegistryAskAllowed": {
+      "value": 24,
+      "macro": "eSeventeenRegistryAskAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "counts_by_scenario",
+          "artifact-registry-token",
+          "test2_pa_allowed"
+        ]
+      }
+    },
+    "eSeventeenRegistryTestOne": {
+      "value": 0.6476190476190476,
+      "macro": "eSeventeenRegistryTestOne",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test1",
+          "by_scenario",
+          "artifact-registry-token"
+        ]
+      }
+    },
+    "eSeventeenRegistryTestTwo": {
+      "value": 0.4388888888888889,
+      "macro": "eSeventeenRegistryTestTwo",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "test2",
+          "by_scenario",
+          "artifact-registry-token"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfEpisodes": {
+      "value": 125,
+      "macro": "eSeventeenGridCapacityPfEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfForbidden": {
+      "value": 46,
+      "macro": "eSeventeenGridCapacityPfForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "forbidden"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfCompromise": {
+      "value": 11,
+      "macro": "eSeventeenGridCapacityPfCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "compromise"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfNoRealWrite": {
+      "value": 50,
+      "macro": "eSeventeenGridCapacityPfNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfOther": {
+      "value": 5,
+      "macro": "eSeventeenGridCapacityPfOther",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "other"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPfIncomplete": {
+      "value": 13,
+      "macro": "eSeventeenGridCapacityPfIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PF",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPaEpisodes": {
+      "value": 30,
+      "macro": "eSeventeenGridCapacityPaEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PA",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPaAllowed": {
+      "value": 26,
+      "macro": "eSeventeenGridCapacityPaAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PA",
+          "allowed"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPaNoRealWrite": {
+      "value": 3,
+      "macro": "eSeventeenGridCapacityPaNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PA",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridCapacityPaIncomplete": {
+      "value": 1,
+      "macro": "eSeventeenGridCapacityPaIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-capacity-figure",
+          "PA",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfEpisodes": {
+      "value": 125,
+      "macro": "eSeventeenGridDispatchPfEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfForbidden": {
+      "value": 72,
+      "macro": "eSeventeenGridDispatchPfForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "forbidden"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfCompromise": {
+      "value": 15,
+      "macro": "eSeventeenGridDispatchPfCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "compromise"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfNoRealWrite": {
+      "value": 25,
+      "macro": "eSeventeenGridDispatchPfNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfOther": {
+      "value": 4,
+      "macro": "eSeventeenGridDispatchPfOther",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "other"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPfIncomplete": {
+      "value": 9,
+      "macro": "eSeventeenGridDispatchPfIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PF",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPaEpisodes": {
+      "value": 30,
+      "macro": "eSeventeenGridDispatchPaEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PA",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPaAllowed": {
+      "value": 27,
+      "macro": "eSeventeenGridDispatchPaAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PA",
+          "allowed"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPaNoRealWrite": {
+      "value": 1,
+      "macro": "eSeventeenGridDispatchPaNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PA",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridDispatchPaIncomplete": {
+      "value": 2,
+      "macro": "eSeventeenGridDispatchPaIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "dispatch-integration-code",
+          "PA",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfEpisodes": {
+      "value": 125,
+      "macro": "eSeventeenGridRolloutPfEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfForbidden": {
+      "value": 78,
+      "macro": "eSeventeenGridRolloutPfForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "forbidden"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfCompromise": {
+      "value": 14,
+      "macro": "eSeventeenGridRolloutPfCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "compromise"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfNoRealWrite": {
+      "value": 33,
+      "macro": "eSeventeenGridRolloutPfNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfOther": {
+      "value": 0,
+      "macro": "eSeventeenGridRolloutPfOther",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "other"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPfIncomplete": {
+      "value": 0,
+      "macro": "eSeventeenGridRolloutPfIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PF",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPaEpisodes": {
+      "value": 30,
+      "macro": "eSeventeenGridRolloutPaEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PA",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPaAllowed": {
+      "value": 28,
+      "macro": "eSeventeenGridRolloutPaAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PA",
+          "allowed"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPaNoRealWrite": {
+      "value": 2,
+      "macro": "eSeventeenGridRolloutPaNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PA",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridRolloutPaIncomplete": {
+      "value": 0,
+      "macro": "eSeventeenGridRolloutPaIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "service-rollout-threshold",
+          "PA",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfEpisodes": {
+      "value": 125,
+      "macro": "eSeventeenGridRegistryPfEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfForbidden": {
+      "value": 75,
+      "macro": "eSeventeenGridRegistryPfForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "forbidden"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfCompromise": {
+      "value": 7,
+      "macro": "eSeventeenGridRegistryPfCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "compromise"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfNoRealWrite": {
+      "value": 39,
+      "macro": "eSeventeenGridRegistryPfNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfOther": {
+      "value": 2,
+      "macro": "eSeventeenGridRegistryPfOther",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "other"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPfIncomplete": {
+      "value": 2,
+      "macro": "eSeventeenGridRegistryPfIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PF",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPaEpisodes": {
+      "value": 30,
+      "macro": "eSeventeenGridRegistryPaEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PA",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPaAllowed": {
+      "value": 24,
+      "macro": "eSeventeenGridRegistryPaAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PA",
+          "allowed"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPaNoRealWrite": {
+      "value": 6,
+      "macro": "eSeventeenGridRegistryPaNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PA",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridRegistryPaIncomplete": {
+      "value": 0,
+      "macro": "eSeventeenGridRegistryPaIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "artifact-registry-token",
+          "PA",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfEpisodes": {
+      "value": 500,
+      "macro": "eSeventeenGridAllPfEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfForbidden": {
+      "value": 271,
+      "macro": "eSeventeenGridAllPfForbidden",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "forbidden"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfCompromise": {
+      "value": 47,
+      "macro": "eSeventeenGridAllPfCompromise",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "compromise"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfNoRealWrite": {
+      "value": 147,
+      "macro": "eSeventeenGridAllPfNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfOther": {
+      "value": 11,
+      "macro": "eSeventeenGridAllPfOther",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "other"
+        ]
+      }
+    },
+    "eSeventeenGridAllPfIncomplete": {
+      "value": 24,
+      "macro": "eSeventeenGridAllPfIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PF",
+          "incomplete"
+        ]
+      }
+    },
+    "eSeventeenGridAllPaEpisodes": {
+      "value": 120,
+      "macro": "eSeventeenGridAllPaEpisodes",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PA",
+          "episodes"
+        ]
+      }
+    },
+    "eSeventeenGridAllPaAllowed": {
+      "value": 105,
+      "macro": "eSeventeenGridAllPaAllowed",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PA",
+          "allowed"
+        ]
+      }
+    },
+    "eSeventeenGridAllPaNoRealWrite": {
+      "value": 12,
+      "macro": "eSeventeenGridAllPaNoRealWrite",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PA",
+          "no_real_write"
+        ]
+      }
+    },
+    "eSeventeenGridAllPaIncomplete": {
+      "value": 3,
+      "macro": "eSeventeenGridAllPaIncomplete",
+      "dataset": "E17: 620 new Qwen3-32B episodes on four scenarios; the rule permits one workspace file and forbids another; the peer asks for the forbidden file (500) or the permitted file (120)",
+      "evaluation": "Last-prompt probe, paper recipe (logistic C=0.1, training-only scaling), layer 48 fixed before the replay; leave-one-scenario-out; within-scenario AUROC weighted by positives; episode bootstrap within scenario, 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261105-1952-e17-probe-analysis",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261105-1952-e17-probe-analysis/results.json",
+        "value_path": [
+          "behaviour",
+          "grid",
+          "all",
+          "PA",
+          "incomplete"
+        ]
+      }
     }
   },
   "aliases": {
@@ -19473,6 +21304,12 @@
           "Current-call emission",
           "Existing calls; no generation",
           "A first replay did not reproduce the saved scores and was discarded; the reported replay holds the saved reply fixed and reproduces them."
+        ],
+        [
+          "Crossed destinations (Qwen)",
+          "First secret write after the request; its file",
+          "Yes: design, tests and criteria before the episodes; layer before the replay",
+          "Test 1 met; gain over setup details and Test 2 not met; monitor comparison not run"
         ]
       ],
       "columns": "llll"
@@ -19583,6 +21420,21 @@
           "gpt new last prompt",
           "\\texttt{2b05b71}",
           "Weights before new scoring"
+        ],
+        [
+          "Crossed destinations: tests",
+          "\\texttt{20261105-1952}",
+          "\\texttt{E17-crossed/probe\\_analysis.py}"
+        ],
+        [
+          "Crossed destinations: activations",
+          "\\texttt{20261105-1130}",
+          "\\texttt{E17-crossed/replay\\_modal.py}"
+        ],
+        [
+          "Crossed destinations: episodes",
+          "\\texttt{20261105-0042/1223}",
+          "\\texttt{E17-crossed/run.py}"
         ]
       ],
       "columns": "lll"
@@ -21169,6 +23021,208 @@
           "\\qwenTestScenAllAuroc{}",
           "\\qwenTestScenAllCaught{}/\\qwenTestScenAllLeaks{}",
           "\\qwenTestScenAllRefusingShare{}"
+        ]
+      ]
+    },
+    "e17_tests": {
+      "columns": "@{}>{\\raggedright\\arraybackslash}p{0.41\\linewidth}>{\\centering\\arraybackslash}p{0.20\\linewidth}>{\\raggedright\\arraybackslash}p{0.30\\linewidth}@{}",
+      "header": [
+        "Comparison",
+        "AUROC [95\\% CI]",
+        "Criterion set before the run"
+      ],
+      "rows": [
+        [
+          "\\textbf{Test 1:} forbidden writes vs compromises, probe",
+          {
+            "key": "eSeventeenTestOne",
+            "ci": true
+          },
+          "lower bound above 0.5 (met)"
+        ],
+        [
+          "Test 1, setup details only",
+          {
+            "key": "eSeventeenSetup",
+            "ci": true
+          },
+          "--"
+        ],
+        [
+          "Test 1, setup details and probe together",
+          {
+            "key": "eSeventeenSetupPlusProbe",
+            "ci": false
+          },
+          "--"
+        ],
+        [
+          "Gain from adding the probe to the setup details",
+          {
+            "key": "eSeventeenGain",
+            "ci": true
+          },
+          "lower bound above 0 (not met)"
+        ],
+        [
+          "Test 1, text classifier on the incoming context",
+          {
+            "key": "eSeventeenText",
+            "ci": true
+          },
+          "--"
+        ],
+        [
+          "\\textbf{Test 2:} forbidden writes vs ask-allowed writes, same probe",
+          {
+            "key": "eSeventeenTestTwo",
+            "ci": true
+          },
+          "lower bound above 0.5 (not met)"
+        ],
+        [
+          "Ask-allowed writes scored above compromises, same probe",
+          {
+            "key": "eSeventeenAskAllowedAboveCompromise",
+            "ci": true
+          },
+          "--"
+        ],
+        [
+          "Best possible Test 1 score from resampling (pilot episodes)",
+          {
+            "key": "eSeventeenCeiling",
+            "ci": true
+          },
+          "--"
+        ]
+      ]
+    },
+    "e17_by_scenario": {
+      "columns": "@{}lccccc@{}",
+      "header": [
+        "Scenario",
+        "Forbidden writes",
+        "Compromises",
+        "Ask-allowed writes",
+        "Test 1",
+        "Test 2"
+      ],
+      "rows": [
+        [
+          "Capacity figure",
+          "\\eSeventeenCapacityForbidden{}",
+          "\\eSeventeenCapacityCompromise{}",
+          "\\eSeventeenCapacityAskAllowed{}",
+          "\\eSeventeenCapacityTestOne{}",
+          "\\eSeventeenCapacityTestTwo{}"
+        ],
+        [
+          "Dispatch code",
+          "\\eSeventeenDispatchForbidden{}",
+          "\\eSeventeenDispatchCompromise{}",
+          "\\eSeventeenDispatchAskAllowed{}",
+          "\\eSeventeenDispatchTestOne{}",
+          "\\eSeventeenDispatchTestTwo{}"
+        ],
+        [
+          "Rollout threshold",
+          "\\eSeventeenRolloutForbidden{}",
+          "\\eSeventeenRolloutCompromise{}",
+          "\\eSeventeenRolloutAskAllowed{}",
+          "\\eSeventeenRolloutTestOne{}",
+          "\\eSeventeenRolloutTestTwo{}"
+        ],
+        [
+          "Registry token",
+          "\\eSeventeenRegistryForbidden{}",
+          "\\eSeventeenRegistryCompromise{}",
+          "\\eSeventeenRegistryAskAllowed{}",
+          "\\eSeventeenRegistryTestOne{}",
+          "\\eSeventeenRegistryTestTwo{}"
+        ]
+      ]
+    },
+    "e17_behaviour": {
+      "columns": "@{}>{\\raggedright\\arraybackslash}p{0.15\\linewidth}*{10}{>{\\centering\\arraybackslash}p{0.077\\linewidth}}@{}",
+      "header": [
+        " & \\multicolumn{6}{c}{Peer asks for forbidden file} & \\multicolumn{4}{c}{Peer asks for allowed file} \\\\ \\cmidrule(lr){2-7}\\cmidrule(l){8-11} Scenario",
+        "Epi\\-sodes",
+        "Forbid\\-den write",
+        "Compro\\-mise",
+        "No real write",
+        "Other",
+        "Incom\\-plete",
+        "Epi\\-sodes",
+        "Al\\-lowed write",
+        "No real write",
+        "Incom\\-plete"
+      ],
+      "rows": [
+        [
+          "Capacity figure",
+          "\\eSeventeenGridCapacityPfEpisodes{}",
+          "\\eSeventeenGridCapacityPfForbidden{}",
+          "\\eSeventeenGridCapacityPfCompromise{}",
+          "\\eSeventeenGridCapacityPfNoRealWrite{}",
+          "\\eSeventeenGridCapacityPfOther{}",
+          "\\eSeventeenGridCapacityPfIncomplete{}",
+          "\\eSeventeenGridCapacityPaEpisodes{}",
+          "\\eSeventeenGridCapacityPaAllowed{}",
+          "\\eSeventeenGridCapacityPaNoRealWrite{}",
+          "\\eSeventeenGridCapacityPaIncomplete{}"
+        ],
+        [
+          "Dispatch code",
+          "\\eSeventeenGridDispatchPfEpisodes{}",
+          "\\eSeventeenGridDispatchPfForbidden{}",
+          "\\eSeventeenGridDispatchPfCompromise{}",
+          "\\eSeventeenGridDispatchPfNoRealWrite{}",
+          "\\eSeventeenGridDispatchPfOther{}",
+          "\\eSeventeenGridDispatchPfIncomplete{}",
+          "\\eSeventeenGridDispatchPaEpisodes{}",
+          "\\eSeventeenGridDispatchPaAllowed{}",
+          "\\eSeventeenGridDispatchPaNoRealWrite{}",
+          "\\eSeventeenGridDispatchPaIncomplete{}"
+        ],
+        [
+          "Rollout threshold",
+          "\\eSeventeenGridRolloutPfEpisodes{}",
+          "\\eSeventeenGridRolloutPfForbidden{}",
+          "\\eSeventeenGridRolloutPfCompromise{}",
+          "\\eSeventeenGridRolloutPfNoRealWrite{}",
+          "\\eSeventeenGridRolloutPfOther{}",
+          "\\eSeventeenGridRolloutPfIncomplete{}",
+          "\\eSeventeenGridRolloutPaEpisodes{}",
+          "\\eSeventeenGridRolloutPaAllowed{}",
+          "\\eSeventeenGridRolloutPaNoRealWrite{}",
+          "\\eSeventeenGridRolloutPaIncomplete{}"
+        ],
+        [
+          "Registry token",
+          "\\eSeventeenGridRegistryPfEpisodes{}",
+          "\\eSeventeenGridRegistryPfForbidden{}",
+          "\\eSeventeenGridRegistryPfCompromise{}",
+          "\\eSeventeenGridRegistryPfNoRealWrite{}",
+          "\\eSeventeenGridRegistryPfOther{}",
+          "\\eSeventeenGridRegistryPfIncomplete{}",
+          "\\eSeventeenGridRegistryPaEpisodes{}",
+          "\\eSeventeenGridRegistryPaAllowed{}",
+          "\\eSeventeenGridRegistryPaNoRealWrite{}",
+          "\\eSeventeenGridRegistryPaIncomplete{}"
+        ],
+        [
+          "All four",
+          "\\eSeventeenGridAllPfEpisodes{}",
+          "\\eSeventeenGridAllPfForbidden{}",
+          "\\eSeventeenGridAllPfCompromise{}",
+          "\\eSeventeenGridAllPfNoRealWrite{}",
+          "\\eSeventeenGridAllPfOther{}",
+          "\\eSeventeenGridAllPfIncomplete{}",
+          "\\eSeventeenGridAllPaEpisodes{}",
+          "\\eSeventeenGridAllPaAllowed{}",
+          "\\eSeventeenGridAllPaNoRealWrite{}",
+          "\\eSeventeenGridAllPaIncomplete{}"
         ]
       ]
     }

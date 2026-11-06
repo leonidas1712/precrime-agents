@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -140,6 +140,12 @@ Yupei Liu, Yuqi Jia, Runpeng Geng, Jinyuan Jia, and Neil~Zhenqiang Gong.
 \newblock Formalizing and benchmarking prompt injection attacks and defenses.
 \newblock In \emph{33rd {USENIX} Security Symposium ({USENIX} Security 24)}, pp.\  1831--1847, Philadelphia, PA, 2024. {USENIX} Association.
 \newblock URL \url{https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei}.
+
+\bibitem[Makelov et~al.(2026)Makelov, Xu, Ananthanarayanan, Mcdonald, and {Dupre la Tour}]{makelov2026}
+Alex Makelov, Xiaojun Xu, Sundaram Ananthanarayanan, Ethan Mcdonald, and Tom {Dupre la Tour}.
+\newblock Training activation classifiers for safety and alignment.
+\newblock OpenAI Alignment Research Blog, 2026.
+\newblock URL \url{https://alignment.openai.com/training-activation-classifiers/}.
 
 \bibitem[McKenzie et~al.(2025)McKenzie, Pawar, Blandfort, Bankes, Krueger, Lubana, and Krasheninnikov]{mckenzie2026}
 Alex McKenzie, Urja Pawar, Phil Blandfort, William Bankes, David Krueger, Ekdeep~Singh Lubana, and Dmitrii Krasheninnikov.

@@ -1117,3 +1117,22 @@
 {"id": "20261027-2006-e12-cascade", "event": "end", "experiment": "E12", "status": "finished", "tags": [], "results": {"saved_scores_only": true}, "time": "2026-10-27T20:06:45"}
 {"id": "20261027-2007-e12-cascade", "event": "start", "experiment": "E12", "status": "running", "tags": [], "time": "2026-10-27T20:07:07"}
 {"id": "20261027-2007-e12-cascade", "event": "end", "experiment": "E12", "status": "finished", "tags": [], "results": {"saved_scores_only": true}, "time": "2026-10-27T20:07:13"}
+{"id": "20261103-1931-e17-pilot", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "pilot"], "time": "2026-11-03T19:31:03"}
+{"id": "20261103-1931-e17-pilot", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "pilot"], "results": {"completed": 0, "spent_usd": "0", "calls": 0}, "time": "2026-11-03T19:31:05"}
+{"id": "20261103-1931-e17-pilot", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "pilot"], "time": "2026-11-03T19:31:40"}
+{"id": "20261103-1931-e17-pilot", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "pilot"], "results": {"completed": 37, "spent_usd": "0.148390226", "calls": 1273}, "time": "2026-11-03T19:50:29"}
+{"id": "20261104-0150-e17-pilot2", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "pilot2"], "time": "2026-11-04T01:50:19"}
+{"id": "20261104-0203-e17-pilot2", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "pilot2"], "time": "2026-11-04T02:03:52"}
+{"id": "20261104-0203-e17-pilot2", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "pilot2"], "results": {"completed": 133, "spent_usd": "0.490614438", "calls": 3936}, "time": "2026-11-04T03:02:53"}
+{"id": "20261104-0748-e17-resample", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "resample"], "time": "2026-11-04T07:48:49"}
+{"id": "20261104-0748-e17-resample", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "resample"], "results": {"prompts": 60, "samples": 600, "spent_usd": "0.0564"}, "time": "2026-11-04T07:54:10"}
+{"id": "20261104-2358-e17-check4", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "check4"], "time": "2026-11-04T23:58:49"}
+{"id": "20261104-2358-e17-check4", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "check4"], "results": {"completed": 24, "spent_usd": "0.073367986", "calls": 693}, "time": "2026-11-05T00:08:47"}
+{"id": "20261105-0042-e17-main-stage1", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "main"], "time": "2026-11-05T00:42:44"}
+{"id": "20261105-0042-e17-main-stage1", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "main"], "results": {"completed": 152, "spent_usd": "0.643491024", "calls": 5113}, "time": "2026-11-05T01:48:22"}
+{"id": "20261105-1223-e17-main-stage2", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "main"], "time": "2026-11-05T12:23:49"}
+{"id": "20261105-1223-e17-main-stage2", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "main"], "results": {"completed": 441, "spent_usd": "1.554698364", "calls": 13837}, "time": "2026-11-05T15:20:35"}
+{"id": "20261105-1947-e17-probe-analysis", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "cpu"], "time": "2026-11-05T19:47:59"}
+{"id": "20261105-1947-e17-probe-analysis", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "cpu"], "results": {}, "time": "2026-11-05T19:48:51"}
+{"id": "20261105-1952-e17-probe-analysis", "event": "start", "experiment": "E17", "status": "running", "tags": ["e17", "cpu"], "time": "2026-11-05T19:52:06"}
+{"id": "20261105-1952-e17-probe-analysis", "event": "end", "experiment": "E17", "status": "finished", "tags": ["e17", "cpu"], "results": {}, "time": "2026-11-05T19:52:59"}

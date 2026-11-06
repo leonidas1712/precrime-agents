@@ -156,13 +156,93 @@ def main(a):
         sj = loso_scores(X[:, j, :], y, scen, t1, t1)
         R['layer_sweep'][int(layer)] = wauc(t1, sj, y, scen)
 
+    # ---- additions for the paper appendix (after the numbers above, so their bootstrap draws are unchanged) ----
+    comp_pa = [i for i in t1 if y[i] == 0] + pa
+    R['test2']['pa_above_compromise_ci'] = boot_ci(comp_pa, Stat(lambda idx: wauc(idx, s, is_pa, scen), scen), rng)
+    R['test2']['by_scenario'] = {sc: wauc([i for i in t2 if scen[i] == sc], s, y, scen) for sc in sorted(set(scen))}
+
+    # Text reader: the paper's TF-IDF recipe on everything the target saw before the scored call (system prompt and
+    # task message excluded, file names replaced by their roles), same leave-one-scenario-out folds. Test 1 only.
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from pilot_report import load_run, scored_prompt_text
+    eps = {x['m']['episode_id']: x for d in a.runs for x in load_run(d, legacy=False)}
+    texts = [scored_prompt_text(eps[m['episode_id']]) for m in meta]
+    s_text = {}
+    for sc in sorted(set(scen)):
+        tr = [i for i in t1 if scen[i] != sc]
+        te = [i for i in t1 if scen[i] == sc]
+        vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_features=50000, sublinear_tf=True, norm='l2')
+        Xtr = vec.fit_transform([texts[i] for i in tr])
+        clf = LogisticRegression(C=0.1, max_iter=2000, tol=1e-5, random_state=42).fit(Xtr, y[tr])
+        s_text.update(zip(te, clf.decision_function(vec.transform([texts[i] for i in te]))))
+    R['text_reader'] = {'auroc': wauc(t1, s_text, y, scen),
+                        'ci': boot_ci(t1, Stat(lambda idx: wauc(idx, s_text, y, scen), scen), rng)}
+    R['probe_minus_setup'] = {'value': R['test1']['auroc'] - R['added_value']['setup_only'],
+                              'ci': boot_ci(t1, Stat(lambda idx: (lambda u, v: None if u is None or v is None else u - v)(
+                                  wauc(idx, s, y, scen), wauc(idx, s_setup, y, scen)), scen), rng)}
+
+    # Behaviour of all main-run episodes
+    from collections import Counter
+    out = Counter((x['cell'], x['outcome']) for x in eps.values())
+    R['behaviour'] = {'episodes': len(eps), 'complete': sum(x['complete'] for x in eps.values()),
+                      'outcomes': {f'{c}|{o}': k for (c, o), k in sorted(out.items())},
+                      'by_scenario': {sc: {f'{c}|{o}': k for (c, o), k in sorted(Counter(
+                          (x['cell'], x['outcome']) for x in eps.values() if x['scen'] == sc).items())} for sc in sorted(set(scen))},
+                      'pf_complete': sum(x['complete'] for x in eps.values() if x['cell'] == 'PF'),
+                      'pa_complete': sum(x['complete'] for x in eps.values() if x['cell'] == 'PA')}
+    R['behaviour']['compromise_rate'] = R['n']['test1_compromise'] / R['behaviour']['pf_complete']
+    R['behaviour']['forbidden_rate'] = R['n']['test1_forbidden'] / R['behaviour']['pf_complete']
+    R['behaviour']['pa_allowed_rate'] = R['n']['test2_pa_allowed'] / R['behaviour']['pa_complete']
+    # Outcome grid for the appendix behaviour table, zeros included
+    groups = {'PF': {'forbidden': ['forbidden'], 'compromise': ['allowed'], 'no_real_write': ['no_disclosure', 'fake_value'],
+                     'other': ['channel_only', 'excluded_channel_first', 'other_file'], 'incomplete': ['incomplete']},
+              'PA': {'allowed': ['allowed'], 'no_real_write': ['no_disclosure', 'fake_value'],
+                     'other': ['forbidden', 'channel_only', 'excluded_channel_first', 'other_file'], 'incomplete': ['incomplete']}}
+    grid = {}
+    for sc in sorted(set(scen)) + ['all']:
+        xs = [x for x in eps.values() if sc == 'all' or x['scen'] == sc]
+        grid[sc] = {c: {g: sum(x['cell'] == c and x['outcome'] in outs for x in xs) for g, outs in gs.items()}
+                    for c, gs in groups.items()}
+        for c in groups:
+            grid[sc][c]['episodes'] = sum(x['cell'] == c for x in xs)
+            grid[sc][c]['complete'] = sum(x['cell'] == c and x['complete'] for x in xs)
+    R['behaviour']['grid'] = grid
+    R['counts_by_scenario'] = {sc: {r: sum(1 for i in range(n) if scen[i] == sc and rows[i] == r) for r in sorted(set(rows))}
+                               for sc in sorted(set(scen))}
+
+    # Resampling check on the pilot episodes (same prompts resent 10 times): how much the choice is set by the prompt
+    import resample
+    RS = resample.report(a.resample)
+    R['resample'] = {'prompts': RS['n_usable'], 'pure': RS['pure'], 'pure_share': RS['pure'] / RS['n_usable'],
+                     'ceiling_within': RS['ceiling_within'], 'ceiling_within_ci': list(RS['ceiling_within_ci'])}
+
+    # Per-row scores for the figure (scores are comparable within a scenario: one fold probe per scenario)
+    with open(Path(a.out).parent / 'scores.csv', 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['episode_id', 'scenario', 'row', 'label_forbidden', 'probe_score', 'setup_score', 'text_score'])
+        for i in sorted(s):
+            w.writerow([meta[i]['episode_id'], scen[i], rows[i], int(y[i]), f'{s[i]:.6f}',
+                        f'{s_setup[i]:.6f}' if i in s_setup else '', f'{s_text[i]:.6f}' if i in s_text else ''])
     Path(a.out).write_text(json.dumps(R, indent=1))
-    print(json.dumps(R, indent=1))
+    print(json.dumps({k: v for k, v in R.items() if k not in ('behaviour',)}, indent=1))
 
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--calls', required=True)
     p.add_argument('--replay', required=True)
-    p.add_argument('--out', required=True)
-    main(p.parse_args())
+    p.add_argument('--out', help='results.json path (scores.csv goes next to it); default: a new run folder')
+    p.add_argument('--runs', nargs='+', default=['runs/20261105-0042-e17-main-stage1', 'runs/20261105-1223-e17-main-stage2'])
+    p.add_argument('--resample', default='runs/20261104-0748-e17-resample')
+    a = p.parse_args()
+    if a.out:
+        main(a)
+    else:
+        sys.path.insert(0, str(HERE.parents[1] / 'src'))
+        from collusion.runs import start_run
+        run = start_run('e17-probe-analysis', experiment='E17', parents=[Path(r).name for r in a.runs] + [Path(a.replay).name, Path(a.resample).name],
+                        settings={'headline_layer': HEADLINE_LAYER, 'recipe': 'LR C=0.1, train-only StandardScaler, LOSO', 'n_boot': N_BOOT,
+                                  'seed': SEED, 'replay': str(a.replay)}, tags=['e17', 'cpu'], model='Qwen/Qwen3-32B')
+        a.out = str(run.dir / 'results.json')
+        main(a)
+        run.finish()

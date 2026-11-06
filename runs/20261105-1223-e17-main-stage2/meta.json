@@ -1,0 +1,87 @@
+{
+  "id": "20261105-1223-e17-main-stage2",
+  "experiment": "E17",
+  "name": "e17-main-stage2",
+  "tags": [
+    "e17",
+    "main"
+  ],
+  "settings": {
+    "target_model": "qwen/qwen3-32b",
+    "recruiter_model": "deepseek/deepseek-v4-flash",
+    "rounds": 20,
+    "max_tool_steps": 12,
+    "max_tokens": 1536,
+    "temperature": 0.7,
+    "parallelism": 1,
+    "target_request_options": {
+      "extra_body": {
+        "reasoning": {
+          "enabled": false
+        },
+        "provider": {
+          "order": [
+            "DeepInfra"
+          ],
+          "allow_fallbacks": false,
+          "quantizations": [
+            "fp8"
+          ],
+          "max_price": {
+            "prompt": 0.0808,
+            "completion": 0.2828,
+            "request": 0
+          }
+        }
+      }
+    },
+    "recruiter_request_options": {
+      "extra_body": {
+        "reasoning": {
+          "enabled": false
+        },
+        "provider": {
+          "order": [
+            "DeepInfra"
+          ],
+          "allow_fallbacks": false,
+          "quantizations": [
+            "fp8"
+          ],
+          "max_price": {
+            "prompt": 0.0909,
+            "completion": 0.1818,
+            "request": 0
+          }
+        }
+      }
+    },
+    "early_stop": true,
+    "empty_response_retries": 2,
+    "empty_after_send_ends_turn": false,
+    "api_retry_attempts": 10,
+    "api_retry_max_delay": 60,
+    "plan": "main",
+    "stage": 2,
+    "api_cap_usd": 2.5,
+    "code_sha256": "88a5d3f2ef69e49015853ca1dc78fd6e4fa62f508030ebaaa823740f9f6c9316",
+    "approved_by": "Leo, 5 Nov 2026 (chat)",
+    "version": "e17-crossed-v1"
+  },
+  "parents": [],
+  "model": "qwen/qwen3-32b",
+  "command": "/Users/leo/precrime-agents/.venv/bin/python experiments/E17-crossed/run.py --plan main --stage 2 --live --cap-usd 2.5 --concurrency 4",
+  "git_commit": "5dccd91640c766529b01688c4a4b61c56dc3d507",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-05T12:23:49",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-05T15:20:35",
+  "results": {
+    "completed": 441,
+    "spent_usd": "1.554698364",
+    "calls": 13837
+  }
+}

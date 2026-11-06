@@ -1,0 +1,36 @@
+{
+  "id": "20261104-0748-e17-resample",
+  "experiment": "E17",
+  "name": "e17-resample",
+  "tags": [
+    "e17",
+    "resample"
+  ],
+  "settings": {
+    "n": 10,
+    "api_cap_usd": 0.15,
+    "source_runs": [
+      "runs/20261103-1931-e17-pilot",
+      "runs/20261104-0203-e17-pilot2"
+    ],
+    "code_sha256": "dc7c268a3ffc78b45d4a1430e79ceb02c94fdb273cbe2516d02d3760e543fe8f",
+    "approved_by": "Leo, 4 Nov 2026 (chat)",
+    "prompts": 60
+  },
+  "parents": [],
+  "model": "qwen/qwen3-32b",
+  "command": "/Users/leo/precrime-agents/.venv/bin/python experiments/E17-crossed/resample.py --live --n 10 --cap-usd 0.15 --concurrency 4",
+  "git_commit": "77808cd8a66a54f8ef5d386672af417da38d70a8",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-04T07:48:49",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-04T07:54:10",
+  "results": {
+    "prompts": 60,
+    "samples": 600,
+    "spent_usd": "0.0564"
+  }
+}
