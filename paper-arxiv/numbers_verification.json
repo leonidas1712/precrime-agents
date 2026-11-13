@@ -5799,6 +5799,96 @@
       "key": "eEighteenCTenGptReasoning",
       "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
       "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eNineteenReadFlagNext",
+      "source": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+      "sha256": "e3cc1b5b02e0d458f2352d5123f0c5434f47d9bd5f056502e931815403f6b32e"
+    },
+    {
+      "key": "eNineteenReasoningNext",
+      "source": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+      "sha256": "e3cc1b5b02e0d458f2352d5123f0c5434f47d9bd5f056502e931815403f6b32e"
+    },
+    {
+      "key": "eNineteenProbeMinusReadFlagNext",
+      "source": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+      "sha256": "e3cc1b5b02e0d458f2352d5123f0c5434f47d9bd5f056502e931815403f6b32e"
+    },
+    {
+      "key": "eNineteenPostReadBowFull",
+      "source": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+      "sha256": "2b80d3a75c43bd1e822b0f6f13d65ed55784dc4fd4ecf080a8068ed232c04a99"
+    },
+    {
+      "key": "eNineteenPostReadProbe",
+      "source": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+      "sha256": "2b80d3a75c43bd1e822b0f6f13d65ed55784dc4fd4ecf080a8068ed232c04a99"
+    },
+    {
+      "key": "eNineteenPostReadProbeMinusBowFull",
+      "source": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+      "sha256": "2b80d3a75c43bd1e822b0f6f13d65ed55784dc4fd4ecf080a8068ed232c04a99"
+    },
+    {
+      "key": "eNineteenAwayBowLatest",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+      "sha256": "8025404dcaac1846537dc73875b05fc475323a972825e619817250ce4c77ba79"
+    },
+    {
+      "key": "eNineteenAwayProbe",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+      "sha256": "8025404dcaac1846537dc73875b05fc475323a972825e619817250ce4c77ba79"
+    },
+    {
+      "key": "eNineteenEEightBowMaxChange",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+      "sha256": "8025404dcaac1846537dc73875b05fc475323a972825e619817250ce4c77ba79"
+    },
+    {
+      "key": "eNineteenJevEEightForbid",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+      "sha256": "10b0ef64ad69e40fefa9766c52f12c688388c18e7240490a1cdd1cbf38b94cbe"
+    },
+    {
+      "key": "eNineteenJevEEightPermit",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+      "sha256": "10b0ef64ad69e40fefa9766c52f12c688388c18e7240490a1cdd1cbf38b94cbe"
+    },
+    {
+      "key": "eNineteenJevEEightPermitNoConsequence",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+      "sha256": "10b0ef64ad69e40fefa9766c52f12c688388c18e7240490a1cdd1cbf38b94cbe"
+    },
+    {
+      "key": "eNineteenJevEEightCalls",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+      "sha256": "10b0ef64ad69e40fefa9766c52f12c688388c18e7240490a1cdd1cbf38b94cbe"
+    },
+    {
+      "key": "eNineteenJevForbiddenAbovePermitted",
+      "source": "runs/20261114-0123-e19-v2-analyses/task1_jev_e14e15.json",
+      "sha256": "ce48aecef4d04500e0171b3fb0b82e87a7bf9e4951a71509ed8e84468588d9e9"
+    },
+    {
+      "key": "eNineteenQwenLayerMidLow",
+      "source": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+      "sha256": "abc1fbbabcfa72773b0a325dd2c40ffbedf5f9e75c5808a2604ab2c216f3d1c4"
+    },
+    {
+      "key": "eNineteenQwenLayerMidHigh",
+      "source": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+      "sha256": "abc1fbbabcfa72773b0a325dd2c40ffbedf5f9e75c5808a2604ab2c216f3d1c4"
+    },
+    {
+      "key": "eNineteenGptLayerMidLow",
+      "source": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+      "sha256": "abc1fbbabcfa72773b0a325dd2c40ffbedf5f9e75c5808a2604ab2c216f3d1c4"
+    },
+    {
+      "key": "eNineteenGptLayerMidHigh",
+      "source": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+      "sha256": "abc1fbbabcfa72773b0a325dd2c40ffbedf5f9e75c5808a2604ab2c216f3d1c4"
     }
   ],
   "pending": []

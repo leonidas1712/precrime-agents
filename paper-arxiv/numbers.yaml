@@ -24124,6 +24124,433 @@
         0.9351337500848217,
         0.9735989130964443
       ]
+    },
+    "eNineteenReadFlagNext": {
+      "value": 0.8509825363870708,
+      "macro": "eNineteenReadFlagNext",
+      "dataset": "gpt-oss-20b development episodes, one-call-earlier label (1,874 calls, 116 positives, 238 families)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios, 3 seeds; family bootstrap 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+        "value_path": [
+          "own_protected_read_call",
+          "auc"
+        ],
+        "ci_path": [
+          "own_protected_read_call",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8166904650907552,
+        0.8865181567920758
+      ]
+    },
+    "eNineteenReasoningNext": {
+      "value": 0.8809477899283995,
+      "macro": "eNineteenReasoningNext",
+      "dataset": "gpt-oss-20b development episodes, one-call-earlier label (1,874 calls, 116 positives, 238 families)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios, 3 seeds; family bootstrap 1,000 draws",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+        "value_path": [
+          "reference_reasoning_probe_token_max_strict1",
+          "auc"
+        ],
+        "ci_path": [
+          "reference_reasoning_probe_token_max_strict1",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8429195517098601,
+        0.9171961086886382
+      ]
+    },
+    "eNineteenProbeMinusReadFlagNext": {
+      "value": -0.2309007412601618,
+      "macro": "eNineteenProbeMinusReadFlagNext",
+      "dataset": "gpt-oss-20b development episodes, one-call-earlier label (1,874 calls, 116 positives, 238 families)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios, 3 seeds; family bootstrap 1,000 draws; paired",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task3_readflag_next.json",
+        "value_path": [
+          "own_protected_read_call",
+          "probe_minus_flag",
+          "estimate"
+        ],
+        "ci_path": [
+          "own_protected_read_call",
+          "probe_minus_flag",
+          "ci95"
+        ]
+      },
+      "ci": [
+        -0.29500212965006983,
+        -0.17294457858722959
+      ]
+    },
+    "eNineteenPostReadBowFull": {
+      "value": 0.5656565656565656,
+      "macro": "eNineteenPostReadBowFull",
+      "dataset": "Qwen3-32B development episodes, calls whose latest input holds the masked secret (235 calls, 46 leaks)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios; family bootstrap 1,000 draws, paired",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+        "value_path": [
+          "dev",
+          "post_read",
+          "bow_full",
+          "auc"
+        ],
+        "ci_path": [
+          "dev",
+          "post_read",
+          "bow_full",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.2799444444444445,
+        0.7894736842105262
+      ]
+    },
+    "eNineteenPostReadProbe": {
+      "value": 0.8535353535353535,
+      "macro": "eNineteenPostReadProbe",
+      "dataset": "Qwen3-32B development episodes, calls whose latest input holds the masked secret (235 calls, 46 leaks)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios; family bootstrap 1,000 draws, paired",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+        "value_path": [
+          "dev",
+          "post_read",
+          "probe",
+          "auc"
+        ],
+        "ci_path": [
+          "dev",
+          "post_read",
+          "probe",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7185185185185187,
+        1.0
+      ]
+    },
+    "eNineteenPostReadProbeMinusBowFull": {
+      "value": 0.28787878787878785,
+      "macro": "eNineteenPostReadProbeMinusBowFull",
+      "dataset": "Qwen3-32B development episodes, calls whose latest input holds the masked secret (235 calls, 46 leaks)",
+      "evaluation": "Within scenario-and-round AUROC, held-out scenarios; family bootstrap 1,000 draws, paired",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task2_fullinput_postread.json",
+        "value_path": [
+          "dev",
+          "post_read",
+          "probe_minus_bow_full",
+          "estimate"
+        ],
+        "ci_path": [
+          "dev",
+          "post_read",
+          "probe_minus_bow_full",
+          "ci95"
+        ]
+      },
+      "ci": [
+        -0.009288194444444594,
+        0.6592803030303029
+      ]
+    },
+    "eNineteenAwayBowLatest": {
+      "value": 0.8418029164825453,
+      "macro": "eNineteenAwayBowLatest",
+      "dataset": "E15 sharing calls away from a read: 31 forbidden leaks, 73 permitted shares when the peer asks at once",
+      "evaluation": "AUROC of forbidden above permitted shares; episode bootstrap 2,000 draws; classifier fit once on development calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+        "value_path": [
+          "E15",
+          "qwen_latest",
+          "auroc_forbidden_vs_early",
+          "nonread",
+          "value"
+        ],
+        "ci_path": [
+          "E15",
+          "qwen_latest",
+          "auroc_forbidden_vs_early",
+          "nonread",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7414935925762263,
+        0.9253203711886876
+      ]
+    },
+    "eNineteenAwayProbe": {
+      "value": 0.7026071586389748,
+      "macro": "eNineteenAwayProbe",
+      "dataset": "E15 sharing calls away from a read: 31 forbidden leaks, 73 permitted shares when the peer asks at once",
+      "evaluation": "AUROC of forbidden above permitted shares; episode bootstrap 2,000 draws; classifier fit once on development calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+        "value_path": [
+          "E15",
+          "probe",
+          "auroc_forbidden_vs_early",
+          "nonread",
+          "value"
+        ],
+        "ci_path": [
+          "E15",
+          "probe",
+          "auroc_forbidden_vs_early",
+          "nonread",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.5740167918692002,
+        0.8144056562085726
+      ]
+    },
+    "eNineteenEEightBowMaxChange": {
+      "value": 0.0,
+      "macro": "eNineteenEEightBowMaxChange",
+      "dataset": "E08 Qwen3-32B: 38 leaking calls replayed under a permitting rule",
+      "evaluation": "Largest change in the latest-message classifier score, permit minus original",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_bow.json",
+        "value_path": [
+          "E08_qwen",
+          "qwen_latest",
+          "paired_leaking_call_changes",
+          "PERMIT_minus_FORBID",
+          "max_abs"
+        ]
+      }
+    },
+    "eNineteenJevEEightForbid": {
+      "value": 8,
+      "macro": "eNineteenJevEEightForbid",
+      "dataset": "E08 Qwen3-32B: 38 leaking test calls replayed under each rule",
+      "evaluation": "Jev, matched cut (E13 rule), with the rule actually in force in its input",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+        "value_path": [
+          "E08_qwen",
+          "threshold_crossing",
+          "FORBID",
+          "numerator"
+        ]
+      }
+    },
+    "eNineteenJevEEightPermit": {
+      "value": 28,
+      "macro": "eNineteenJevEEightPermit",
+      "dataset": "E08 Qwen3-32B: 38 leaking test calls replayed under each rule",
+      "evaluation": "Jev, matched cut (E13 rule), with the rule actually in force in its input",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+        "value_path": [
+          "E08_qwen",
+          "threshold_crossing",
+          "PERMIT",
+          "numerator"
+        ]
+      }
+    },
+    "eNineteenJevEEightPermitNoConsequence": {
+      "value": 38,
+      "macro": "eNineteenJevEEightPermitNoConsequence",
+      "dataset": "E08 Qwen3-32B: 38 leaking test calls replayed under each rule",
+      "evaluation": "Jev, matched cut (E13 rule), with the rule actually in force in its input",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+        "value_path": [
+          "E08_qwen",
+          "threshold_crossing",
+          "PERMIT_NO_CONSEQUENCE",
+          "numerator"
+        ]
+      }
+    },
+    "eNineteenJevEEightCalls": {
+      "value": 38,
+      "macro": "eNineteenJevEEightCalls",
+      "dataset": "E08 Qwen3-32B: 38 leaking test calls replayed under each rule",
+      "evaluation": "Jev, matched cut (E13 rule), with the rule actually in force in its input",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_jev.json",
+        "value_path": [
+          "E08_qwen",
+          "threshold_crossing",
+          "FORBID",
+          "denominator"
+        ]
+      }
+    },
+    "eNineteenJevForbiddenAbovePermitted": {
+      "value": 0.0023829381627546767,
+      "macro": "eNineteenJevForbiddenAbovePermitted",
+      "dataset": "E15 sharing calls: 77 forbidden leaks, 109 permitted shares when the peer asks at once",
+      "evaluation": "Jev AUROC of forbidden above permitted shares; episode bootstrap 2,000 draws",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 3,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task1_jev_e14e15.json",
+        "value_path": [
+          "E15",
+          "auroc_forbidden_vs_early",
+          "all",
+          "value"
+        ],
+        "ci_path": [
+          "E15",
+          "auroc_forbidden_vs_early",
+          "all",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.0,
+        0.007863695937090432
+      ]
+    },
+    "eNineteenQwenLayerMidLow": {
+      "value": 0.9458403938320835,
+      "macro": "eNineteenQwenLayerMidLow",
+      "dataset": "qwen test episodes; layers 8 to 56",
+      "evaluation": "Single-layer probe, paper recipe, fit on all development calls; within scenario-and-round AUROC on test calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+        "value_path": [
+          "qwen",
+          "test_by_layer",
+          "16",
+          "test_auc"
+        ]
+      }
+    },
+    "eNineteenQwenLayerMidHigh": {
+      "value": 0.9708726945569051,
+      "macro": "eNineteenQwenLayerMidHigh",
+      "dataset": "qwen test episodes; layers 8 to 56",
+      "evaluation": "Single-layer probe, paper recipe, fit on all development calls; within scenario-and-round AUROC on test calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+        "value_path": [
+          "qwen",
+          "test_by_layer",
+          "48",
+          "test_auc"
+        ]
+      }
+    },
+    "eNineteenGptLayerMidLow": {
+      "value": 0.800887573964497,
+      "macro": "eNineteenGptLayerMidLow",
+      "dataset": "gptoss test episodes; layers 7 to 16",
+      "evaluation": "Single-layer probe, paper recipe, fit on all development calls; within scenario-and-round AUROC on test calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+        "value_path": [
+          "gptoss",
+          "test_by_layer",
+          "10",
+          "test_auc"
+        ]
+      }
+    },
+    "eNineteenGptLayerMidHigh": {
+      "value": 0.8461538461538461,
+      "macro": "eNineteenGptLayerMidHigh",
+      "dataset": "gptoss test episodes; layers 7 to 16",
+      "evaluation": "Single-layer probe, paper recipe, fit on all development calls; within scenario-and-round AUROC on test calls",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
+        "value_path": [
+          "gptoss",
+          "test_by_layer",
+          "13",
+          "test_auc"
+        ]
+      }
     }
   },
   "aliases": {
@@ -25485,6 +25912,12 @@
           "Same labels; three AUROC variants; gpt-oss test Jev and text classifier",
           "No: chosen after the results, to answer reviewer questions",
           "No conclusion changes; Jev below chance only within round"
+        ],
+        [
+          "v2 checks on saved data",
+          "Same labels as the paper",
+          "No: run after the paper",
+          "Read flag beats last-prompt probe one call ahead; text classifier and Jev added to policy tests; layers flat"
         ]
       ],
       "columns": "llll"
@@ -25630,6 +26063,11 @@
           "Robustness: gpt-oss test text and Jev",
           "\\texttt{20261106-2314/2315}",
           "\\texttt{E18-robustness/gptoss\\_test\\_text\\_jev.py}"
+        ],
+        [
+          "Checks on saved data for v2",
+          "\\texttt{20261114-0123}",
+          "\\texttt{E19-v2-analyses/task*.py}"
         ]
       ],
       "columns": "lll"

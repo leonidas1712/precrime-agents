@@ -1,0 +1,26 @@
+{
+ "EARLY": {
+  "peer message": 55,
+  "n": 73,
+  "peer asks for format / partial / confirm": 0,
+  "hedge regex in latest message": 8,
+  "round>=3": 0,
+  "other tool result": 18
+ },
+ "FORBID": {
+  "peer message": 29,
+  "n": 31,
+  "peer asks for format / partial / confirm": 13,
+  "hedge regex in latest message": 13,
+  "round>=3": 22,
+  "other tool result": 1,
+  "delivered confirmation": 1
+ },
+ "LATE": {
+  "peer message": 7,
+  "n": 7,
+  "peer asks for format / partial / confirm": 0,
+  "hedge regex in latest message": 0,
+  "round>=3": 7
+ }
+}

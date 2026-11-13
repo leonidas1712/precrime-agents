@@ -1,0 +1,3 @@
+{"id": "20261114-0123-e19-v2-analyses", "experiment": "E19", "name": "e19-v2-analyses",
+ "note": "Outputs of the 1 Nov 2026 checks on saved data, copied from the private working folder on 14 Nov 2026. task3 re-run on 14 Nov reproduced its JSON exactly.",
+ "api_spend_usd": 0.30, "gpu_spend_usd": 0, "scripts": "experiments/E19-v2-analyses"}

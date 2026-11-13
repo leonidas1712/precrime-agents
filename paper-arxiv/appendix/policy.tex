@@ -22,6 +22,8 @@ The probe ranks leaking above non-leaking calls about equally well under every p
 Removing the consequence sentence as well raises the median score slightly (\eFourteenReplayNoConsequenceShift{}).
 Neither the text of the rule nor its stated consequence drives the score.
 \citet{sadhu2026compliance} find the same for activation probes and guard models that score a written case against a rule: changing the rule leaves their accuracy unchanged.
+A text classifier on the latest message cannot see the rule, and its scores do not change at all.
+Jev, which is given the rule in force, moves with it: \eNineteenJevEEightForbid{} of the \eNineteenJevEEightCalls{} leaking calls cross its matched cut under the original rule, \eNineteenJevEEightPermit{} under the permitting rule and \eNineteenJevEEightPermitNoConsequence{} when the consequence sentence is also removed.
 These replayed prompts still contain the agent's earlier refusals, which the next subsection removes.
 
 \begin{table}[h]
@@ -76,6 +78,14 @@ Forbidden leaks follow a read more often than permitted shares do (\eFifteenForb
 The probe therefore reads a coming disclosure, most strongly right after the value is read and more strongly when the disclosure is contested.
 The delayed request worked: the late peer first asked for the value in its fifth message in \eFifteenLateAskFifth{} of \eFifteenLateEpisodes{} episodes.
 But the target re-read the file before \eFifteenLateReadCalls{} of its \eFifteenLateAllCalls{} shares, so the test of timing rests on few calls, and in every permitted episode the share was also uncontested.
+
+\paragraph{Text classifier and Jev.}
+A bag-of-words classifier on the latest message, fit only under the forbidding rule, behaves like the probe.
+It flags every share made right after a read, and away from a read it ranks forbidden leaks above permitted shares (\eNineteenAwayBowLatest{} \eNineteenAwayBowLatestCI{}, against \eNineteenAwayProbe{} \eNineteenAwayProbeCI{} for the probe).
+It does so through the stage of the peer's pressure: forbidden leaks follow the peer's later, narrower requests, and permitted shares follow its first request.
+Setting the weights of hedge words to zero leaves its ranking unchanged.
+Jev, which reads the rule, does the opposite: it ranks permitted shares above forbidden leaks almost perfectly (AUROC \eNineteenJevForbiddenAbovePermitted{} for forbidden above permitted).
+So the probe and the classifier read a coming disclosure, and Jev reads the rule; an alarm for violations would need both.
 
 \begin{figure}[h]
   \centering

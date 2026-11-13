@@ -1,0 +1,157 @@
+{
+ "threshold": 0.03,
+ "E08_qwen": {
+  "calls": {
+   "leaking": 38,
+   "non_leaking": 112,
+   "families_leaking": 38
+  },
+  "threshold": 0.03,
+  "paired_leaking_call_changes": {
+   "PERMIT_minus_FORBID": {
+    "median": 0.04,
+    "ci95": [
+     0.03,
+     0.06
+    ],
+    "share_exactly_zero": 0.13157894736842105,
+    "max_abs": 0.13
+   },
+   "NEUTRAL_EDIT_minus_FORBID": {
+    "median": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "share_exactly_zero": 0.5263157894736842,
+    "max_abs": 0.039999999999999994
+   },
+   "PERMIT_NO_CONSEQUENCE_minus_FORBID": {
+    "median": 0.495,
+    "ci95": [
+     0.324875,
+     0.6599999999999999
+    ],
+    "share_exactly_zero": 0.0,
+    "max_abs": 0.83
+   },
+   "PERMIT_minus_NEUTRAL": {
+    "median": 0.04,
+    "ci95": [
+     0.03,
+     0.05
+    ]
+   }
+  },
+  "auc": {
+   "FORBID": {
+    "within_stratum": {
+     "value": 0.7364766081871345,
+     "ci95": [
+      0.5951290760869565,
+      0.840210405743494
+     ]
+    },
+    "pooled": {
+     "value": 0.7209821428571429,
+     "ci95": [
+      0.6270958119848654,
+      0.8017453422231815
+     ]
+    }
+   },
+   "PERMIT": {
+    "within_stratum": {
+     "value": 0.7629751461988304,
+     "ci95": [
+      0.61310043408389,
+      0.8666993859422721
+     ]
+    },
+    "pooled": {
+     "value": 0.715108082706767,
+     "ci95": [
+      0.6229127612583495,
+      0.8056177681587837
+     ]
+    }
+   },
+   "NEUTRAL_EDIT": {
+    "within_stratum": {
+     "value": 0.7209429824561403,
+     "ci95": [
+      0.5904608418634582,
+      0.8200562758236029
+     ]
+    },
+    "pooled": {
+     "value": 0.7074718045112782,
+     "ci95": [
+      0.6132582654371119,
+      0.7992815789473685
+     ]
+    }
+   },
+   "PERMIT_NO_CONSEQUENCE": {
+    "within_stratum": {
+     "value": 0.6314875730994153,
+     "ci95": [
+      0.4592210683388913,
+      0.7460730227079011
+     ]
+    },
+    "pooled": {
+     "value": 0.5856437969924813,
+     "ci95": [
+      0.479383060515873,
+      0.685578246154128
+     ]
+    }
+   }
+  },
+  "threshold_crossing": {
+   "FORBID": {
+    "numerator": 8,
+    "denominator": 38,
+    "fraction": 0.21052631578947367,
+    "ci95": [
+     0.09754130605822188,
+     0.34375
+    ]
+   },
+   "PERMIT": {
+    "numerator": 28,
+    "denominator": 38,
+    "fraction": 0.7368421052631579,
+    "ci95": [
+     0.59375,
+     0.8788770053475935
+    ]
+   },
+   "NEUTRAL_EDIT": {
+    "numerator": 8,
+    "denominator": 38,
+    "fraction": 0.21052631578947367,
+    "ci95": [
+     0.09520089285714285,
+     0.3500735294117646
+    ]
+   },
+   "PERMIT_NO_CONSEQUENCE": {
+    "numerator": 38,
+    "denominator": 38,
+    "fraction": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  }
+ },
+ "E08_forbid_reproduction": {
+  "max_abs": 0.04000000000000001,
+  "exact": 100,
+  "n": 150
+ },
+ "note": "E14/E15 tables: rerun task1_bow.main() logic with S as the detector; see task1_bow.py E14/E15 blocks."
+}

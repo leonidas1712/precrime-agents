@@ -979,3 +979,9 @@ Two agents independently (a Claude subagent, commit 1cc8900d on a worktree branc
   - **C sweep** (`runs/20261107-0013-e18-c-sweep-reasoning` for the reasoning probe): the last-prompt probes are flat from 0.01 to 0.3. Weaker regularisation lowers Qwen (0.93 at C = 1, 0.91 at C = 10). The gpt-oss reasoning probe ranges from 0.93 to 0.96 and is lowest near the recipe's 0.1.
 - **Cost:** Jev $0.084. Everything else ran on CPU.
 - **Paper:** Table 1 and Figure 1 filled in, three main-text sentences reworded with net fewer words, new appendix G.1–G.3. Uncommitted.
+
+### 2026-11-14 ~01:30 SGT — E19 checks on saved data folded into v2; v2 branches merged
+- **What:** the 1 Nov checks queued for v2 (queue items 2, 17, 21, 22) were never folded in. Moved to `experiments/E19-v2-analyses/` (record: `RESULTS.md`) and `runs/20261114-0123-e19-v2-analyses/`; registered by `paper-arxiv/register_e19.py`.
+- **Correction:** the paper said that one call before a leak on gpt-oss-20b, a read flag "scores about as well as the probe". It scores 0.85 [0.82, 0.89] against 0.62 for the last-prompt probe and 0.88 for the reasoning probe. Fixed in results, App ahead and App shortcuts.
+- **Added to appendices:** text classifier and Jev on E08/E15 (classifier behaves like the probe; Jev reads the rule, AUROC 0.002 for forbidden above permitted); full-input classifier after a read (0.57 vs probe 0.85, difference interval just includes 0); AUROC by layer (Qwen 0.95–0.97 over layers 8–56, gpt-oss 0.80–0.85 over 7–16).
+- **Branches:** `v2-edits` (review-queue text fixes) merged with `e17-crossed` (E17 + E18) on local branch `v2-final`. Nothing pushed.

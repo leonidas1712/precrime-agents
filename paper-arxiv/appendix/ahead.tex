@@ -7,7 +7,9 @@ At a threshold set for few false alarms per call, many refusing episodes still g
 
 \paragraph{One call ahead.}
 Asked whether the next call will leak, with the leaking call removed, the probe is much weaker on both models.
-On gpt-oss-20b, nearly all of the calls just before a leak are reads of the protected file, and a flag for that read scores about as well as the probe.
+On gpt-oss-20b, nearly all of the calls just before a leak are reads of the protected file.
+A flag for that read scores \eNineteenReadFlagNext{} \eNineteenReadFlagNextCI{}, above the last-prompt probe (\gptossStrictNextProbe{}; paired difference \eNineteenProbeMinusReadFlagNext{} \eNineteenProbeMinusReadFlagNextCI{}) and close to the reasoning probe (\eNineteenReasoningNext{} \eNineteenReasoningNextCI{}).
+The flag is taken from the call's own tool call, so it is a diagnostic rather than a warning before the call.
 Among those reads, the probe still separates the ones followed by a leak.
 
 \paragraph{Score across an episode.}

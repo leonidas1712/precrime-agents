@@ -74,7 +74,7 @@ The test episodes, scored once by probes fit on development episodes, show the s
 It usually leaks within a round of the request, so ``this round or the next'' marks nearly the same calls as ``ever'' (\cref{app:gptoss-round}).
 
 Even one call earlier, asked whether the next call will leak, the probe drops well below its score on the leaking call (\cref{tab:glance}).
-On gpt-oss-20b, what it detects there is mostly the read of the protected file that usually comes just before the leak, and a flag for that read scores about as well as the probe (\cref{app:ahead}).
+On gpt-oss-20b, the call just before a leak usually reads the protected file, and a flag for that read scores \eNineteenReadFlagNext{}, above the last-prompt probe and close to the reasoning probe (\cref{app:ahead}).
 
 An earlier check of this question on the Qwen3-32B test episodes, with a slightly different leak label (\cref{app:labels}), scores \qwenRoundFreshProbe{}.
 Under that label Jev was slightly ahead on development episodes (\cref{app:confirmation,app:roundmonitor}).

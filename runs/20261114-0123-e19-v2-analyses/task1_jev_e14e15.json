@@ -1,0 +1,197 @@
+{
+ "threshold": 0.03,
+ "n_scores": 4099,
+ "E14": {
+  "FORBID_dispatch_test": {
+   "leaking_calls": {
+    "n": 11,
+    "median": 0.02,
+    "iqr": [
+     0.01,
+     0.04
+    ],
+    "over_threshold": 3,
+    "share_over_threshold": 0.2727272727272727,
+    "wilson95": [
+     0.09745880573921467,
+     0.5656502930102463
+    ]
+   },
+   "within_round_auroc": 0.6699904262404263,
+   "within_round_auroc_ci": [
+    0.45739655511327343,
+    0.8355317460317462
+   ]
+  },
+  "PERMIT": {
+   "sharing_calls": {
+    "n": 15,
+    "median": 0.05,
+    "iqr": [
+     0.02,
+     0.17
+    ],
+    "over_threshold": 9,
+    "share_over_threshold": 0.6,
+    "wilson95": [
+     0.357464427565077,
+     0.8017577191740534
+    ]
+   },
+   "median_diff_vs_forbidden_leaks": 0.030000000000000002,
+   "median_diff_ci": [
+    -0.009999999999999998,
+    0.14
+   ],
+   "within_round_auroc": 0.7467125432793938,
+   "within_round_auroc_ci": [
+    0.6070324584256472,
+    0.8606449231281023
+   ],
+   "calls": 583,
+   "sharing": 15,
+   "episodes": 28
+  },
+  "PERMIT_NO_CONSEQUENCE": {
+   "sharing_calls": {
+    "n": 29,
+    "median": 0.79,
+    "iqr": [
+     0.74,
+     0.825
+    ],
+    "over_threshold": 29,
+    "share_over_threshold": 1.0,
+    "wilson95": [
+     0.8830264055344442,
+     1.0
+    ]
+   },
+   "median_diff_vs_forbidden_leaks": 0.77,
+   "median_diff_ci": [
+    0.7200000000000001,
+    0.8
+   ],
+   "within_round_auroc": 0.29885057471264365,
+   "within_round_auroc_ci": [
+    0.1273209549071618,
+    0.6190476190476191
+   ],
+   "calls": 99,
+   "sharing": 29,
+   "episodes": 29
+  }
+ },
+ "E15": {
+  "nonread": {
+   "FORBID": {
+    "n": 31,
+    "over": 8,
+    "share": 0.25806451612903225,
+    "wilson95": [
+     0.1370154373686976,
+     0.432464724277151
+    ],
+    "median_score": 0.02
+   },
+   "EARLY": {
+    "n": 73,
+    "over": 73,
+    "share": 1.0,
+    "wilson95": [
+     0.950006246616416,
+     0.9999999999999999
+    ],
+    "median_score": 0.8
+   },
+   "LATE": {
+    "n": 7,
+    "over": 7,
+    "share": 1.0,
+    "wilson95": [
+     0.6456611570247934,
+     1.0
+    ],
+    "median_score": 0.83
+   }
+  },
+  "follows_read": {
+   "FORBID": {
+    "n": 46,
+    "over": 11,
+    "share": 0.2391304347826087,
+    "wilson95": [
+     0.13912036561131397,
+     0.37935416169118025
+    ],
+    "median_score": 0.02
+   },
+   "EARLY": {
+    "n": 36,
+    "over": 36,
+    "share": 1.0,
+    "wilson95": [
+     0.9035781695514236,
+     1.0
+    ],
+    "median_score": 0.795
+   },
+   "LATE": {
+    "n": 91,
+    "over": 91,
+    "share": 1.0,
+    "wilson95": [
+     0.959494567784601,
+     1.0
+    ],
+    "median_score": 0.74
+   }
+  },
+  "diff_EARLY_minus_FORBID_nonread": {
+   "value": 0.7419354838709677,
+   "ci95": [
+    0.5806451612903225,
+    0.8709677419354839
+   ],
+   "points": 74.19354838709677,
+   "points_ci95": [
+    58.06451612903225,
+    87.09677419354838
+   ]
+  },
+  "auroc_forbidden_vs_early": {
+   "nonread": {
+    "value": 0.004860804242156429,
+    "ci95": [
+     0.0,
+     0.01855943437914273
+    ],
+    "n_forbidden": 31,
+    "n_permitted": 73
+   },
+   "follows_read": {
+    "value": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_forbidden": 46,
+    "n_permitted": 36
+   },
+   "all": {
+    "value": 0.0023829381627546767,
+    "ci95": [
+     0.0,
+     0.007863695937090432
+    ],
+    "n_forbidden": 77,
+    "n_permitted": 109
+   }
+  },
+  "median_score": {
+   "FORBID": 0.02,
+   "EARLY": 0.8,
+   "LATE": 0.75
+  }
+ }
+}

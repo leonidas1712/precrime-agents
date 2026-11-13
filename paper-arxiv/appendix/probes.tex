@@ -42,7 +42,8 @@ Call weights make leaking and non-leaking calls contribute equally within each r
 We choose the layer from evenly spaced candidates (17 on each model) on an inner validation split of the training data, by the same within-group AUROC that we report.
 In the held-out-scenario evaluation, the inner validation set is one of the five training scenarios, so layer selection never sees the held-out scenario.
 We run three split seeds and average their AUROCs.
-The chosen layer often differs between seeds (\cref{tab:settings}), so each reported AUROC averages probes at different layers rather than resting on one layer.
+The chosen layer often differs between seeds (\cref{tab:settings}), but the choice matters little.
+Refit at one layer, the probe scores \eNineteenQwenLayerMidLow{}--\eNineteenQwenLayerMidHigh{} on the Qwen3-32B test calls at every candidate layer from 8 to 56, and \eNineteenGptLayerMidLow{}--\eNineteenGptLayerMidHigh{} on gpt-oss-20b at layers 7 to 16, with overlapping intervals.
 
 \paragraph{Reasoning probe.}
 The reasoning probe uses the same recipe, with every reasoning token carrying its call's label.

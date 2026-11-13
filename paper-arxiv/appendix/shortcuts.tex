@@ -1,7 +1,7 @@
 \section{Is the probe reading pressure, the secret string or the read step?}
 \label{app:shortcuts}
 
-The probe beats each of them, although the read flag alone scores well, and one call before the leak it scores about as well as the probe (\cref{fig:shortcuts}).
+The probe beats each of them, although the read flag alone scores well (\cref{fig:shortcuts}); one call before a leak on gpt-oss-20b, a flag for the call's own read beats the last-prompt probe (\cref{app:ahead}).
 A probe that sees only the incoming peer message and tool results also scores high, so much of the signal arrives with the input (\cref{tab:shortcuts}).
 
 \paragraph{Pressure.}
@@ -16,6 +16,8 @@ Fixed keyword rules on the reasoning, written before scoring, do no better than 
 The call that leaks often comes right after the target reads the protected file.
 A flag for ``the latest input is the protected file's contents'' therefore scores well on both models, and the probe beats it by \qwenProbeMinusReadStep{} on Qwen3-32B and \gptossProbeMinusReadFlag{} on gpt-oss-20b (paired).
 Among the calls that come right after a read, the probe still separates those that leak (\qwenPostReadProbe{} on Qwen3-32B, \gptossPostReadProbe{} on gpt-oss-20b).
+On these Qwen3-32B calls the latest-message text classifier scores at chance, because almost all of them share one latest message, and the full-input classifier, which also sees the agent's earlier replies, scores \eNineteenPostReadBowFull{} \eNineteenPostReadBowFullCI{}.
+The probe's lead over it, \eNineteenPostReadProbeMinusBowFull{} \eNineteenPostReadProbeMinusBowFullCI{}, rests on 15 groups and just includes zero.
 These within-subset scores, and the handoff-write score below, use only the scenario-and-round groups that hold both kinds of call, which cover most but not all of the subset's leaking calls.
 
 \paragraph{The target's own earlier promise.}

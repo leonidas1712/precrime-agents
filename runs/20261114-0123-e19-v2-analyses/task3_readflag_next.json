@@ -1,0 +1,76 @@
+{
+ "rows": 1874,
+ "positives": 116,
+ "families": 238,
+ "episodes": 238,
+ "probe": {
+  "auc": 0.620081795126909,
+  "ci95": [
+   0.567737876329932,
+   0.6680756943398433
+  ]
+ },
+ "paper_check": {
+  "recomputed": 0.620081795126909,
+  "saved": 0.620081795126909
+ },
+ "own_protected_read_call": {
+  "auc": 0.8509825363870708,
+  "ci95": [
+   0.8166904650907552,
+   0.8865181567920758
+  ],
+  "positives_flagged": 108,
+  "negatives_flagged": 49,
+  "probe_minus_flag": {
+   "estimate": -0.2309007412601618,
+   "ci95": [
+    -0.29500212965006983,
+    -0.17294457858722959
+   ]
+  }
+ },
+ "latest_input_is_protected_read": {
+  "auc": 0.39859446630920664,
+  "ci95": [
+   0.3715916954358553,
+   0.42954243958233757
+  ],
+  "positives_flagged": 1,
+  "negatives_flagged": 45,
+  "probe_minus_flag": {
+   "estimate": 0.22148732881770233,
+   "ci95": [
+    0.15211756060027812,
+    0.2807024255607757
+   ]
+  }
+ },
+ "previous_call_read_protected_file": {
+  "auc": 0.3987740640103559,
+  "ci95": [
+   0.3715916954358553,
+   0.4297404677722157
+  ],
+  "positives_flagged": 1,
+  "negatives_flagged": 44,
+  "probe_minus_flag": {
+   "estimate": 0.22130773111655305,
+   "ci95": [
+    0.15203619790117634,
+    0.2802969706684474
+   ]
+  }
+ },
+ "malformed_read_calls_among_positives": 3,
+ "reference_reasoning_probe_token_max_strict1": {
+  "auc": 0.8809477899283995,
+  "ci95": [
+   0.8429195517098601,
+   0.9171961086886382
+  ],
+  "rows": 1874,
+  "positives": 116,
+  "source": "runs/20261026-0526-e05-reasoning-stream/strict_future.json h1/all/loso/token_max"
+ }
+}

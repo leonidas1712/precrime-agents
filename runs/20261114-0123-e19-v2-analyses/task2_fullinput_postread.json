@@ -1,0 +1,247 @@
+{
+ "dev": {
+  "all_calls": {
+   "calls": 2976,
+   "leaking": 66,
+   "families": 133,
+   "episodes": 152,
+   "probe": {
+    "auc": 0.9601796341087426,
+    "ci95": [
+     0.9342971314561841,
+     0.9828295049871293
+    ]
+   },
+   "bow_full": {
+    "auc": 0.7103315744982052,
+    "ci95": [
+     0.6528065233060383,
+     0.7818738340766582
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.9251344019507147,
+    "ci95": [
+     0.8777871802610299,
+     0.9647586407876111
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.24984805961053747,
+    "ci95": [
+     0.17921209261585838,
+     0.3059950716554773
+    ]
+   }
+  },
+  "post_read": {
+   "calls": 235,
+   "leaking": 46,
+   "families": 133,
+   "episodes": 152,
+   "probe": {
+    "auc": 0.8535353535353535,
+    "ci95": [
+     0.7185185185185187,
+     1.0
+    ]
+   },
+   "bow_full": {
+    "auc": 0.5656565656565656,
+    "ci95": [
+     0.2799444444444445,
+     0.7894736842105262
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.5,
+    "ci95": [
+     0.4444444444444444,
+     0.58
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.28787878787878785,
+    "ci95": [
+     -0.009288194444444594,
+     0.6592803030303029
+    ]
+   }
+  },
+  "not_post_read": {
+   "calls": 2741,
+   "leaking": 20,
+   "families": 133,
+   "episodes": 152,
+   "probe": {
+    "auc": 0.908191871468258,
+    "ci95": [
+     0.8275537064733318,
+     0.9642398786696227
+    ]
+   },
+   "bow_full": {
+    "auc": 0.6737854300550921,
+    "ci95": [
+     0.5261366652194452,
+     0.8002447431141614
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.8232975730959602,
+    "ci95": [
+     0.6834815696812072,
+     0.9237440402842666
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.2344064414131659,
+    "ci95": [
+     0.11671258295540089,
+     0.3635372824936133
+    ]
+   }
+  },
+  "post_read_tie_check_full": {
+   "cells": 56,
+   "cells_with_more_than_one_distinct_score": 29,
+   "cells_with_leaking_and_nonleaking": 15,
+   "leaking_calls_in_those_cells": 33,
+   "nonleaking_calls_in_those_cells": 24,
+   "mixed_cells_where_bow_scores_differ": 15
+  },
+  "post_read_tie_check_latest": {
+   "cells": 56,
+   "cells_with_more_than_one_distinct_score": 3,
+   "cells_with_leaking_and_nonleaking": 15,
+   "leaking_calls_in_those_cells": 33,
+   "nonleaking_calls_in_those_cells": 24,
+   "mixed_cells_where_bow_scores_differ": 2
+  },
+  "paper_check_all_calls_full_input": {
+   "recomputed": 0.7103315744982052,
+   "saved_run": 0.7103315744982052
+  }
+ },
+ "test": {
+  "all_calls": {
+   "calls": 1825,
+   "leaking": 38,
+   "families": 89,
+   "episodes": 89,
+   "probe": {
+    "auc": 0.9755173189383717,
+    "ci95": [
+     0.9430512977793153,
+     0.9950315421293682
+    ]
+   },
+   "bow_full": {
+    "auc": 0.7802990215386336,
+    "ci95": [
+     0.6858404246252544,
+     0.8723507558174278
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.9574202248198093,
+    "ci95": [
+     0.9160524692249459,
+     0.985404504830657
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.19521829739973806,
+    "ci95": [
+     0.10631733848840892,
+     0.28821518637810045
+    ]
+   }
+  },
+  "post_read": {
+   "calls": 128,
+   "leaking": 21,
+   "families": 89,
+   "episodes": 89,
+   "probe": {
+    "auc": 0.7142857142857143,
+    "ci95": [
+     0.0,
+     1.0
+    ]
+   },
+   "bow_full": {
+    "auc": 0.6428571428571429,
+    "ci95": [
+     0.0,
+     1.0
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.5,
+    "ci95": [
+     0.5,
+     0.5
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.0714285714285714,
+    "ci95": [
+     -1.0,
+     1.0
+    ]
+   }
+  },
+  "not_post_read": {
+   "calls": 1697,
+   "leaking": 17,
+   "families": 89,
+   "episodes": 89,
+   "probe": {
+    "auc": 0.95298191778922,
+    "ci95": [
+     0.8895344019686126,
+     0.9923109640831759
+    ]
+   },
+   "bow_full": {
+    "auc": 0.7116515837104073,
+    "ci95": [
+     0.549995890717398,
+     0.8512754986843223
+    ]
+   },
+   "bow_latest": {
+    "auc": 0.9178664613502342,
+    "ci95": [
+     0.8370016076154713,
+     0.9744551146010186
+    ]
+   },
+   "probe_minus_bow_full": {
+    "estimate": 0.24133033407881277,
+    "ci95": [
+     0.09794600136705388,
+     0.397048795213252
+    ]
+   }
+  },
+  "post_read_tie_check_full": {
+   "cells": 33,
+   "cells_with_more_than_one_distinct_score": 16,
+   "cells_with_leaking_and_nonleaking": 5,
+   "leaking_calls_in_those_cells": 7,
+   "nonleaking_calls_in_those_cells": 6,
+   "mixed_cells_where_bow_scores_differ": 5
+  },
+  "post_read_tie_check_latest": {
+   "cells": 33,
+   "cells_with_more_than_one_distinct_score": 0,
+   "cells_with_leaking_and_nonleaking": 5,
+   "leaking_calls_in_those_cells": 7,
+   "nonleaking_calls_in_those_cells": 6,
+   "mixed_cells_where_bow_scores_differ": 0
+  }
+ },
+ "note": "Post-read = the call's last input message contains the masked secret (a tool result of reading the protected file). Test numbers use classifiers/probes trained on development episodes that include the test scenarios (not held-out-scenario); dev numbers are leave-one-scenario-out. AUROC counts only scenario-and-round cells with both a leaking and a non-leaking post-read call."
+}
