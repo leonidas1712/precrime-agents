@@ -51,9 +51,12 @@ Its settings are in \cref{tab:detector-settings}.
 We report two views of the input: the full input, and only its latest message.
 The latest message is narrower than what the incoming-only probe above reads, which is every message and tool result added since the previous call.
 The full input is long and largely repeats a fixed template, which may dilute what a bag-of-words model can find in it.
-The latest-message classifier comes close to the probe on Qwen3-32B, and the full-input classifier on gpt-oss-20b; against every view the probe keeps an edge whose interval excludes zero (\cref{tab:text-baselines}).
+The latest-message classifier comes close to the probe on Qwen3-32B, and the full-input classifier on gpt-oss-20b; on development episodes, against every view the probe keeps an edge whose interval excludes zero (\cref{tab:text-baselines}).
 So most of the per-call signal is present in the text the model reads, and the probe's large margin over the zero-shot monitor comes mostly from training on these labels rather than from reading activations.
 On the Qwen3-32B test episodes, the latest-message classifier, fit on all development calls, scores \qwenFreshCallBow{}, and the probe's paired edge over it is \qwenFreshCallProbeMinusBow{} (95\% interval \qwenFreshCallProbeMinusBowLow{} to \qwenFreshCallProbeMinusBowHigh{}), which includes zero.
+On the gpt-oss-20b test episodes, the full-input classifier, fit the same way, scores \gptossFreshCallBow{} \gptossFreshCallBowCI{}.
+Its paired difference from the last-prompt probe is \gptossFreshCallProbeMinusBow{} \gptossFreshCallProbeMinusBowCI{}, and from the reasoning probe \gptossFreshReasoningMinusBow{} \gptossFreshReasoningMinusBowCI{}.
+Both intervals include zero, so on the test episodes of both models the classifier is level with the probes within noise.
 
 \begin{table}[h]
   \centering

@@ -1,0 +1,548 @@
+{
+  "gpt_dev/immediate": {
+    "reproduced": true,
+    "target_auc": 0.9055172941208524,
+    "target_ci95": [
+      0.8708647111524837,
+      0.9360241609966362
+    ],
+    "target_rows": 1995,
+    "target_positives": 121,
+    "within_round_auc": 0.9055172941208524,
+    "within_round_ci95": [
+      0.8708647111524837,
+      0.9360241609966362
+    ],
+    "within_round_by_seed": [
+      0.9226903434920358,
+      0.8862805386572997,
+      0.9075810002132214
+    ],
+    "pooled_auc": 0.9462898118666043,
+    "pooled_ci95": [
+      0.9222956507460651,
+      0.9661290990407978
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 238,
+    "rows": 1995,
+    "positives": 121,
+    "episodes": 238,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 109,
+    "strata_with_both_classes": 16,
+    "positives_in_kept_strata": 121,
+    "selected_layers": {
+      "42/0": 4,
+      "42/1": 12,
+      "42/2": 13,
+      "42/3": 1,
+      "42/4": 6,
+      "42/5": 10,
+      "43/0": 1,
+      "43/1": 6,
+      "43/2": 0,
+      "43/3": 18,
+      "43/4": 15,
+      "43/5": 23,
+      "44/0": 13,
+      "44/1": 13,
+      "44/2": 1,
+      "44/3": 6,
+      "44/4": 9,
+      "44/5": 23
+    },
+    "max_iter_raised": []
+  },
+  "gpt_dev/strict1": {
+    "reproduced": false,
+    "target_auc": 0.620081795126909,
+    "target_ci95": [
+      0.567737876329932,
+      0.6680756943398433
+    ],
+    "target_rows": 1874,
+    "target_positives": 116,
+    "within_round_auc": 0.6200041312561416,
+    "within_round_ci95": [
+      0.5675398367455984,
+      0.6680010846061426
+    ],
+    "within_round_by_seed": [
+      0.5826796415436571,
+      0.6345788395764805,
+      0.6427539126482871
+    ],
+    "pooled_auc": 0.7781815150445256,
+    "pooled_ci95": [
+      0.7422368469278329,
+      0.8131577277328763
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 238,
+    "rows": 1874,
+    "positives": 116,
+    "episodes": 238,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 109,
+    "strata_with_both_classes": 15,
+    "positives_in_kept_strata": 116,
+    "selected_layers": {
+      "42/0": 16,
+      "42/1": 20,
+      "42/2": 23,
+      "42/3": 20,
+      "42/4": 0,
+      "42/5": 10,
+      "43/0": 20,
+      "43/1": 0,
+      "43/2": 18,
+      "43/3": 20,
+      "43/4": 6,
+      "43/5": 16,
+      "44/0": 20,
+      "44/1": 10,
+      "44/2": 4,
+      "44/3": 0,
+      "44/4": 16,
+      "44/5": 23
+    },
+    "max_iter_raised": []
+  },
+  "gpt_dev/round_any": {
+    "reproduced": true,
+    "target_auc": 0.6371913911402034,
+    "target_ci95": [
+      0.5861730558667251,
+      0.6917795929863436
+    ],
+    "target_rows": 1995,
+    "target_positives": 304,
+    "within_round_auc": 0.6371913911402034,
+    "within_round_ci95": [
+      0.5861730558667251,
+      0.6917795929863436
+    ],
+    "within_round_by_seed": [
+      0.6624406249197108,
+      0.6086776299088632,
+      0.6404559185920362
+    ],
+    "pooled_auc": 0.8451885368358804,
+    "pooled_ci95": [
+      0.816861911517034,
+      0.8709179469582518
+    ],
+    "positive_coverage_by_seed": [
+      0.9967105263157895,
+      0.9967105263157895,
+      0.9967105263157895
+    ],
+    "bootstrap_groups": 238,
+    "rows": 1995,
+    "positives": 304,
+    "episodes": 238,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 109,
+    "strata_with_both_classes": 17,
+    "positives_in_kept_strata": 303,
+    "selected_layers": {
+      "42/0": 1,
+      "42/1": 9,
+      "42/2": 12,
+      "42/3": 20,
+      "42/4": 12,
+      "42/5": 10,
+      "43/0": 16,
+      "43/1": 0,
+      "43/2": 1,
+      "43/3": 23,
+      "43/4": 20,
+      "43/5": 1,
+      "44/0": 9,
+      "44/1": 10,
+      "44/2": 4,
+      "44/3": 22,
+      "44/4": 9,
+      "44/5": 18
+    },
+    "max_iter_raised": []
+  },
+  "gpt_dev/eventual_any": {
+    "reproduced": false,
+    "target_auc": 0.6103165428942173,
+    "target_ci95": [
+      0.5645578542731162,
+      0.6638159625629834
+    ],
+    "target_rows": 1995,
+    "target_positives": 330,
+    "within_round_auc": 0.6102036466718986,
+    "within_round_ci95": [
+      0.5643633208854963,
+      0.663618348604675
+    ],
+    "within_round_by_seed": [
+      0.6097103133950026,
+      0.6123129237613018,
+      0.6085877028593917
+    ],
+    "pooled_auc": 0.8329675129675129,
+    "pooled_ci95": [
+      0.7963544754473922,
+      0.8665288247573248
+    ],
+    "positive_coverage_by_seed": [
+      0.996969696969697,
+      0.996969696969697,
+      0.996969696969697
+    ],
+    "bootstrap_groups": 238,
+    "rows": 1995,
+    "positives": 330,
+    "episodes": 238,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 109,
+    "strata_with_both_classes": 22,
+    "positives_in_kept_strata": 329,
+    "selected_layers": {
+      "42/0": 3,
+      "42/1": 9,
+      "42/2": 22,
+      "42/3": 18,
+      "42/4": 0,
+      "42/5": 10,
+      "43/0": 16,
+      "43/1": 0,
+      "43/2": 4,
+      "43/3": 23,
+      "43/4": 22,
+      "43/5": 4,
+      "44/0": 9,
+      "44/1": 10,
+      "44/2": 16,
+      "44/3": 0,
+      "44/4": 4,
+      "44/5": 18
+    },
+    "max_iter_raised": []
+  },
+  "qwen_dev/immediate": {
+    "reproduced": false,
+    "target_auc": 0.9601796341087426,
+    "target_ci95": [
+      0.9342971314561841,
+      0.9828295049871293
+    ],
+    "target_rows": 2976,
+    "target_positives": 66,
+    "within_round_auc": 0.9586799973868602,
+    "within_round_ci95": [
+      0.9329670365289048,
+      0.9817130941402508
+    ],
+    "within_round_by_seed": [
+      0.9437637038421214,
+      0.9724538126711654,
+      0.9598224756472936
+    ],
+    "pooled_auc": 0.9593425665590614,
+    "pooled_ci95": [
+      0.9353636399951254,
+      0.9807047788331279
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 133,
+    "rows": 2976,
+    "positives": 66,
+    "episodes": 152,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 120,
+    "strata_with_both_classes": 37,
+    "positives_in_kept_strata": 66,
+    "selected_layers": {
+      "42/0": 52,
+      "42/1": 52,
+      "42/2": 16,
+      "42/3": 44,
+      "42/4": 48,
+      "42/5": 60,
+      "43/0": 48,
+      "43/1": 48,
+      "43/2": 52,
+      "43/3": 56,
+      "43/4": 20,
+      "43/5": 52,
+      "44/0": 56,
+      "44/1": 60,
+      "44/2": 0,
+      "44/3": 48,
+      "44/4": 60,
+      "44/5": 16
+    },
+    "max_iter_raised": []
+  },
+  "qwen_dev/round_near": {
+    "reproduced": false,
+    "target_auc": 0.6692555307293088,
+    "target_ci95": [
+      0.6309885361526546,
+      0.7083846158623851
+    ],
+    "target_rows": 2976,
+    "target_positives": 240,
+    "within_round_auc": 0.6690724019527198,
+    "within_round_ci95": [
+      0.6310838948148143,
+      0.7082439106740235
+    ],
+    "within_round_by_seed": [
+      0.6612846416504229,
+      0.6695282496471716,
+      0.6764043145605646
+    ],
+    "pooled_auc": 0.6712384259259259,
+    "pooled_ci95": [
+      0.6297653324948952,
+      0.7107351990082292
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 133,
+    "rows": 2976,
+    "positives": 240,
+    "episodes": 152,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 120,
+    "strata_with_both_classes": 63,
+    "positives_in_kept_strata": 240,
+    "selected_layers": {
+      "42/0": 44,
+      "42/1": 63,
+      "42/2": 40,
+      "42/3": 8,
+      "42/4": 8,
+      "42/5": 52,
+      "43/0": 60,
+      "43/1": 24,
+      "43/2": 36,
+      "43/3": 63,
+      "43/4": 60,
+      "43/5": 8,
+      "44/0": 63,
+      "44/1": 63,
+      "44/2": 8,
+      "44/3": 56,
+      "44/4": 63,
+      "44/5": 8
+    },
+    "max_iter_raised": []
+  },
+  "qwen_dev/eventual": {
+    "reproduced": false,
+    "target_auc": 0.5328061025420716,
+    "target_ci95": [
+      0.4743073194887098,
+      0.5933598902255284
+    ],
+    "target_rows": 2976,
+    "target_positives": 717,
+    "within_round_auc": 0.5327375476125007,
+    "within_round_ci95": [
+      0.47425625785124237,
+      0.593296716248309
+    ],
+    "within_round_by_seed": [
+      0.5372304149446077,
+      0.5326705471722838,
+      0.5283116807206105
+    ],
+    "pooled_auc": 0.6208891383173335,
+    "pooled_ci95": [
+      0.5634711307649127,
+      0.6861928385662762
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 133,
+    "rows": 2976,
+    "positives": 717,
+    "episodes": 152,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 120,
+    "strata_with_both_classes": 92,
+    "positives_in_kept_strata": 717,
+    "selected_layers": {
+      "42/0": 8,
+      "42/1": 20,
+      "42/2": 28,
+      "42/3": 12,
+      "42/4": 24,
+      "42/5": 8,
+      "43/0": 0,
+      "43/1": 24,
+      "43/2": 8,
+      "43/3": 16,
+      "43/4": 44,
+      "43/5": 8,
+      "44/0": 63,
+      "44/1": 52,
+      "44/2": 12,
+      "44/3": 24,
+      "44/4": 56,
+      "44/5": 8
+    },
+    "max_iter_raised": []
+  },
+  "qwen_dev/strict1": {
+    "reproduced": false,
+    "target_auc": 0.7472789062730628,
+    "target_ci95": [
+      0.6871715523095221,
+      0.7998274969362178
+    ],
+    "target_rows": 2910,
+    "target_positives": 66,
+    "within_round_auc": 0.7466758509956039,
+    "within_round_ci95": [
+      0.6876259367339448,
+      0.7988779139636094
+    ],
+    "within_round_by_seed": [
+      0.7142251439276124,
+      0.7346496694017686,
+      0.7911527396574303
+    ],
+    "pooled_auc": 0.7549865746068279,
+    "pooled_ci95": [
+      0.6944730291311048,
+      0.8120334581455065
+    ],
+    "positive_coverage_by_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bootstrap_groups": 133,
+    "rows": 2910,
+    "positives": 66,
+    "episodes": 152,
+    "within_round_valid_bootstrap_reps": 1000,
+    "strata": 120,
+    "strata_with_both_classes": 38,
+    "positives_in_kept_strata": 66,
+    "selected_layers": {
+      "42/0": 44,
+      "42/1": 0,
+      "42/2": 20,
+      "42/3": 56,
+      "42/4": 36,
+      "42/5": 52,
+      "43/0": 52,
+      "43/1": 56,
+      "43/2": 40,
+      "43/3": 48,
+      "43/4": 20,
+      "43/5": 60,
+      "44/0": 48,
+      "44/1": 63,
+      "44/2": 56,
+      "44/3": 56,
+      "44/4": 63,
+      "44/5": 52
+    },
+    "max_iter_raised": []
+  },
+  "qwen_test/immediate": {
+    "reproduced": true,
+    "target_auc": 0.9755173189383717,
+    "target_ci95": [
+      0.9430512977793153,
+      0.9950315421293682
+    ],
+    "target_rows": 1825,
+    "target_positives": 38,
+    "within_round_auc": 0.9755173189383717,
+    "within_round_ci95": [
+      0.9430512977793153,
+      0.9950315421293682
+    ],
+    "within_round_by_seed": [
+      0.9755173189383717
+    ],
+    "pooled_auc": 0.9702824492681059,
+    "pooled_ci95": [
+      0.948740502613602,
+      0.9857748694237896
+    ],
+    "positive_coverage_by_seed": [
+      1.0
+    ],
+    "bootstrap_groups": 89,
+    "rows": 1825,
+    "positives": 38,
+    "episodes": 89,
+    "within_round_valid_bootstrap_reps": 1000,
+    "frozen_models_identical": false,
+    "layers": [
+      48,
+      16,
+      48
+    ]
+  },
+  "gpt_test/immediate": {
+    "reproduced": true,
+    "target_auc": 0.8179487179487179,
+    "target_ci95": [
+      0.6569961001642037,
+      0.9475625911521632
+    ],
+    "target_rows": 594,
+    "target_positives": 26,
+    "within_round_auc": 0.8179487179487179,
+    "within_round_ci95": [
+      0.6569961001642037,
+      0.9475625911521632
+    ],
+    "within_round_by_seed": [
+      0.8179487179487179
+    ],
+    "pooled_auc": 0.9126489707475623,
+    "pooled_ci95": [
+      0.8475900853565108,
+      0.9651872529990879
+    ],
+    "positive_coverage_by_seed": [
+      1.0
+    ],
+    "bootstrap_groups": 57,
+    "rows": 594,
+    "positives": 26,
+    "episodes": 57,
+    "within_round_valid_bootstrap_reps": 1000,
+    "frozen_models_identical": false,
+    "layers": [
+      6,
+      6,
+      13
+    ]
+  }
+}

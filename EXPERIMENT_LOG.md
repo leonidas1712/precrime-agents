@@ -957,3 +957,25 @@ Two agents independently (a Claude subagent, commit 1cc8900d on a worktree branc
   - Layer sweep (secondary, no CIs): 0.57–0.70; best 0.70 at layer 20, so the frozen layer was not unlucky.
   - Against the pre-stated success criteria: Test 1 lower bound above 0.5 met; added value not met; Test 2 not met; LLM monitor not run.
 - **E17 appendix drafted** (5 Nov; paper-arxiv, not committed): new Appendix J `appendix/crossed.tex` ("Does the probe read rule-breaking, or doing what the peer asked?"), after the rule-change appendix, plus a one-line pointer from it. Final numbers from `runs/20261105-1952-e17-probe-analysis` (same values as `…-1947`, adds the outcome grid; 1947 superseded). Registered via `register_e17.py` (118 macros), tables `e17_behaviour`, `e17_tests`, `e17_by_scenario`; figures `make_e17_design.py` (setup diagram in the Figure 2 style; quotes checked against a real episode) and `make_e17_scores.py` (three kinds of write per scenario). History and reproducibility tables updated. Clean build: 52 pages, no undefined references, no overfull boxes. Main text unchanged.
+
+### 2026-11-07 ~01:00 SGT — E18 robustness and coverage checks for the preprint
+- **Why:** reviewer-style gaps found on 6 Nov, approved by Leo:
+  - blank gpt-oss test cells (Jev, text classifier);
+  - a headline metric that keeps a minority of calls (gpt-oss test: 14 of 108 groups);
+  - the ladder on development episodes only;
+  - no sweep of the regularisation C or report of the split seeds.
+- **Full record with links:** `experiments/E18-robustness/RESULTS.md`.
+- **Results:**
+  - **Every paper value reproduces from saved scores.** The six dev ladder refits match within 0.0015, a gap traced to a dirty working tree when the original runs were made.
+  - **gpt-oss test episodes:**
+    - Jev 0.44 within round (0.86 pooled), text classifier 0.84.
+    - The classifier is level with both probes within noise, as on Qwen.
+    - Jev's matched cut catches 2 of 26 leaks, against 14 for the reasoning probe.
+  - **Metric variants:** every leak is always kept. Pooling rounds or all calls keeps the probes' lead over text and Jev, and the gpt-oss test probe rises to 0.91. Jev on gpt-oss is below chance only within round: its score falls with the round, and leaks cluster in rounds 3–4.
+  - **Test ladder:**
+    - Qwen: ever 0.56, this round or next 0.77, one call earlier 0.77.
+    - gpt-oss: 0.66, 0.68, 0.51.
+    - Same shape as on development episodes.
+  - **C sweep** (`runs/20261107-0013-e18-c-sweep-reasoning` for the reasoning probe): the last-prompt probes are flat from 0.01 to 0.3. Weaker regularisation lowers Qwen (0.93 at C = 1, 0.91 at C = 10). The gpt-oss reasoning probe ranges from 0.93 to 0.96 and is lowest near the recipe's 0.1.
+- **Cost:** Jev $0.084. Everything else ran on CPU.
+- **Paper:** Table 1 and Figure 1 filled in, three main-text sentences reworded with net fewer words, new appendix G.1–G.3. Uncommitted.

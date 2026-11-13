@@ -13,8 +13,11 @@
     \multicolumn{4}{@{}l}{\emph{Test episodes}} \\
     This call? & last-prompt probe & \qwenFreshCallProbe{} & \gptossFreshCallProbe{} \\
     This call? & reasoning probe & -- & \gptossFreshReasoning{} \\
-    This call? & Jev & \qwenFreshCallJev{} & -- \\
-    This call? & trained text classifier & \qwenFreshCallBow{} & -- \\
+    This call? & Jev & \qwenFreshCallJev{} & \gptossFreshCallJev{} \\
+    This call? & trained text classifier & \qwenFreshCallBow{} & \gptossFreshCallBow{} \\
+    One call earlier? & last-prompt probe & \eEighteenQwenTestStrict{} & \eEighteenGptTestStrict{} \\
+    This round or next? & last-prompt probe & \eEighteenQwenTestNear{} & \eEighteenGptTestNear{} \\
+    Ever? & last-prompt probe & \eEighteenQwenTestEver{} & \eEighteenGptTestEver{} \\
     \midrule
     \multicolumn{4}{@{}l}{\emph{Development episodes}} \\
     This call? & last-prompt probe & \qwenCallProbe{} & \gptossCallProbe{} \\
@@ -26,7 +29,7 @@
     Ever? & last-prompt probe & \qwenEverProbe{} & \gptossEverProbe{} \\
     \bottomrule
   \end{tabular}
-  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios, and -- means not run. \Cref{tab:glance-ci} gives the same results with intervals. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. For each model the text classifier shows the stronger of its two views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
+  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios. Qwen3-32B runs with reasoning off, so it has no reasoning probe. \Cref{tab:glance-ci} gives the same results with intervals. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. For each model the text classifier shows the stronger of its two views, which favours it: the latest message on Qwen3-32B and the full input on gpt-oss-20b. Jev's \gptossCallJev{} on gpt-oss-20b is below chance because it ranks leaking calls below the other calls under the same pressure (\cref{sec:monitor}).}
   \label{tab:glance}
 \end{table}
 
@@ -66,16 +69,15 @@ Earlier calls are mixed and noisy, few episodes have many calls before the leak,
 
 On the same calls, the probe goes from near chance for the eventual outcome, to modest for this round or the next, to high for this call (\cref{fig:headline}).
 We refit the probe for each question, on the same scored calls, model and token, so only the question changes.
-A scenario-and-round group needs both leaking and non-leaking calls to compare, so for each question, groups with only one kind are skipped.
 gpt-oss-20b follows the same pattern, with the largest jump at the call itself.
+The test episodes, scored once by probes fit on development episodes, show the same pattern.
 It usually leaks within a round of the request, so ``this round or the next'' marks nearly the same calls as ``ever'' (\cref{app:gptoss-round}).
 
 Even one call earlier, asked whether the next call will leak, the probe drops well below its score on the leaking call (\cref{tab:glance}).
 On gpt-oss-20b, what it detects there is mostly the read of the protected file that usually comes just before the leak, and a flag for that read scores about as well as the probe (\cref{app:ahead}).
 
-We also checked the ``this round or the next'' question on the Qwen3-32B test episodes.
-That check counts a leak slightly differently: the full value posted to the team channel or written into another file (\cref{app:labels}).
-The probe scores \qwenRoundFreshProbe{} there, against \qwenOriginalNeartermProbe{} under the same label on development episodes, where Jev was slightly ahead at \qwenOriginalNeartermJev{} (\cref{app:confirmation,app:roundmonitor}).
+An earlier check of this question on the Qwen3-32B test episodes, with a slightly different leak label (\cref{app:labels}), scores \qwenRoundFreshProbe{}.
+Under that label Jev was slightly ahead on development episodes (\cref{app:confirmation,app:roundmonitor}).
 
 \begin{figure}[t]
   \centering
@@ -90,11 +92,11 @@ The probe scores \qwenRoundFreshProbe{} there, against \qwenOriginalNeartermProb
 \label{sec:monitor}
 
 A zero-shot text monitor shown the same conversation and tool results scores well below the probe on both models, and a trained text classifier comes close (\cref{fig:percall}).
-On gpt-oss-20b, Jev ranks leaking calls below the other calls under the same pressure.
+On gpt-oss-20b, Jev ranks leaking calls below other calls of the same scenario and round, though across all calls it scores \eEighteenGptDevJevPooled{}.
 On gpt-oss-20b development episodes, at a cutoff where Jev flags no more refusing-episode calls than the probe (\gptossMatchedProbeRefusing{}), Jev catches \gptossMatchedJevCaught{} of leaking calls and the last-prompt probe \gptossMatchedProbeCaught{}.
 The bag-of-words classifier, trained on the same labelled development calls, scores close to the probe on both models.
 On development episodes the probe leads it by a small but reliable \qwenTextGapLatest{} AUROC on Qwen3-32B and \gptossTextGapFull{} on gpt-oss-20b.
-On the Qwen3-32B test episodes the two are level within noise (\qwenFreshCallProbe{} for the probe, \qwenFreshCallBow{} for the classifier; intervals in \cref{app:shortcuts}).
+On the test episodes of both models the two are level within noise (\cref{tab:glance}; intervals in \cref{app:shortcuts}).
 
 Most of the probe's lead over the zero-shot monitor therefore comes from training on labelled calls, and activations add at most a small edge.
 Much of the signal also arrives with the incoming message.
@@ -106,7 +108,7 @@ In new Qwen3-32B episodes on the five scenarios of its test set, nearly every di
 Away from a read, forbidden leaks cross about twice as often as permitted shares (\eFifteenForbidNonreadRate{} against \eFifteenEarlyNonreadRate{}).
 The probe therefore mostly reads a coming disclosure, sharpest just after the value is read and stronger when the agent was pressed into it.
 Its scores are largely insensitive to the tested changes in the rule text (\cref{app:policy}).
-With one permitted and one forbidden file, it scores a write the peer asked for alike in either (\cref{app:crossed}).
+On Qwen3-32B, with one permitted and one forbidden file, it scores a write the peer asked for alike in either (\cref{app:crossed}).
 
 \subsection{How costly are the alarms?}
 \label{sec:cost}

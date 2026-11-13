@@ -1,0 +1,17 @@
+[run] 20261106-2313-e18-metric-robustness-fdf8 -> runs/20261106-2313-e18-metric-robustness-fdf8
+SET qwen_dev 2976 66
+REPRO qwen_dev probe 0.9602 {'saved_run': '20261026-2211-e05-arxiv-qwen-controls', 'saved_auc': 0.9601796341087426, 'saved_ci95': [0.9342971314561841, 0.9828295049871293], 'paper': 0.96, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_dev text_latest 0.9251 {'saved_run': '20261026-2245-e05-arxiv-qwen-text-workflow', 'saved_auc': 0.9251344019507147, 'saved_ci95': [0.8777871802610299, 0.9647586407876111], 'paper': 0.925, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_dev jev 0.7581 {'saved_run': '20261026-2211-e05-arxiv-qwen-controls', 'saved_auc': 0.7581167629948363, 'saved_ci95': [0.6836685113569769, 0.804510783684528], 'paper': 0.758, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+SET gpt_dev 1995 121
+Traceback (most recent call last):
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 189, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 181, in main
+    repro[f'{name}/{det}'] = c = check(name, det, r)
+                                 ^^^^^^^^^^^^^^^^^^^
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 163, in check
+    for k in keys: m = m[k]
+                       ~^^^
+KeyError: 'matched'

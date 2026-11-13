@@ -1,0 +1,58 @@
+{
+  "id": "20261106-2346-e18-reproduce",
+  "experiment": "E18",
+  "name": "e18-reproduce",
+  "tags": [
+    "cpu-only",
+    "reproduction"
+  ],
+  "settings": {
+    "C": 0.1,
+    "workers": 2,
+    "threads_per_worker": 2,
+    "no_gpu": true,
+    "no_api": true,
+    "tolerance": 1e-09
+  },
+  "parents": [
+    "20261026-2201-e05-arxiv-qwen-any-public",
+    "20261026-2223-e05-arxiv-qwen-strict-next",
+    "20261026-1304-e05-lastprompt-label-ladder",
+    "20261026-1221-e05-lastprompt-percall-6013",
+    "20261026-2212-e05-arxiv-qwen-fresh-percall",
+    "20261026-2222-e05-arxiv-gpt-fresh-percall"
+  ],
+  "model": null,
+  "command": "/Users/leo/.cache/uv/archive-v0/iIVBZvSAzliKv4vetl6ls/bin/python3 experiments/E18-robustness/reproduce.py",
+  "git_commit": "53a237302dc68a134f39c0b159afb95982abff79",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-06T23:46:17",
+  "status": "failed",
+  "error": "mismatch: ['gpt_dev/strict1', 'gpt_dev/eventual_any', 'qwen_dev/immediate', 'qwen_dev/round_near', 'qwen_dev/eventual', 'qwen_dev/strict1', 'qwen_test/frozen_models', 'gpt_test/frozen_models']",
+  "ended": "2026-11-07T00:12:28",
+  "results": {
+    "reproduced": false,
+    "failures": [
+      "gpt_dev/strict1",
+      "gpt_dev/eventual_any",
+      "qwen_dev/immediate",
+      "qwen_dev/round_near",
+      "qwen_dev/eventual",
+      "qwen_dev/strict1",
+      "qwen_test/frozen_models",
+      "gpt_test/frozen_models"
+    ],
+    "gpt_dev/immediate": 0.9055,
+    "gpt_dev/strict1": 0.62,
+    "gpt_dev/round_any": 0.6372,
+    "gpt_dev/eventual_any": 0.6102,
+    "qwen_dev/immediate": 0.9587,
+    "qwen_dev/round_near": 0.6691,
+    "qwen_dev/eventual": 0.5327,
+    "qwen_dev/strict1": 0.7467,
+    "qwen_test/immediate": 0.9755,
+    "gpt_test/immediate": 0.8179
+  }
+}

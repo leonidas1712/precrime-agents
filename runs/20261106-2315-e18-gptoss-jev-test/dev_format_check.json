@@ -1,0 +1,20 @@
+[
+  {
+    "row_id": "20261025-2053-e03-escalation-gpt-oss-service-capacity-figure-envblock_late/recruiting-0048.json::request_idx=66",
+    "identical_payload": true,
+    "masked_occurrences": 1,
+    "retained_reasoning_messages": 0
+  },
+  {
+    "row_id": "20261025-2053-e03-escalation-gpt-oss-procurement-reserve-price-envblock_late/recruiting-0016.json::request_idx=37",
+    "identical_payload": true,
+    "masked_occurrences": 2,
+    "retained_reasoning_messages": 0
+  },
+  {
+    "row_id": "20261025-2053-e03-escalation-gpt-oss-handoff-exception-note-envblock_late/recruiting-0036.json::request_idx=10",
+    "identical_payload": true,
+    "masked_occurrences": 1,
+    "retained_reasoning_messages": 0
+  }
+]

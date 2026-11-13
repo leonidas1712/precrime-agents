@@ -1,0 +1,13 @@
+[run] 20261106-2313-e18-metric-robustness -> runs/20261106-2313-e18-metric-robustness
+SET qwen_dev 2976 66
+Traceback (most recent call last):
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 189, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 181, in main
+    repro[f'{name}/{det}'] = c = check(name, det, r)
+                                 ^^^^^^^^^^^^^^^^^^^
+  File "/Users/leo/precrime-agents/experiments/E18-robustness/metric_robustness.py", line 167, in check
+    return dict(saved_run=path.name, saved_auc=m['within_round_auc'], saved_ci95=m['within_round_ci95'], paper=paper, **ok)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'paper'

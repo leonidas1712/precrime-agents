@@ -1,0 +1,47 @@
+{
+  "id": "20261107-0013-e18-c-sweep-reasoning",
+  "experiment": "E18",
+  "name": "e18-c-sweep-reasoning",
+  "tags": [
+    "cpu-only",
+    "sensitivity"
+  ],
+  "settings": {
+    "C": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1,
+      10
+    ],
+    "part": "reasoning",
+    "split": "loso (held-out scenarios)",
+    "workers": 2,
+    "threads_per_worker": 2,
+    "no_gpu": true,
+    "no_api": true
+  },
+  "parents": [
+    "20261106-2346-e18-reproduce"
+  ],
+  "model": null,
+  "command": "/Users/leo/.cache/uv/archive-v0/iIVBZvSAzliKv4vetl6ls/bin/python3 experiments/E18-robustness/c_sweep.py --part reasoning --repro runs/20261106-2346-e18-reproduce",
+  "git_commit": "53a237302dc68a134f39c0b159afb95982abff79",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-07T00:13:35",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-07T02:20:07",
+  "results": {
+    "c01_reproduced": true,
+    "gpt_reasoning/C=0.01": 0.9557,
+    "gpt_reasoning/C=0.03": 0.9647,
+    "gpt_reasoning/C=0.1": 0.9333,
+    "gpt_reasoning/C=0.3": 0.9314,
+    "gpt_reasoning/C=1": 0.9601,
+    "gpt_reasoning/C=10": 0.956
+  }
+}

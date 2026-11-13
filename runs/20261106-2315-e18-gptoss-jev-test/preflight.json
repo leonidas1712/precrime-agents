@@ -1,0 +1,12 @@
+{
+  "calls": 594,
+  "positives": 26,
+  "unique_payloads": 594,
+  "reserve_usd_per_byte": "5.254794520547945205479452054E-8",
+  "worst_case_usd": "0.3766017172054794520547945210",
+  "cap_usd": "1.00",
+  "within_cap": true,
+  "calls_with_retained_reasoning": 28,
+  "calls_with_masked_value": 594,
+  "protected_values_sent": false
+}

@@ -1,0 +1,12 @@
+[run] 20261106-2314-e18-gptoss-bow-test -> runs/20261106-2314-e18-gptoss-bow-test
+FIT full_input {'dev_calls': 1995, 'dev_positives': 121, 'dev_fit_calls': 803, 'vocabulary': 33665, 'iterations': [7]}
+FIT latest_input {'dev_calls': 1995, 'dev_positives': 121, 'dev_fit_calls': 803, 'vocabulary': 4805, 'iterations': [10]}
+last_prompt 0.818 [0.657 0.948] pooled 0.913 [0.848 0.965]
+reasoning 0.905 [0.775 0.991] pooled 0.954 [0.916 0.982]
+bow_full_input 0.844 [0.704 0.957] pooled 0.671 [0.534 0.803]
+bow_latest_input 0.742 [0.576 0.907] pooled 0.777 [0.669 0.879]
+last_prompt_minus_bow_full_input -0.026 [-0.204  0.14 ]
+last_prompt_minus_bow_latest_input 0.076 [-0.11  0.25]
+reasoning_minus_bow_full_input 0.061 [-0.105  0.214]
+reasoning_minus_bow_latest_input 0.163 [0.015 0.31 ]
+/Users/leo/precrime-agents/runs/20261106-2314-e18-gptoss-bow-test

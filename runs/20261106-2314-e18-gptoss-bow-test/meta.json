@@ -1,0 +1,38 @@
+{
+  "id": "20261106-2314-e18-gptoss-bow-test",
+  "experiment": "E18",
+  "name": "e18-gptoss-bow-test",
+  "tags": [
+    "cpu-only",
+    "post-hoc",
+    "test"
+  ],
+  "settings": {
+    "no_api": true,
+    "no_gpu": true,
+    "bootstrap": 1000,
+    "restore_root": "/Users/leo/collusion-research",
+    "recipe": "arxiv_text_workflow text views and TF-IDF/LR hyperparameters; fit once on all 1,995 dev calls (round-balanced weights, weight>0 rows) as E12 add_bow; score 594 test calls once"
+  },
+  "parents": [
+    "20261026-2242-e05-arxiv-gpt-text-workflow",
+    "20261026-2222-e05-arxiv-gpt-fresh-percall",
+    "20261026-1302-e05-stream-confirm-score"
+  ],
+  "model": null,
+  "command": "/Users/leo/.cache/uv/archive-v0/iJegrwKZpH4D5i6q22d6m/bin/python3 experiments/E18-robustness/gptoss_test_text_jev.py bow",
+  "git_commit": "53a237302dc68a134f39c0b159afb95982abff79",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-06T23:14:32",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-06T23:14:39",
+  "results": {
+    "last_prompt": 0.8179487179487179,
+    "reasoning": 0.905128205128205,
+    "bow_full_input": 0.8439102564102564,
+    "bow_latest_input": 0.742311214426599
+  }
+}

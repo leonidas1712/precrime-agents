@@ -1,0 +1,18 @@
+[run] 20261106-2314-e18-metric-robustness -> runs/20261106-2314-e18-metric-robustness
+SET qwen_dev 2976 66
+REPRO qwen_dev probe 0.9602 {'saved_run': '20261026-2211-e05-arxiv-qwen-controls', 'saved_auc': 0.9601796341087426, 'saved_ci95': [0.9342971314561841, 0.9828295049871293], 'paper': 0.96, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_dev text_latest 0.9251 {'saved_run': '20261026-2245-e05-arxiv-qwen-text-workflow', 'saved_auc': 0.9251344019507147, 'saved_ci95': [0.8777871802610299, 0.9647586407876111], 'paper': 0.925, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_dev jev 0.7581 {'saved_run': '20261026-2211-e05-arxiv-qwen-controls', 'saved_auc': 0.7581167629948363, 'saved_ci95': [0.6836685113569769, 0.804510783684528], 'paper': 0.758, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+SET gpt_dev 1995 121
+REPRO gpt_dev probe 0.9055 {'saved_run': '20261026-1221-e05-lastprompt-percall-6013', 'saved_auc': 0.9055172941208524, 'saved_ci95': [0.8708647111524837, 0.9360241609966362], 'paper': 0.906, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO gpt_dev text_full 0.8629 {'saved_run': '20261026-2242-e05-arxiv-gpt-text-workflow', 'saved_auc': 0.8628839763868715, 'saved_ci95': [0.815266509289573, 0.9097931771794039], 'paper': 0.863, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO gpt_dev reasoning 0.9333 {'saved_run': '20261026-1221-e05-lastprompt-percall-6013', 'saved_auc': 0.9333420720909574, 'saved_ci95': [0.9117733742817319, 0.952082789118824], 'paper': 0.933, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO gpt_dev jev 0.3968 {'saved_run': '20261026-1319-e06-percall-input-jev-l4', 'saved_auc': 0.3968481547397384, 'saved_ci95': [0.3323867137748024, 0.45296794697405734], 'paper': 0.397, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+SET qwen_test 1825 38
+REPRO qwen_test probe 0.9755 {'saved_run': '20261026-2212-e05-arxiv-qwen-fresh-percall', 'saved_auc': 0.9755173189383717, 'saved_ci95': [0.9430512977793153, 0.9950315421293682], 'paper': 0.976, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_test jev 0.7488 {'saved_run': '20261026-2224-e05-arxiv-fresh-comparisons', 'saved_auc': 0.7487541284892391, 'saved_ci95': [0.6387631433178396, 0.8340865028910517], 'paper': 0.749, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO qwen_test text_bow 0.9574 {'saved_run': '20261028-0228-e12-bow-test-auroc', 'saved_auc': 0.9574202248198093, 'saved_ci95': [0.9160524692249459, 0.985404504830657], 'paper': 0.957, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+SET gpt_test 594 26
+REPRO gpt_test probe 0.8179 {'saved_run': '20261026-2222-e05-arxiv-gpt-fresh-percall', 'saved_auc': 0.8179487179487179, 'saved_ci95': [0.6569961001642037, 0.9475625911521632], 'paper': 0.818, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+REPRO gpt_test reasoning 0.9051 {'saved_run': '20261026-2224-e05-arxiv-fresh-comparisons', 'saved_auc': 0.905128205128205, 'saved_ci95': [0.7754905808477238, 0.9913294314381271], 'paper': 0.905, 'auc': True, 'ci': True, 'pooled': True, 'paper_match': True}
+/Users/leo/precrime-agents/runs/20261106-2314-e18-metric-robustness

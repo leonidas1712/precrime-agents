@@ -65,3 +65,8 @@ report/build/.tmp/
 # Local agent worktrees (may contain local .env files)
 .claude/worktrees/
 experiments/E10-shi-transfer/refs/
+
+# E18: per-fold probe fits, row-index copies and the Jev request payloads are large and rebuilt by the scripts; kept locally only
+runs/*e18*/**/fit.json
+runs/*e18*/**/rows.json
+runs/*e18*/payloads.json

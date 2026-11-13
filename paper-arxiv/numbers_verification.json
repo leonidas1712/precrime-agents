@@ -4954,6 +4954,851 @@
       "key": "eSeventeenGridAllPaIncomplete",
       "source": "runs/20261105-1952-e17-probe-analysis/results.json",
       "sha256": "cc23f1a870cf2c93955c2c375ec67410553c7a986fc5f613bb3f3351234b4f4f"
+    },
+    {
+      "key": "eEighteenQwenDevKeptRoundCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevPairsRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevKeptPooledCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevPairsPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbePooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevTextRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevTextScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevTextPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevTextDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevTextDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevJevRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevJevScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevJevPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevJevDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevJevDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevKeptRoundCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevPairsRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevKeptPooledCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevPairsPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbePooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevTextRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevTextScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevTextPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevTextDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevTextDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevJevRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevJevScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevJevPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevJevDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevJevDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestKeptRoundCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestPairsRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestKeptPooledCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestPairsPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbePooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestTextRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestTextScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestTextPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestTextDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestTextDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestJevRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestJevScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestJevPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestJevDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestJevDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestKeptRoundCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestPairsRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestKeptPooledCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestPairsPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestProbeRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestProbeScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestProbePooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestProbeDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestProbeDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestReasoningRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestReasoningScenario",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestReasoningPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestReasoningDropMin",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestReasoningDropMax",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeMinusTextRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenTestProbeMinusTextPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeMinusTextRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeMinusTextPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeMinusJevRound",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeMinusJevPooled",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeSeedA",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeSeedB",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenQwenDevProbeSeedC",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeSeedA",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeSeedB",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevProbeSeedC",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningSeedA",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningSeedB",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptDevReasoningSeedC",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDeployTokenCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDeployTokenLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDeployTokenKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDeployTokenProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDeployTokenReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDispatchIntegrationCodeCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDispatchIntegrationCodeLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDispatchIntegrationCodeKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDispatchIntegrationCodeProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenDispatchIntegrationCodeReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenHandoffExceptionNoteCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenHandoffExceptionNoteLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenHandoffExceptionNoteKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenHandoffExceptionNoteProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenHandoffExceptionNoteReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenProcurementReservePriceCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenProcurementReservePriceLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenProcurementReservePriceKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenProcurementReservePriceProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenProcurementReservePriceReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceCapacityFigureCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceCapacityFigureLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceCapacityFigureKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceCapacityFigureProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceCapacityFigureReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceRolloutThresholdCalls",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceRolloutThresholdLeaks",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceRolloutThresholdKeptGroups",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceRolloutThresholdProbe",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "eEighteenGptTestScenServiceRolloutThresholdReasoning",
+      "source": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+      "sha256": "f7d92c86033d78de5f919f75f65d9dddc1c1222c22f0e1ecc1376cb41cb483e6"
+    },
+    {
+      "key": "gptossFreshCallBow",
+      "source": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+      "sha256": "bab0abd3cc829e233a0a2acd73032c56d33c8a78300c7b7ee25935cf73680185"
+    },
+    {
+      "key": "gptossFreshCallBowLatest",
+      "source": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+      "sha256": "bab0abd3cc829e233a0a2acd73032c56d33c8a78300c7b7ee25935cf73680185"
+    },
+    {
+      "key": "gptossFreshCallJev",
+      "source": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+      "sha256": "69c07828d6616a14e5e6f499a25ee6f9866f5094a93ef098d3b78d2e4785e2d5"
+    },
+    {
+      "key": "gptossFreshCallJevPooled",
+      "source": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+      "sha256": "69c07828d6616a14e5e6f499a25ee6f9866f5094a93ef098d3b78d2e4785e2d5"
+    },
+    {
+      "key": "gptossFreshCallProbeMinusBow",
+      "source": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+      "sha256": "bab0abd3cc829e233a0a2acd73032c56d33c8a78300c7b7ee25935cf73680185"
+    },
+    {
+      "key": "gptossFreshReasoningMinusBow",
+      "source": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+      "sha256": "bab0abd3cc829e233a0a2acd73032c56d33c8a78300c7b7ee25935cf73680185"
+    },
+    {
+      "key": "gptossFreshMatchedJevCaught",
+      "source": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+      "sha256": "69c07828d6616a14e5e6f499a25ee6f9866f5094a93ef098d3b78d2e4785e2d5"
+    },
+    {
+      "key": "gptossFreshMatchedJevCaughtCount",
+      "source": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+      "sha256": "69c07828d6616a14e5e6f499a25ee6f9866f5094a93ef098d3b78d2e4785e2d5"
+    },
+    {
+      "key": "gptossFreshMatchedProbeRefusing",
+      "source": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+      "sha256": "69c07828d6616a14e5e6f499a25ee6f9866f5094a93ef098d3b78d2e4785e2d5"
+    },
+    {
+      "key": "eEighteenQwenTestEver",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenTestEverPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenTestNear",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenTestNearPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenTestStrict",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenTestStrictPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestEver",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestEverPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestNear",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestNearPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestStrict",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenGptTestStrictPositives",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenQwenFreshRoundChannelCheck",
+      "source": "runs/20261107-0013-e18-test-ladder/metrics.json",
+      "sha256": "fcb345665596d43640a4be729d5802477c10dfb7832a4e12dffd64b68b0bcf3d"
+    },
+    {
+      "key": "eEighteenCHundredthQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCHundredthGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCHundredthGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eEighteenCThreeHundredthsQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCThreeHundredthsGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCThreeHundredthsGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eEighteenCTenthQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCTenthGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCTenthGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eEighteenCThreeTenthsQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCThreeTenthsGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCThreeTenthsGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eEighteenCOneQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCOneGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCOneGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
+    },
+    {
+      "key": "eEighteenCTenQwenProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCTenGptProbe",
+      "source": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+      "sha256": "53868c0ccd820829c9bce2f9c6e4f479b0ddf2b0d6785a7fee1b3c74107e50bf"
+    },
+    {
+      "key": "eEighteenCTenGptReasoning",
+      "source": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+      "sha256": "7f02d6e65c4db1f351d3b7b530bb0e5b51543cfd3da34034a4ca0acf4465fc60"
     }
   ],
   "pending": []

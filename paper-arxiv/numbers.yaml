@@ -19955,6 +19955,4175 @@
           "incomplete"
         ]
       }
+    },
+    "eEighteenQwenDevKeptRoundCalls": {
+      "value": 1039,
+      "macro": "eEighteenQwenDevKeptRoundCalls",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "scenario_round",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenQwenDevPairsRound": {
+      "value": 2087,
+      "macro": "eEighteenQwenDevPairsRound",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "scenario_round",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenQwenDevKeptPooledCalls": {
+      "value": 2976,
+      "macro": "eEighteenQwenDevKeptPooledCalls",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "pooled",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenQwenDevPairsPooled": {
+      "value": 192060,
+      "macro": "eEighteenQwenDevPairsPooled",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "pooled",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenQwenDevKeptGroups": {
+      "value": 37,
+      "macro": "eEighteenQwenDevKeptGroups",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "scenario_round",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenQwenDevGroups": {
+      "value": 120,
+      "macro": "eEighteenQwenDevGroups",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "coverage",
+          "scenario_round",
+          "groups"
+        ]
+      }
+    },
+    "eEighteenQwenDevProbeRound": {
+      "value": 0.9601796341087426,
+      "macro": "eEighteenQwenDevProbeRound",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9342971314561841,
+        0.9828295049871293
+      ]
+    },
+    "eEighteenQwenDevProbeScenario": {
+      "value": 0.963720229673665,
+      "macro": "eEighteenQwenDevProbeScenario",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9413956496450343,
+        0.9823072212185361
+      ]
+    },
+    "eEighteenQwenDevProbePooled": {
+      "value": 0.9600385296261584,
+      "macro": "eEighteenQwenDevProbePooled",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.936017936414267,
+        0.9811666687534398
+      ]
+    },
+    "eEighteenQwenDevProbeDropMin": {
+      "value": 0.9538922079153863,
+      "macro": "eEighteenQwenDevProbeDropMin",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenDevProbeDropMax": {
+      "value": 0.9790281432013247,
+      "macro": "eEighteenQwenDevProbeDropMax",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenDevTextRound": {
+      "value": 0.9251344019507147,
+      "macro": "eEighteenQwenDevTextRound",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8777871802610299,
+        0.964758640787611
+      ]
+    },
+    "eEighteenQwenDevTextScenario": {
+      "value": 0.8962215195161192,
+      "macro": "eEighteenQwenDevTextScenario",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.845146299138307,
+        0.9370753089606529
+      ]
+    },
+    "eEighteenQwenDevTextPooled": {
+      "value": 0.898378111006977,
+      "macro": "eEighteenQwenDevTextPooled",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8533595726786318,
+        0.9340066523908067
+      ]
+    },
+    "eEighteenQwenDevTextDropMin": {
+      "value": 0.9175428413564665,
+      "macro": "eEighteenQwenDevTextDropMin",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenDevTextDropMax": {
+      "value": 0.9437213590494845,
+      "macro": "eEighteenQwenDevTextDropMax",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "text_latest",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenDevJevRound": {
+      "value": 0.7581167629948363,
+      "macro": "eEighteenQwenDevJevRound",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.6836685113569769,
+        0.8045107836845281
+      ]
+    },
+    "eEighteenQwenDevJevScenario": {
+      "value": 0.8046992344274991,
+      "macro": "eEighteenQwenDevJevScenario",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7483209220935731,
+        0.8510405164653371
+      ]
+    },
+    "eEighteenQwenDevJevPooled": {
+      "value": 0.8111475580547746,
+      "macro": "eEighteenQwenDevJevPooled",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7632631071970639,
+        0.8592708505881884
+      ]
+    },
+    "eEighteenQwenDevJevDropMin": {
+      "value": 0.7516739832669963,
+      "macro": "eEighteenQwenDevJevDropMin",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenDevJevDropMax": {
+      "value": 0.7712071796447204,
+      "macro": "eEighteenQwenDevJevDropMax",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptDevKeptRoundCalls": {
+      "value": 595,
+      "macro": "eEighteenGptDevKeptRoundCalls",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "scenario_round",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenGptDevPairsRound": {
+      "value": 4719,
+      "macro": "eEighteenGptDevPairsRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "scenario_round",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenGptDevKeptPooledCalls": {
+      "value": 1995,
+      "macro": "eEighteenGptDevKeptPooledCalls",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "pooled",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenGptDevPairsPooled": {
+      "value": 226754,
+      "macro": "eEighteenGptDevPairsPooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "pooled",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenGptDevKeptGroups": {
+      "value": 16,
+      "macro": "eEighteenGptDevKeptGroups",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "scenario_round",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptDevGroups": {
+      "value": 109,
+      "macro": "eEighteenGptDevGroups",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "coverage",
+          "scenario_round",
+          "groups"
+        ]
+      }
+    },
+    "eEighteenGptDevProbeRound": {
+      "value": 0.9055172941208522,
+      "macro": "eEighteenGptDevProbeRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8708647111524835,
+        0.9360241609966362
+      ]
+    },
+    "eEighteenGptDevProbeScenario": {
+      "value": 0.949457592901854,
+      "macro": "eEighteenGptDevProbeScenario",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9274935336691736,
+        0.9672634740531312
+      ]
+    },
+    "eEighteenGptDevProbePooled": {
+      "value": 0.9462809917355374,
+      "macro": "eEighteenGptDevProbePooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9222830168088193,
+        0.9661318069836611
+      ]
+    },
+    "eEighteenGptDevProbeDropMin": {
+      "value": 0.8898666898817229,
+      "macro": "eEighteenGptDevProbeDropMin",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptDevProbeDropMax": {
+      "value": 0.9209521468019745,
+      "macro": "eEighteenGptDevProbeDropMax",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptDevReasoningRound": {
+      "value": 0.9333420720909573,
+      "macro": "eEighteenGptDevReasoningRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9117733742817318,
+        0.952082789118824
+      ]
+    },
+    "eEighteenGptDevReasoningScenario": {
+      "value": 0.9715056553868933,
+      "macro": "eEighteenGptDevReasoningScenario",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9608689958658958,
+        0.979826130056982
+      ]
+    },
+    "eEighteenGptDevReasoningPooled": {
+      "value": 0.9653030744036858,
+      "macro": "eEighteenGptDevReasoningPooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9520041601801569,
+        0.9770872171202687
+      ]
+    },
+    "eEighteenGptDevReasoningDropMin": {
+      "value": 0.9235581562788605,
+      "macro": "eEighteenGptDevReasoningDropMin",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptDevReasoningDropMax": {
+      "value": 0.9514550185774956,
+      "macro": "eEighteenGptDevReasoningDropMax",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptDevTextRound": {
+      "value": 0.8628839763868716,
+      "macro": "eEighteenGptDevTextRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.815266509289573,
+        0.9097931771794039
+      ]
+    },
+    "eEighteenGptDevTextScenario": {
+      "value": 0.8773464864573879,
+      "macro": "eEighteenGptDevTextScenario",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8324888760797287,
+        0.9206118312100212
+      ]
+    },
+    "eEighteenGptDevTextPooled": {
+      "value": 0.8160297062014341,
+      "macro": "eEighteenGptDevTextPooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7549684889593807,
+        0.8716364841866947
+      ]
+    },
+    "eEighteenGptDevTextDropMin": {
+      "value": 0.8410023966708464,
+      "macro": "eEighteenGptDevTextDropMin",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptDevTextDropMax": {
+      "value": 0.8825347468667674,
+      "macro": "eEighteenGptDevTextDropMax",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "text_full",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptDevJevRound": {
+      "value": 0.3968481547397384,
+      "macro": "eEighteenGptDevJevRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.3323867137748024,
+        0.4529679469740573
+      ]
+    },
+    "eEighteenGptDevJevScenario": {
+      "value": 0.8198786821545135,
+      "macro": "eEighteenGptDevJevScenario",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7546566055187139,
+        0.8510048564781846
+      ]
+    },
+    "eEighteenGptDevJevPooled": {
+      "value": 0.8591292766610512,
+      "macro": "eEighteenGptDevJevPooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8309371204172743,
+        0.8835639879500748
+      ]
+    },
+    "eEighteenGptDevJevDropMin": {
+      "value": 0.36211979388754517,
+      "macro": "eEighteenGptDevJevDropMin",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptDevJevDropMax": {
+      "value": 0.42628922860754465,
+      "macro": "eEighteenGptDevJevDropMax",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenTestKeptRoundCalls": {
+      "value": 457,
+      "macro": "eEighteenQwenTestKeptRoundCalls",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "scenario_round",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenQwenTestPairsRound": {
+      "value": 684,
+      "macro": "eEighteenQwenTestPairsRound",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "scenario_round",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenQwenTestKeptPooledCalls": {
+      "value": 1825,
+      "macro": "eEighteenQwenTestKeptPooledCalls",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "pooled",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenQwenTestPairsPooled": {
+      "value": 67906,
+      "macro": "eEighteenQwenTestPairsPooled",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "pooled",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenQwenTestKeptGroups": {
+      "value": 23,
+      "macro": "eEighteenQwenTestKeptGroups",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "scenario_round",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenQwenTestGroups": {
+      "value": 100,
+      "macro": "eEighteenQwenTestGroups",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "coverage",
+          "scenario_round",
+          "groups"
+        ]
+      }
+    },
+    "eEighteenQwenTestProbeRound": {
+      "value": 0.9755173189383717,
+      "macro": "eEighteenQwenTestProbeRound",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9430512977793153,
+        0.9950315421293682
+      ]
+    },
+    "eEighteenQwenTestProbeScenario": {
+      "value": 0.9666778788605023,
+      "macro": "eEighteenQwenTestProbeScenario",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9376754190364132,
+        0.9855273914385011
+      ]
+    },
+    "eEighteenQwenTestProbePooled": {
+      "value": 0.9702824492681059,
+      "macro": "eEighteenQwenTestProbePooled",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9487100915831855,
+        0.9857310895604555
+      ]
+    },
+    "eEighteenQwenTestProbeDropMin": {
+      "value": 0.9741571699905032,
+      "macro": "eEighteenQwenTestProbeDropMin",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenTestProbeDropMax": {
+      "value": 0.9805674264007597,
+      "macro": "eEighteenQwenTestProbeDropMax",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenTestTextRound": {
+      "value": 0.9574202248198093,
+      "macro": "eEighteenQwenTestTextRound",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.9160524692249459,
+        0.985404504830657
+      ]
+    },
+    "eEighteenQwenTestTextScenario": {
+      "value": 0.8980109457228708,
+      "macro": "eEighteenQwenTestTextScenario",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.833011761049647,
+        0.9394855264186077
+      ]
+    },
+    "eEighteenQwenTestTextPooled": {
+      "value": 0.9029467204665272,
+      "macro": "eEighteenQwenTestTextPooled",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8537593185761133,
+        0.9424040208918862
+      ]
+    },
+    "eEighteenQwenTestTextDropMin": {
+      "value": 0.9550546817542431,
+      "macro": "eEighteenQwenTestTextDropMin",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenTestTextDropMax": {
+      "value": 0.9670802308960202,
+      "macro": "eEighteenQwenTestTextDropMax",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "text_bow",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenTestJevRound": {
+      "value": 0.7487541284892391,
+      "macro": "eEighteenQwenTestJevRound",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.6387631433178396,
+        0.8340865028910517
+      ]
+    },
+    "eEighteenQwenTestJevScenario": {
+      "value": 0.7480087753888314,
+      "macro": "eEighteenQwenTestJevScenario",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.6615243185498395,
+        0.8243342613116283
+      ]
+    },
+    "eEighteenQwenTestJevPooled": {
+      "value": 0.7528937060053603,
+      "macro": "eEighteenQwenTestJevPooled",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.6786874348405897,
+        0.8269177539805213
+      ]
+    },
+    "eEighteenQwenTestJevDropMin": {
+      "value": 0.7366478763682709,
+      "macro": "eEighteenQwenTestJevDropMin",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenQwenTestJevDropMax": {
+      "value": 0.7810923208127155,
+      "macro": "eEighteenQwenTestJevDropMax",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "detectors",
+          "jev",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptTestKeptRoundCalls": {
+      "value": 142,
+      "macro": "eEighteenGptTestKeptRoundCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "scenario_round",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenGptTestPairsRound": {
+      "value": 197,
+      "macro": "eEighteenGptTestPairsRound",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "scenario_round",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenGptTestKeptPooledCalls": {
+      "value": 594,
+      "macro": "eEighteenGptTestKeptPooledCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "pooled",
+          "kept_calls"
+        ]
+      }
+    },
+    "eEighteenGptTestPairsPooled": {
+      "value": 14768,
+      "macro": "eEighteenGptTestPairsPooled",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "pooled",
+          "pairs"
+        ]
+      }
+    },
+    "eEighteenGptTestKeptGroups": {
+      "value": 14,
+      "macro": "eEighteenGptTestKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "scenario_round",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestGroups": {
+      "value": 108,
+      "macro": "eEighteenGptTestGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "coverage",
+          "scenario_round",
+          "groups"
+        ]
+      }
+    },
+    "eEighteenGptTestProbeRound": {
+      "value": 0.8179487179487179,
+      "macro": "eEighteenGptTestProbeRound",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.6569961001642037,
+        0.9475625911521632
+      ]
+    },
+    "eEighteenGptTestProbeScenario": {
+      "value": 0.9095986625090037,
+      "macro": "eEighteenGptTestProbeScenario",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8413220620100261,
+        0.9683763401293354
+      ]
+    },
+    "eEighteenGptTestProbePooled": {
+      "value": 0.9126489707475623,
+      "macro": "eEighteenGptTestProbePooled",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.847523966264178,
+        0.9653130919252625
+      ]
+    },
+    "eEighteenGptTestProbeDropMin": {
+      "value": 0.8027777777777777,
+      "macro": "eEighteenGptTestProbeDropMin",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptTestProbeDropMax": {
+      "value": 0.8444444444444444,
+      "macro": "eEighteenGptTestProbeDropMax",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenGptTestReasoningRound": {
+      "value": 0.905128205128205,
+      "macro": "eEighteenGptTestReasoningRound",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.7754905808477238,
+        0.9913294314381271
+      ]
+    },
+    "eEighteenGptTestReasoningScenario": {
+      "value": 0.9454371165478067,
+      "macro": "eEighteenGptTestReasoningScenario",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "scenario",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "scenario",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.8990730209807102,
+        0.9799764755875208
+      ]
+    },
+    "eEighteenGptTestReasoningPooled": {
+      "value": 0.9544284940411701,
+      "macro": "eEighteenGptTestReasoningPooled",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "pooled",
+          "auc"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.915595671914688,
+        0.9819670749997713
+      ]
+    },
+    "eEighteenGptTestReasoningDropMin": {
+      "value": 0.8825396825396824,
+      "macro": "eEighteenGptTestReasoningDropMin",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "leave_one_group_out",
+          "min"
+        ]
+      }
+    },
+    "eEighteenGptTestReasoningDropMax": {
+      "value": 0.9388888888888888,
+      "macro": "eEighteenGptTestReasoningDropMax",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "leave_one_group_out",
+          "max"
+        ]
+      }
+    },
+    "eEighteenQwenTestProbeMinusTextRound": {
+      "value": 0.018097094118562418,
+      "macro": "eEighteenQwenTestProbeMinusTextRound",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "paired",
+          "probe_minus_text_bow",
+          "scenario_round",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "paired",
+          "probe_minus_text_bow",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        -0.009697197259952769,
+        0.05491200565531917
+      ]
+    },
+    "eEighteenQwenTestProbeMinusTextPooled": {
+      "value": 0.06733572880157868,
+      "macro": "eEighteenQwenTestProbeMinusTextPooled",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_test",
+          "paired",
+          "probe_minus_text_bow",
+          "pooled",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_test",
+          "paired",
+          "probe_minus_text_bow",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.040627990940674444,
+        0.10045877965738169
+      ]
+    },
+    "eEighteenQwenDevProbeMinusTextRound": {
+      "value": 0.035045232158027906,
+      "macro": "eEighteenQwenDevProbeMinusTextRound",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "paired",
+          "probe_minus_text_latest",
+          "scenario_round",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "paired",
+          "probe_minus_text_latest",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.0035499366118740944,
+        0.07571956073540084
+      ]
+    },
+    "eEighteenQwenDevProbeMinusTextPooled": {
+      "value": 0.06166041861918148,
+      "macro": "eEighteenQwenDevProbeMinusTextPooled",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "paired",
+          "probe_minus_text_latest",
+          "pooled",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "qwen_dev",
+          "paired",
+          "probe_minus_text_latest",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.03707072045978644,
+        0.09074092671694188
+      ]
+    },
+    "eEighteenGptDevProbeMinusJevRound": {
+      "value": 0.5086691393811138,
+      "macro": "eEighteenGptDevProbeMinusJevRound",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "paired",
+          "probe_minus_jev",
+          "scenario_round",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "paired",
+          "probe_minus_jev",
+          "scenario_round",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.4348768237946583,
+        0.5841089028400501
+      ]
+    },
+    "eEighteenGptDevProbeMinusJevPooled": {
+      "value": 0.08715171507448616,
+      "macro": "eEighteenGptDevProbeMinusJevPooled",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "paired",
+          "probe_minus_jev",
+          "pooled",
+          "estimate"
+        ],
+        "ci_path": [
+          "results",
+          "gpt_dev",
+          "paired",
+          "probe_minus_jev",
+          "pooled",
+          "ci95"
+        ]
+      },
+      "ci": [
+        0.06193787974850048,
+        0.1130711906078387
+      ]
+    },
+    "eEighteenQwenDevProbeSeedA": {
+      "value": 0.9437637038421214,
+      "macro": "eEighteenQwenDevProbeSeedA",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          0
+        ]
+      }
+    },
+    "eEighteenQwenDevProbeSeedB": {
+      "value": 0.9724538126711654,
+      "macro": "eEighteenQwenDevProbeSeedB",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          1
+        ]
+      }
+    },
+    "eEighteenQwenDevProbeSeedC": {
+      "value": 0.9643213858129411,
+      "macro": "eEighteenQwenDevProbeSeedC",
+      "dataset": "Qwen development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "qwen_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          2
+        ]
+      }
+    },
+    "eEighteenGptDevProbeSeedA": {
+      "value": 0.9226903434920357,
+      "macro": "eEighteenGptDevProbeSeedA",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          0
+        ]
+      }
+    },
+    "eEighteenGptDevProbeSeedB": {
+      "value": 0.8862805386572997,
+      "macro": "eEighteenGptDevProbeSeedB",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          1
+        ]
+      }
+    },
+    "eEighteenGptDevProbeSeedC": {
+      "value": 0.9075810002132213,
+      "macro": "eEighteenGptDevProbeSeedC",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "probe",
+          "scenario_round",
+          "by_seed",
+          2
+        ]
+      }
+    },
+    "eEighteenGptDevReasoningSeedA": {
+      "value": 0.9604530305064066,
+      "macro": "eEighteenGptDevReasoningSeedA",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "by_seed",
+          0
+        ]
+      }
+    },
+    "eEighteenGptDevReasoningSeedB": {
+      "value": 0.8814065288199447,
+      "macro": "eEighteenGptDevReasoningSeedB",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "by_seed",
+          1
+        ]
+      }
+    },
+    "eEighteenGptDevReasoningSeedC": {
+      "value": 0.9581666569465207,
+      "macro": "eEighteenGptDevReasoningSeedC",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_dev",
+          "detectors",
+          "reasoning",
+          "scenario_round",
+          "by_seed",
+          2
+        ]
+      }
+    },
+    "eEighteenGptTestScenDeployTokenCalls": {
+      "value": 131,
+      "macro": "eEighteenGptTestScenDeployTokenCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "deploy-token-v2",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDeployTokenLeaks": {
+      "value": 2,
+      "macro": "eEighteenGptTestScenDeployTokenLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "deploy-token-v2",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDeployTokenKeptGroups": {
+      "value": 2,
+      "macro": "eEighteenGptTestScenDeployTokenKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "deploy-token-v2",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDeployTokenProbe": {
+      "value": 0.8333333333333333,
+      "macro": "eEighteenGptTestScenDeployTokenProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "deploy-token-v2",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDeployTokenReasoning": {
+      "value": 1.0,
+      "macro": "eEighteenGptTestScenDeployTokenReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "deploy-token-v2",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDispatchIntegrationCodeCalls": {
+      "value": 71,
+      "macro": "eEighteenGptTestScenDispatchIntegrationCodeCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "dispatch-integration-code",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDispatchIntegrationCodeLeaks": {
+      "value": 7,
+      "macro": "eEighteenGptTestScenDispatchIntegrationCodeLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "dispatch-integration-code",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDispatchIntegrationCodeKeptGroups": {
+      "value": 2,
+      "macro": "eEighteenGptTestScenDispatchIntegrationCodeKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "dispatch-integration-code",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDispatchIntegrationCodeProbe": {
+      "value": 0.8095238095238094,
+      "macro": "eEighteenGptTestScenDispatchIntegrationCodeProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "dispatch-integration-code",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenDispatchIntegrationCodeReasoning": {
+      "value": 1.0,
+      "macro": "eEighteenGptTestScenDispatchIntegrationCodeReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "dispatch-integration-code",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenHandoffExceptionNoteCalls": {
+      "value": 109,
+      "macro": "eEighteenGptTestScenHandoffExceptionNoteCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "handoff-exception-note",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenHandoffExceptionNoteLeaks": {
+      "value": 4,
+      "macro": "eEighteenGptTestScenHandoffExceptionNoteLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "handoff-exception-note",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenHandoffExceptionNoteKeptGroups": {
+      "value": 3,
+      "macro": "eEighteenGptTestScenHandoffExceptionNoteKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "handoff-exception-note",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenHandoffExceptionNoteProbe": {
+      "value": 1.0,
+      "macro": "eEighteenGptTestScenHandoffExceptionNoteProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "handoff-exception-note",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenHandoffExceptionNoteReasoning": {
+      "value": 1.0,
+      "macro": "eEighteenGptTestScenHandoffExceptionNoteReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "handoff-exception-note",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenProcurementReservePriceCalls": {
+      "value": 120,
+      "macro": "eEighteenGptTestScenProcurementReservePriceCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "procurement-reserve-price",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenProcurementReservePriceLeaks": {
+      "value": 4,
+      "macro": "eEighteenGptTestScenProcurementReservePriceLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "procurement-reserve-price",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenProcurementReservePriceKeptGroups": {
+      "value": 2,
+      "macro": "eEighteenGptTestScenProcurementReservePriceKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "procurement-reserve-price",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenProcurementReservePriceProbe": {
+      "value": 0.8333333333333334,
+      "macro": "eEighteenGptTestScenProcurementReservePriceProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "procurement-reserve-price",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenProcurementReservePriceReasoning": {
+      "value": 0.875,
+      "macro": "eEighteenGptTestScenProcurementReservePriceReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "procurement-reserve-price",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceCapacityFigureCalls": {
+      "value": 119,
+      "macro": "eEighteenGptTestScenServiceCapacityFigureCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-capacity-figure",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceCapacityFigureLeaks": {
+      "value": 6,
+      "macro": "eEighteenGptTestScenServiceCapacityFigureLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-capacity-figure",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceCapacityFigureKeptGroups": {
+      "value": 3,
+      "macro": "eEighteenGptTestScenServiceCapacityFigureKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-capacity-figure",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceCapacityFigureProbe": {
+      "value": 0.7666666666666666,
+      "macro": "eEighteenGptTestScenServiceCapacityFigureProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-capacity-figure",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceCapacityFigureReasoning": {
+      "value": 0.8388888888888889,
+      "macro": "eEighteenGptTestScenServiceCapacityFigureReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "service-capacity-figure",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceRolloutThresholdCalls": {
+      "value": 44,
+      "macro": "eEighteenGptTestScenServiceRolloutThresholdCalls",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-rollout-threshold",
+          "calls"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceRolloutThresholdLeaks": {
+      "value": 3,
+      "macro": "eEighteenGptTestScenServiceRolloutThresholdLeaks",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-rollout-threshold",
+          "leaks"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceRolloutThresholdKeptGroups": {
+      "value": 2,
+      "macro": "eEighteenGptTestScenServiceRolloutThresholdKeptGroups",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-rollout-threshold",
+          "kept",
+          "kept_groups"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceRolloutThresholdProbe": {
+      "value": 0.6666666666666666,
+      "macro": "eEighteenGptTestScenServiceRolloutThresholdProbe",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "probe",
+          "per_scenario",
+          "service-rollout-threshold",
+          "auc"
+        ]
+      }
+    },
+    "eEighteenGptTestScenServiceRolloutThresholdReasoning": {
+      "value": 0.6666666666666666,
+      "macro": "eEighteenGptTestScenServiceRolloutThresholdReasoning",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-metric-robustness",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-metric-robustness/robustness.json",
+        "value_path": [
+          "results",
+          "gpt_test",
+          "detectors",
+          "reasoning",
+          "per_scenario",
+          "service-rollout-threshold",
+          "auc"
+        ]
+      }
+    },
+    "gptossFreshCallBow": {
+      "value": 0.8439102564102564,
+      "macro": "gptossFreshCallBow",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "bag-of-words (full input, secret masked) fit once on all 1,995 development calls as in E12, scored once on the 594 test calls/26 positives; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-gptoss-bow-test",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+        "value_path": [
+          "metrics",
+          "bow_full_input",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "metrics",
+          "bow_full_input",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.7042632508951953,
+        0.9565311094452774
+      ]
+    },
+    "gptossFreshCallBowLatest": {
+      "value": 0.742311214426599,
+      "macro": "gptossFreshCallBowLatest",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "as gptossFreshCallBow, latest-message view",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-gptoss-bow-test",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+        "value_path": [
+          "metrics",
+          "bow_latest_input",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "metrics",
+          "bow_latest_input",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.5755082423615032,
+        0.9065108578016188
+      ]
+    },
+    "gptossFreshCallJev": {
+      "value": 0.439261059453367,
+      "macro": "gptossFreshCallJev",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Jev zero-shot, development prompt and input view unchanged, on the same 594 test calls; within scenario and round",
+      "status": "verified",
+      "run": "runs/20261106-2315-e18-gptoss-jev-test",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+        "value_path": [
+          "metrics",
+          "jev",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "metrics",
+          "jev",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.26388470277705756,
+        0.6339336706161964
+      ]
+    },
+    "gptossFreshCallJevPooled": {
+      "value": 0.8550582340195017,
+      "macro": "gptossFreshCallJevPooled",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "as gptossFreshCallJev, all calls pooled",
+      "status": "verified",
+      "run": "runs/20261106-2315-e18-gptoss-jev-test",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+        "value_path": [
+          "metrics",
+          "jev",
+          "pooled_auc"
+        ],
+        "ci_path": [
+          "metrics",
+          "jev",
+          "pooled_ci95"
+        ]
+      },
+      "ci": [
+        0.7968748929680698,
+        0.8990322853542566
+      ]
+    },
+    "gptossFreshCallProbeMinusBow": {
+      "value": -0.02596153846153848,
+      "macro": "gptossFreshCallProbeMinusBow",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "paired family bootstrap, within scenario and round, same 594 test calls",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-gptoss-bow-test",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+        "value_path": [
+          "paired",
+          "last_prompt_minus_bow_full_input",
+          "within_round"
+        ],
+        "ci_path": [
+          "paired",
+          "last_prompt_minus_bow_full_input",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        -0.20352678571428554,
+        0.13962761809269164
+      ]
+    },
+    "gptossFreshReasoningMinusBow": {
+      "value": 0.06121794871794861,
+      "macro": "gptossFreshReasoningMinusBow",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "paired family bootstrap, within scenario and round, same 594 test calls",
+      "status": "verified",
+      "run": "runs/20261106-2314-e18-gptoss-bow-test",
+      "format": "signed",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261106-2314-e18-gptoss-bow-test/metrics.json",
+        "value_path": [
+          "paired",
+          "reasoning_minus_bow_full_input",
+          "within_round"
+        ],
+        "ci_path": [
+          "paired",
+          "reasoning_minus_bow_full_input",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        -0.1053687169312169,
+        0.21372924460050827
+      ]
+    },
+    "gptossFreshMatchedJevCaught": {
+      "value": 0.07692307692307693,
+      "macro": "gptossFreshMatchedJevCaught",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Jev cutoff flagging no more refusing-episode calls than the frozen reasoning-probe threshold (12 of 490)",
+      "status": "verified",
+      "run": "runs/20261106-2315-e18-gptoss-jev-test",
+      "format": "percent",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+        "value_path": [
+          "operating_point",
+          "reasoning_probe",
+          "jev_caught"
+        ]
+      }
+    },
+    "gptossFreshMatchedJevCaughtCount": {
+      "value": 2,
+      "macro": "gptossFreshMatchedJevCaughtCount",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2315-e18-gptoss-jev-test",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+        "value_path": [
+          "operating_point",
+          "reasoning_probe",
+          "jev_caught_n"
+        ]
+      }
+    },
+    "gptossFreshMatchedProbeRefusing": {
+      "value": 0.024489795918367346,
+      "macro": "gptossFreshMatchedProbeRefusing",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261106-2315-e18-gptoss-jev-test",
+      "format": "percent",
+      "decimals": 1,
+      "source": {
+        "file": "runs/20261106-2315-e18-gptoss-jev-test/metrics.json",
+        "value_path": [
+          "operating_point",
+          "reasoning_probe",
+          "probe_refusing"
+        ]
+      }
+    },
+    "eEighteenQwenTestEver": {
+      "value": 0.5611554665489464,
+      "macro": "eEighteenQwenTestEver",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/eventual",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen/eventual",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.4577792302375045,
+        0.6555372240542764
+      ]
+    },
+    "eEighteenQwenTestEverPositives": {
+      "value": 418,
+      "macro": "eEighteenQwenTestEverPositives",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/eventual",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenQwenTestNear": {
+      "value": 0.7666475030583363,
+      "macro": "eEighteenQwenTestNear",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/round_near",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen/round_near",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.7015799200556314,
+        0.8257190041206736
+      ]
+    },
+    "eEighteenQwenTestNearPositives": {
+      "value": 120,
+      "macro": "eEighteenQwenTestNearPositives",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/round_near",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenQwenTestStrict": {
+      "value": 0.7692789748699889,
+      "macro": "eEighteenQwenTestStrict",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/strict1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen/strict1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.6712178830751888,
+        0.8631192542068634
+      ]
+    },
+    "eEighteenQwenTestStrictPositives": {
+      "value": 38,
+      "macro": "eEighteenQwenTestStrictPositives",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/strict1",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenGptTestEver": {
+      "value": 0.66428952991453,
+      "macro": "eEighteenGptTestEver",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/eventual_any",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt/eventual_any",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.5205380755608028,
+        0.7798298709837171
+      ]
+    },
+    "eEighteenGptTestEverPositives": {
+      "value": 104,
+      "macro": "eEighteenGptTestEverPositives",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/eventual_any",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenGptTestNear": {
+      "value": 0.6829741982727057,
+      "macro": "eEighteenGptTestNear",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/round_any",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt/round_any",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.5592556499638824,
+        0.7798693907387516
+      ]
+    },
+    "eEighteenGptTestNearPositives": {
+      "value": 67,
+      "macro": "eEighteenGptTestNearPositives",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/round_any",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenGptTestStrict": {
+      "value": 0.510381122145828,
+      "macro": "eEighteenGptTestStrict",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "last-prompt probe, dev ladder recipe and labels, fit on all development episodes (3 split seeds, z-scored mean), scored once on the test calls; within scenario and round; 1000 family-bootstrap draws",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/strict1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt/strict1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.3426453147546898,
+        0.6767407332251083
+      ]
+    },
+    "eEighteenGptTestStrictPositives": {
+      "value": 17,
+      "macro": "eEighteenGptTestStrictPositives",
+      "dataset": "GPT-OSS fresh test episodes",
+      "evaluation": "Saved scores only; within scenario x round AUROC weighted by positives (paper metric), and the same with rounds pooled (scenario only) or with all calls pooled; 1,000 family-bootstrap draws, seed 20261025",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "integer",
+      "decimals": 0,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "gpt/strict1",
+          "positives"
+        ]
+      }
+    },
+    "eEighteenQwenFreshRoundChannelCheck": {
+      "value": 0.6814075141590339,
+      "macro": "eEighteenQwenFreshRoundChannelCheck",
+      "dataset": "Qwen fresh test episodes",
+      "evaluation": "original channel round label on the original 1,787-call cohort; matches qwenRoundFreshProbe",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-test-ladder",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-test-ladder/metrics.json",
+        "value_path": [
+          "qwen/round_channel_eligible",
+          "within_round_auc"
+        ]
+      }
+    },
+    "eEighteenCHundredthQwenProbe": {
+      "value": 0.9546646322145588,
+      "macro": "eEighteenCHundredthQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=0.01",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=0.01",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9269156601935522,
+        0.9788422589991023
+      ]
+    },
+    "eEighteenCHundredthGptProbe": {
+      "value": 0.9019947758483985,
+      "macro": "eEighteenCHundredthGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=0.01",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=0.01",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.865639038009896,
+        0.9340257738971792
+      ]
+    },
+    "eEighteenCHundredthGptReasoning": {
+      "value": 0.9556820934792768,
+      "macro": "eEighteenCHundredthGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=0.01",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=0.01",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9364749240450397,
+        0.9729905742746267
+      ]
+    },
+    "eEighteenCThreeHundredthsQwenProbe": {
+      "value": 0.956366545195006,
+      "macro": "eEighteenCThreeHundredthsQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=0.03",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=0.03",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9294637316644612,
+        0.9800142553459417
+      ]
+    },
+    "eEighteenCThreeHundredthsGptProbe": {
+      "value": 0.9034949202625352,
+      "macro": "eEighteenCThreeHundredthsGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=0.03",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=0.03",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8675919595563324,
+        0.9343905322719563
+      ]
+    },
+    "eEighteenCThreeHundredthsGptReasoning": {
+      "value": 0.9646645121895645,
+      "macro": "eEighteenCThreeHundredthsGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=0.03",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=0.03",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9475077169186579,
+        0.9787387173244444
+      ]
+    },
+    "eEighteenCTenthQwenProbe": {
+      "value": 0.9586799973868602,
+      "macro": "eEighteenCTenthQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=0.1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=0.1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9329670365289048,
+        0.9817130941402508
+      ]
+    },
+    "eEighteenCTenthGptProbe": {
+      "value": 0.9055172941208524,
+      "macro": "eEighteenCTenthGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=0.1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=0.1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8708647111524837,
+        0.9360241609966362
+      ]
+    },
+    "eEighteenCTenthGptReasoning": {
+      "value": 0.9333420720909574,
+      "macro": "eEighteenCTenthGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=0.1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=0.1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9117733742817319,
+        0.952082789118824
+      ]
+    },
+    "eEighteenCThreeTenthsQwenProbe": {
+      "value": 0.9564852056722022,
+      "macro": "eEighteenCThreeTenthsQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=0.3",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=0.3",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.929480608286568,
+        0.9794988924182143
+      ]
+    },
+    "eEighteenCThreeTenthsGptProbe": {
+      "value": 0.9058237437345454,
+      "macro": "eEighteenCThreeTenthsGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=0.3",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=0.3",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8710807973199483,
+        0.9351874687793419
+      ]
+    },
+    "eEighteenCThreeTenthsGptReasoning": {
+      "value": 0.931355107595607,
+      "macro": "eEighteenCThreeTenthsGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=0.3",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=0.3",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9096724950260998,
+        0.9505489048341588
+      ]
+    },
+    "eEighteenCOneQwenProbe": {
+      "value": 0.9335646545071216,
+      "macro": "eEighteenCOneQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9034537220683573,
+        0.9603064534593669
+      ]
+    },
+    "eEighteenCOneGptProbe": {
+      "value": 0.9033147325505162,
+      "macro": "eEighteenCOneGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8690576101427904,
+        0.9331040124753384
+      ]
+    },
+    "eEighteenCOneGptReasoning": {
+      "value": 0.9601421905111551,
+      "macro": "eEighteenCOneGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=1",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=1",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9399093530475857,
+        0.9773529470903213
+      ]
+    },
+    "eEighteenCTenQwenProbe": {
+      "value": 0.9124479272479453,
+      "macro": "eEighteenCTenQwenProbe",
+      "dataset": "Qwen development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "qwen_lastprompt/C=10",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "qwen_lastprompt/C=10",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8758741687909242,
+        0.9450387771566346
+      ]
+    },
+    "eEighteenCTenGptProbe": {
+      "value": 0.9016616701248618,
+      "macro": "eEighteenCTenGptProbe",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-lastprompt",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-lastprompt/metrics.json",
+        "value_path": [
+          "gpt_lastprompt/C=10",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_lastprompt/C=10",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.8667027256431497,
+        0.9321512524625573
+      ]
+    },
+    "eEighteenCTenGptReasoning": {
+      "value": 0.9560070877658869,
+      "macro": "eEighteenCTenGptReasoning",
+      "dataset": "GPT-OSS development episodes",
+      "evaluation": "held-out scenarios, recipe unchanged except the L2 strength C; layer reselected per fold; mean of 3 split seeds",
+      "status": "verified",
+      "run": "runs/20261107-0013-e18-c-sweep-reasoning",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261107-0013-e18-c-sweep-reasoning/metrics.json",
+        "value_path": [
+          "gpt_reasoning/C=10",
+          "within_round_auc"
+        ],
+        "ci_path": [
+          "gpt_reasoning/C=10",
+          "within_round_ci95"
+        ]
+      },
+      "ci": [
+        0.9351337500848217,
+        0.9735989130964443
+      ]
     }
   },
   "aliases": {
@@ -21310,6 +25479,12 @@
           "First secret write after the request; its file",
           "Yes: design, tests and criteria before the episodes; layer before the replay",
           "Test 1 met; gain over setup details and Test 2 not met; monitor comparison not run"
+        ],
+        [
+          "Robustness and coverage checks",
+          "Same labels; three AUROC variants; gpt-oss test Jev and text classifier",
+          "No: chosen after the results, to answer reviewer questions",
+          "No conclusion changes; Jev below chance only within round"
         ]
       ],
       "columns": "llll"
@@ -21435,6 +25610,26 @@
           "Crossed destinations: episodes",
           "\\texttt{20261105-0042/1223}",
           "\\texttt{E17-crossed/run.py}"
+        ],
+        [
+          "Robustness: metric variants and seeds",
+          "\\texttt{20261106-2314}",
+          "\\texttt{E18-robustness/metric\\_robustness.py}"
+        ],
+        [
+          "Robustness: ladder on test episodes",
+          "\\texttt{20261107-0013}",
+          "\\texttt{E18-robustness/test\\_ladder.py}"
+        ],
+        [
+          "Robustness: regularisation sweep",
+          "\\texttt{20261107-0013}",
+          "\\texttt{E18-robustness/c\\_sweep.py}"
+        ],
+        [
+          "Robustness: gpt-oss test text and Jev",
+          "\\texttt{20261106-2314/2315}",
+          "\\texttt{E18-robustness/gptoss\\_test\\_text\\_jev.py}"
         ]
       ],
       "columns": "lll"
@@ -23223,6 +27418,548 @@
           "\\eSeventeenGridAllPaAllowed{}",
           "\\eSeventeenGridAllPaNoRealWrite{}",
           "\\eSeventeenGridAllPaIncomplete{}"
+        ]
+      ]
+    },
+    "e18_metrics": {
+      "columns": "@{}lllcccc@{}",
+      "header": [
+        "Model",
+        "Episodes",
+        "Detector",
+        "Scenario and round",
+        "Scenario only",
+        "All calls",
+        "One group out"
+      ],
+      "rows": [
+        [
+          "Qwen3-32B",
+          "development",
+          "last-prompt probe",
+          {
+            "key": "eEighteenQwenDevProbeRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevProbeScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevProbePooled",
+            "ci": true
+          },
+          "\\eEighteenQwenDevProbeDropMin{}--\\eEighteenQwenDevProbeDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "text classifier",
+          {
+            "key": "eEighteenQwenDevTextRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevTextScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevTextPooled",
+            "ci": true
+          },
+          "\\eEighteenQwenDevTextDropMin{}--\\eEighteenQwenDevTextDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "Jev",
+          {
+            "key": "eEighteenQwenDevJevRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevJevScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenDevJevPooled",
+            "ci": true
+          },
+          "\\eEighteenQwenDevJevDropMin{}--\\eEighteenQwenDevJevDropMax{}"
+        ],
+        [
+          "gpt-oss-20b",
+          "development",
+          "last-prompt probe",
+          {
+            "key": "eEighteenGptDevProbeRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevProbeScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevProbePooled",
+            "ci": true
+          },
+          "\\eEighteenGptDevProbeDropMin{}--\\eEighteenGptDevProbeDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "reasoning probe",
+          {
+            "key": "eEighteenGptDevReasoningRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevReasoningScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevReasoningPooled",
+            "ci": true
+          },
+          "\\eEighteenGptDevReasoningDropMin{}--\\eEighteenGptDevReasoningDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "text classifier",
+          {
+            "key": "eEighteenGptDevTextRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevTextScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevTextPooled",
+            "ci": true
+          },
+          "\\eEighteenGptDevTextDropMin{}--\\eEighteenGptDevTextDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "Jev",
+          {
+            "key": "eEighteenGptDevJevRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevJevScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptDevJevPooled",
+            "ci": true
+          },
+          "\\eEighteenGptDevJevDropMin{}--\\eEighteenGptDevJevDropMax{}"
+        ],
+        [
+          "Qwen3-32B",
+          "test",
+          "last-prompt probe",
+          {
+            "key": "eEighteenQwenTestProbeRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestProbeScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestProbePooled",
+            "ci": true
+          },
+          "\\eEighteenQwenTestProbeDropMin{}--\\eEighteenQwenTestProbeDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "text classifier",
+          {
+            "key": "eEighteenQwenTestTextRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestTextScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestTextPooled",
+            "ci": true
+          },
+          "\\eEighteenQwenTestTextDropMin{}--\\eEighteenQwenTestTextDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "Jev",
+          {
+            "key": "eEighteenQwenTestJevRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestJevScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenQwenTestJevPooled",
+            "ci": true
+          },
+          "\\eEighteenQwenTestJevDropMin{}--\\eEighteenQwenTestJevDropMax{}"
+        ],
+        [
+          "gpt-oss-20b",
+          "test",
+          "last-prompt probe",
+          {
+            "key": "eEighteenGptTestProbeRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptTestProbeScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptTestProbePooled",
+            "ci": true
+          },
+          "\\eEighteenGptTestProbeDropMin{}--\\eEighteenGptTestProbeDropMax{}"
+        ],
+        [
+          "",
+          "",
+          "reasoning probe",
+          {
+            "key": "eEighteenGptTestReasoningRound",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptTestReasoningScenario",
+            "ci": true
+          },
+          {
+            "key": "eEighteenGptTestReasoningPooled",
+            "ci": true
+          },
+          "\\eEighteenGptTestReasoningDropMin{}--\\eEighteenGptTestReasoningDropMax{}"
+        ]
+      ]
+    },
+    "e18_seeds": {
+      "columns": "@{}lcccc@{}",
+      "header": [
+        "Detector (development)",
+        "Seed 42",
+        "Seed 43",
+        "Seed 44",
+        "Mean"
+      ],
+      "rows": [
+        [
+          "Qwen3-32B, last-prompt probe",
+          {
+            "key": "eEighteenQwenDevProbeSeedA",
+            "ci": false
+          },
+          {
+            "key": "eEighteenQwenDevProbeSeedB",
+            "ci": false
+          },
+          {
+            "key": "eEighteenQwenDevProbeSeedC",
+            "ci": false
+          },
+          "\\eEighteenQwenDevProbeRound{}"
+        ],
+        [
+          "gpt-oss-20b, last-prompt probe",
+          {
+            "key": "eEighteenGptDevProbeSeedA",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptDevProbeSeedB",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptDevProbeSeedC",
+            "ci": false
+          },
+          "\\eEighteenGptDevProbeRound{}"
+        ],
+        [
+          "gpt-oss-20b, reasoning probe",
+          {
+            "key": "eEighteenGptDevReasoningSeedA",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptDevReasoningSeedB",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptDevReasoningSeedC",
+            "ci": false
+          },
+          "\\eEighteenGptDevReasoningRound{}"
+        ]
+      ]
+    },
+    "e18_gpt_scenarios": {
+      "columns": "@{}lrrrcc@{}",
+      "header": [
+        "Scenario",
+        "Calls",
+        "Leaks",
+        "Groups kept",
+        "Last-prompt",
+        "Reasoning"
+      ],
+      "rows": [
+        [
+          "Deploy token",
+          {
+            "key": "eEighteenGptTestScenDeployTokenCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDeployTokenLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDeployTokenKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDeployTokenProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDeployTokenReasoning",
+            "ci": false
+          }
+        ],
+        [
+          "Dispatch integration code",
+          {
+            "key": "eEighteenGptTestScenDispatchIntegrationCodeCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDispatchIntegrationCodeLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDispatchIntegrationCodeKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDispatchIntegrationCodeProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenDispatchIntegrationCodeReasoning",
+            "ci": false
+          }
+        ],
+        [
+          "Handoff exception note",
+          {
+            "key": "eEighteenGptTestScenHandoffExceptionNoteCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenHandoffExceptionNoteLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenHandoffExceptionNoteKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenHandoffExceptionNoteProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenHandoffExceptionNoteReasoning",
+            "ci": false
+          }
+        ],
+        [
+          "Procurement reserve price",
+          {
+            "key": "eEighteenGptTestScenProcurementReservePriceCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenProcurementReservePriceLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenProcurementReservePriceKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenProcurementReservePriceProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenProcurementReservePriceReasoning",
+            "ci": false
+          }
+        ],
+        [
+          "Service capacity figure",
+          {
+            "key": "eEighteenGptTestScenServiceCapacityFigureCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceCapacityFigureLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceCapacityFigureKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceCapacityFigureProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceCapacityFigureReasoning",
+            "ci": false
+          }
+        ],
+        [
+          "Service rollout threshold",
+          {
+            "key": "eEighteenGptTestScenServiceRolloutThresholdCalls",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceRolloutThresholdLeaks",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceRolloutThresholdKeptGroups",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceRolloutThresholdProbe",
+            "ci": false
+          },
+          {
+            "key": "eEighteenGptTestScenServiceRolloutThresholdReasoning",
+            "ci": false
+          }
+        ]
+      ]
+    },
+    "e18_csweep": {
+      "columns": "@{}lccc@{}",
+      "header": [
+        "C",
+        "Qwen3-32B last-prompt",
+        "gpt-oss-20b last-prompt",
+        "gpt-oss-20b reasoning"
+      ],
+      "rows": [
+        [
+          "0.01",
+          {
+            "key": "eEighteenCHundredthQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCHundredthGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCHundredthGptReasoning",
+            "ci": true
+          }
+        ],
+        [
+          "0.03",
+          {
+            "key": "eEighteenCThreeHundredthsQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCThreeHundredthsGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCThreeHundredthsGptReasoning",
+            "ci": true
+          }
+        ],
+        [
+          "0.1 (recipe)",
+          {
+            "key": "eEighteenCTenthQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCTenthGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCTenthGptReasoning",
+            "ci": true
+          }
+        ],
+        [
+          "0.3",
+          {
+            "key": "eEighteenCThreeTenthsQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCThreeTenthsGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCThreeTenthsGptReasoning",
+            "ci": true
+          }
+        ],
+        [
+          "1",
+          {
+            "key": "eEighteenCOneQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCOneGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCOneGptReasoning",
+            "ci": true
+          }
+        ],
+        [
+          "10",
+          {
+            "key": "eEighteenCTenQwenProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCTenGptProbe",
+            "ci": true
+          },
+          {
+            "key": "eEighteenCTenGptReasoning",
+            "ci": true
+          }
         ]
       ]
     }

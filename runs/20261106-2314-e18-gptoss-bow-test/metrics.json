@@ -1,0 +1,287 @@
+{
+  "calls": 594,
+  "leaking_calls": 26,
+  "fits": {
+    "full_input": {
+      "dev_calls": 1995,
+      "dev_positives": 121,
+      "dev_fit_calls": 803,
+      "vocabulary": 33665,
+      "iterations": [
+        7
+      ]
+    },
+    "latest_input": {
+      "dev_calls": 1995,
+      "dev_positives": 121,
+      "dev_fit_calls": 803,
+      "vocabulary": 4805,
+      "iterations": [
+        10
+      ]
+    }
+  },
+  "metrics": {
+    "last_prompt": {
+      "within_round_auc": 0.8179487179487179,
+      "within_round_by_seed": [
+        0.8179487179487179
+      ],
+      "within_round_ci95": [
+        0.6569961001642037,
+        0.9475625911521632
+      ],
+      "pooled_auc": 0.9126489707475623,
+      "pooled_by_seed": [
+        0.9126489707475623
+      ],
+      "pooled_ci95": [
+        0.847523966264178,
+        0.9653130919252625
+      ],
+      "positive_coverage_by_seed": [
+        1.0
+      ],
+      "bootstrap_groups": 57,
+      "bootstrap_reps": 1000,
+      "within_round_valid_bootstrap_reps": 1000,
+      "pooled_valid_bootstrap_reps": 1000,
+      "fold_stratified_auc": 0.8179487179487179,
+      "per_scenario_auc": {
+        "deploy-token-v2": 0.8333333333333333,
+        "dispatch-integration-code": 0.8095238095238094,
+        "handoff-exception-note": 1.0,
+        "procurement-reserve-price": 0.8333333333333334,
+        "service-capacity-figure": 0.7666666666666666,
+        "service-rollout-threshold": 0.6666666666666666
+      },
+      "balanced_auc": 0.8182539682539683,
+      "rows": 594,
+      "positives": 26,
+      "episodes": 57
+    },
+    "reasoning": {
+      "within_round_auc": 0.905128205128205,
+      "within_round_by_seed": [
+        0.905128205128205
+      ],
+      "within_round_ci95": [
+        0.7754905808477238,
+        0.9913294314381271
+      ],
+      "pooled_auc": 0.9544284940411701,
+      "pooled_by_seed": [
+        0.9544284940411701
+      ],
+      "pooled_ci95": [
+        0.915595671914688,
+        0.9819670749997713
+      ],
+      "positive_coverage_by_seed": [
+        1.0
+      ],
+      "bootstrap_groups": 57,
+      "bootstrap_reps": 1000,
+      "within_round_valid_bootstrap_reps": 1000,
+      "pooled_valid_bootstrap_reps": 1000,
+      "fold_stratified_auc": 0.905128205128205,
+      "per_scenario_auc": {
+        "deploy-token-v2": 1.0,
+        "dispatch-integration-code": 1.0,
+        "handoff-exception-note": 1.0,
+        "procurement-reserve-price": 0.875,
+        "service-capacity-figure": 0.8388888888888889,
+        "service-rollout-threshold": 0.6666666666666666
+      },
+      "balanced_auc": 0.8967592592592593,
+      "rows": 594,
+      "positives": 26,
+      "episodes": 57
+    },
+    "bow_full_input": {
+      "within_round_auc": 0.8439102564102564,
+      "within_round_by_seed": [
+        0.8439102564102564
+      ],
+      "within_round_ci95": [
+        0.7042632508951953,
+        0.9565311094452774
+      ],
+      "pooled_auc": 0.6708423618634887,
+      "pooled_by_seed": [
+        0.6708423618634887
+      ],
+      "pooled_ci95": [
+        0.5344758570496411,
+        0.803144433398998
+      ],
+      "positive_coverage_by_seed": [
+        1.0
+      ],
+      "bootstrap_groups": 57,
+      "bootstrap_reps": 1000,
+      "within_round_valid_bootstrap_reps": 1000,
+      "pooled_valid_bootstrap_reps": 1000,
+      "fold_stratified_auc": 0.8439102564102564,
+      "per_scenario_auc": {
+        "deploy-token-v2": 0.8333333333333333,
+        "dispatch-integration-code": 1.0,
+        "handoff-exception-note": 1.0,
+        "procurement-reserve-price": 0.6666666666666667,
+        "service-capacity-figure": 0.7680555555555557,
+        "service-rollout-threshold": 0.6666666666666666
+      },
+      "balanced_auc": 0.8224537037037037,
+      "rows": 594,
+      "positives": 26,
+      "episodes": 57
+    },
+    "bow_latest_input": {
+      "within_round_auc": 0.742311214426599,
+      "within_round_by_seed": [
+        0.742311214426599
+      ],
+      "within_round_ci95": [
+        0.5755082423615032,
+        0.9065108578016188
+      ],
+      "pooled_auc": 0.7772887323943662,
+      "pooled_by_seed": [
+        0.7772887323943662
+      ],
+      "pooled_ci95": [
+        0.6692012113617377,
+        0.8789128424659206
+      ],
+      "positive_coverage_by_seed": [
+        1.0
+      ],
+      "bootstrap_groups": 57,
+      "bootstrap_reps": 1000,
+      "within_round_valid_bootstrap_reps": 1000,
+      "pooled_valid_bootstrap_reps": 1000,
+      "fold_stratified_auc": 0.742311214426599,
+      "per_scenario_auc": {
+        "deploy-token-v2": 0.858974358974359,
+        "dispatch-integration-code": 0.673469387755102,
+        "handoff-exception-note": 0.9583333333333333,
+        "procurement-reserve-price": 0.6815476190476191,
+        "service-capacity-figure": 0.8291666666666666,
+        "service-rollout-threshold": 0.4444444444444444
+      },
+      "balanced_auc": 0.7409893017035873,
+      "rows": 594,
+      "positives": 26,
+      "episodes": 57
+    }
+  },
+  "paired": {
+    "last_prompt_minus_bow_full_input": {
+      "within_round": -0.02596153846153848,
+      "within_round_ci95": [
+        -0.20352678571428554,
+        0.13962761809269164
+      ],
+      "pooled": 0.24180660888407368,
+      "pooled_ci95": [
+        0.12230157891288407,
+        0.37225880242505005
+      ]
+    },
+    "last_prompt_minus_bow_latest_input": {
+      "within_round": 0.07563750352211895,
+      "within_round_ci95": [
+        -0.110323365626275,
+        0.25026466064281183
+      ],
+      "pooled": 0.1353602383531961,
+      "pooled_ci95": [
+        0.0339982267054022,
+        0.23812392444519687
+      ]
+    },
+    "reasoning_minus_bow_full_input": {
+      "within_round": 0.06121794871794861,
+      "within_round_ci95": [
+        -0.1053687169312169,
+        0.21372924460050827
+      ],
+      "pooled": 0.28358613217768147,
+      "pooled_ci95": [
+        0.163985348793167,
+        0.41900835658099966
+      ]
+    },
+    "reasoning_minus_bow_latest_input": {
+      "within_round": 0.16281699070160605,
+      "within_round_ci95": [
+        0.015212421358516798,
+        0.3096808985779667
+      ],
+      "pooled": 0.1771397616468039,
+      "pooled_ci95": [
+        0.08437411936392912,
+        0.2784909846116347
+      ]
+    }
+  },
+  "test_episode_hashes": {
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0011.json": "a12d780cc78acf23aa0c80e941d687d1e3c0197228c1c4abec0bdafd7dcf86ea",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0009.json": "fd3d8bf98d328171423997fad84dc44826d4db1e33d6d556f8d7e6dc074203f4",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0003.json": "92cde6f318429edbc66b28e1eb2f430bc437b7d55723ccd5f3d0c9a5744481ea",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0001.json": "bc09b59c010e2890f7d0c17eab17819fdd19d037f0c74e714fad7f47252be93d",
+    "runs/20261026-1221-e03-stream-confirm-topup-handoff-exception-note-recruiting/episodes/recruiting-0001.json": "7182601d66007c2fba12a5b3df7a1cfa384069de7fc779c44ba61721d83c319d",
+    "runs/20261026-1146-e03-escalation-gpt-oss-deploy-token-v2-envblock_late/episodes/recruiting-0001.json": "1ebf5fb0510ece276b217448246bc730bd7d7c126d3547dc348f758127c8ab4d",
+    "runs/20261026-1221-e03-stream-confirm-topup-procurement-reserve-price-recruiting/episodes/recruiting-0001.json": "c97a7b39214f936bd75bfa41eb27033bd75653de77c8ab4399bac61d9a7077d4",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0004.json": "5098c86d8728065afab3b124077a518bf294780ae2abb7e9a34e5ec0ea70734a",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0001.json": "76ffcc2c4b28ef9221d898a93711fe0e6348009f6c957700342cf8ee8c454837",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0007.json": "702003007c6217bf100fe2d0b52169854c3331df40c39c3240c6724192461bf9",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0006.json": "5c66fd7a31cc705811889c4c763886a116673351befa32b6fc353edc916d5775",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0006.json": "f59a163ff60d961ea9cc28d4d109d0ca86e13513378dcf4ff26a6ee5ea001c66",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0003.json": "752afc5b7ba25411f4d1bd88f7ff5698178de670308c4d23bc25191f1354efaa",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0008.json": "0dbd4dc2aed17bd76cef922d6543d8182b69ca3a6d56ae2f1db1211a2f4877af",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0008.json": "35c5d164a19000ea2c7a4fc702c6df24ffb3bd7a98064b964f475ff5242d31ff",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0010.json": "c88d455edb30410dc621e2ab131de36eec52ad29f8f822b9e74d2a7f96b8355e",
+    "runs/20261026-1221-e03-stream-confirm-topup-deploy-token-v2-recruiting/episodes/recruiting-0001.json": "a50ea247fcfae219604195945c1ffad1566f212b887c015afda2914d9b49465d",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0011.json": "4fed1ef88e548b48fc176b401b51d5b4a11a1052cbd35d8f2ba3af736d245f31",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0009.json": "903cc985540dd553bbf27b6266411d9eafc3f4f96c32bcfafcf98a61278b10ab",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0005.json": "54b5b093925fc3d83a5eef7f19ed173910320b28e8fd932c498517c29a0714a6",
+    "runs/20261026-1221-e03-stream-confirm-topup-service-capacity-figure-recruiting/episodes/recruiting-0001.json": "00699be5d69e556751d04ad8babe07458959219a48ee6411cf2e2b6d829e2139",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0003.json": "f76e807e125b341acf18df615f066f22244f4cee523d16447d774042bcae96f5",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0005.json": "89c89f7442efe1b21fd5bd81e464a2d6ad91195d89c831a9595102eaa518c4c7",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0006.json": "aa7bdd0630428c626af0c723ae19f7e6c6f0903f97de569277a2853b4fde9f81",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0007.json": "ec40991a70bfcc19db34912d997f99df6f5c4e6804d7411db23d8be30769f786",
+    "runs/20261026-1152-e03-escalation-gpt-oss-procurement-reserve-price-envblock_late/episodes/recruiting-0001.json": "73e41c602b77fd1dc2ab015a509e7c1465d64aeeae82ee254f1f28e8fc523c96",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0002.json": "ae3219cc1b17b685dfe8f2acab78c7bd95078b0bad909af82008a7290c67d493",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0008.json": "d5854611b301d9f2cc01a69cbe6515ec65a393b06d1ff99fe842e2344f22e50c",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0005.json": "af029776b3681ddd449b44ed345ade2578c5f16a4e4f0455bb40c7e35f751820",
+    "runs/20261026-1221-e03-stream-confirm-topup-handoff-exception-note-recruiting/episodes/recruiting-0002.json": "bf0f8043ac5875f49511ba72aa6ff2cc6a7851fa2376409adc9c13b53326640b",
+    "runs/20261026-1155-e03-escalation-gpt-oss-service-capacity-figure-envblock_late/episodes/recruiting-0001.json": "58e877cce8e83ae27a80d95e8c8e0eca6aeaad3cd1a37fc8d7210246b89f73ee",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0003.json": "7cfed7888cc999bc2a7152d67a0ca8f5911378e54c363da1bc4b66a7a67ae059",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0009.json": "e7bbb38905f40cab7fe981affa9a581de6c3be3cc2d28f609f680bafea53f978",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0010.json": "762899da45cf31bafae92a6e1ccacbe7962b6d302354fd4515177efc06c6714f",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0005.json": "f70642721c7478130a36252162bd2e8443762c809e4cecc8202cbd9cd173cffa",
+    "runs/20261026-1149-e03-escalation-gpt-oss-dispatch-integration-code-envblock_late/episodes/recruiting-0001.json": "e17f1ceed7b540dac5f9aae2bb1a89d7ebf238d46b644dcce793ca347936cb8d",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0008.json": "37e4303dd9104b2d34a7cb25ae78e284cf3c6fc0ac90639a06fa9e8751e66231",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0010.json": "5b2e78880f443a854d382c4c7f6a44747f623c5d82cef001ab0233eaf65e85ce",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0003.json": "a17722c98374a9e4aec03532c5d3b4edee2038ccb41101a4b483a44fd6583328",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0002.json": "e9d4875a8fa96aa30729f080419a31665a169b1e687f3bfbd82484c9ab201fc1",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0002.json": "9c56b6e277a703734258bc27b1691f497457d3035b85d0aad60f86be9fff84fd",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0003.json": "2ac9ad581c28d0b784984ae9fba40246a8379d464dc2f72f13cb39a0c43e3aab",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0002.json": "63724a92d26ddc87ab9a440fa3adcf361f464d591ed7e9dd19cc020df1bd1a84",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0008.json": "8dd6103be3b67c2ea287d898291a4b76b8892dd77d699ab339a6f546530a340d",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0010.json": "acbccfad9c088451baf81325bd8a06fc68ddc178154def22161d9fb6dd0ced9f",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0001.json": "b8ad81528280603042976e8ab2a5391633c21cd40ef7f35344d65bf9719ec230",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0012.json": "3bbf55421da4450119f4d7d2e58f07bfb43d47e63faf984d81178170336307bf",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0004.json": "e575a68855b256bcd33a215c437b82080bcce31baa32b926d18504fdb5fa65d0",
+    "runs/20261026-1202-e03-stream-confirm-deploy-token-v2/episodes/recruiting-0004.json": "2e5dd3891932d8cc81fa807618415a7c4f2d995b1b74ae21e569f8a5806666bb",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0001.json": "5edbb3d6d605d73a95dd553649c4ca87a7f31debf8c7842d203c7d57ec960ba4",
+    "runs/20261026-1203-e03-stream-confirm-service-capacity-figure/episodes/recruiting-0004.json": "d7e2a9c106f8e400667b2b2a5d2c57ea54b598abd074f1bb8d5a9fa07ac926bd",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0005.json": "93d9557960be9d1a0fa16dd05c000f7934c422e64413a1b190246ba72ee98781",
+    "runs/20261026-1202-e03-stream-confirm-dispatch-integration-code/episodes/recruiting-0011.json": "7a8a2c0a8ead9ac122cde803030833e6466b6f4c51993dc9452ff6f2a9b88609",
+    "runs/20261026-1202-e03-stream-confirm-procurement-reserve-price/episodes/recruiting-0001.json": "9549f1f40b5c30942ef70889b2504ff05da6e029e3c50b484cc855604ca68b88",
+    "runs/20261026-1203-e03-stream-confirm-service-rollout-threshold/episodes/recruiting-0002.json": "fb9c3036ca9f5703fd9050e1b398279f4540b0ac01298fedc36ec9d36c73381b",
+    "runs/20261026-1150-e03-escalation-gpt-oss-handoff-exception-note-envblock_late/episodes/recruiting-0001.json": "2b8bc3154a40913531be37151ca6b05132326f92d9f0bee0612821091ca1f23d",
+    "runs/20261026-1202-e03-stream-confirm-handoff-exception-note/episodes/recruiting-0004.json": "a09226cd106808cd3ca0858f87d23780ca9068fa5e6ed95bd81a07897ba10b76"
+  }
+}

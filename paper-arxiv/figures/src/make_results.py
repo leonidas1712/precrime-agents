@@ -80,15 +80,21 @@ def headline(data,sha):
         values=[]
         for x,key in enumerate(keys):
             e=get(data,key);rows.append((title,['Ever','This/next round','This call'][x],e))
-            position = x - .18 if x == 2 else x
+            position = x - .18
             if draw(ax,position,None,e,model):
                 values.append((position,e['value']))
                 if x == 2:value_label(ax,e,position,e['value'],MODEL_COLORS[model],ha='right',offset=(-6,0))
                 else:value_label(ax,e,position,whisker_end(e),MODEL_COLORS[model],ha='center',va='bottom',offset=(0,2))
         # Do not bridge an unobserved rung.
         for a,b in zip(values,values[1:]):
-            if .8 <= b[0]-a[0] <= 1:ax.plot([a[0],b[0]],[a[1],b[1]],color=MODEL_COLORS[model],lw=.8,alpha=.6)
+            pass  # no connecting line: test markers now sit between development points
         fresh=[(2,'qwenFreshCallProbe','activation')] if model=='qwen' else [(2,'gptossFreshCallProbe','activation'),(2,'gptossFreshReasoning','activation')]
+        # Further-ahead questions on the test episodes (E18: probes fit on development only, scored once)
+        tag='Qwen' if model=='qwen' else 'Gpt'
+        for x,key in [(0,'eEighteen'+tag+'TestEver'),(1,'eEighteen'+tag+'TestNear')]:
+            e=get(data,key);rows.append((title,'Fresh test: '+key,e))
+            draw(ax,x+.18,None,e,model,'activation',fresh=True,marker='o')
+            value_label(ax,e,x+.18,whisker_end(e,'low'),MODEL_COLORS[model],ha='center',va='top',offset=(0,-2))
         for i,(x,key,kind) in enumerate(fresh):
             e=get(data,key);rows.append((title,'Fresh test: '+key,e))
             fresh_x=x+(0 if model=='gpt_oss' and i==0 else .18)

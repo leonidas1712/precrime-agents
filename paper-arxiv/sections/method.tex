@@ -40,7 +40,8 @@ We compute the AUROC within each such group $g$ and average the groups, weightin
 \end{equation*}
 AUROC is the chance that a random positive call outranks a random negative one, so 0.5 is chance and 1 is perfect.
 Our metric is therefore the chance that a leaking call outranks a non-leaking call from the same scenario and round.
-A group needs both leaking and non-leaking calls to compare, so groups with only one kind are skipped (\cref{tab:group-coverage} counts what remains).
+A group needs both leaking and non-leaking calls to compare, so groups with only one kind are skipped; every leaking call is kept (\cref{tab:group-coverage}).
+Pooling rounds, or all calls, keeps the probes' lead over both text baselines (\cref{app:metric-variants}).
 Any score that depends only on the scenario and the round therefore gets exactly 0.5.
 
 \paragraph{Held-out scenarios.}

@@ -136,4 +136,5 @@ The probe trained only on ask-forbidden episodes, where doing what the peer aske
 Adding ask-allowed episodes to training would force the probe to separate the two.
 But the peer's request names the file, so such a probe could pass Test 2 by reading the request alone.
 A cleaner test needs many more compromises, so that a probe can learn the target's choice within ask-forbidden episodes.
-The results cover one model with reasoning off, one reading point and one form of rule.
+The results cover one model, Qwen3-32B with reasoning off, and one reading point and one form of rule.
+We did not run these episodes on gpt-oss-20b, so whether its probe behaves the same way is untested.

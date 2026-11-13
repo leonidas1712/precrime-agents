@@ -1,0 +1,41 @@
+{
+  "id": "20261107-0013-e18-test-ladder",
+  "experiment": "E18",
+  "name": "e18-test-ladder",
+  "tags": [
+    "cpu-only",
+    "held-out",
+    "post-hoc"
+  ],
+  "settings": {
+    "C": 0.1,
+    "threads": 2,
+    "no_gpu": true,
+    "no_api": true,
+    "fit": "development only",
+    "scored_once": true
+  },
+  "parents": [
+    "20261106-2346-e18-reproduce"
+  ],
+  "model": null,
+  "command": "/Users/leo/.cache/uv/archive-v0/iIVBZvSAzliKv4vetl6ls/bin/python3 experiments/E18-robustness/test_ladder.py --repro runs/20261106-2346-e18-reproduce",
+  "git_commit": "53a237302dc68a134f39c0b159afb95982abff79",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-07T00:13:35",
+  "status": "finished",
+  "error": null,
+  "ended": "2026-11-07T00:39:08",
+  "results": {
+    "qwen/eventual": 0.5612,
+    "qwen/round_near": 0.7666,
+    "qwen/strict1": 0.7693,
+    "qwen/round_channel": 0.7706,
+    "qwen/round_channel_eligible": 0.6814,
+    "gpt/eventual_any": 0.6643,
+    "gpt/round_any": 0.683,
+    "gpt/strict1": 0.5104
+  }
+}

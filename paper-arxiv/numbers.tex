@@ -1617,6 +1617,391 @@
 \newcommand{\eSeventeenGridAllPaAllowed}{105}
 \newcommand{\eSeventeenGridAllPaNoRealWrite}{12}
 \newcommand{\eSeventeenGridAllPaIncomplete}{3}
+\newcommand{\eEighteenQwenDevKeptRoundCalls}{1039}
+\newcommand{\eEighteenQwenDevPairsRound}{2087}
+\newcommand{\eEighteenQwenDevKeptPooledCalls}{2976}
+\newcommand{\eEighteenQwenDevPairsPooled}{192060}
+\newcommand{\eEighteenQwenDevKeptGroups}{37}
+\newcommand{\eEighteenQwenDevGroups}{120}
+\newcommand{\eEighteenQwenDevProbeRound}{0.96}
+\newcommand{\eEighteenQwenDevProbeRoundLow}{0.93}
+\newcommand{\eEighteenQwenDevProbeRoundHigh}{0.98}
+\newcommand{\eEighteenQwenDevProbeRoundCI}{[0.93, 0.98]}
+\newcommand{\eEighteenQwenDevProbeScenario}{0.96}
+\newcommand{\eEighteenQwenDevProbeScenarioLow}{0.94}
+\newcommand{\eEighteenQwenDevProbeScenarioHigh}{0.98}
+\newcommand{\eEighteenQwenDevProbeScenarioCI}{[0.94, 0.98]}
+\newcommand{\eEighteenQwenDevProbePooled}{0.96}
+\newcommand{\eEighteenQwenDevProbePooledLow}{0.94}
+\newcommand{\eEighteenQwenDevProbePooledHigh}{0.98}
+\newcommand{\eEighteenQwenDevProbePooledCI}{[0.94, 0.98]}
+\newcommand{\eEighteenQwenDevProbeDropMin}{0.95}
+\newcommand{\eEighteenQwenDevProbeDropMax}{0.98}
+\newcommand{\eEighteenQwenDevTextRound}{0.93}
+\newcommand{\eEighteenQwenDevTextRoundLow}{0.88}
+\newcommand{\eEighteenQwenDevTextRoundHigh}{0.96}
+\newcommand{\eEighteenQwenDevTextRoundCI}{[0.88, 0.96]}
+\newcommand{\eEighteenQwenDevTextScenario}{0.90}
+\newcommand{\eEighteenQwenDevTextScenarioLow}{0.85}
+\newcommand{\eEighteenQwenDevTextScenarioHigh}{0.94}
+\newcommand{\eEighteenQwenDevTextScenarioCI}{[0.85, 0.94]}
+\newcommand{\eEighteenQwenDevTextPooled}{0.90}
+\newcommand{\eEighteenQwenDevTextPooledLow}{0.85}
+\newcommand{\eEighteenQwenDevTextPooledHigh}{0.93}
+\newcommand{\eEighteenQwenDevTextPooledCI}{[0.85, 0.93]}
+\newcommand{\eEighteenQwenDevTextDropMin}{0.92}
+\newcommand{\eEighteenQwenDevTextDropMax}{0.94}
+\newcommand{\eEighteenQwenDevJevRound}{0.76}
+\newcommand{\eEighteenQwenDevJevRoundLow}{0.68}
+\newcommand{\eEighteenQwenDevJevRoundHigh}{0.80}
+\newcommand{\eEighteenQwenDevJevRoundCI}{[0.68, 0.80]}
+\newcommand{\eEighteenQwenDevJevScenario}{0.80}
+\newcommand{\eEighteenQwenDevJevScenarioLow}{0.75}
+\newcommand{\eEighteenQwenDevJevScenarioHigh}{0.85}
+\newcommand{\eEighteenQwenDevJevScenarioCI}{[0.75, 0.85]}
+\newcommand{\eEighteenQwenDevJevPooled}{0.81}
+\newcommand{\eEighteenQwenDevJevPooledLow}{0.76}
+\newcommand{\eEighteenQwenDevJevPooledHigh}{0.86}
+\newcommand{\eEighteenQwenDevJevPooledCI}{[0.76, 0.86]}
+\newcommand{\eEighteenQwenDevJevDropMin}{0.75}
+\newcommand{\eEighteenQwenDevJevDropMax}{0.77}
+\newcommand{\eEighteenGptDevKeptRoundCalls}{595}
+\newcommand{\eEighteenGptDevPairsRound}{4719}
+\newcommand{\eEighteenGptDevKeptPooledCalls}{1995}
+\newcommand{\eEighteenGptDevPairsPooled}{226754}
+\newcommand{\eEighteenGptDevKeptGroups}{16}
+\newcommand{\eEighteenGptDevGroups}{109}
+\newcommand{\eEighteenGptDevProbeRound}{0.91}
+\newcommand{\eEighteenGptDevProbeRoundLow}{0.87}
+\newcommand{\eEighteenGptDevProbeRoundHigh}{0.94}
+\newcommand{\eEighteenGptDevProbeRoundCI}{[0.87, 0.94]}
+\newcommand{\eEighteenGptDevProbeScenario}{0.95}
+\newcommand{\eEighteenGptDevProbeScenarioLow}{0.93}
+\newcommand{\eEighteenGptDevProbeScenarioHigh}{0.97}
+\newcommand{\eEighteenGptDevProbeScenarioCI}{[0.93, 0.97]}
+\newcommand{\eEighteenGptDevProbePooled}{0.95}
+\newcommand{\eEighteenGptDevProbePooledLow}{0.92}
+\newcommand{\eEighteenGptDevProbePooledHigh}{0.97}
+\newcommand{\eEighteenGptDevProbePooledCI}{[0.92, 0.97]}
+\newcommand{\eEighteenGptDevProbeDropMin}{0.89}
+\newcommand{\eEighteenGptDevProbeDropMax}{0.92}
+\newcommand{\eEighteenGptDevReasoningRound}{0.93}
+\newcommand{\eEighteenGptDevReasoningRoundLow}{0.91}
+\newcommand{\eEighteenGptDevReasoningRoundHigh}{0.95}
+\newcommand{\eEighteenGptDevReasoningRoundCI}{[0.91, 0.95]}
+\newcommand{\eEighteenGptDevReasoningScenario}{0.97}
+\newcommand{\eEighteenGptDevReasoningScenarioLow}{0.96}
+\newcommand{\eEighteenGptDevReasoningScenarioHigh}{0.98}
+\newcommand{\eEighteenGptDevReasoningScenarioCI}{[0.96, 0.98]}
+\newcommand{\eEighteenGptDevReasoningPooled}{0.97}
+\newcommand{\eEighteenGptDevReasoningPooledLow}{0.95}
+\newcommand{\eEighteenGptDevReasoningPooledHigh}{0.98}
+\newcommand{\eEighteenGptDevReasoningPooledCI}{[0.95, 0.98]}
+\newcommand{\eEighteenGptDevReasoningDropMin}{0.92}
+\newcommand{\eEighteenGptDevReasoningDropMax}{0.95}
+\newcommand{\eEighteenGptDevTextRound}{0.86}
+\newcommand{\eEighteenGptDevTextRoundLow}{0.82}
+\newcommand{\eEighteenGptDevTextRoundHigh}{0.91}
+\newcommand{\eEighteenGptDevTextRoundCI}{[0.82, 0.91]}
+\newcommand{\eEighteenGptDevTextScenario}{0.88}
+\newcommand{\eEighteenGptDevTextScenarioLow}{0.83}
+\newcommand{\eEighteenGptDevTextScenarioHigh}{0.92}
+\newcommand{\eEighteenGptDevTextScenarioCI}{[0.83, 0.92]}
+\newcommand{\eEighteenGptDevTextPooled}{0.82}
+\newcommand{\eEighteenGptDevTextPooledLow}{0.75}
+\newcommand{\eEighteenGptDevTextPooledHigh}{0.87}
+\newcommand{\eEighteenGptDevTextPooledCI}{[0.75, 0.87]}
+\newcommand{\eEighteenGptDevTextDropMin}{0.84}
+\newcommand{\eEighteenGptDevTextDropMax}{0.88}
+\newcommand{\eEighteenGptDevJevRound}{0.40}
+\newcommand{\eEighteenGptDevJevRoundLow}{0.33}
+\newcommand{\eEighteenGptDevJevRoundHigh}{0.45}
+\newcommand{\eEighteenGptDevJevRoundCI}{[0.33, 0.45]}
+\newcommand{\eEighteenGptDevJevScenario}{0.82}
+\newcommand{\eEighteenGptDevJevScenarioLow}{0.75}
+\newcommand{\eEighteenGptDevJevScenarioHigh}{0.85}
+\newcommand{\eEighteenGptDevJevScenarioCI}{[0.75, 0.85]}
+\newcommand{\eEighteenGptDevJevPooled}{0.86}
+\newcommand{\eEighteenGptDevJevPooledLow}{0.83}
+\newcommand{\eEighteenGptDevJevPooledHigh}{0.88}
+\newcommand{\eEighteenGptDevJevPooledCI}{[0.83, 0.88]}
+\newcommand{\eEighteenGptDevJevDropMin}{0.36}
+\newcommand{\eEighteenGptDevJevDropMax}{0.43}
+\newcommand{\eEighteenQwenTestKeptRoundCalls}{457}
+\newcommand{\eEighteenQwenTestPairsRound}{684}
+\newcommand{\eEighteenQwenTestKeptPooledCalls}{1825}
+\newcommand{\eEighteenQwenTestPairsPooled}{67906}
+\newcommand{\eEighteenQwenTestKeptGroups}{23}
+\newcommand{\eEighteenQwenTestGroups}{100}
+\newcommand{\eEighteenQwenTestProbeRound}{0.98}
+\newcommand{\eEighteenQwenTestProbeRoundLow}{0.94}
+\newcommand{\eEighteenQwenTestProbeRoundHigh}{1.00}
+\newcommand{\eEighteenQwenTestProbeRoundCI}{[0.94, 1.00]}
+\newcommand{\eEighteenQwenTestProbeScenario}{0.97}
+\newcommand{\eEighteenQwenTestProbeScenarioLow}{0.94}
+\newcommand{\eEighteenQwenTestProbeScenarioHigh}{0.99}
+\newcommand{\eEighteenQwenTestProbeScenarioCI}{[0.94, 0.99]}
+\newcommand{\eEighteenQwenTestProbePooled}{0.97}
+\newcommand{\eEighteenQwenTestProbePooledLow}{0.95}
+\newcommand{\eEighteenQwenTestProbePooledHigh}{0.99}
+\newcommand{\eEighteenQwenTestProbePooledCI}{[0.95, 0.99]}
+\newcommand{\eEighteenQwenTestProbeDropMin}{0.97}
+\newcommand{\eEighteenQwenTestProbeDropMax}{0.98}
+\newcommand{\eEighteenQwenTestTextRound}{0.96}
+\newcommand{\eEighteenQwenTestTextRoundLow}{0.92}
+\newcommand{\eEighteenQwenTestTextRoundHigh}{0.99}
+\newcommand{\eEighteenQwenTestTextRoundCI}{[0.92, 0.99]}
+\newcommand{\eEighteenQwenTestTextScenario}{0.90}
+\newcommand{\eEighteenQwenTestTextScenarioLow}{0.83}
+\newcommand{\eEighteenQwenTestTextScenarioHigh}{0.94}
+\newcommand{\eEighteenQwenTestTextScenarioCI}{[0.83, 0.94]}
+\newcommand{\eEighteenQwenTestTextPooled}{0.90}
+\newcommand{\eEighteenQwenTestTextPooledLow}{0.85}
+\newcommand{\eEighteenQwenTestTextPooledHigh}{0.94}
+\newcommand{\eEighteenQwenTestTextPooledCI}{[0.85, 0.94]}
+\newcommand{\eEighteenQwenTestTextDropMin}{0.96}
+\newcommand{\eEighteenQwenTestTextDropMax}{0.97}
+\newcommand{\eEighteenQwenTestJevRound}{0.75}
+\newcommand{\eEighteenQwenTestJevRoundLow}{0.64}
+\newcommand{\eEighteenQwenTestJevRoundHigh}{0.83}
+\newcommand{\eEighteenQwenTestJevRoundCI}{[0.64, 0.83]}
+\newcommand{\eEighteenQwenTestJevScenario}{0.75}
+\newcommand{\eEighteenQwenTestJevScenarioLow}{0.66}
+\newcommand{\eEighteenQwenTestJevScenarioHigh}{0.82}
+\newcommand{\eEighteenQwenTestJevScenarioCI}{[0.66, 0.82]}
+\newcommand{\eEighteenQwenTestJevPooled}{0.75}
+\newcommand{\eEighteenQwenTestJevPooledLow}{0.68}
+\newcommand{\eEighteenQwenTestJevPooledHigh}{0.83}
+\newcommand{\eEighteenQwenTestJevPooledCI}{[0.68, 0.83]}
+\newcommand{\eEighteenQwenTestJevDropMin}{0.74}
+\newcommand{\eEighteenQwenTestJevDropMax}{0.78}
+\newcommand{\eEighteenGptTestKeptRoundCalls}{142}
+\newcommand{\eEighteenGptTestPairsRound}{197}
+\newcommand{\eEighteenGptTestKeptPooledCalls}{594}
+\newcommand{\eEighteenGptTestPairsPooled}{14768}
+\newcommand{\eEighteenGptTestKeptGroups}{14}
+\newcommand{\eEighteenGptTestGroups}{108}
+\newcommand{\eEighteenGptTestProbeRound}{0.82}
+\newcommand{\eEighteenGptTestProbeRoundLow}{0.66}
+\newcommand{\eEighteenGptTestProbeRoundHigh}{0.95}
+\newcommand{\eEighteenGptTestProbeRoundCI}{[0.66, 0.95]}
+\newcommand{\eEighteenGptTestProbeScenario}{0.91}
+\newcommand{\eEighteenGptTestProbeScenarioLow}{0.84}
+\newcommand{\eEighteenGptTestProbeScenarioHigh}{0.97}
+\newcommand{\eEighteenGptTestProbeScenarioCI}{[0.84, 0.97]}
+\newcommand{\eEighteenGptTestProbePooled}{0.91}
+\newcommand{\eEighteenGptTestProbePooledLow}{0.85}
+\newcommand{\eEighteenGptTestProbePooledHigh}{0.97}
+\newcommand{\eEighteenGptTestProbePooledCI}{[0.85, 0.97]}
+\newcommand{\eEighteenGptTestProbeDropMin}{0.80}
+\newcommand{\eEighteenGptTestProbeDropMax}{0.84}
+\newcommand{\eEighteenGptTestReasoningRound}{0.91}
+\newcommand{\eEighteenGptTestReasoningRoundLow}{0.78}
+\newcommand{\eEighteenGptTestReasoningRoundHigh}{0.99}
+\newcommand{\eEighteenGptTestReasoningRoundCI}{[0.78, 0.99]}
+\newcommand{\eEighteenGptTestReasoningScenario}{0.95}
+\newcommand{\eEighteenGptTestReasoningScenarioLow}{0.90}
+\newcommand{\eEighteenGptTestReasoningScenarioHigh}{0.98}
+\newcommand{\eEighteenGptTestReasoningScenarioCI}{[0.90, 0.98]}
+\newcommand{\eEighteenGptTestReasoningPooled}{0.95}
+\newcommand{\eEighteenGptTestReasoningPooledLow}{0.92}
+\newcommand{\eEighteenGptTestReasoningPooledHigh}{0.98}
+\newcommand{\eEighteenGptTestReasoningPooledCI}{[0.92, 0.98]}
+\newcommand{\eEighteenGptTestReasoningDropMin}{0.88}
+\newcommand{\eEighteenGptTestReasoningDropMax}{0.94}
+\newcommand{\eEighteenQwenTestProbeMinusTextRound}{+0.02}
+\newcommand{\eEighteenQwenTestProbeMinusTextRoundLow}{\ensuremath{-}0.01}
+\newcommand{\eEighteenQwenTestProbeMinusTextRoundHigh}{+0.05}
+\newcommand{\eEighteenQwenTestProbeMinusTextRoundCI}{[\ensuremath{-}0.01, +0.05]}
+\newcommand{\eEighteenQwenTestProbeMinusTextPooled}{+0.07}
+\newcommand{\eEighteenQwenTestProbeMinusTextPooledLow}{+0.04}
+\newcommand{\eEighteenQwenTestProbeMinusTextPooledHigh}{+0.10}
+\newcommand{\eEighteenQwenTestProbeMinusTextPooledCI}{[+0.04, +0.10]}
+\newcommand{\eEighteenQwenDevProbeMinusTextRound}{+0.04}
+\newcommand{\eEighteenQwenDevProbeMinusTextRoundLow}{+0.00}
+\newcommand{\eEighteenQwenDevProbeMinusTextRoundHigh}{+0.08}
+\newcommand{\eEighteenQwenDevProbeMinusTextRoundCI}{[+0.00, +0.08]}
+\newcommand{\eEighteenQwenDevProbeMinusTextPooled}{+0.06}
+\newcommand{\eEighteenQwenDevProbeMinusTextPooledLow}{+0.04}
+\newcommand{\eEighteenQwenDevProbeMinusTextPooledHigh}{+0.09}
+\newcommand{\eEighteenQwenDevProbeMinusTextPooledCI}{[+0.04, +0.09]}
+\newcommand{\eEighteenGptDevProbeMinusJevRound}{+0.51}
+\newcommand{\eEighteenGptDevProbeMinusJevRoundLow}{+0.43}
+\newcommand{\eEighteenGptDevProbeMinusJevRoundHigh}{+0.58}
+\newcommand{\eEighteenGptDevProbeMinusJevRoundCI}{[+0.43, +0.58]}
+\newcommand{\eEighteenGptDevProbeMinusJevPooled}{+0.09}
+\newcommand{\eEighteenGptDevProbeMinusJevPooledLow}{+0.06}
+\newcommand{\eEighteenGptDevProbeMinusJevPooledHigh}{+0.11}
+\newcommand{\eEighteenGptDevProbeMinusJevPooledCI}{[+0.06, +0.11]}
+\newcommand{\eEighteenQwenDevProbeSeedA}{0.94}
+\newcommand{\eEighteenQwenDevProbeSeedB}{0.97}
+\newcommand{\eEighteenQwenDevProbeSeedC}{0.96}
+\newcommand{\eEighteenGptDevProbeSeedA}{0.92}
+\newcommand{\eEighteenGptDevProbeSeedB}{0.89}
+\newcommand{\eEighteenGptDevProbeSeedC}{0.91}
+\newcommand{\eEighteenGptDevReasoningSeedA}{0.96}
+\newcommand{\eEighteenGptDevReasoningSeedB}{0.88}
+\newcommand{\eEighteenGptDevReasoningSeedC}{0.96}
+\newcommand{\eEighteenGptTestScenDeployTokenCalls}{131}
+\newcommand{\eEighteenGptTestScenDeployTokenLeaks}{2}
+\newcommand{\eEighteenGptTestScenDeployTokenKeptGroups}{2}
+\newcommand{\eEighteenGptTestScenDeployTokenProbe}{0.83}
+\newcommand{\eEighteenGptTestScenDeployTokenReasoning}{1.00}
+\newcommand{\eEighteenGptTestScenDispatchIntegrationCodeCalls}{71}
+\newcommand{\eEighteenGptTestScenDispatchIntegrationCodeLeaks}{7}
+\newcommand{\eEighteenGptTestScenDispatchIntegrationCodeKeptGroups}{2}
+\newcommand{\eEighteenGptTestScenDispatchIntegrationCodeProbe}{0.81}
+\newcommand{\eEighteenGptTestScenDispatchIntegrationCodeReasoning}{1.00}
+\newcommand{\eEighteenGptTestScenHandoffExceptionNoteCalls}{109}
+\newcommand{\eEighteenGptTestScenHandoffExceptionNoteLeaks}{4}
+\newcommand{\eEighteenGptTestScenHandoffExceptionNoteKeptGroups}{3}
+\newcommand{\eEighteenGptTestScenHandoffExceptionNoteProbe}{1.00}
+\newcommand{\eEighteenGptTestScenHandoffExceptionNoteReasoning}{1.00}
+\newcommand{\eEighteenGptTestScenProcurementReservePriceCalls}{120}
+\newcommand{\eEighteenGptTestScenProcurementReservePriceLeaks}{4}
+\newcommand{\eEighteenGptTestScenProcurementReservePriceKeptGroups}{2}
+\newcommand{\eEighteenGptTestScenProcurementReservePriceProbe}{0.83}
+\newcommand{\eEighteenGptTestScenProcurementReservePriceReasoning}{0.88}
+\newcommand{\eEighteenGptTestScenServiceCapacityFigureCalls}{119}
+\newcommand{\eEighteenGptTestScenServiceCapacityFigureLeaks}{6}
+\newcommand{\eEighteenGptTestScenServiceCapacityFigureKeptGroups}{3}
+\newcommand{\eEighteenGptTestScenServiceCapacityFigureProbe}{0.77}
+\newcommand{\eEighteenGptTestScenServiceCapacityFigureReasoning}{0.84}
+\newcommand{\eEighteenGptTestScenServiceRolloutThresholdCalls}{44}
+\newcommand{\eEighteenGptTestScenServiceRolloutThresholdLeaks}{3}
+\newcommand{\eEighteenGptTestScenServiceRolloutThresholdKeptGroups}{2}
+\newcommand{\eEighteenGptTestScenServiceRolloutThresholdProbe}{0.67}
+\newcommand{\eEighteenGptTestScenServiceRolloutThresholdReasoning}{0.67}
+\newcommand{\gptossFreshCallBow}{0.84}
+\newcommand{\gptossFreshCallBowLow}{0.70}
+\newcommand{\gptossFreshCallBowHigh}{0.96}
+\newcommand{\gptossFreshCallBowCI}{[0.70, 0.96]}
+\newcommand{\gptossFreshCallBowLatest}{0.74}
+\newcommand{\gptossFreshCallBowLatestLow}{0.58}
+\newcommand{\gptossFreshCallBowLatestHigh}{0.91}
+\newcommand{\gptossFreshCallBowLatestCI}{[0.58, 0.91]}
+\newcommand{\gptossFreshCallJev}{0.44}
+\newcommand{\gptossFreshCallJevLow}{0.26}
+\newcommand{\gptossFreshCallJevHigh}{0.63}
+\newcommand{\gptossFreshCallJevCI}{[0.26, 0.63]}
+\newcommand{\gptossFreshCallJevPooled}{0.86}
+\newcommand{\gptossFreshCallJevPooledLow}{0.80}
+\newcommand{\gptossFreshCallJevPooledHigh}{0.90}
+\newcommand{\gptossFreshCallJevPooledCI}{[0.80, 0.90]}
+\newcommand{\gptossFreshCallProbeMinusBow}{\ensuremath{-}0.03}
+\newcommand{\gptossFreshCallProbeMinusBowLow}{\ensuremath{-}0.20}
+\newcommand{\gptossFreshCallProbeMinusBowHigh}{+0.14}
+\newcommand{\gptossFreshCallProbeMinusBowCI}{[\ensuremath{-}0.20, +0.14]}
+\newcommand{\gptossFreshReasoningMinusBow}{+0.06}
+\newcommand{\gptossFreshReasoningMinusBowLow}{\ensuremath{-}0.11}
+\newcommand{\gptossFreshReasoningMinusBowHigh}{+0.21}
+\newcommand{\gptossFreshReasoningMinusBowCI}{[\ensuremath{-}0.11, +0.21]}
+\newcommand{\gptossFreshMatchedJevCaught}{8\%}
+\newcommand{\gptossFreshMatchedJevCaughtCount}{2}
+\newcommand{\gptossFreshMatchedProbeRefusing}{2.4\%}
+\newcommand{\eEighteenQwenTestEver}{0.56}
+\newcommand{\eEighteenQwenTestEverLow}{0.46}
+\newcommand{\eEighteenQwenTestEverHigh}{0.66}
+\newcommand{\eEighteenQwenTestEverCI}{[0.46, 0.66]}
+\newcommand{\eEighteenQwenTestEverPositives}{418}
+\newcommand{\eEighteenQwenTestNear}{0.77}
+\newcommand{\eEighteenQwenTestNearLow}{0.70}
+\newcommand{\eEighteenQwenTestNearHigh}{0.83}
+\newcommand{\eEighteenQwenTestNearCI}{[0.70, 0.83]}
+\newcommand{\eEighteenQwenTestNearPositives}{120}
+\newcommand{\eEighteenQwenTestStrict}{0.77}
+\newcommand{\eEighteenQwenTestStrictLow}{0.67}
+\newcommand{\eEighteenQwenTestStrictHigh}{0.86}
+\newcommand{\eEighteenQwenTestStrictCI}{[0.67, 0.86]}
+\newcommand{\eEighteenQwenTestStrictPositives}{38}
+\newcommand{\eEighteenGptTestEver}{0.66}
+\newcommand{\eEighteenGptTestEverLow}{0.52}
+\newcommand{\eEighteenGptTestEverHigh}{0.78}
+\newcommand{\eEighteenGptTestEverCI}{[0.52, 0.78]}
+\newcommand{\eEighteenGptTestEverPositives}{104}
+\newcommand{\eEighteenGptTestNear}{0.68}
+\newcommand{\eEighteenGptTestNearLow}{0.56}
+\newcommand{\eEighteenGptTestNearHigh}{0.78}
+\newcommand{\eEighteenGptTestNearCI}{[0.56, 0.78]}
+\newcommand{\eEighteenGptTestNearPositives}{67}
+\newcommand{\eEighteenGptTestStrict}{0.51}
+\newcommand{\eEighteenGptTestStrictLow}{0.34}
+\newcommand{\eEighteenGptTestStrictHigh}{0.68}
+\newcommand{\eEighteenGptTestStrictCI}{[0.34, 0.68]}
+\newcommand{\eEighteenGptTestStrictPositives}{17}
+\newcommand{\eEighteenQwenFreshRoundChannelCheck}{0.68}
+\newcommand{\eEighteenCHundredthQwenProbe}{0.95}
+\newcommand{\eEighteenCHundredthQwenProbeLow}{0.93}
+\newcommand{\eEighteenCHundredthQwenProbeHigh}{0.98}
+\newcommand{\eEighteenCHundredthQwenProbeCI}{[0.93, 0.98]}
+\newcommand{\eEighteenCHundredthGptProbe}{0.90}
+\newcommand{\eEighteenCHundredthGptProbeLow}{0.87}
+\newcommand{\eEighteenCHundredthGptProbeHigh}{0.93}
+\newcommand{\eEighteenCHundredthGptProbeCI}{[0.87, 0.93]}
+\newcommand{\eEighteenCHundredthGptReasoning}{0.96}
+\newcommand{\eEighteenCHundredthGptReasoningLow}{0.94}
+\newcommand{\eEighteenCHundredthGptReasoningHigh}{0.97}
+\newcommand{\eEighteenCHundredthGptReasoningCI}{[0.94, 0.97]}
+\newcommand{\eEighteenCThreeHundredthsQwenProbe}{0.96}
+\newcommand{\eEighteenCThreeHundredthsQwenProbeLow}{0.93}
+\newcommand{\eEighteenCThreeHundredthsQwenProbeHigh}{0.98}
+\newcommand{\eEighteenCThreeHundredthsQwenProbeCI}{[0.93, 0.98]}
+\newcommand{\eEighteenCThreeHundredthsGptProbe}{0.90}
+\newcommand{\eEighteenCThreeHundredthsGptProbeLow}{0.87}
+\newcommand{\eEighteenCThreeHundredthsGptProbeHigh}{0.93}
+\newcommand{\eEighteenCThreeHundredthsGptProbeCI}{[0.87, 0.93]}
+\newcommand{\eEighteenCThreeHundredthsGptReasoning}{0.96}
+\newcommand{\eEighteenCThreeHundredthsGptReasoningLow}{0.95}
+\newcommand{\eEighteenCThreeHundredthsGptReasoningHigh}{0.98}
+\newcommand{\eEighteenCThreeHundredthsGptReasoningCI}{[0.95, 0.98]}
+\newcommand{\eEighteenCTenthQwenProbe}{0.96}
+\newcommand{\eEighteenCTenthQwenProbeLow}{0.93}
+\newcommand{\eEighteenCTenthQwenProbeHigh}{0.98}
+\newcommand{\eEighteenCTenthQwenProbeCI}{[0.93, 0.98]}
+\newcommand{\eEighteenCTenthGptProbe}{0.91}
+\newcommand{\eEighteenCTenthGptProbeLow}{0.87}
+\newcommand{\eEighteenCTenthGptProbeHigh}{0.94}
+\newcommand{\eEighteenCTenthGptProbeCI}{[0.87, 0.94]}
+\newcommand{\eEighteenCTenthGptReasoning}{0.93}
+\newcommand{\eEighteenCTenthGptReasoningLow}{0.91}
+\newcommand{\eEighteenCTenthGptReasoningHigh}{0.95}
+\newcommand{\eEighteenCTenthGptReasoningCI}{[0.91, 0.95]}
+\newcommand{\eEighteenCThreeTenthsQwenProbe}{0.96}
+\newcommand{\eEighteenCThreeTenthsQwenProbeLow}{0.93}
+\newcommand{\eEighteenCThreeTenthsQwenProbeHigh}{0.98}
+\newcommand{\eEighteenCThreeTenthsQwenProbeCI}{[0.93, 0.98]}
+\newcommand{\eEighteenCThreeTenthsGptProbe}{0.91}
+\newcommand{\eEighteenCThreeTenthsGptProbeLow}{0.87}
+\newcommand{\eEighteenCThreeTenthsGptProbeHigh}{0.94}
+\newcommand{\eEighteenCThreeTenthsGptProbeCI}{[0.87, 0.94]}
+\newcommand{\eEighteenCThreeTenthsGptReasoning}{0.93}
+\newcommand{\eEighteenCThreeTenthsGptReasoningLow}{0.91}
+\newcommand{\eEighteenCThreeTenthsGptReasoningHigh}{0.95}
+\newcommand{\eEighteenCThreeTenthsGptReasoningCI}{[0.91, 0.95]}
+\newcommand{\eEighteenCOneQwenProbe}{0.93}
+\newcommand{\eEighteenCOneQwenProbeLow}{0.90}
+\newcommand{\eEighteenCOneQwenProbeHigh}{0.96}
+\newcommand{\eEighteenCOneQwenProbeCI}{[0.90, 0.96]}
+\newcommand{\eEighteenCOneGptProbe}{0.90}
+\newcommand{\eEighteenCOneGptProbeLow}{0.87}
+\newcommand{\eEighteenCOneGptProbeHigh}{0.93}
+\newcommand{\eEighteenCOneGptProbeCI}{[0.87, 0.93]}
+\newcommand{\eEighteenCOneGptReasoning}{0.96}
+\newcommand{\eEighteenCOneGptReasoningLow}{0.94}
+\newcommand{\eEighteenCOneGptReasoningHigh}{0.98}
+\newcommand{\eEighteenCOneGptReasoningCI}{[0.94, 0.98]}
+\newcommand{\eEighteenCTenQwenProbe}{0.91}
+\newcommand{\eEighteenCTenQwenProbeLow}{0.88}
+\newcommand{\eEighteenCTenQwenProbeHigh}{0.95}
+\newcommand{\eEighteenCTenQwenProbeCI}{[0.88, 0.95]}
+\newcommand{\eEighteenCTenGptProbe}{0.90}
+\newcommand{\eEighteenCTenGptProbeLow}{0.87}
+\newcommand{\eEighteenCTenGptProbeHigh}{0.93}
+\newcommand{\eEighteenCTenGptProbeCI}{[0.87, 0.93]}
+\newcommand{\eEighteenCTenGptReasoning}{0.96}
+\newcommand{\eEighteenCTenGptReasoningLow}{0.94}
+\newcommand{\eEighteenCTenGptReasoningHigh}{0.97}
+\newcommand{\eEighteenCTenGptReasoningCI}{[0.94, 0.97]}
 \newcommand{\gptossLadderCall}{\gptossCallProbe}
 \newcommand{\gptossLadderEver}{\gptossEverProbe}
 \newcommand{\gptossLadderNear}{\gptossNearProbe}

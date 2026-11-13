@@ -1,0 +1,53 @@
+{
+  "id": "20261107-0013-e18-c-sweep-lastprompt",
+  "experiment": "E18",
+  "name": "e18-c-sweep-lastprompt",
+  "tags": [
+    "cpu-only",
+    "sensitivity"
+  ],
+  "settings": {
+    "C": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1,
+      10
+    ],
+    "part": "lastprompt",
+    "split": "loso (held-out scenarios)",
+    "workers": 2,
+    "threads_per_worker": 2,
+    "no_gpu": true,
+    "no_api": true
+  },
+  "parents": [
+    "20261106-2346-e18-reproduce"
+  ],
+  "model": null,
+  "command": "/Users/leo/.cache/uv/archive-v0/iIVBZvSAzliKv4vetl6ls/bin/python3 experiments/E18-robustness/c_sweep.py --part lastprompt --repro runs/20261106-2346-e18-reproduce",
+  "git_commit": "53a237302dc68a134f39c0b159afb95982abff79",
+  "dirty": true,
+  "host": "Leos-MacBook-Pro.local",
+  "gpu": null,
+  "started": "2026-11-07T00:13:35",
+  "status": "failed",
+  "error": "C=0.1 mismatch",
+  "ended": "2026-11-07T00:40:48",
+  "results": {
+    "c01_reproduced": false,
+    "gpt_lastprompt/C=0.01": 0.902,
+    "qwen_lastprompt/C=0.01": 0.9547,
+    "gpt_lastprompt/C=0.03": 0.9035,
+    "qwen_lastprompt/C=0.03": 0.9564,
+    "gpt_lastprompt/C=0.1": 0.9055,
+    "qwen_lastprompt/C=0.1": 0.9587,
+    "gpt_lastprompt/C=0.3": 0.9058,
+    "qwen_lastprompt/C=0.3": 0.9565,
+    "gpt_lastprompt/C=1": 0.9033,
+    "qwen_lastprompt/C=1": 0.9336,
+    "gpt_lastprompt/C=10": 0.9017,
+    "qwen_lastprompt/C=10": 0.9124
+  }
+}

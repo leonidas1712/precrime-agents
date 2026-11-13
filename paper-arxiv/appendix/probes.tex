@@ -13,8 +13,11 @@
     \multicolumn{4}{@{}l}{\emph{Test episodes}} \\
     This call? & last-prompt probe & \qwenFreshCallProbe{} \qwenFreshCallProbeCI{} & \gptossFreshCallProbe{} \gptossFreshCallProbeCI{} \\
     This call? & reasoning probe & -- & \gptossFreshReasoning{} \gptossFreshReasoningCI{} \\
-    This call? & Jev & \qwenFreshCallJev{} \qwenFreshCallJevCI{} & -- \\
-    This call? & trained text classifier & \qwenFreshCallBow{} \qwenFreshCallBowCI{} & -- \\
+    This call? & Jev & \qwenFreshCallJev{} \qwenFreshCallJevCI{} & \gptossFreshCallJev{} \gptossFreshCallJevCI{} \\
+    This call? & trained text classifier & \qwenFreshCallBow{} \qwenFreshCallBowCI{} & \gptossFreshCallBow{} \gptossFreshCallBowCI{} \\
+    One call earlier? & last-prompt probe & \eEighteenQwenTestStrict{} \eEighteenQwenTestStrictCI{} & \eEighteenGptTestStrict{} \eEighteenGptTestStrictCI{} \\
+    This round or next? & last-prompt probe & \eEighteenQwenTestNear{} \eEighteenQwenTestNearCI{} & \eEighteenGptTestNear{} \eEighteenGptTestNearCI{} \\
+    Ever? & last-prompt probe & \eEighteenQwenTestEver{} \eEighteenQwenTestEverCI{} & \eEighteenGptTestEver{} \eEighteenGptTestEverCI{} \\
     \midrule
     \multicolumn{4}{@{}l}{\emph{Development episodes}} \\
     This call? & last-prompt probe & \qwenCallProbe{} \qwenCallProbeCI{} & \gptossCallProbe{} \gptossCallProbeCI{} \\
@@ -26,7 +29,7 @@
     Ever? & last-prompt probe & \qwenEverProbe{} \qwenEverProbeCI{} & \gptossEverProbe{} \gptossEverProbeCI{} \\
     \bottomrule
   \end{tabular}
-  \caption{\textbf{\Cref{tab:glance} with 95\% intervals.} AUROC within scenario and round, with episode-clustered bootstrap intervals. Development results are on held-out scenarios, and -- means not run.}
+  \caption{\textbf{\Cref{tab:glance} with 95\% intervals.} AUROC within scenario and round, with episode-clustered bootstrap intervals. Development results are on held-out scenarios. Qwen3-32B runs with reasoning off, so it has no reasoning probe.}
   \label{tab:glance-ci}
 \end{table}
 
