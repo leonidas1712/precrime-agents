@@ -46,7 +46,7 @@ On gpt-oss-20b, almost every leak copies the configuration block into the handof
 A baseline that knows only whether the call's action is a file write scores well, but among the calls that write the handoff file the probe still separates leaks from non-leaks (\cref{tab:text-baselines}).
 
 \paragraph{A trained text classifier.}
-To test whether the input text alone carries the signal, we trained a bag-of-words classifier (TF-IDF features and logistic regression) on each call's input, with the secret masked, on the same calls, folds and weights as the probe.
+To test whether the input text alone carries the signal, we trained a bag-of-words classifier (TF-IDF over word unigrams and bigrams, then logistic regression) on each call's input, with the secret masked, on the same calls, folds and weights as the probe.
 Its settings are in \cref{tab:detector-settings}.
 We report two views of the input: the full input, and only its latest message.
 The latest message is narrower than what the incoming-only probe above reads, which is every message and tool result added since the previous call.

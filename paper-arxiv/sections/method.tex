@@ -25,7 +25,7 @@ Monitors that read this call's own reasoning $z_t$ also stay far below the probe
 \Cref{app:monitors} gives the prompts and two further monitors, an LLM judge and a second decision model.
 
 \paragraph{Trained text classifier.}
-To separate what the probe gains from training from what it gains from activations, we also train a bag-of-words text classifier on the same labelled calls: TF-IDF features and a logistic regression, with the secret masked, on the same folds and weights as the probe.
+To separate what the probe gains from training from what it gains from activations, we also train a bag-of-words text classifier on the same labelled calls: TF-IDF over word unigrams and bigrams and a logistic regression, with the secret masked, on the same folds and weights as the probe.
 It reads either the call's full input or only the latest message of that input.
 For each model we report the stronger of the two views, which favours the text baseline: the latest message on Qwen3-32B and the full input on gpt-oss-20b.
 \Cref{app:shortcuts} reports both views for both models.
@@ -50,6 +50,6 @@ Related episodes, such as variants of one seeded episode or reruns that share a 
 The appendices give bootstrap intervals that resample these groups of related episodes (\cref{app:probes}).
 
 \paragraph{Evidence.}
-Test episodes are scored once, by detectors whose weights and alarm thresholds were set on development episodes.
-Before collecting the gpt-oss-20b test episodes, we committed the analysis plan, alarm threshold and success criterion to the repository (\cref{app:confirmation}).
+We chose each label, the probe recipe and the alarm threshold on development episodes, and committed each to the repository before it was scored on the test episodes (\cref{app:confirmation}).
+The gpt-oss-20b plan, threshold and success criterion were pre-registered: committed before its test episodes were collected.
 In every figure, filled markers are test episodes and hollow markers are development episodes.

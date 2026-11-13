@@ -21,6 +21,7 @@ No prompt lowers the score of leaking calls (\cref{tab:policy}).
 The probe ranks leaking above non-leaking calls about equally well under every prompt, and nearly the same leaking calls cross the threshold.
 Removing the consequence sentence as well raises the median score slightly (\eFourteenReplayNoConsequenceShift{}).
 Neither the text of the rule nor its stated consequence drives the score.
+\citet{sadhu2026compliance} find the same for activation probes and guard models that score a written case against a rule: changing the rule leaves their accuracy unchanged.
 These replayed prompts still contain the agent's earlier refusals, which the next subsection removes.
 
 \begin{table}[h]

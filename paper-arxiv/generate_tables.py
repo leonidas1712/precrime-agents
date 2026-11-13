@@ -8,7 +8,7 @@ NAMES=['datasets','behaviour_by_scenario','labels','replay','fresh','robust_call
 WRAPPED_WIDTHS = {
     'alarms': [.14, .12, .19, .11, .12, .14],
     'history': [.19, .20, .22, .28],
-    'episode_calibration': [.13, .10, .088, .088, .088, .088, .088, .088, .088],
+    'episode_calibration': [.12, .13, .088, .088, .088, .088, .088, .088, .088],
 }
 
 def columns(name, default):

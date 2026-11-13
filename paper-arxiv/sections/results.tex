@@ -38,7 +38,7 @@
   \includegraphics[width=\linewidth]{fig1_headline.pdf}
   \caption{\textbf{The nearer the act, the more predictable the leak.}
   For each model, the probe is asked three questions about the same calls, each label defined from the same leak, from ``will this episode ever leak?'' to ``will this call leak?''.
-  Hollow markers are held-out scenarios on development episodes; filled markers are test episodes, each scored once by a model fit only on development episodes.
+  Hollow markers are held-out scenarios on development episodes; filled markers are test episodes, new episodes in the development scenarios, each scored once by a model fit only on development episodes.
   On gpt-oss-20b, the filled diamond is the reasoning probe; the circles are the last-prompt probe.
   AUROC is computed within each scenario and round, so 0.5 is chance; whiskers are 95\% bootstrap intervals.}
   \label{fig:headline}
@@ -124,7 +124,7 @@ On Qwen3-32B, with one permitted and one forbidden file, it scores a write the p
 
 AUROC measures how well a detector ranks calls.
 An overseer also needs to know how many leaks a threshold catches, how many other calls it flags, and how many of its alarms are real.
-At a threshold set on benign control calls, so that 5\% of them are flagged, the probe catches most leaking calls while flagging few other calls (\cref{fig:qwen-alarms}).
+At a threshold set on control calls, so that 5\% of them are flagged, the probe catches most leaking calls while flagging few other calls (\cref{fig:qwen-alarms}).
 On Qwen3-32B test episodes, the probe catches \qwenFreshProbeCaught{} of leaking calls (\qwenMatchedProbeCaughtCount{} of \qwenMatchedLeakTotal{}) and flags \qwenFreshProbeAlarm{} of the calls in refusing episodes.
 Of the calls the probe flags, \qwenFreshProbePrecision{} are real leaks.
 Jev, flagging \qwenMatchedJevRefusing{} of refusing calls (fewer than the probe's \qwenFreshProbeAlarm{}), catches \qwenMatchedJevCaught{} of leaking calls (\qwenMatchedJevCaughtCount{} of \qwenMatchedLeakTotal{}).

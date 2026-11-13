@@ -4,21 +4,18 @@
 \paragraph{Probes on agents under attack.}
 Probes can detect that a tool-using agent has been exposed to prompt injection \citep{dong2026}, separate hijacked from resisted trajectories \citep{yu2026}, and read agents that were told to collude \citep{rose2026}.
 \citet{fomin2026} warn that such probes may read the situation rather than the action.
+Probes read before generation also predict whether a model will leak its system prompt \citep{dong2025leak}, and flag requests that seek credentials or private data, labelled by the request rather than by whether the call leaked \citep{chauhan2026caught,das2026neurofilter}.
 Every call we score has already been exposed to the same recruiting pressure, and our target is never told to collude, so the probe must separate calls that face the same situation.
 
 \paragraph{Early warning.}
 Closest to our question, \citet{saraogi2026before} read hidden states each turn as a user presses a model to drop a correct answer, and find a weak, model-specific signal.
-\citet{fayyazi2026agent} forecast unauthorised agent actions from internal states and from text, and find that text monitors often match the internal states.
+\citet{fayyazi2026agent} forecast unauthorised agent actions from internal states and from text, and find that text monitors often match the internal states; \cref{app:related} compares their study with ours.
 \citet{jia2026window} branch injected agents from identical states and find that early probes do not reliably beat text baselines.
 \citet{gao2026} combines an activation monitor with outcome forecasts on AgentDojo.
 Production text and activation classifiers score a model's output as it streams and can block tool calls \citep{sharma2025constitutional,cunningham2026,makelov2026}, and activation probes often combine token scores with a maximum \citep{mckenzie2026,kramar2026}, which our reasoning probe borrows.
 We find the same weak signal far from the act, and a strong one at the call itself, in a setting where the pressure comes from a peer.
 
-\paragraph{Spread, sustained pressure and filters.}
-Work on spreading prompts and multi-turn attacks studies how pressure reaches an agent, and control protocols and streaming classifiers act on what it then generates (\cref{sec:intro}).
-We sit between the two: like the exposure probes above, our per-call probe reads the call's input under sustained pressure, before the call generates anything.
-
 \paragraph{Monitors and persuasion between agents.}
-Monitors that see agents' messages catch more coordinated sabotage \citep{radev2026}, and coordinated persuasion attacks between agents have been detected from their messages \citep{tao2026}. Yielding to sustained multi-turn pressure has also been measured \citep{tang2026}.
-Our setting complements studies of collusion in markets and in shared multi-agent tasks \citep{fish2026,lin2025,nakamura2026} by examining the harmful act itself: an agent with tools, files and a credential breaking its operator's rule.
-We add the persuaded agent's activations and score probes, a zero-shot monitor and a trained text classifier on exactly the same calls.
+Monitors that see agents' messages catch more coordinated sabotage \citep{radev2026}, and coordinated persuasion attacks between agents have been detected from their messages \citep{tao2026}.
+We study the harmful act itself: an agent with tools and a credential breaking its operator's rule.
+We add the persuaded agent's activations, and score probes, a zero-shot monitor and a trained text classifier on exactly the same calls.

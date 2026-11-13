@@ -20,7 +20,7 @@ Its example episodes are chosen by one fixed rule: for each model, the leaking t
   \includegraphics[width=\linewidth]{fig6_trajectories.pdf}
   \caption{\textbf{On average, the score jumps at the call that leaks.}
   Last-prompt probe score, as a percentile among that model's scored calls, aligned on each episode's leaking call (top: median over all leaking episodes, with the middle 50\% shaded for test episodes).
-  Bottom: one example test episode per model, chosen by the rule above; individual episodes vary. Numbers at the leaking call give the median percentile there.}
+  Bottom: one example test episode per model, chosen by the rule above; individual episodes vary. Numbers at the leaking call give the median percentile there in the top panels, and that episode's percentile in the bottom panels.}
   \label{fig:trajectories}
 \end{figure}
 
@@ -32,11 +32,9 @@ This does not show what the signal represents.
 \subsection{False alarms}
 \label{app:alarms}
 
-We set each threshold on control calls, so that about 5\% of them alarm.
-At that threshold the reasoning probe catches most leaking calls in development while few calls in refusing episodes alarm.
-Counted per episode, however, a sizeable share of refusing episodes get at least one alarm, because each episode has many calls.
-A threshold set so that about 5\% of control episodes alarm catches about a third of leaking episodes before the first leak.
-On the test episodes, the threshold set on development control calls caught about half of the leaking calls (\cref{app:confirmation}).
+Each per-call threshold is set so that about 5\% of control calls alarm.
+\Cref{tab:alarms} gives, for each model and probe, the share of leaking calls caught and the share of refusing calls and refusing episodes that alarm at that threshold.
+Counted per episode, a sizeable share of refusing episodes get at least one alarm, because each episode has many calls.
 The Qwen3-32B operating points on the test episodes, and how per-call and per-episode rates relate, are in \cref{sec:cost}.
 On the Qwen3-32B test episodes, the probe catches \qwenFreshProbeCaughtWilson{} of leaking calls (Wilson 95\% interval \qwenFreshProbeCaughtWilsonLow{} to \qwenFreshProbeCaughtWilsonHigh{}).
 Jev, at the cutoff that flags no more calls in refusing episodes than the probe, catches \qwenMatchedJevCaught{} (95\% interval \qwenMatchedJevCaughtLow{} to \qwenMatchedJevCaughtHigh{}, from resampling episodes and re-matching the cutoff each time).

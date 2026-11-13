@@ -1,0 +1,36 @@
+\section{How does this work differ from the closest prior work?}
+\label{app:related}
+
+The closest prior work is \citet{fayyazi2026agent}.
+Like us, they forecast an agent's rule-breaking action from its internal states and compare the forecast with text baselines.
+The two studies differ in the setting, in what is predicted and in where the probe reads (\cref{tab:tgk}).
+
+Their main reading comes at the end of the agent's reasoning for a turn, just before it writes the tool call.
+They also read once at the last prompt token of the first turn after the agent reads the decisive fact, to forecast whether the episode will later violate, and the internal states are weak there.
+We read at the last prompt token of every call, before any generation, and ask whether this call leaks.
+They also report that a separate model, reading gpt-oss-20b's trajectories, detects its informed violations.
+Both studies find that a trained text classifier comes close to the probe once the act is near.
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}@{}}
+    \toprule
+    & \citet{fayyazi2026agent} & This work \\
+    \midrule
+    Agents & One agent with mock tools, acting for one user. & A target and a peer agent that share a team channel. \\
+    Pressure & The task itself, which one fact in the environment makes unauthorised. & The peer asks for the secret openly, over up to 20 rounds. \\
+    What is predicted & Whether the episode will later violate; whether the proposed action is unauthorised; whether the final report will be false. & Whether this call leaks the secret; also whether the leak comes this round or the next, and whether the episode ever leaks. \\
+    Reading points & End of a turn's reasoning, before the tool-call markup; last prompt token of the first turn after the decisive fact (AUROC 0.580, against 0.546 for the text classifier); last prompt token before the report. & Last prompt token of every call, before any generation; on gpt-oss-20b, also every token of the call's reasoning, before its public output. \\
+    Labels & A rule check in the environment for violations; an LLM judge for false reports. & An exact string match of the secret in the call's output. \\
+    Negatives and controls & Other actions, and the same action in a matched world where it is authorised. & Calls under the same pressure that do not leak, compared within scenario and round; control episodes in which the peer never asks. \\
+    Text baselines & A TF-IDF classifier on everything the agent has seen and written; zero-shot LLM monitors with and without the agent's reasoning. & A TF-IDF classifier on the call's input or its latest message, with the secret masked; a zero-shot decision model on the same input. Neither reads the reasoning of the call being scored. \\
+    Held-out data & Development and fresh episodes, with fresh scenarios and seeds of the same templates; one test that holds out a whole family of templates. & Held-out scenarios on development episodes; test episodes, which are new episodes in the development scenarios. \\
+    Interventions & Steering, gating and asking an approver, with their effects on violations and task completion. & None; we measure the cost of acting on alarms. \\
+    Other readers & A separate model reading gpt-oss-20b's trajectories detects its informed violations (AUROC 0.86, 0.28 above a placebo). & Not tested. \\
+    Models & Qwen3.8-27B, Muse-Glimmer-30B, Gemma-4-26B-A4B, gpt-oss-20b. & Qwen3-32B, gpt-oss-20b. \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{This work beside \citet{fayyazi2026agent}.} Their numbers are as reported in their paper.}
+  \label{tab:tgk}
+\end{table}
