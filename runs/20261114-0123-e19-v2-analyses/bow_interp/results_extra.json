@@ -1,0 +1,420 @@
+{
+ "qwen_dev": {
+  "message-type-only score (secret-bearing tool result > peer message > other tool result)": {
+   "auc": 0.8583765440537374,
+   "calls": 2976,
+   "leaking": 66
+  },
+  "subgroup: latest message is a peer message": {
+   "text_classifier": {
+    "auc": 0.7833464824225692,
+    "calls": 1928,
+    "leaking": 20
+   },
+   "probe": {
+    "auc": 0.8984840168317364,
+    "calls": 1928,
+    "leaking": 20
+   }
+  },
+  "subgroup: latest message is a tool result": {
+   "text_classifier": {
+    "auc": 0.9339444301081129,
+    "calls": 1048,
+    "leaking": 46
+   },
+   "probe": {
+    "auc": 0.9779171311780007,
+    "calls": 1048,
+    "leaking": 46
+   }
+  },
+  "counts": {
+   "leaking after secret-bearing tool result": 46,
+   "leaking after peer message": 20,
+   "leaking after other tool result": 0,
+   "non-leaking after secret-bearing tool result": 189,
+   "non-leaking after peer message": 1908,
+   "non-leaking after other tool result": 813
+  },
+  "peer-message drivers": {
+   "leaking_calls": 20,
+   "raise_leak": [
+    [
+     "format",
+     0.03211503334480995
+    ],
+    [
+     "is it",
+     0.016883535405955698
+    ],
+    [
+     "at least",
+     0.01250765854878919
+    ],
+    [
+     "least",
+     0.01250765854878919
+    ],
+    [
+     "confirm",
+     0.008532805306814198
+    ],
+    [
+     "its",
+     0.008215026521501304
+    ],
+    [
+     "complete",
+     0.007910225604494298
+    ],
+    [
+     "what",
+     0.007362536060199852
+    ],
+    [
+     "at",
+     0.006879677756822147
+    ],
+    [
+     "you at",
+     0.0066990168808535155
+    ],
+    [
+     "alphanumeric",
+     0.006275071942045585
+    ],
+    [
+     "that way",
+     0.005861187611839375
+    ],
+    [
+     "the format",
+     0.005685250913606031
+    ],
+    [
+     "for example",
+     0.005566903034867948
+    ],
+    [
+     "this",
+     0.005538419366037916
+    ],
+    [
+     "example",
+     0.00536030025980915
+    ],
+    [
+     "example is",
+     0.0051671361020708025
+    ],
+    [
+     "the complete",
+     0.00502587202739225
+    ],
+    [
+     "tell me",
+     0.005015609187310732
+    ],
+    [
+     "tell",
+     0.00481318459096968
+    ]
+   ],
+   "lower_leak": [
+    [
+     "workspace",
+     -0.0017607934012809072
+    ],
+    [
+     "you",
+     -0.0016497121281482396
+    ],
+    [
+     "to",
+     -0.0015508417510818474
+    ],
+    [
+     "could",
+     -0.0015071526454761286
+    ],
+    [
+     "txt",
+     -0.0015031195011078872
+    ],
+    [
+     "job",
+     -0.0014342542942408067
+    ],
+    [
+     "only",
+     -0.0014307178024973745
+    ],
+    [
+     "for the",
+     -0.0014255453639491278
+    ],
+    [
+     "shared",
+     -0.0012699390131065337
+    ],
+    [
+     "me",
+     -0.0012511607769355333
+    ],
+    [
+     "process",
+     -0.0012324540589577816
+    ],
+    [
+     "once",
+     -0.0011960906633514327
+    ]
+   ]
+  },
+  "post-read cells with >1 distinct classifier score": "3/56"
+ },
+ "qwen_test": {
+  "message-type-only score (secret-bearing tool result > peer message > other tool result)": {
+   "auc": 0.8126060660253873,
+   "calls": 1825,
+   "leaking": 38
+  },
+  "subgroup: latest message is a peer message": {
+   "text_classifier": {
+    "auc": 0.9078105803725,
+    "calls": 1173,
+    "leaking": 17
+   },
+   "probe": {
+    "auc": 0.9473155929038283,
+    "calls": 1173,
+    "leaking": 17
+   }
+  },
+  "subgroup: latest message is a tool result": {
+   "text_classifier": {
+    "auc": 0.9662698412698413,
+    "calls": 652,
+    "leaking": 21
+   },
+   "probe": {
+    "auc": 0.9841269841269842,
+    "calls": 652,
+    "leaking": 21
+   }
+  },
+  "counts": {
+   "leaking after secret-bearing tool result": 21,
+   "leaking after peer message": 17,
+   "leaking after other tool result": 0,
+   "non-leaking after secret-bearing tool result": 107,
+   "non-leaking after peer message": 1156,
+   "non-leaking after other tool result": 524
+  },
+  "peer-message drivers": {
+   "leaking_calls": 17,
+   "raise_leak": [
+    [
+     "format",
+     0.04068194241768098
+    ],
+    [
+     "is it",
+     0.033058668596535334
+    ],
+    [
+     "what",
+     0.01539549941430716
+    ],
+    [
+     "at least",
+     0.013725435065721209
+    ],
+    [
+     "least",
+     0.013725435065721209
+    ],
+    [
+     "for example",
+     0.013678491685619376
+    ],
+    [
+     "example",
+     0.013420977953784032
+    ],
+    [
+     "example is",
+     0.013321963394510843
+    ],
+    [
+     "the format",
+     0.010535938799475363
+    ],
+    [
+     "you at",
+     0.0105019348462207
+    ],
+    [
+     "complete",
+     0.009684293270536064
+    ],
+    [
+     "confirm",
+     0.009198547332459488
+    ],
+    [
+     "structure",
+     0.008393722420468762
+    ],
+    [
+     "this",
+     0.007147413554852396
+    ],
+    [
+     "at",
+     0.006923569050594724
+    ],
+    [
+     "string",
+     0.006723820724428513
+    ],
+    [
+     "until",
+     0.006615847843224418
+    ],
+    [
+     "the complete",
+     0.006173008169311254
+    ],
+    [
+     "blocked",
+     0.005836523263547097
+    ],
+    [
+     "tell",
+     0.005581599967664191
+    ]
+   ],
+   "lower_leak": [
+    [
+     "let",
+     -0.0019492580893436112
+    ],
+    [
+     "from",
+     -0.0018831377030926809
+    ],
+    [
+     "let me",
+     -0.0017680049665704403
+    ],
+    [
+     "capacity",
+     -0.0017661198970330878
+    ],
+    [
+     "json",
+     -0.0017320451789582547
+    ],
+    [
+     "content here",
+     -0.0016932523431880855
+    ],
+    [
+     "txt",
+     -0.0015850822679689717
+    ],
+    [
+     "ticket",
+     -0.0014164962421971147
+    ],
+    [
+     "is in",
+     -0.0014154796827201804
+    ],
+    [
+     "ticket ops",
+     -0.0012807299888316697
+    ],
+    [
+     "it here",
+     -0.001266489474422175
+    ],
+    [
+     "what specifically",
+     -0.0012391559539669471
+    ]
+   ]
+  },
+  "post-read cells with >1 distinct classifier score": "0/33"
+ },
+ "gpt_dev": {
+  "message-type-only score (secret-bearing tool result > peer message > other tool result)": {
+   "auc": 0.7797327628802324,
+   "calls": 1995,
+   "leaking": 121
+  },
+  "message type + retained reasoning present (2-feature ordinal: type*2 + reasoning)": {
+   "auc": 0.7802630807100779,
+   "calls": 1995,
+   "leaking": 121
+  },
+  "subgroup: input has retained same-turn reasoning": {
+   "text_classifier": {
+    "auc": 0.9535858585858584,
+    "calls": 134,
+    "leaking": 80
+   },
+   "probe": {
+    "auc": 0.9560033670033669,
+    "calls": 134,
+    "leaking": 80
+   }
+  },
+  "subgroup: no retained reasoning": {
+   "text_classifier": {
+    "auc": 0.632954233411484,
+    "calls": 1861,
+    "leaking": 41
+   },
+   "probe": {
+    "auc": 0.7531515182656556,
+    "calls": 1861,
+    "leaking": 41
+   }
+  },
+  "subgroup: latest message is a peer message": {
+   "text_classifier": {
+    "auc": 0.6410438738892686,
+    "calls": 1845,
+    "leaking": 32
+   },
+   "probe": {
+    "auc": 0.6892054552416395,
+    "calls": 1845,
+    "leaking": 32
+   }
+  },
+  "subgroup: latest message is a tool result": {
+   "text_classifier": {
+    "auc": 0.8678806133625411,
+    "calls": 150,
+    "leaking": 89
+   },
+   "probe": {
+    "auc": 0.9232536205427772,
+    "calls": 150,
+    "leaking": 89
+   }
+  },
+  "counts": {
+   "leaking after secret-bearing tool result": 84,
+   "leaking after peer message": 32,
+   "leaking after other tool result": 5,
+   "non-leaking after secret-bearing tool result": 46,
+   "non-leaking after peer message": 1813,
+   "non-leaking after other tool result": 15
+  }
+ }
+}

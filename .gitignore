@@ -70,3 +70,4 @@ experiments/E10-shi-transfer/refs/
 runs/*e18*/**/fit.json
 runs/*e18*/**/rows.json
 runs/*e18*/payloads.json
+experiments/E19-v2-analyses/bow_interp/cache/

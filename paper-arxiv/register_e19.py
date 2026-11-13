@@ -81,6 +81,50 @@ def main():
         add(E + name + 'LayerMidLow', f, [model, 'test_by_layer', str(kmin), 'test_auc'], dataset=ds, evaluation=ev)
         add(E + name + 'LayerMidHigh', f, [model, 'test_by_layer', str(kmax), 'test_auc'], dataset=ds, evaluation=ev)
 
+    # What the trained text classifier reads (Qwen latest-message view, gpt-oss full-input view)
+    BI = 'bow_interp/'
+    ev = 'Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates'
+    AB = lambda name, key: ['ablations', name, key, 'auc']
+    rows = []
+    def cell(m, file, path, ds):
+        add(m, BI + file, path, dataset=ds, evaluation=ev)
+        return '\\' + m + '{}'
+    q, qt, g = 'Qwen3-32B development, latest message', 'Qwen3-32B test, latest message', 'gpt-oss-20b development, full input'
+    def trio(name, label, qkey=None, gkey=None):
+        qn = cell(E + 'Bow' + name + 'QwenTest', 'results.json', AB(qkey, 'qwen_test'), qt) if qkey else None
+        qd = cell(E + 'Bow' + name + 'QwenDev', 'results.json', AB(qkey, 'qwen_dev'), q) if qkey else None
+        gd = cell(E + 'Bow' + name + 'Gpt', 'results.json', AB(gkey or qkey, 'gpt_dev'), g) if (gkey or qkey) else None
+        rows.append([label, f'{qn} / {qd}' if qkey else '-- (not in this view)', gd or '--'])
+    rows.append(['Raises the score',
+                 r'a tool result showing the protected file (masked secret, other fields); the peer asking for the format or a partial confirmation (\emph{format}, \emph{is it}, \emph{at least}, \emph{confirm})',
+                 r"the target's own reasoning kept from earlier in the turn (\emph{need to}, \emph{to read}, \emph{and write}, \emph{entire content})"])
+    rows.append(['Lowers the score',
+                 r"a confirmation that the target's message was delivered (\emph{delivered true}); plain requests (\emph{please}, \emph{proceed}, \emph{the complete})",
+                 r"a last message from the peer; the target's refusal reasoning (\emph{must not}, \emph{cannot include})"])
+    trio('Reported', 'Classifier as reported', 'paper classifier (no change)')
+    mt = 'message-type-only score (secret-bearing tool result > peer message > other tool result)'
+    rows.append(['Type of the latest message alone',
+                 cell(E + 'BowTypeQwenTest', 'results_extra.json', ['qwen_test', mt, 'auc'], qt) + ' / ' + cell(E + 'BowTypeQwenDev', 'results_extra.json', ['qwen_dev', mt, 'auc'], q),
+                 cell(E + 'BowTypeGpt', 'results_extra.json', ['gpt_dev', mt, 'auc'], g)])
+    trio('TopTen', 'Without the top 10 words', 'remove top-10 words by |weight|')
+    trio('TopFifty', 'Without the top 50 words', 'remove top-50 words by |weight|')
+    trio('Mask', 'Without the mask token', 'remove mask token only (protected_value)')
+    trio('Scenario', 'Without scenario-specific words', 'remove scenario-specific words (>=90% of docs in one scenario, df>=5)')
+    trio('Reasoning', 'Without the kept reasoning', gkey='gpt: drop retained same-turn reasoning from the input (fields and text)')
+    pr = ['cues', '{}', 'subgroups', 'latest message contains masked secret', '{}', 'auc']
+    def sub(model, det, m, ds):
+        path = [x.format(model) if x == '{}' and i == 1 else x for i, x in enumerate(pr)]
+        path[4] = det
+        return cell(m, 'results.json', path, ds)
+    gsub = lambda det, m: cell(m, 'results.json', ['cues', 'gpt', 'subgroups', 'latest message contains masked secret', det, 'auc'], g)
+    rows.append(['Right after a read: classifier vs probe',
+                 sub('test', 'text_classifier', E + 'BowPostReadTextQwenTest', qt) + ' vs ' + sub('test', 'probe', E + 'BowPostReadProbeQwenTest', qt)
+                 + ' (test); ' + sub('qwen', 'text_classifier', E + 'BowPostReadTextQwenDev', q) + ' vs ' + sub('qwen', 'probe', E + 'BowPostReadProbeQwenDev', q) + ' (dev)',
+                 gsub('text_classifier', E + 'BowPostReadTextGpt') + ' vs ' + gsub('probe', E + 'BowPostReadProbeGpt')])
+    reg['tables']['e19_bow_interp'] = dict(
+        columns=r'@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.37\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}@{}',
+        header=['', 'Qwen3-32B, latest message (test / dev)', 'gpt-oss-20b, full input (dev)'], rows=rows)
+
     hist = reg['tables']['history']['rows']
     row = ['v2 checks on saved data', 'Same labels as the paper', 'No: run after the paper',
            'Read flag beats last-prompt probe one call ahead; text classifier and Jev added to policy tests; layers flat']

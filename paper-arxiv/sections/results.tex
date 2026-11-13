@@ -96,7 +96,7 @@ On gpt-oss-20b, Jev ranks leaking calls below other calls of the same scenario a
 On gpt-oss-20b development episodes, at a cutoff where Jev flags no more refusing-episode calls than the probe (\gptossMatchedProbeRefusing{}), Jev catches \gptossMatchedJevCaught{} of leaking calls and the last-prompt probe \gptossMatchedProbeCaught{}.
 The bag-of-words classifier, trained on the same labelled development calls, scores close to the probe on both models.
 On development episodes the probe leads it by a small but reliable \qwenTextGapLatest{} AUROC on Qwen3-32B and \gptossTextGapFull{} on gpt-oss-20b.
-On the test episodes of both models the two are level within noise (\cref{tab:glance}; intervals in \cref{app:shortcuts}).
+On the test episodes of both models the two are level within noise (\cref{tab:glance}; intervals in \cref{app:shortcuts}, and what the classifier reads in \cref{tab:bow-interp}).
 
 Most of the probe's lead over the zero-shot monitor therefore comes from training on labelled calls, and activations add at most a small edge.
 Much of the signal also arrives with the incoming message.

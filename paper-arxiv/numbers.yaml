@@ -24551,6 +24551,490 @@
           "test_auc"
         ]
       }
+    },
+    "eNineteenBowReportedQwenTest": {
+      "value": 0.9574202248198093,
+      "macro": "eNineteenBowReportedQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "paper classifier (no change)",
+          "qwen_test",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowReportedQwenDev": {
+      "value": 0.9251344019507147,
+      "macro": "eNineteenBowReportedQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "paper classifier (no change)",
+          "qwen_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowReportedGpt": {
+      "value": 0.8628839763868715,
+      "macro": "eNineteenBowReportedGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "paper classifier (no change)",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTypeQwenTest": {
+      "value": 0.8126060660253873,
+      "macro": "eNineteenBowTypeQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+        "value_path": [
+          "qwen_test",
+          "message-type-only score (secret-bearing tool result > peer message > other tool result)",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTypeQwenDev": {
+      "value": 0.8583765440537374,
+      "macro": "eNineteenBowTypeQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+        "value_path": [
+          "qwen_dev",
+          "message-type-only score (secret-bearing tool result > peer message > other tool result)",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTypeGpt": {
+      "value": 0.7797327628802324,
+      "macro": "eNineteenBowTypeGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+        "value_path": [
+          "gpt_dev",
+          "message-type-only score (secret-bearing tool result > peer message > other tool result)",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopTenQwenTest": {
+      "value": 0.9557321103027474,
+      "macro": "eNineteenBowTopTenQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-10 words by |weight|",
+          "qwen_test",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopTenQwenDev": {
+      "value": 0.8157206102879103,
+      "macro": "eNineteenBowTopTenQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-10 words by |weight|",
+          "qwen_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopTenGpt": {
+      "value": 0.8694749797038767,
+      "macro": "eNineteenBowTopTenGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-10 words by |weight|",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopFiftyQwenTest": {
+      "value": 0.8772323753885388,
+      "macro": "eNineteenBowTopFiftyQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-50 words by |weight|",
+          "qwen_test",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopFiftyQwenDev": {
+      "value": 0.7375662905458299,
+      "macro": "eNineteenBowTopFiftyQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-50 words by |weight|",
+          "qwen_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowTopFiftyGpt": {
+      "value": 0.6849368860636603,
+      "macro": "eNineteenBowTopFiftyGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove top-50 words by |weight|",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowMaskQwenTest": {
+      "value": 0.955775487977704,
+      "macro": "eNineteenBowMaskQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove mask token only (protected_value)",
+          "qwen_test",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowMaskQwenDev": {
+      "value": 0.9179846268291015,
+      "macro": "eNineteenBowMaskQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove mask token only (protected_value)",
+          "qwen_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowMaskGpt": {
+      "value": 0.8584182072386976,
+      "macro": "eNineteenBowMaskGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove mask token only (protected_value)",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowScenarioQwenTest": {
+      "value": 0.9645727214459902,
+      "macro": "eNineteenBowScenarioQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove scenario-specific words (>=90% of docs in one scenario, df>=5)",
+          "qwen_test",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowScenarioQwenDev": {
+      "value": 0.9263187302515083,
+      "macro": "eNineteenBowScenarioQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove scenario-specific words (>=90% of docs in one scenario, df>=5)",
+          "qwen_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowScenarioGpt": {
+      "value": 0.8561831483525243,
+      "macro": "eNineteenBowScenarioGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "remove scenario-specific words (>=90% of docs in one scenario, df>=5)",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowReasoningGpt": {
+      "value": 0.6098830670705941,
+      "macro": "eNineteenBowReasoningGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "ablations",
+          "gpt: drop retained same-turn reasoning from the input (fields and text)",
+          "gpt_dev",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadTextQwenTest": {
+      "value": 0.5,
+      "macro": "eNineteenBowPostReadTextQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "test",
+          "subgroups",
+          "latest message contains masked secret",
+          "text_classifier",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadProbeQwenTest": {
+      "value": 0.7142857142857143,
+      "macro": "eNineteenBowPostReadProbeQwenTest",
+      "dataset": "Qwen3-32B test, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "test",
+          "subgroups",
+          "latest message contains masked secret",
+          "probe",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadTextQwenDev": {
+      "value": 0.5,
+      "macro": "eNineteenBowPostReadTextQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "qwen",
+          "subgroups",
+          "latest message contains masked secret",
+          "text_classifier",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadProbeQwenDev": {
+      "value": 0.8535353535353535,
+      "macro": "eNineteenBowPostReadProbeQwenDev",
+      "dataset": "Qwen3-32B development, latest message",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "qwen",
+          "subgroups",
+          "latest message contains masked secret",
+          "probe",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadTextGpt": {
+      "value": 0.8759493670886075,
+      "macro": "eNineteenBowPostReadTextGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "gpt",
+          "subgroups",
+          "latest message contains masked secret",
+          "text_classifier",
+          "auc"
+        ]
+      }
+    },
+    "eNineteenBowPostReadProbeGpt": {
+      "value": 0.9320675105485233,
+      "macro": "eNineteenBowPostReadProbeGpt",
+      "dataset": "gpt-oss-20b development, full input",
+      "evaluation": "Within scenario-and-round AUROC; refit with the paper recipe on the same calls and folds; point estimates",
+      "status": "verified",
+      "run": "runs/20261114-0123-e19-v2-analyses",
+      "format": "decimal",
+      "decimals": 2,
+      "source": {
+        "file": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+        "value_path": [
+          "cues",
+          "gpt",
+          "subgroups",
+          "latest message contains masked secret",
+          "probe",
+          "auc"
+        ]
+      }
     }
   },
   "aliases": {
@@ -28398,6 +28882,66 @@
             "key": "eEighteenCTenGptReasoning",
             "ci": true
           }
+        ]
+      ]
+    },
+    "e19_bow_interp": {
+      "columns": "@{}>{\\raggedright\\arraybackslash}p{0.28\\linewidth}>{\\raggedright\\arraybackslash}p{0.37\\linewidth}>{\\raggedright\\arraybackslash}p{0.29\\linewidth}@{}",
+      "header": [
+        "",
+        "Qwen3-32B, latest message (test / dev)",
+        "gpt-oss-20b, full input (dev)"
+      ],
+      "rows": [
+        [
+          "Raises the score",
+          "a tool result showing the protected file (masked secret, other fields); the peer asking for the format or a partial confirmation (\\emph{format}, \\emph{is it}, \\emph{at least}, \\emph{confirm})",
+          "the target's own reasoning kept from earlier in the turn (\\emph{need to}, \\emph{to read}, \\emph{and write}, \\emph{entire content})"
+        ],
+        [
+          "Lowers the score",
+          "a confirmation that the target's message was delivered (\\emph{delivered true}); plain requests (\\emph{please}, \\emph{proceed}, \\emph{the complete})",
+          "a last message from the peer; the target's refusal reasoning (\\emph{must not}, \\emph{cannot include})"
+        ],
+        [
+          "Classifier as reported",
+          "\\eNineteenBowReportedQwenTest{} / \\eNineteenBowReportedQwenDev{}",
+          "\\eNineteenBowReportedGpt{}"
+        ],
+        [
+          "Type of the latest message alone",
+          "\\eNineteenBowTypeQwenTest{} / \\eNineteenBowTypeQwenDev{}",
+          "\\eNineteenBowTypeGpt{}"
+        ],
+        [
+          "Without the top 10 words",
+          "\\eNineteenBowTopTenQwenTest{} / \\eNineteenBowTopTenQwenDev{}",
+          "\\eNineteenBowTopTenGpt{}"
+        ],
+        [
+          "Without the top 50 words",
+          "\\eNineteenBowTopFiftyQwenTest{} / \\eNineteenBowTopFiftyQwenDev{}",
+          "\\eNineteenBowTopFiftyGpt{}"
+        ],
+        [
+          "Without the mask token",
+          "\\eNineteenBowMaskQwenTest{} / \\eNineteenBowMaskQwenDev{}",
+          "\\eNineteenBowMaskGpt{}"
+        ],
+        [
+          "Without scenario-specific words",
+          "\\eNineteenBowScenarioQwenTest{} / \\eNineteenBowScenarioQwenDev{}",
+          "\\eNineteenBowScenarioGpt{}"
+        ],
+        [
+          "Without the kept reasoning",
+          "-- (not in this view)",
+          "\\eNineteenBowReasoningGpt{}"
+        ],
+        [
+          "Right after a read: classifier vs probe",
+          "\\eNineteenBowPostReadTextQwenTest{} vs \\eNineteenBowPostReadProbeQwenTest{} (test); \\eNineteenBowPostReadTextQwenDev{} vs \\eNineteenBowPostReadProbeQwenDev{} (dev)",
+          "\\eNineteenBowPostReadTextGpt{} vs \\eNineteenBowPostReadProbeGpt{}"
         ]
       ]
     }

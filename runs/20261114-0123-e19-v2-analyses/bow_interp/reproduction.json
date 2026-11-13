@@ -1,0 +1,23 @@
+{
+ "gpt_dev_full_input": {
+  "reproduced_auc": 0.8628839763868715,
+  "saved_run_auc": 0.8628839763868715,
+  "max_abs_score_diff_vs_saved": 0.0,
+  "calls": 1995,
+  "leaking": 121
+ },
+ "qwen_dev_latest_input": {
+  "reproduced_auc": 0.9251344019507147,
+  "saved_run_auc": 0.9251344019507147,
+  "max_abs_score_diff_vs_saved": 0.0,
+  "calls": 2976,
+  "leaking": 66
+ },
+ "qwen_test_latest_input": {
+  "reproduced_auc": 0.9574202248198093,
+  "saved_run_auc": 0.9574202248198093,
+  "max_abs_score_diff_vs_saved": 0.0,
+  "calls": 1825,
+  "leaking": 38
+ }
+}

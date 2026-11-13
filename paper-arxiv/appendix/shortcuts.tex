@@ -60,6 +60,23 @@ On the gpt-oss-20b test episodes, the full-input classifier, fit the same way, s
 Its paired difference from the last-prompt probe is \gptossFreshCallProbeMinusBow{} \gptossFreshCallProbeMinusBowCI{}, and from the reasoning probe \gptossFreshReasoningMinusBow{} \gptossFreshReasoningMinusBowCI{}.
 Both intervals include zero, so on the test episodes of both models the classifier is level with the probes within noise.
 
+\paragraph{What the classifier reads.}
+We inspected the classifier's weights, and refit it with groups of words removed (\cref{tab:bow-interp}).
+On Qwen3-32B it mostly reads what kind of message came last: a tool result showing the protected file raises the score, and a confirmation that the target's own message was delivered lowers it.
+A score from the type of the latest message alone reaches \eNineteenBowTypeQwenTest{} on the test calls.
+Among peer messages, requests for the secret's format or for a partial confirmation raise the score.
+On gpt-oss-20b, the full input includes the target's reasoning from earlier steps of the same turn, such as a plan to read the file and write its entire content, and the classifier mostly reads that; without it, the score falls to \eNineteenBowReasoningGpt{}.
+Removing the mask token or scenario-specific words changes little, and no single word carries the score.
+These are point estimates from single refits, and the weights describe a linear model on these episodes, not why the target leaks.
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+  \input{tables/e19_bow_interp.tex}
+  \caption{\textbf{What the trained text classifier reads.} Words are examples among the highest weights. Numbers are AUROC within scenario and round, from refits with the paper's recipe on the same calls and folds, without intervals. The last row compares the classifier and the probe on calls whose latest input is the protected file.}
+  \label{tab:bow-interp}
+\end{table}
+
 \begin{table}[h]
   \centering
   \small

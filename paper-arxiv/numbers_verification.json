@@ -5889,6 +5889,131 @@
       "key": "eNineteenGptLayerMidHigh",
       "source": "runs/20261114-0123-e19-v2-analyses/task4_layers.json",
       "sha256": "abc1fbbabcfa72773b0a325dd2c40ffbedf5f9e75c5808a2604ab2c216f3d1c4"
+    },
+    {
+      "key": "eNineteenBowReportedQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowReportedQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowReportedGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTypeQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+      "sha256": "1340a45adf62824ae96f93470c97469af86ede14792e948c9c5c157ad48e9c80"
+    },
+    {
+      "key": "eNineteenBowTypeQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+      "sha256": "1340a45adf62824ae96f93470c97469af86ede14792e948c9c5c157ad48e9c80"
+    },
+    {
+      "key": "eNineteenBowTypeGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results_extra.json",
+      "sha256": "1340a45adf62824ae96f93470c97469af86ede14792e948c9c5c157ad48e9c80"
+    },
+    {
+      "key": "eNineteenBowTopTenQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTopTenQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTopTenGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTopFiftyQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTopFiftyQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowTopFiftyGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowMaskQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowMaskQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowMaskGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowScenarioQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowScenarioQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowScenarioGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowReasoningGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadTextQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadProbeQwenTest",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadTextQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadProbeQwenDev",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadTextGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
+    },
+    {
+      "key": "eNineteenBowPostReadProbeGpt",
+      "source": "runs/20261114-0123-e19-v2-analyses/bow_interp/results.json",
+      "sha256": "995b7131f4aea81aa91813de8a0042c2b034da0cd037f4f439b655c7735d6de5"
     }
   ],
   "pending": []
