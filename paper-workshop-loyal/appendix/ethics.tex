@@ -1,0 +1,32 @@
+\section{What are the dual-use risks, and why release anyway?}
+\label{app:ethics}
+
+The released prompts and findings could help someone pressure an agent into leaking, or evade a probe.
+We release everything anyway, because the setup is synthetic, the tactics are already published, and the defensive lessons are new.
+
+\paragraph{Risks.}
+The recruiting prompts and the whole-block copy strategy are reusable, and could help someone draw disclosures from other agents.
+The results also show where monitoring is weak.
+A model that leaks soon after the request leaves little to forecast, and a monitor that sees only the target's actions misses the pressure.
+Because the probe scores single calls, an attacker might spread pressure across calls, or leak through a paraphrase or an encoding.
+A released probe could also be used to tune pressure until the probe stops firing.
+Our probes are not hardened against this kind of adaptation.
+
+\paragraph{Why the uplift is low.}
+Prior work already describes the persuasion tactics we use \citep{nakamura2026} and models giving in to sustained pressure over many turns \citep{tang2026}.
+The whole-block strategy exploits a simple failure, copying a block that happens to contain a protected field.
+It is not a new attack technique, and we saw it only on open-weight models in synthetic scenarios.
+
+\paragraph{Why release.}
+Replication depends on the prompts, transcripts and scoring code.
+The results also give defenders concrete advice.
+A rule that names a protected field fails when the whole block is copied, so protected values should be filtered at the action itself.
+Monitors should see the peer's messages, not only the target's actions.
+A probe on the target's activations could add an earlier warning on top of such a filter.
+The weak spots we report describe how our detectors performed, not a method for evading them.
+
+\paragraph{What we release and what is synthetic.}
+We release all peer prompts, the monitor prompts, the scoring code and the transcripts (\cref{app:prompts}).
+Nothing is withheld.
+All tools are mocked in memory, and every protected value is a randomly generated fake.
+No real system, credential or network resource is touched.

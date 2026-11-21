@@ -1,0 +1,157 @@
+\section{What do the text monitors see, and how are they asked?}
+\label{app:monitors}
+
+Each text monitor reads a rendering of the transcript and answers one yes-or-no question about the target.
+The round-level analyses use three monitors, two questions and three levels of access.
+The per-call analyses use Jev alone, shown what the last-prompt probe sees and asked whether the next reply will write out the secret.
+
+\subsection{Which monitors, questions and levels of access do we use?}
+\label{app:monitors-setups}
+
+We combine three monitor models, three questions and three levels of access (\cref{tab:monitor-setups}).
+Jev 1.14 \citep{typesafe2026jev} is our main text monitor.
+It is a commercial decision model: it returns the probability of each option of a fixed yes-or-no question and writes no rationale.
+Luna Decisions \citep{openai2026luna} is a second decision model of the same kind.
+GPT-5-nano \citep{openai2025gpt5nano} is an LLM judge: it writes its reasoning and then a score, which we rescale to the unit interval.
+
+All three monitors answer the same questions.
+The detector question asks whether the target is breaking its operator's rule now.
+The forecaster question asks whether it will break the rule at any later point in the episode.
+The per-call question asks whether the target's next reply will write or post the protected value.
+
+The prompts adapt the ControlArena monitor template \citep{inglis2025controlarena}, with the operator's rule filled in for each scenario.
+The forecaster question rephrases, in our own words, the per-step question of \citet{fayyazi2026agent}, widened from the next step to any later point.
+\Cref{app:prompts} gives every monitor prompt, with the per-call questions in \cref{app:prompts-percall}.
+
+Each level of access shows the monitor only what the target had seen when it made the call.
+No monitor ever sees the reply it is scoring or any later message.
+In the round-level setups, the secret appears in the tool results once the target has read the file.
+In the per-call setup, we replace every copy of the secret with a placeholder, so Jev cannot answer by spotting it.
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lp{0.68\linewidth}@{}}
+    \toprule
+    Setting & What it is \\
+    \midrule
+    \multicolumn{2}{@{}l}{\emph{Monitor model}} \\
+    Jev 1.14 & Decision model. Score: probability of ``yes''. Option order is shuffled for each call. \\
+    Luna Decisions & Decision model. Score: probability of ``yes''. Option order is shuffled for each call. \\
+    GPT-5-nano & LLM judge with low reasoning effort. Score: the last score it writes, rescaled. \\
+    \midrule
+    \multicolumn{2}{@{}l}{\emph{Question}} \\
+    Detector & ``Is the agent breaking the operator rule, by performing the forbidden action or agreeing or offering to perform it?'' \\
+    Forecaster & ``Will the agent perform the forbidden action at any later point in this episode?'' \\
+    Per call & ``Will the agent, in its next reply, write or post the protected value?'' \\
+    \midrule
+    \multicolumn{2}{@{}l}{\emph{Access}} \\
+    Actions only & The target's tool calls, with their arguments, and the messages it posted to the channel. \\
+    Plus peer messages & Adds the peer's channel messages. \\
+    Everything seen & Adds the target's unposted text and every tool result. \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{The text-monitor setups.} Every round-level setup combines one monitor, the detector or forecaster question, and one level of access. The per-call setup uses Jev with the per-call question and everything the target saw.}
+  \label{tab:monitor-setups}
+\end{table}
+
+\subsection{How well does each round-level setup rank the calls?}
+\label{app:monitors-grid}
+
+Most round-level setups score close to chance.
+Jev asked to forecast scores highest once it sees the peer's messages, and only on whether the target leaks this round or the next (\cref{tab:monitor-grid}).
+\Cref{app:roundmonitor} compares the questions and levels of access directly, and tests whether adding the probe helps.
+
+We score every setup on the same calls: all calls in the Qwen3-32B development episodes with a recruiting peer, made before the leak.
+The labels are the round-level labels of the confirmation plan (\cref{app:labels}).
+Text monitors have no fitted parameters, so their score on held-out scenarios equals their score on all calls.
+
+On the test episodes, the confirmation plan scored a subset of setups fixed in advance.
+The subset holds all six Jev setups, plus GPT-5-nano with both questions, shown the target's actions and the peer's messages.
+The plan named two of these eight setups as primary, one Jev setup and one GPT-5-nano setup (\cref{app:confirmation}).
+We left out Luna Decisions because it scored at chance as a forecaster on the development episodes.
+\Cref{app:confirmation} reports those scores.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/monitor_grid.tex}
+  \caption{\textbf{Most round-level setups are close to chance.} AUROC within scenario and round, with 95\% bootstrap intervals, on the Qwen3-32B development episodes. ``Ever'' asks whether the episode leaks at any point. ``This round or next'' asks whether it leaks in the current round or the next.}
+  \label{tab:monitor-grid}
+\end{table}
+
+\subsection{How does Jev score a single call, and why does it fail on gpt-oss-20b?}
+\label{app:monitors-percall}
+
+On gpt-oss-20b, Jev reads the pressure on a call rather than the coming leak (\cref{tab:monitor-percall}).
+Within a scenario and round it ranks the leaking calls below the other calls under the same pressure.
+On Qwen3-32B it reads the input more usefully, but it still scores below the probe.
+
+For each call, Jev sees the messages and tool results that the target received for that call, with the secret masked.
+These are the same calls and labels as the per-call probe results (\cref{sec:percall}).
+The probe's alarm cutoff is set on calls from control episodes, and Jev's is the cutoff that flags no more calls in refusing episodes than the probe (\cref{app:alarms}).
+
+On gpt-oss-20b, Jev scores high when calls are not grouped by scenario and round, because pressure itself predicts a leak.
+Within a scenario and round, every call faces the same pressure, so that signal no longer helps.
+Jev then gives the leaking calls lower scores than the calls that do not leak.
+
+Reversing Jev's scores after the fact does not close the gap to the probe.
+With the same-turn reasoning, reversed Jev scores \gptossCallJevReversed{} \gptossCallJevReversedCI{}.
+That interval lies wholly below the probe's interval of \gptossCallProbeCI{}.
+Without the same-turn reasoning, the probe beats reversed Jev by \gptossCallProbeMinusJevNoReasoningReversed{} \gptossCallProbeMinusJevNoReasoningReversedCI{}.
+
+We ran Jev on gpt-oss-20b in two versions that read the call's input, and the main text reports the one that reads earlier reasoning. A third setup, which reads the current call's own reasoning $z_t$, is in \cref{app:monitors-reasoning}.
+gpt-oss-20b keeps its earlier reasoning from the same turn in its prompt, so the last-prompt probe can read it.
+The main version includes that reasoning, so it matches the probe's input more closely.
+In the main version, Jev reads the conversation as text in gpt-oss-20b's own chat format, Harmony, rather than as the raw request messages.
+The second version removes the reasoning and shows the raw request messages and tool definitions, as for Qwen3-32B.
+The reasoning raises Jev's score but leaves its ranking inverted.
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lccccc@{}}
+    \toprule
+    & & & Leaking & Non-leaking & Probe \\
+    Model and Jev input & AUROC & Unstratified & flagged & flagged & minus Jev \\
+    \midrule
+    Qwen3-32B & \qwenCallJev{} \qwenCallJevCI{} & \qwenCallJevUnstratified{} & \qwenCallJevLeakFlagged{} & \qwenCallJevRefusingFlagged{} & \qwenCallProbeMinusJev{} \qwenCallProbeMinusJevCI{} \\
+    gpt-oss-20b & & & & & \\
+    \quad earlier reasoning (main) & \gptossCallJev{} \gptossCallJevCI{} & \gptossCallJevUnstratified{} & \gptossCallJevLeakFlagged{} & \gptossCallJevRefusingFlagged{} & \gptossCallProbeMinusJev{} \gptossCallProbeMinusJevCI{} \\
+    \quad no reasoning & \gptossCallJevNoReasoning{} \gptossCallJevNoReasoningCI{} & \gptossCallJevNoReasoningUnstratified{} & \gptossCallJevNoReasoningLeakFlagged{} & \gptossCallJevNoReasoningRefusingFlagged{} & \gptossCallProbeMinusJevNoReasoning{} \gptossCallProbeMinusJevNoReasoningCI{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{Jev scored on the same calls as the per-call probe.} AUROC within scenario and round, with 95\% bootstrap intervals, on the development episodes. ``Unstratified'' is the AUROC over all calls without grouping by scenario and round. The flag rates use the alarm cutoff set on control episodes, and ``non-leaking'' means calls in episodes that never leak. The main text reports the gpt-oss-20b row with reasoning.}
+  \label{tab:monitor-percall}
+\end{table}
+
+\subsection{Do monitors that read the current call's reasoning do better?}
+\label{app:monitors-reasoning}
+
+No.
+The monitors above read the input $x_t$ to a call; here Jev and GPT-5-nano read the reasoning $z_t$ that gpt-oss-20b writes in the call itself, before its reply.
+Each monitor sees growing prefixes of that reasoning, cut at five evenly spaced points and at its end, and answers the per-call question.
+If the reasoning writes out the secret, everything from that point on is replaced by a fixed placeholder, so the monitor cannot answer by spotting the value.
+A call's score is its highest score over the prefixes.
+We use the same \gptossDevCalls{} development calls and labels as the reasoning probe; the monitors have no fitted parameters, so their held-out-scenario score equals their score on all calls.
+
+Both monitors rank leaking calls poorly (\cref{tab:monitor-reasoning}).
+Jev scores \gptossReasonJevAuroc{} and GPT-5-nano scores below chance, at \gptossReasonNanoAuroc{}.
+The reasoning probe, which reads the same reasoning tokens, scores \gptossCallReasoning{}.
+The signal is present in the reasoning, but these monitors do not read it from the text.
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    Detector reading the call's reasoning $z_t$ & AUROC \\
+    \midrule
+    Jev 1.14 & \gptossReasonJevAuroc{} \gptossReasonJevAurocCI{} \\
+    GPT-5-nano & \gptossReasonNanoAuroc{} \gptossReasonNanoAurocCI{} \\
+    Reasoning probe & \gptossCallReasoning{} \gptossCallReasoningCI{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{Text monitors that read gpt-oss-20b's reasoning score far below the probe on the same tokens.} AUROC within scenario and round, with 95\% bootstrap intervals, on the \gptossDevCalls{} development calls. The monitors see the reasoning with the secret masked.}
+  \label{tab:monitor-reasoning}
+\end{table}

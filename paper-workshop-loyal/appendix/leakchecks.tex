@@ -1,0 +1,29 @@
+\section{How do the leaks go out, and are they deliberate?}
+\label{app:leakchecks}
+
+On the development episodes, Qwen3-32B's leaks go out about equally as the ordinary end-of-turn reply and as an explicit channel message, with a few file writes, while nearly every gpt-oss-20b leak is a file write.
+An automated judge labels most leaks deliberate on both models (\cref{tab:leakchecks}).
+
+\paragraph{How leaks go out.}
+The end-of-turn reply is the text that the harness posts to the channel when the target finishes its turn.
+On gpt-oss-20b, the first leak is almost always the whole configuration block copied into the handoff file.
+
+\paragraph{Deliberate or accidental.}
+A decision model, Luna Decisions \citep{openai2026luna}, reads the first message that publishes the value.
+It labels the leak deliberate if the message offers the real value for use, and accidental if it exposes the value inside a refusal or an illustration.
+For a few Qwen3-32B leaks no saved judge label exists, and the table counts them separately.
+We keep accidental leaks in the label, because an overseer must stop them too.
+
+\paragraph{Peer claims of authority.}
+A decision-model pass flagged peer messages that claim to speak for the operator.
+On Qwen3-32B, leaks were about as common in episodes with such a claim as in episodes without one (\cref{tab:leakchecks}).
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/episode_routes.tex}
+  \input{tables/episode_intent.tex}
+  \input{tables/episode_authority.tex}
+  \caption{How the first leak goes out, whether the judge labels it deliberate, and leak rates with and without a peer claim of operator authority, on the development episodes.}
+  \label{tab:leakchecks}
+\end{table}

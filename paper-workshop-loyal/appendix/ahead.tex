@@ -1,0 +1,96 @@
+\section{Does the probe warn early, and how many false alarms would it raise?}
+\label{app:ahead}
+
+
+The probe warns about the call that leaks, not earlier ones.
+At a threshold set for few false alarms per call, many refusing episodes still get at least one alarm (\cref{tab:alarms}).
+
+\paragraph{One call ahead.}
+Asked whether the next call will leak, with the leaking call removed, the probe is much weaker on both models.
+On gpt-oss-20b, nearly all of the calls just before a leak are reads of the protected file.
+A flag for that read scores \eNineteenReadFlagNext{} \eNineteenReadFlagNextCI{}, above the last-prompt probe (\gptossStrictNextProbe{}; paired difference \eNineteenProbeMinusReadFlagNext{} \eNineteenProbeMinusReadFlagNextCI{}) and close to the reasoning probe (\eNineteenReasoningNext{} \eNineteenReasoningNextCI{}).
+The flag is taken from the call's own tool call, so it is a diagnostic rather than a warning before the call.
+Among those reads, the probe still separates the ones followed by a leak.
+
+\paragraph{Score across an episode.}
+\Cref{fig:trajectories} aligns each leaking episode on its leaking call and shows the probe's score as a percentile among that model's scored calls.
+On average, the score is lower over the calls before the leak and rises sharply at the leaking call, on both models and both sets of episodes, although individual episodes vary.
+Its example episodes are chosen by one fixed rule: for each model, the leaking test episode of median length among those with at least five scored calls.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.79\linewidth]{fig6_trajectories.pdf}
+  \caption{\textbf{On average, the score jumps at the call that leaks.}
+  Last-prompt probe score, as a percentile among that model's scored calls, aligned on each episode's leaking call (top: median over all leaking episodes, with the middle 50\% shaded for test episodes).
+  Bottom: one example test episode per model, chosen by the rule above; individual episodes vary. Numbers at the leaking call give the median percentile there in the top panels, and that episode's percentile in the bottom panels.}
+  \label{fig:trajectories}
+\end{figure}
+
+\paragraph{Where in the call.}
+gpt-oss-20b's reasoning is short, and most of the reasoning probe's first alarms on leaking calls fire at the first reasoning token.
+The signal is present when the call starts, which fits the result that the incoming message alone carries much of it (\cref{app:shortcuts}).
+This does not show what the signal represents.
+
+\subsection{False alarms}
+\label{app:alarms}
+
+Each per-call threshold is set so that about 5\% of control calls alarm.
+\Cref{tab:alarms} gives, for each model and probe, the share of leaking calls caught and the share of refusing calls and refusing episodes that alarm at that threshold.
+Counted per episode, a sizeable share of refusing episodes get at least one alarm, because each episode has many calls.
+The Qwen3-32B operating points on the test episodes, and how per-call and per-episode rates relate, are in \cref{sec:cost}.
+On the Qwen3-32B test episodes, the probe catches \qwenFreshProbeCaughtWilson{} of leaking calls (Wilson 95\% interval \qwenFreshProbeCaughtWilsonLow{} to \qwenFreshProbeCaughtWilsonHigh{}).
+Jev, at the cutoff that flags no more calls in refusing episodes than the probe, catches \qwenMatchedJevCaught{} (95\% interval \qwenMatchedJevCaughtLow{} to \qwenMatchedJevCaughtHigh{}, from resampling episodes and re-matching the cutoff each time).
+\Cref{tab:episode-calibration} compares the per-call and per-episode thresholds on both models, with the share of flagged calls that are real leaks and the gap between control and refusing traffic.
+
+\begin{table}[h]
+  \centering
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \input{tables/episode_calibration.tex}
+  \caption{Per-call and per-episode thresholds on the test episodes: precision of the flagged calls, leaking episodes caught by their first leak, refusing episodes and calls flagged, and the same rates on control traffic. Recruiting calls come from leaking and refusing episodes; control calls come from control episodes and are counted separately. Jev's per-call row uses the cutoff that flags no more refusing calls than the probe. Precision counts every flagged recruiting call, including calls before the leak in leaking episodes, so its denominator is not the sum of the other columns.}
+  \label{tab:episode-calibration}
+\end{table}
+A deployed alarm would need its threshold set per episode, as \citet{gao2026} also argues.
+\Cref{fig:alarm-tradeoff} shows the full trade-off between leaking calls caught and refusing calls alarmed for the probe and Jev on the same calls.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.79\linewidth]{fig7_alarm_tradeoffs.pdf}
+  \caption{\textbf{Leaking calls caught against refusing calls alarmed, as the threshold moves.}
+  Rates are unstratified, counted over all calls, and negatives are calls in episodes that never leak; circles mark the probe's threshold set on control calls, which for the gpt-oss-20b test episodes is the threshold committed before they were collected, and squares mark Jev at the cutoff that alarms on no more refusing calls than the probe.
+  Jev on gpt-oss-20b was scored only on development episodes. Labels give the share of leaking calls caught and of refusing calls alarmed at each marker.}
+  \label{fig:alarm-tradeoff}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/alarms.tex}
+  \caption{Alarm rates at thresholds set on control calls or control episodes; Jev's threshold flags no more refusing calls than the probe.}
+  \label{tab:alarms}
+\end{table}
+
+\subsection{Does a second check on the same input help?}
+\label{app:cascade}
+
+No detectable gain.
+We paired the probe with a second detector on the Qwen3-32B test episodes and halted an episode at the first call that both flag.
+The second detector was either Jev or the bag-of-words classifier, fit once on all development calls and scored on the test calls.
+With the same cap on refusing episodes halted, no pairing catches more leaking episodes than the probe alone with a stricter threshold, and the pairing with Jev catches fewer (\cref{fig:cascade,tab:cascade}).
+At these strict thresholds the second detector misses most leaking episodes on its own.
+Every threshold is chosen on the test episodes, which favours the pairings because they have more thresholds to tune.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.55\linewidth]{fig9_cascade.pdf}
+  \caption{\textbf{A second check on the same input does not improve the trade-off.} Leaking episodes caught against refusing episodes halted, as thresholds move, on Qwen3-32B test episodes, for the probe alone and for the probe at its lenient threshold paired with Jev or with the bag-of-words classifier. Dots mark the thresholds chosen for at most 5\% and at most 10\% of refusing episodes halted; the numbers above those lines are the share of leaking episodes caught there (\cref{tab:cascade}).}
+  \label{fig:cascade}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/cascade.tex}
+  \caption{Leaking episodes caught at a fixed share of refusing episodes halted, Qwen3-32B test episodes, with 95\% episode-bootstrap intervals in which thresholds are chosen again in each draw. ``Lenient'' keeps the probe at its control-call threshold; ``grid'' also chooses the probe's threshold. The last number in each cascade cell is its difference from the probe alone, in episodes.}
+  \label{tab:cascade}
+\end{table}

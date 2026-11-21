@@ -1,0 +1,20 @@
+\section{Further limitations}
+\label{app:limitations}
+
+These limitations matter less for the headlines than those in \cref{sec:discussion}.
+
+\paragraph{One peer strategy on gpt-oss-20b.}
+The gpt-oss-20b leaks come from one peer strategy, a delayed request to copy the whole configuration block, so they may reflect careless copying of an instruction as much as giving in to pressure.
+
+\paragraph{Warning about the current call only.}
+One call ahead the signal is much weaker, and on gpt-oss-20b it mostly reflects the file read that precedes the leak (\cref{app:ahead}).
+
+\paragraph{False alarms per episode.}
+At a per-call threshold, most refusing Qwen3-32B episodes see at least one flag, which suits escalating single calls rather than halting the agent (\cref{sec:cost}).
+The stricter per-episode thresholds, for the probe alone and for the paired detectors, are chosen on the test episodes, so they show the trade-off rather than test a threshold fixed in advance.
+Calls before the first read of the protected file are not scored.
+The target reads the file in the first round in \qwenPreReadRoundOne{} of \qwenPreReadEpisodes{} Qwen3-32B test episodes, so there are \qwenPreReadCalls{} such calls against \qwenFreshCalls{} scored ones, but their false-alarm rate is unmeasured.
+
+\paragraph{Automated labels.}
+The leak label is an exact match on the tool log.
+Whether a leak was deliberate or accidental, which we use only to describe the leaks, comes from an automated judge (\cref{app:leakchecks}).

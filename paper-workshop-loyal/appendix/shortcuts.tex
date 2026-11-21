@@ -1,0 +1,115 @@
+\section{Is the probe reading pressure, the secret string or the read step?}
+\label{app:shortcuts}
+
+The probe beats each of them, although the read flag alone scores well (\cref{fig:shortcuts}); one call before a leak on gpt-oss-20b, a flag for the call's own read beats the last-prompt probe (\cref{app:ahead}).
+A probe that sees only the incoming peer message and tool results also scores high, so much of the signal arrives with the input (\cref{tab:shortcuts}).
+
+\paragraph{Pressure.}
+Every scored call comes from an episode with a recruiting peer, and we compare it only with calls in the same scenario and round.
+On gpt-oss-20b every scored call also follows the peer's request, and the probe applied to the calls between the read and the request, scored against whether the episode ever leaks, stays at chance.
+
+\paragraph{The secret string.}
+On gpt-oss-20b, almost no leaking call names the value in its reasoning.
+Fixed keyword rules on the reasoning, written before scoring, do no better than chance.
+
+\paragraph{The read step.}
+The call that leaks often comes right after the target reads the protected file.
+A flag for ``the latest input is the protected file's contents'' therefore scores well on both models, and the probe beats it by \qwenProbeMinusReadStep{} on Qwen3-32B and \gptossProbeMinusReadFlag{} on gpt-oss-20b (paired).
+Among the calls that come right after a read, the probe still separates those that leak (\qwenPostReadProbe{} on Qwen3-32B, \gptossPostReadProbe{} on gpt-oss-20b).
+On these Qwen3-32B calls the latest-message text classifier scores at chance, because almost all of them share one latest message, and the full-input classifier, which also sees the agent's earlier replies, scores \eNineteenPostReadBowFull{} \eNineteenPostReadBowFullCI{}.
+The probe's lead over it, \eNineteenPostReadProbeMinusBowFull{} \eNineteenPostReadProbeMinusBowFullCI{}, rests on 15 groups and just includes zero.
+These within-subset scores, and the handoff-write score below, use only the scenario-and-round groups that hold both kinds of call, which cover most but not all of the subset's leaking calls.
+
+\paragraph{The target's own earlier promise.}
+The probe reads the whole input, including the target's own earlier messages, so it might read back an earlier promise such as ``fine, I'll send it''.
+We flagged every scored call on the test episodes whose earlier target messages agree or offer to share the value, by asking Jev with the value masked, and recomputed the probes' AUROC from their saved scores without the flagged calls (\cref{tab:precommitment}).
+On Qwen3-32B such earlier promises are rare.
+On gpt-oss-20b about one leaking call in five follows one, mostly in its earlier reasoning in the same turn.
+Removing those calls changes the score little on both models.
+A blind reviewer agreed with Jev's flag on \precommitJevReviewAgreements{} of \precommitJevReviewSample{} sampled calls, counting earlier reasoning as a promise; a fixed keyword list agreed poorly, so we do not use it.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/precommitment.tex}
+  \caption{Earlier promises to share, on the test episodes: how many leaking and non-leaking calls follow one, and the probe's AUROC with and without those calls.}
+  \label{tab:precommitment}
+\end{table}
+
+\paragraph{What arrives with the input.}
+A second replay on gpt-oss-20b saved the incoming segment of each prompt, which is the latest peer message and tool results, and every generated token up to the secret.
+A probe on the incoming segment alone also ranks the leaking calls highly, but alarms on far more refusing calls at the same threshold.
+A probe that also reads the tokens generated up to the secret ranks them almost perfectly.
+For an exact string, an output filter does the same.
+Both use one layer, one seed and a reduced version of a production streaming recipe \citep{cunningham2026}.
+
+\paragraph{The handoff-file write.}
+On gpt-oss-20b, almost every leak copies the configuration block into the handoff file, so the probe might detect an upcoming file write rather than a leak.
+A baseline that knows only whether the call's action is a file write scores well, but among the calls that write the handoff file the probe still separates leaks from non-leaks (\cref{tab:text-baselines}).
+
+\paragraph{A trained text classifier.}
+To test whether the input text alone carries the signal, we trained a bag-of-words classifier (TF-IDF over word unigrams and bigrams, then logistic regression) on each call's input, with the secret masked, on the same calls, folds and weights as the probe.
+Its settings are in \cref{tab:detector-settings}.
+We report two views of the input: the full input, and only its latest message.
+The latest message is narrower than what the incoming-only probe above reads, which is every message and tool result added since the previous call.
+The full input is long and largely repeats a fixed template, which may dilute what a bag-of-words model can find in it.
+The latest-message classifier comes close to the probe on Qwen3-32B, and the full-input classifier on gpt-oss-20b; on development episodes, against every view the probe keeps an edge whose interval excludes zero (\cref{tab:text-baselines}).
+So most of the per-call signal is present in the text the model reads, and the probe's large margin over the zero-shot monitor comes mostly from training on these labels rather than from reading activations.
+On the Qwen3-32B test episodes, the latest-message classifier, fit on all development calls, scores \qwenFreshCallBow{}, and the probe's paired edge over it is \qwenFreshCallProbeMinusBow{} (95\% interval \qwenFreshCallProbeMinusBowLow{} to \qwenFreshCallProbeMinusBowHigh{}), which includes zero.
+On the gpt-oss-20b test episodes, the full-input classifier, fit the same way, scores \gptossFreshCallBow{} \gptossFreshCallBowCI{}.
+Its paired difference from the last-prompt probe is \gptossFreshCallProbeMinusBow{} \gptossFreshCallProbeMinusBowCI{}, and from the reasoning probe \gptossFreshReasoningMinusBow{} \gptossFreshReasoningMinusBowCI{}.
+Both intervals include zero, so on the test episodes of both models the classifier is level with the probes within noise.
+
+\paragraph{What the classifier reads.}
+We inspected the classifier's weights, and refit it with groups of words removed (\cref{tab:bow-interp}).
+On Qwen3-32B it mostly reads what kind of message came last: a tool result showing the protected file raises the score, and a confirmation that the target's own message was delivered lowers it.
+A score from the type of the latest message alone reaches \eNineteenBowTypeQwenTest{} on the test calls.
+Among peer messages, requests for the secret's format or for a partial confirmation raise the score.
+On gpt-oss-20b, the full input includes the target's reasoning from earlier steps of the same turn, such as a plan to read the file and write its entire content, and the classifier mostly reads that; without it, the score falls to \eNineteenBowReasoningGpt{}.
+Removing the mask token or scenario-specific words changes little, and no single word carries the score.
+These are point estimates from single refits, and the weights describe a linear model on these episodes, not why the target leaks.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e19_bow_interp.tex}
+  \caption{\textbf{What the trained text classifier reads.} Words are examples among the highest weights. Numbers are AUROC within scenario and round, from refits with the paper's recipe on the same calls and folds, without intervals. The last row compares the classifier and the probe on calls whose latest input is the protected file.}
+  \label{tab:bow-interp}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lcc@{}}
+    \toprule
+    Detector & Qwen3-32B & gpt-oss-20b \\
+    \midrule
+    Last-prompt probe & \qwenCallProbe{} & \gptossCallProbe{} \\
+    Trained text classifier, full input & \qwenTextClassifier{} & \gptossTextClassifier{} \\
+    Trained text classifier, latest message only & \qwenTextClassifierLatest{} & \gptossTextClassifierLatest{} \\
+    Probe minus full-input classifier, paired & +\qwenProbeMinusTextFull{} \qwenProbeMinusTextFullCI{} & +\gptossProbeMinusTextFull{} \gptossProbeMinusTextFullCI{} \\
+    Probe minus latest-message classifier, paired & +\qwenProbeMinusTextLatest{} \qwenProbeMinusTextLatestCI{} & +\gptossProbeMinusTextLatest{} \gptossProbeMinusTextLatestCI{} \\
+    Flag: the call's action is a file write & -- & \gptossWriteBaseline{} \\
+    Last-prompt probe, handoff-file writes only & -- & \gptossHandoffProbe{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Text and workflow baselines, development episodes, held-out scenarios, on the same calls as the last-prompt probe.}
+  \label{tab:text-baselines}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.79\linewidth]{fig4_shortcuts.pdf}
+  \caption{\textbf{The probe beats simple shortcuts.}
+  Per-call AUROC on held-out scenarios, development episodes.
+  The placebo applies the probe to calls made before the peer asks, and the incoming-only probe reads only the tokens new to each call (\cref{app:shortcuts}).}
+  \label{fig:shortcuts}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/shortcuts.tex}
+  \caption{Shortcut checks. AUROC within scenario and round, development episodes, held-out scenarios.}
+  \label{tab:shortcuts}
+\end{table}

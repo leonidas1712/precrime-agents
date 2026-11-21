@@ -1,0 +1,133 @@
+\section{Does the per-call result hold under other evaluations and settings?}
+\label{app:robustness}
+
+Yes.
+On development episodes, mixed-scenario cross-validation, the mean instead of the maximum over reasoning tokens, dropping reasoning after the secret is first mentioned, adding calls with no reasoning, and excluding writes back to the protected file all give a similar ranking (\cref{tab:robust-call}).
+
+\paragraph{Another evaluation.}
+Mixed-scenario cross-validation splits families into five folds regardless of scenario, so the probe has seen every scenario in training.
+On both models it gives a score a little below the held-out-scenario one.
+Because it compares scores from different fitted models within one group, it can fall below 0.5 for a weak score, so we use held-out scenarios as the main evaluation.
+
+\paragraph{Other aggregates and cuts.}
+On gpt-oss-20b, averaging the reasoning tokens instead of taking the maximum gives a higher score.
+The plan committed before the test episodes were collected specified the maximum (\cref{app:confirmation}), so the reported score is the lower of the two.
+Dropping every reasoning token from the first exact mention of the secret onward also gives a slightly higher score, so the probe does not depend on the secret appearing in the reasoning.
+Including the calls that returned no reasoning, the last-prompt probe scores slightly higher.
+
+\paragraph{Writes back to the protected file.}
+On Qwen3-32B, excluding the one development episode whose leak is a write back into the protected file changes the score very little.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/robust_call.tex}
+  \caption{Per-call robustness. AUROC within scenario and round, with 95\% bootstrap intervals, development episodes.}
+  \label{tab:robust-call}
+\end{table}
+
+\paragraph{Each Qwen3-32B test scenario.}
+Every test scenario scores between \qwenTestScenAurocMin{} and \qwenTestScenAurocMax{} (\cref{tab:per-scenario-test}).
+Each holds only \qwenTestScenRolloutLeaks{} to \qwenTestScenDispatchLeaks{} leaking calls, so the per-scenario numbers are noisy.
+The test episodes are new episodes in the scenarios used for development, not new scenarios.
+The last column is the share of calls in refusing episodes, recruiting episodes with no leaking call, that the probe flags at the threshold set on development control calls.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/per_scenario_test.tex}
+  \caption{\textbf{The last-prompt probe on each Qwen3-32B test scenario.} AUROC within scenario and round. Leaks caught and refusing calls flagged use the threshold set on development control calls.}
+  \label{tab:per-scenario-test}
+\end{table}
+
+\subsection{Does the result depend on how the metric drops calls?}
+\label{app:metric-variants}
+
+No.
+Our metric compares each leaking call only with non-leaking calls from the same scenario and round, and skips groups without both kinds.
+Every leaking call is kept, but most non-leaking calls are dropped, because leaks cluster in a few rounds.
+On the gpt-oss-20b test episodes, only \eEighteenGptTestKeptGroups{} of \eEighteenGptTestGroups{} groups remain, with \eEighteenGptTestPairsRound{} leaking and non-leaking pairs.
+We therefore recompute every per-call result from its saved scores in two looser ways.
+The first compares calls within a scenario across all its rounds.
+The second compares all calls at once, which gives \eEighteenGptTestPairsPooled{} pairs on the same test episodes.
+We also drop each kept group in turn and recompute.
+
+The ranking of the detectors holds under every variant (\cref{tab:metric-variants}).
+The probes score about the same or higher once more calls are compared.
+On the gpt-oss-20b test episodes, the last-prompt probe rises from \eEighteenGptTestProbeRound{} to \eEighteenGptTestProbePooled{} over all calls, and no single group moves it by more than a few hundredths.
+The small number of groups therefore does not drive the result, and our metric is the stricter one.
+
+Jev is the exception.
+On gpt-oss-20b development episodes it scores \eEighteenGptDevJevRound{} within scenario and round but \eEighteenGptDevJevPooled{} over all calls.
+Its scores fall steadily with the round, and most leaks come in the first rounds after the request, so a comparison across rounds rewards that alone.
+Within a round, it ranks the leaking calls below the others, so its result below chance holds only for the comparison we use.
+The probe still leads Jev over all calls (\eEighteenGptDevProbeMinusJevPooled{} \eEighteenGptDevProbeMinusJevPooledCI{}).
+
+The probe's edge over the text classifier on the Qwen3-32B test episodes is \eEighteenQwenTestProbeMinusTextRound{} \eEighteenQwenTestProbeMinusTextRoundCI{} under our metric and \eEighteenQwenTestProbeMinusTextPooled{} \eEighteenQwenTestProbeMinusTextPooledCI{} over all calls.
+So for the comparison with text, too, our metric is the conservative choice.
+The scenario-and-round column reproduces the paper's numbers exactly from the saved scores.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e18_metrics.tex}
+  \caption{\textbf{Per-call AUROC under three ways of choosing which calls to compare.} Scenario and round is the metric used throughout the paper. Scenario only compares calls across all rounds of a scenario; all calls compares every leaking call with every non-leaking call. One group out gives the lowest and highest AUROC when any single kept scenario-and-round group is removed. All rows use saved scores, with 95\% episode-clustered bootstrap intervals.}
+  \label{tab:metric-variants}
+\end{table}
+
+\paragraph{Each gpt-oss-20b test scenario.}
+\Cref{tab:gpt-scenarios-test} mirrors \cref{tab:per-scenario-test} for gpt-oss-20b.
+Each scenario holds only a handful of leaks, and only two or three of its groups have both kinds of call, so these numbers are very noisy.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e18_gpt_scenarios.tex}
+  \caption{\textbf{The two gpt-oss-20b probes on each test scenario.} AUROC within scenario and round, from the frozen test scores. Groups kept are scenario-and-round groups that hold both leaking and non-leaking calls.}
+  \label{tab:gpt-scenarios-test}
+\end{table}
+
+\paragraph{Split seeds.}
+Each development result averages three runs that differ only in the inner split used to choose the probe's layer.
+The fit itself is deterministic.
+\Cref{tab:split-seeds} gives each run; on gpt-oss-20b one split gives a lower score for both probes.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e18_seeds.tex}
+  \caption{\textbf{Development AUROC for each of the three inner splits.} Within scenario and round, held-out scenarios. The mean is the value reported in the paper.}
+  \label{tab:split-seeds}
+\end{table}
+
+\subsection{Do the further-ahead questions hold on the test episodes?}
+\label{app:test-ladder}
+
+Yes, with the same shape.
+The main text first reported the questions further from the act on development episodes only.
+We fit the last-prompt probe for each question on all development episodes, with the labels and recipe of the development results, and score the test episodes once.
+On Qwen3-32B the probe scores \eEighteenQwenTestEver{} for ``ever'', \eEighteenQwenTestNear{} for ``this round or next'' and \eEighteenQwenTestStrict{} one call earlier, against \qwenFreshCallProbe{} for the call itself.
+On gpt-oss-20b it scores \eEighteenGptTestEver{}, \eEighteenGptTestNear{} and \eEighteenGptTestStrict{}, against \gptossFreshCallProbe{}.
+Intervals are in \cref{tab:glance-ci}.
+The test sets are small: gpt-oss-20b has only \eEighteenGptTestStrictPositives{} leaking calls one call ahead, so that interval is wide.
+On the Qwen3-32B test episodes, the original channel label used in \cref{app:confirmation} gives the same \eEighteenQwenFreshRoundChannelCheck{} when refit this way.
+These checks were added after the main results, to answer how far the pattern carries; no detector or threshold was changed.
+
+\subsection{Does the regularisation strength matter?}
+\label{app:c-sweep}
+
+Little.
+The probe recipe fixes the L2 strength at $C = 0.1$.
+We refit the development probes at five other values, choosing the layer afresh in each fold as before (\cref{tab:c-sweep}).
+From $C = 0.01$ to $C = 0.3$ the last-prompt probes barely move.
+Weaker regularisation lowers the Qwen3-32B probe, while the gpt-oss-20b last-prompt probe stays flat.
+The reasoning probe varies more, and scores lowest near the recipe's value, so the fixed recipe does not favour it.
+At $C = 0.1$ the refit Qwen3-32B score differs from the reported one in the third decimal, because the original runs used a slightly different working copy of the fitting script; every two-decimal value is unchanged.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e18_csweep.tex}
+  \caption{\textbf{Per-call AUROC against the L2 strength $C$.} Development episodes, held-out scenarios, within scenario and round, mean of three split seeds, with 95\% bootstrap intervals.}
+  \label{tab:c-sweep}
+\end{table}

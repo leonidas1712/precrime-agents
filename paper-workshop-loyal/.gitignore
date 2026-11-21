@@ -1,0 +1,18 @@
+.texmf/
+.texmf-var/
+.texmf-config/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+build.out
+refs.bib
+# backups and unused copies
+*.bak
+*.bak[0-9]
+.bak_appendix/
+supplementary_extended_version.pdf
+missfont.log

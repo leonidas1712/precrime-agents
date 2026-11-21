@@ -1,0 +1,45 @@
+\section{What was committed for the test episodes, and what happened?}
+\label{app:confirmation}
+
+Two tests were fixed in written plans before any detector's predictions on their test episodes were compared with the labels, and both met their criteria (\cref{tab:fresh}).
+The gpt-oss-20b plan was committed before its test episodes were collected (commit \texttt{d470afd}, \cref{tab:repro}); in this sense it was pre-registered.
+The Qwen3-32B round-level plan was committed after its test episodes were collected, when their overall leak counts were known, but before any probe or monitor predictions were compared with their labels; it fixed an AUROC analysis, not an alarm threshold.
+A third test, the Qwen3-32B per-call probe, was frozen and committed before it was scored on the same test episodes, which had by then been analysed for the round-level test.
+
+\paragraph{gpt-oss-20b reasoning probe.}
+Before the test episodes were collected, we committed the probe's layer, chosen on development data, its weights, refit once on all development calls, the maximum over tokens as the call score, and an alarm threshold calibrated on development control calls.
+The success criterion was a lower 95\% bound above 0.5 on the per-call AUROC.
+The lower bound was \gptossFreshReasoningLow{}, well above the 0.5 criterion.
+With few leaking calls, the interval is wide.
+At the frozen threshold the probe caught \gptossFreshCaught{} of the leaking calls (binomial 95\% interval \gptossFreshCaughtCI{}), fewer than in development, while alarming on \gptFreshAlarmOne{} of calls in refusing episodes and in \gptossFreshRefusingEpisodeAlarm{} of refusing episodes (\cref{tab:alarms,tab:episode-calibration}).
+
+\paragraph{Last-prompt and reasoning probes on gpt-oss-20b.}
+On development episodes the last-prompt probe and the reasoning probe score about the same, so most of the signal is present before the model starts to reason.
+On the test episodes the reasoning probe scored higher than the last-prompt probe on the same calls, and the last-prompt probe caught fewer leaking calls at its threshold (\cref{tab:fresh,tab:alarms}); with few leaking calls, the gap in AUROC is within noise.
+
+\paragraph{Qwen3-32B round-level test.}
+The plan fixed the near-term label of \cref{app:labels}, the probe (one logistic model per seed trained on all development recruiting calls), and two primary text monitors among the eight setups it scored (\cref{app:monitors-grid}): Jev asked to forecast and shown everything the target saw, and GPT-5-nano asked to detect and shown the target's actions and the peer's messages.
+Its criteria were a probe interval above 0.5, and a gain above 0 from adding the probe to the weaker of the two primary monitors, GPT-5-nano.
+Both were met (\cref{fig:round}).
+The plan expected no gain from adding the probe to the stronger monitor, and there was none that was clearly above zero (\cref{app:roundmonitor}).
+
+\paragraph{Qwen3-32B per-call probe.}
+We fit this probe on the development episodes only, committed its weights and threshold, and then scored it once on the test episodes.
+No test episode was used to fit or choose anything for it.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.47\linewidth]{fig_round_confirmation.pdf}
+  \caption{\textbf{This round or the next is modestly predictable on test episodes.}
+  Qwen3-32B test episodes, scored once under its plan, with its own leak label (\cref{app:labels}).
+  Whiskers are 95\% bootstrap intervals.}
+  \label{fig:round}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/fresh.tex}
+  \caption{Results on the test episodes. AUROC within scenario and round, with 95\% bootstrap intervals.}
+  \label{tab:fresh}
+\end{table}

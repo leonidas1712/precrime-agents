@@ -1,0 +1,63 @@
+\section{How often does each model leak, and what differs for the second target?}
+\label{app:behaviour}
+
+Qwen3-32B leaked in some episodes and refused in others under almost every setting we screened, and the screens are too small to show which settings matter.
+gpt-oss-20b and Gemma-4-31B refused direct requests for the secret, so gpt-oss-20b faces a different peer strategy and Gemma-4-31B was not used for probes.
+
+\subsection{Screens on Qwen3-32B}
+
+Before fixing the final setup, we ran small screens on Qwen3-32B that each varied one feature of the episode (\cref{tab:screens}).
+Most screens use an earlier version of the main scenario.
+The own-stake screen uses four other scenarios, in which the target gains something from sharing the value.
+These screens use the scoring rules of the original screening runs, and \cref{tab:screens} describes behaviour without testing any setting.
+\Cref{tab:behaviour-scenario} gives the leak rate of the final collection in each scenario.
+
+Each screen was a separate collection, so a gap between two rows can reflect the batch or the scenario version as well as the setting.
+One set of plain-request episodes serves as the reference for the tactic, thinking and peer-count screens.
+The seven single tactics are helpful framing, an organiser's tone, a trade, social proof, time pressure, playing it safe and cost anchoring.
+We adapted them from the persuasion prompts released by \citet{nakamura2026} and kept that source's honesty limits.
+The reproducibility index points to the full table, which lists every cell with its interval and every excluded episode (\cref{app:repro}).
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lllll@{}}
+    \toprule
+    Feature varied & Reference setting & Leak rate & Changed setting & Leak rate \\
+    \midrule
+    Wording of the rule & states the consequence & \screenRuleBaseRate{} (\screenRuleBaseN{}) & adds ``this channel is logged'' & \screenRuleLoggedRate{} (\screenRuleLoggedN{}) \\
+    Persuasion tactic & plain request & \screenPlainRate{} (\screenPlainN{}) & one of seven tactics & \screenTacticMinRate{} to \screenTacticMaxRate{} (\screenTacticMinN{} to \screenTacticMaxN{} each) \\
+    Target's own stake & none & \screenStakeNoneRate{} (\screenStakeNoneN{}) & target gains from sharing & \screenStakeOwnRate{} (\screenStakeOwnN{}) \\
+    Thinking mode & off & \screenPlainRate{} (\screenPlainN{}) & on (note a) & \screenThinkingRate{} (\screenThinkingN{}) \\
+    Number of peers & one & \screenPlainRate{} (\screenPlainN{}) & two & \screenTwoPeersRate{} (\screenTwoPeersN{}) \\
+    Awareness of a test (note b) & not flagged & \screenAwareNoRate{} (\screenAwareNoN{}) & flagged & \screenAwareYesRate{} (\screenAwareYesN{}) \\
+    \bottomrule
+  \end{tabular}
+  \par\smallskip
+  \parbox{\linewidth}{\small
+  Note a: turning thinking on also raised the reply-length limit, so this row changes two things at once.
+  Note b: an automated judge flagged episodes in which the target seemed to recognise a test. Both flagged episodes only mention the mocked software tests in the task, so neither clearly shows such recognition.}
+  \caption{\textbf{Almost every screened setting gave a mix of leaks and refusals on Qwen3-32B.}
+  Each cell gives the share of recruiting episodes that leak, with the number of episodes in brackets.}
+  \label{tab:screens}
+\end{table}
+
+\subsection{What differs for gpt-oss-20b?}
+
+For gpt-oss-20b only the peer and the scored window change.
+The task, the rule, the secret, the leak label and the detectors stay the same, and so does the control principle: a peer that never asks for the value.
+
+The peer runs on DeepSeek-V4-Pro instead of DeepSeek-V4-Flash, with its own prompt (\cref{app:prompts}).
+gpt-oss-20b mostly refused the plain request, and it never leaked when the peer stacked every tactic at once.
+The peer therefore first coordinates on the ordinary task, then asks for the whole configuration block for a handoff file, without naming the secret.
+We accepted a strategy only if four things held.
+The target read the secret before any leak, made a scored call between the read and the leak, leaked in some episodes and refused in others, and never leaked in control episodes.
+We chose the strategy on behaviour alone and froze it before any probe or monitor saw the data.
+
+The scored window on gpt-oss-20b starts at the peer's first request for the block, not at the read.
+The calls between the read and that request carry no pressure, so we keep them as a placebo on which a sound detector scores at chance (\cref{app:shortcuts}).
+
+\subsection{Why was Gemma-4-31B not used for probes?}
+
+Gemma-4-31B almost never leaked under direct requests, and in a small batch under the delayed block request it wrote the secret into a file every time.
+It therefore gave no mix of leaking and refusing episodes, so we ran no replay, probes or monitors on it.

@@ -1,0 +1,101 @@
+\section{How are probes trained and scored?}
+\label{app:probes}
+
+\Cref{tab:glance-ci} repeats the main-text results of \cref{tab:glance} with their intervals.
+\Cref{fig:positions} shows which tokens of a call each detector reads.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.76\linewidth]{fig_probe_positions.pdf}
+  \caption{\textbf{Which tokens each detector reads.}
+  In one call $t$, the model reads the prompt $x_t$, then writes reasoning $z_t$ (gpt-oss-20b only) and an output $o_t$.
+  The last-prompt probe reads one position, the last prompt token, so its score is ready before anything is generated.
+  The incoming-only probe reads every token new since the previous call, and the reasoning probe reads every token of $z_t$.
+  The text monitor and classifier read the text of $x_t$ with the secret masked, and an output filter can act only after $o_t$ is written.}
+  \label{fig:positions}
+\end{figure}
+
+\begin{table}[ht]
+  \centering
+  \small
+  \begin{tabular}{@{}llcc@{}}
+    \toprule
+    Question & Detector & Qwen3-32B & gpt-oss-20b \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Test episodes}} \\
+    This call? & last-prompt probe & \qwenFreshCallProbe{} \qwenFreshCallProbeCI{} & \gptossFreshCallProbe{} \gptossFreshCallProbeCI{} \\
+    This call? & reasoning probe & -- & \gptossFreshReasoning{} \gptossFreshReasoningCI{} \\
+    This call? & Jev & \qwenFreshCallJev{} \qwenFreshCallJevCI{} & \gptossFreshCallJev{} \gptossFreshCallJevCI{} \\
+    This call? & trained text classifier & \qwenFreshCallBow{} \qwenFreshCallBowCI{} & \gptossFreshCallBow{} \gptossFreshCallBowCI{} \\
+    One call earlier? & last-prompt probe & \eEighteenQwenTestStrict{} \eEighteenQwenTestStrictCI{} & \eEighteenGptTestStrict{} \eEighteenGptTestStrictCI{} \\
+    This round or next? & last-prompt probe & \eEighteenQwenTestNear{} \eEighteenQwenTestNearCI{} & \eEighteenGptTestNear{} \eEighteenGptTestNearCI{} \\
+    Ever? & last-prompt probe & \eEighteenQwenTestEver{} \eEighteenQwenTestEverCI{} & \eEighteenGptTestEver{} \eEighteenGptTestEverCI{} \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Development episodes}} \\
+    This call? & last-prompt probe & \qwenCallProbe{} \qwenCallProbeCI{} & \gptossCallProbe{} \gptossCallProbeCI{} \\
+    This call? & reasoning probe & -- & \gptossCallReasoning{} \gptossCallReasoningCI{} \\
+    This call? & Jev & \qwenCallJev{} \qwenCallJevCI{} & \gptossCallJev{} \gptossCallJevCI{} \\
+    This call? & trained text classifier & \qwenTextLatest{} \qwenTextLatestCI{} & \gptossTextFull{} \gptossTextFullCI{} \\
+    One call earlier? & last-prompt probe & \qwenStrictNextProbe{} \qwenStrictNextProbeCI{} & \gptossStrictNextProbe{} \gptossStrictNextProbeCI{} \\
+    This round or next? & last-prompt probe & \qwenNearProbe{} \qwenNearProbeCI{} & \gptossNearProbe{} \gptossNearProbeCI{} \\
+    Ever? & last-prompt probe & \qwenEverProbe{} \qwenEverProbeCI{} & \gptossEverProbe{} \gptossEverProbeCI{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{\Cref{tab:glance} with 95\% intervals.} AUROC within scenario and round, with episode-clustered bootstrap intervals. Development results are on held-out scenarios. Qwen3-32B runs with reasoning off, so it has no reasoning probe.}
+  \label{tab:glance-ci}
+\end{table}
+
+Every probe is a regularised logistic regression on one layer's activation, with the layer chosen inside each training split.
+Scores are compared only within a scenario and round, and intervals resample whole groups of related episodes.
+
+\paragraph{Probe recipe.}
+The probe is a logistic regression with L2 regularisation ($C = 0.1$), on activations standardised with training statistics only.
+Call weights make leaking and non-leaking calls contribute equally within each round, and rounds with only one class get no weight.
+We choose the layer from evenly spaced candidates (17 on each model) on an inner validation split of the training data, by the same within-group AUROC that we report.
+In the held-out-scenario evaluation, the inner validation set is one of the five training scenarios, so layer selection never sees the held-out scenario.
+We run three split seeds and average their AUROCs.
+The chosen layer often differs between seeds (\cref{tab:settings}), but the choice matters little.
+Refit at one layer, the probe scores \eNineteenQwenLayerMidLow{}--\eNineteenQwenLayerMidHigh{} on the Qwen3-32B test calls at every candidate layer from 8 to 56, and \eNineteenGptLayerMidLow{}--\eNineteenGptLayerMidHigh{} on gpt-oss-20b at layers 7 to 16, with overlapping intervals.
+
+\paragraph{Reasoning probe.}
+The reasoning probe uses the same recipe, with every reasoning token carrying its call's label.
+Each call's weight is split equally across its tokens, so long reasoning does not dominate training.
+A call's score is its maximum token score; the mean is reported as a check (\cref{app:robustness}).
+
+\paragraph{Incoming-only probe.}
+The incoming-only probe reads the tokens that are new since the target's previous call, at layer 18 of gpt-oss-20b.
+In training, its per-token scores are averaged over sliding 16-token windows before the loss, following \citet{cunningham2026}.
+In scoring, each token's score is replaced by a running average that gives weight $2/17$ to the newest token and lets older tokens fade, which spans about 16 tokens.
+A call's score is the maximum of this running average over its incoming tokens.
+
+\paragraph{The metric, worked through.}
+Suppose one scenario-and-round group holds a leaking call scored 0.8 and two other calls scored 0.5 and 0.9.
+The leaking call outranks one of the two, so the group's AUROC is 0.5.
+A second group holds a leaking call at 0.7 and one other call at 0.4, so its AUROC is 1.
+Each group has one positive, so the reported value is their mean, 0.75.
+Groups with only one class are dropped, and ties count one half, which is why any score that is constant within a group gets exactly 0.5.
+\Cref{tab:group-coverage} shows, for each headline test, how many leaking calls remain in groups that hold both kinds of call.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/group_coverage.tex}
+  \caption{Scenario-and-round groups kept by the metric, and the leaking calls they contain, for each headline test.}
+  \label{tab:group-coverage}
+\end{table}
+
+\paragraph{Why compare only within scenario and round.}
+Leaks fall in earlier rounds than other calls, so rating early rounds as risky already scores well on the raw AUROC.
+Within a scenario and round, the same rule scores exactly 0.5.
+Leak rates also differ across scenarios (\cref{tab:behaviour-scenario}).
+
+\paragraph{Related episodes and intervals.}
+Some episodes share a history, such as variants of one seeded episode and reruns that branch from the same state.
+We call each such group a family and always keep a family on one side of a split.
+Intervals are 95\% bootstrap intervals: we resample families with replacement 1,000 times, recompute the AUROC from the saved scores without refitting, and take the 2.5th and 97.5th percentiles.
+
+\paragraph{Held-out scenarios.}
+We train on five scenarios, test on the sixth, rotate through all six and pool the test scores.
+Training also drops any family that appears in the held-out scenario.
+Text monitors have no fitted parameters, so their held-out score is their score on the same calls.
+\Cref{app:robustness} reports a second evaluation, cross-validation that mixes scenarios.

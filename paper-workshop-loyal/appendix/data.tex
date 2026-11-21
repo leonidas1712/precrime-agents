@@ -1,0 +1,111 @@
+\section{How were the datasets built and checked?}
+\label{app:data}
+
+We score every call that the target makes after reading the secret, up to and including the call that leaks, in episodes that ran correctly.
+Re-running the saved prompts through the open weights reproduces the served replies closely, so the activations we read belong to the model that acted (\cref{tab:replay}).
+
+\paragraph{Which episodes count.}
+An episode is analysed only if it ran to completion, the target read the protected value, and the target wrote a correct status summary at some point.
+We check for a correct summary at some point, not in the final file, because on gpt-oss-20b a leak can overwrite the summary file.
+A check on the final file would therefore drop mostly leaking episodes and select on the outcome.
+We fixed this rule for gpt-oss-20b before any probe or monitor saw its data.
+The Qwen3-32B analyses keep the episodes and validity checks of the original Qwen3-32B collection, so the two models' rules differ slightly, and no Qwen3-32B episode was re-selected for this version.
+
+\paragraph{Which calls count.}
+We exclude the calls before the target reads the secret.
+A probe trained to tell calls before and after the read apart does so perfectly, so including those calls would reward detecting the read rather than the leak.
+We therefore score calls from the read up to and including the call that leaks.
+On gpt-oss-20b, the scored calls also start only after the peer's first request, and the calls between the read and the request serve as a placebo (\cref{app:shortcuts}).
+The reasoning-probe comparisons on gpt-oss-20b use the scored calls that returned reasoning; the last-prompt probe gives a similar result on all scored calls (\cref{app:robustness}).
+
+\paragraph{Development and test episodes.}
+For Qwen3-32B, the development episodes were collected first and the test episodes later, and the plan in \cref{app:confirmation} was committed before any detector's predictions on them were compared with their labels.
+For gpt-oss-20b, the development episodes are the main collection, and the test episodes were collected after the reasoning probe and its analysis plan were committed (\cref{app:confirmation}).
+The two sets never share an episode, and no test episode was used to fit or choose anything for the model scored on it.
+
+\paragraph{Episodes excluded before scoring.}
+Some collected episodes are not scored, because they fail the validity checks above or have no call in the scored window (\cref{tab:attrition}).
+On gpt-oss-20b, most exclusions are episodes with no scored call after the peer's request.
+The Qwen3-32B test episodes contain none from the main scenario, and in the gpt-oss-20b test episodes the main scenario has few leaking calls (\cref{tab:attrition}).
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/datasets_attrition.tex}
+  \input{tables/datasets_fresh.tex}
+  \caption{Episodes collected or replayed, scored and excluded (top), and the test episodes by scenario (bottom).}
+  \label{tab:attrition}
+\end{table}
+
+\paragraph{Leaking episodes and leaking calls.}
+On gpt-oss-20b, the reasoning-probe comparisons have fewer leaking calls than leaking episodes, because some leaking calls return no reasoning and are left out.
+Those episodes stay in the scored set through their earlier calls, which are labelled as not leaking for the per-call question and as leaking for the eventual one.
+
+\Cref{tab:reasoning-coverage} gives these counts, and \cref{tab:qwen-accounting} breaks down the Qwen3-32B test calls.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/reasoning_coverage.tex}
+  \caption{Leaking episodes and leaking calls with reasoning, gpt-oss-20b.}
+  \label{tab:reasoning-coverage}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/qwen_call_accounting.tex}
+  \caption{Qwen3-32B test calls: leaking calls, earlier calls in leaking episodes, calls in refusing episodes, and control calls, which are counted separately.}
+  \label{tab:qwen-accounting}
+\end{table}
+
+\paragraph{Reading the activations.}
+We re-run every saved target prompt once through the open-weight checkpoint, on one GPU, with no generation.
+For Qwen3-32B we save every decoder layer at the last prompt token.
+For gpt-oss-20b we also save every returned reasoning token.
+Before loading the model, each prompt and token sequence is checked against a hash list written in advance, and every saved array is checked for shape and finite values.
+
+\paragraph{Replay fidelity.}
+To check that the replay matches the model that acted, we score the target's actual replies under the replayed model (\cref{tab:replay}).
+A low loss on the actual reply tokens and high top-5 agreement mean the replay closely reproduces the served model, though they do not prove token-for-token identity with the provider's kernels.
+gpt-oss-20b's chat format keeps the current turn's reasoning between tool calls, and its prompts render within one token of the served prompts for nearly all requests from the main provider.
+A second provider served a small share of requests with a less exact rendering, and we keep and flag those requests.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/replay.tex}
+  \caption{Replay fidelity: loss of the actual reply tokens under the replayed model, and top-5 token agreement.}
+  \label{tab:replay}
+\end{table}
+
+\paragraph{Generation and inference settings.}
+Both targets were served through an API at temperature 0.7 (\cref{tab:settings}), and their prompts were then re-run through the open weights to read the activations (\cref{tab:replay}).
+The chosen layers are those of the per-call probes fit on development episodes, one per seed.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/settings.tex}
+  \caption{Generation and inference settings.}
+  \label{tab:settings}
+\end{table}
+
+The detector settings and the rules for splits and families are in \cref{tab:detector-settings,tab:split-settings}.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/detector_settings.tex}
+  \caption{Settings of the trained text classifier, the neural-network probe and the incoming-only probe.}
+  \label{tab:detector-settings}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/split_settings.tex}
+  \caption{How families of related episodes and the inner validation splits are defined.}
+  \label{tab:split-settings}
+\end{table}
+

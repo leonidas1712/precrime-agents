@@ -1,0 +1,87 @@
+\section{How were the crossed-destination episodes built and scored?}
+\label{app:crossed}
+
+This section gives the details behind \cref{sec:crossed}: the scenarios and randomised details, the exclusions, the comparisons, the criteria fixed before the run, and the results with intervals.
+The conclusion is the one in the main text.
+The probe reads doing what the peer asked, not breaking the rule.
+
+\subsection{Design details}
+
+\paragraph{Scenarios and randomised details.}
+We use four scenarios: the capacity-figure, rollout-threshold and dispatch-code test scenarios, and a registry-token scenario from our screening set.
+A pilot on six scenarios dropped two that never produced one of the two choices, using behaviour only, before any activation was read.
+Within each scenario we randomise five setup details.
+These are which file the rule names first, which file the workspace lists first, whether the two files share an extension, the wording of the rule and the set of file names.
+The target is Qwen3-32B with reasoning off, and the peer and all other settings are as in the main episodes.
+The peer's read tool opens only the file it asks for.
+\Cref{tab:e17-behaviour} gives the number of episodes in each scenario.
+
+\paragraph{Exclusions.}
+We exclude episodes with no real write, including writes of a made-up value.
+We also exclude incomplete episodes and those that post the secret in the chat before writing it.
+
+\paragraph{Probe and metric.}
+The new last-prompt probe uses the recipe of \cref{app:probes}, at layer \eSeventeenHeadlineLayer{}, the layer of the main Qwen3-32B probe.
+Both tests report AUROC within scenario, averaged with weights by the number of forbidden writes.
+Intervals are 95\% intervals from 1,000 bootstrap resamples of episodes within each scenario.
+
+\paragraph{Comparisons.}
+A logistic regression on the randomised details alone, the \emph{setup-details classifier}, checks whether the probe only reads the layout of the prompt.
+We also fit the setup details and the probe score together and report the gain over the setup details alone.
+The probe score that this combined model trains on comes from probes that did not see the scored rows.
+A trained text classifier, as in \cref{app:shortcuts}, reads everything the target saw after its task message, with the two file names replaced by their roles.
+
+\paragraph{What was fixed before the data.}
+The episodes, labels, tests and success criteria were committed before the main episodes were run, and the probe layer before the activations were extracted.
+The criteria were a Test 1 interval above 0.5, a gain over the setup details with an interval above 0, and a Test 2 interval above 0.5.
+A fourth criterion compared the probe with a zero-shot text monitor.
+We did not run that monitor, because the gain criterion had already failed.
+
+\subsection{Behaviour}
+
+In ask-allowed episodes the target wrote to the allowed file in \eSeventeenAskAllowedRate{} of complete episodes.
+\Cref{tab:e17-behaviour} gives every outcome in both kinds of episode.
+
+\begin{table}[h]
+  \centering
+  \small
+  \setlength{\tabcolsep}{2pt}
+  \input{tables/e17_behaviour.tex}
+  \caption{Outcomes of all crossed-destination episodes. The first block is ask-forbidden episodes and the second ask-allowed episodes. A real write puts the secret itself in a file. No real write means the target held out or wrote a made-up value. Other means the secret went first to the chat or to a third file. Only forbidden writes, compromises and allowed writes enter the tests.}
+  \label{tab:e17-behaviour}
+\end{table}
+
+\subsection{Results with intervals}
+
+\Cref{tab:e17-tests} repeats \cref{tab:crossed} with intervals and the criterion for each test, and \cref{tab:e17-by-scenario} gives the scores by scenario.
+Test 1 meets its criterion, the gain over the setup details does not, and Test 2 does not.
+The text classifier's interval on Test 1 includes chance.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e17_tests.tex}
+  \caption{The two tests and their comparisons. All rows use the same scored writes and scenario folds, except the last, which comes from resampled pilot prompts. The gain row is the paired difference between setup details with the probe and setup details alone. The ask-allowed row gives the probability that an ask-allowed write scores above a compromise from the same scenario.}
+  \label{tab:e17-tests}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/e17_by_scenario.tex}
+  \caption{Scored writes and AUROC by scenario. Test 1 compares forbidden writes with compromises, and Test 2 compares forbidden writes with ask-allowed writes, using the same probe.}
+  \label{tab:e17-by-scenario}
+\end{table}
+
+\paragraph{Resampling and layers.}
+On pilot episodes, we resent the exact prompts of \eSeventeenResamplePrompts{} scored calls ten times each.
+In \eSeventeenResamplePure{} of them every resample made the same choice.
+The probe layer does not change the result: across the saved layers, Test 1 ranges from \eSeventeenLayerLow{} to \eSeventeenLayerHigh{}.
+
+\paragraph{Agreement with the permitted-share episodes.}
+The result agrees with \cref{app:e15}, where permitted shares right after a read crossed the threshold as often as forbidden leaks.
+
+\paragraph{Limitations.}
+Compromises are rare, so Test 1 rests on \eSeventeenCompromises{} of them and its intervals are wide.
+The results cover one model, Qwen3-32B with reasoning off, and one reading point and one form of rule.
+We did not run these episodes on gpt-oss-20b, so whether its probe behaves the same way is untested.

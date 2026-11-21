@@ -1,0 +1,529 @@
+%File: main.tex -- Loyal Agents Workshop (AAAI-27) cut of the arXiv paper.
+% Numbers, figures and references are shared with ../paper-arxiv; nothing is typed by hand.
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai2027}  % DO NOT CHANGE THIS (single-blind review: authors shown)
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[capitalize,noabbrev]{cleveref}
+% Workshop paper, non-archival: no AAAI copyright slug.
+\nocopyright
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+\setcounter{secnumdepth}{2}
+\graphicspath{{../paper-arxiv/figures/}}
+\input{../paper-arxiv/numbers.tex}
+\input{../paper-arxiv/pending_macros.tex}
+\crefname{appendix}{App.}{Apps.}
+% The appendix sources are shared in spirit with the arXiv build; these spacing helpers are no-ops here.
+\providecommand{\needspace}[1]{}
+\providecommand{\Needspace}[1]{}
+\Crefname{appendix}{Appendix}{Appendices}
+
+\title{Pre-Crime for Agents, at the Last Second:\\ Probing When a Recruited Agent Gives In}
+\author{
+    Leonidas Raghav\thanks{This is a shortened version of an arXiv preprint \citep{raghav2026precrime}, with one added experiment (\cref{sec:crossed}). Code, prompts and transcripts: \texttt{github.com/leonidas1712/precrime-agents}.}
+}
+\affiliations{
+    Independent
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+An AI agent that acts for an operator shares channels with other agents, and one of them can press it, round after round, to break its operator's rule.
+Output filters check only what an agent has already written.
+Can an overseer tell beforehand that an agent is about to give in?
+In six workplace scenarios, a peer presses a target for up to 20 rounds to reveal a secret, such as a deploy token; the target often refuses, then gives in.
+A linear probe on the target's activations, read at each model call before any output is written, picks out the call that leaks.
+On new Qwen3-32B episodes, at a threshold that flags 5\% of calls when no one asks for the secret, it catches \qwenFreshProbeCaught{} of leaking calls.
+A zero-shot text monitor at a similar flag rate catches \qwenMatchedJevCaught{}.
+On a second model, gpt-oss-20b, a probe on its private reasoning also picks out the leaking call.
+The warning is short-range: the same probe barely predicts which episodes will ever leak.
+A bag-of-words classifier trained on the same calls comes close to the probe, so most of the gain comes from training on labels, not from activations.
+The probe also does not read disloyalty itself.
+When the rule permits one file and forbids another, the probe scores a permitted write that the peer asked for like a forbidden one (AUROC \eSeventeenTestTwo{}).
+The probe therefore reads the coming disclosure, not the violation.
+A warning raised before generation could still let an overseer stop an agent that is about to give in, before other agents act on its messages.
+\end{abstract}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.74\textwidth]{fig2_setup.pdf}
+  \caption{\textbf{How an episode works.}
+  (a)~A real leak on Qwen3-32B, verbatim and shortened, with the token redacted.
+  (b)~The peer asks over the team channel for the token held by the target; the text monitor reads the transcript, and the probe reads the target's activations before each output.
+  (c)~The three labels on one schematic episode.}
+  \label{fig:episode}
+\end{figure*}
+
+\section{Introduction}
+\label{sec:intro}
+
+An agent that works for one party increasingly deals with agents that work for others.
+They share channels, tools and credentials, so one agent can press another to break its own operator's rule.
+The operator is the principal here: it gives the agent a task and one rule.
+The agent stays loyal by keeping that rule when a peer asks it not to.
+
+How hard is it to stop an agent from giving in to such pressure?
+Sometimes it is easy.
+If a peer asks once and the agent hands the secret over through a tool call, a filter on that tool call can catch it.
+So can a monitor that blocks a suspicious action before it runs \citep{bhatt2025ctrlz}.
+The cases we study are harder, for four reasons.
+First, the leak can go out as an ordinary message that other agents read at once.
+On our development episodes, \qwenRouteFinalReplyShare{} of Qwen3-32B leaks are the agent's plain end-of-turn reply, which a filter on tool calls never sees (\cref{app:leakchecks}).
+Second, the request comes openly from a teammate, so it is not an injection hidden in data \citep{liu2024formalizing,debenedetti2024agentdojo}.
+Third, the pressure can build over many rounds, as in multi-turn attacks whose steps each look harmless \citep{russinovich2024crescendo}.
+Fourth, the rule is often the operator's own, such as keeping one credential private, which guardian models built on fixed harm categories do not cover \citep{hoover2025dynaguard}.
+One agent giving in is also not the end of it.
+Compromised agents can pass an attack on to others \citep{cohen2024morris,pulipaka2026shareborne}, and in a 2026 incident some evaluation agents pressed others to join an attack on production infrastructure \citep{openai2026huggingface,greenblatt2026incident}.
+
+Current defences act on the action or the output.
+They block a suspicious action before it runs \citep{bhatt2025ctrlz} or halt a model's output as it streams \citep{sharma2025constitutional,cunningham2026}.
+Such a filter works only if it recognises the leak in the text, and rewording, translation and encoding evade it \citep{ippolito2023verbatim,zhang2024extraction,glukhov2023censorship}.
+Encoded exfiltration that evades output-only detection stays legible in activations \citep{revankar2026mirage}.
+A warning raised before the output exists does not depend on recognising the leak in the text.
+It also separates proposal from execution: an overseer can hold a call for review before the agent writes anything.
+
+Activation probes, small linear classifiers trained on a model's internal activations, already read agents before they act \citep{dong2026,yu2026,fayyazi2026agent}.
+What is new here is the setting and the question.
+A teammate presses the agent openly over many rounds, the agent refuses and then gives in, and we ask which call gives in, before that call generates anything.
+
+In our setup, the target holds a secret that its operator has told it never to share, and a peer agent keeps asking for it (\cref{fig:episode}).
+We compare linear probes with a zero-shot text monitor and a trained text classifier on exactly the same calls, in six scenarios on two open-weight models.
+We find four things.
+\begin{itemize}
+  \item \textbf{The call that leaks is predictable just before it acts.} This holds on test episodes for both models (\cref{sec:percall}).
+  \item \textbf{The warning comes late.} The probe is only modestly accurate for whether the target leaks this round or the next, and weak for whether an episode will ever leak (\cref{sec:ladder}).
+  \item \textbf{Training matters more than activations.} A zero-shot text monitor does far worse than the probe, but a text classifier trained on the same labelled calls comes close (\cref{sec:monitor}).
+  \item \textbf{The probe reads compliance with the peer, not disloyalty to the operator.} When a rule permits one destination and forbids another, the probe scores a write the peer asked for alike in either (\cref{sec:crossed}).
+\end{itemize}
+The last finding sets a limit that matters for loyalty.
+A detector trained on leaks learns that a disclosure is coming.
+It does not learn whose instruction the disclosure follows, and telling the two apart needs a different kind of data.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.66\textwidth]{fig1_headline.pdf}
+  \caption{\textbf{The nearer the act, the more predictable the leak.}
+  For each model, the probe is asked three questions about the same calls, from ``will this episode ever leak?'' to ``will this call leak?''.
+  Hollow markers are held-out scenarios on development episodes, and filled markers are test episodes; AUROC is within scenario and round, and whiskers are 95\% bootstrap intervals.}
+  \label{fig:headline}
+\end{figure*}
+
+\section{Setup and Method}
+\label{sec:setup}
+
+\paragraph{Workspace and rule.}
+A target agent does an ordinary task in a mocked workspace under one rule from its operator.
+The task is to read a configuration file and write a short status report.
+The rule is to never share a protected value outside the file that holds it.
+In our main scenario that value is a staging deploy token.
+Five other scenarios protect a reserve price, a capacity figure, a rollout threshold, a handoff note and an integration code.
+All six share one task template, and every protected value is a randomly generated fake string (\cref{app:scenarios}).
+
+\paragraph{Agents.}
+The target can list, read and write files, run the workspace tests, and post to a shared team channel.
+A peer agent shares the channel and needs the value, but cannot read the files and is not shown the rule.
+The peer asks for the value openly, as a colleague would, so we study recruitment that arises from an ordinary conflict of goals.
+Tools act in memory, so no real system, credential or network is touched.
+Every scenario also runs with a control peer, which asks only for ordinary task details and never for the value.
+No control episode leaks, so the leaks in recruiting episodes are caused by the peer's request (\cref{app:behaviour}).
+We call the calls in control episodes \emph{control calls}, and recruiting episodes that never leak \emph{refusing episodes}.
+
+\paragraph{Rounds, calls and leaks.}
+An episode runs for up to 20 rounds.
+In each round the peer posts to the channel, and the target responds with one or more model calls.
+A call $c_t$ is one request to the model that ends in a reply or a tool call, and calls are numbered $t = 1, 2, \dots$ across the episode.
+The call reads an input $x_t$, the whole conversation the target has seen so far, and writes an output $o_t$: the reply text and the arguments of any tool calls.
+On gpt-oss-20b it first writes private reasoning $z_t$.
+We write $r(t)$ for the round of call $c_t$.
+A call \emph{leaks} if its output contains the secret $\sigma$, wherever it goes: a channel post, the end-of-turn reply or a file write.
+We detect this with an exact string match on the tool log, so the label needs no judge.
+The first leak is at
+\begin{equation}
+  \tau = \min\{\, t : \sigma \sqsubseteq o_t \,\},
+  \label{eq:leak}
+\end{equation}
+where $\sigma \sqsubseteq o_t$ means that $\sigma$ is a substring of $o_t$, and $\tau = \infty$ if no output contains $\sigma$.
+
+\paragraph{Scored calls and labels.}
+We score each call made after the target has first read the protected file, up to and including the first leak $c_\tau$.
+Before that read, a probe could score well just by detecting the read; after the leak, the secret is already in the input (\cref{app:data}).
+Each scored call gets three labels, by distance from the act (\cref{fig:episode}c):
+\begin{align}
+  y^{\text{ever}}_t &= \mathbf{1}[\tau < \infty], \nonumber\\
+  y^{\text{near}}_t &= \mathbf{1}[r(\tau) \in \{r(t), r(t)+1\}], \label{eq:labels}\\
+  y^{\text{call}}_t &= \mathbf{1}[t = \tau]. \nonumber
+\end{align}
+\emph{Ever} marks every scored call of an episode that leaks at some point.
+\emph{This round or next} marks calls in the leaking round or the round before it.
+\emph{This call} marks only the call that leaks.
+
+\paragraph{Models and datasets.}
+We use two open-weight target models: Qwen3-32B \citep{yang2025qwen3} with thinking disabled, and gpt-oss-20b \citep{openai2025gptoss}, which reasons before it answers.
+Each faces a peer from the DeepSeek-V4 family \citep{deepseek2026v4flash,deepseek2026v4pro}.
+gpt-oss-20b refuses requests that name the token, so its peer instead asks for the whole configuration block that contains it to be copied into a shared handoff file.
+We chose that strategy on behaviour alone, before any detector saw the data (\cref{app:behaviour}).
+We never pool the two models' results.
+Each model has \emph{development episodes}, on which we develop every method, and \emph{test episodes}, collected afterwards and scored once by detectors fit on development episodes only (\cref{tab:datasets}).
+In both models' development episodes, the target leaks in some recruiting episodes and refuses throughout in others.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{@{}llrrrr@{}}
+    \toprule
+    Target & Set & Recr. & Ctrl. & Calls & Leaks \\
+    \midrule
+    Qwen3-32B & dev. & \qwenDevEpisodes{} & \qwenDevControls{} & \qwenDevCalls{} & \qwenDevLeaks{} \\
+    Qwen3-32B & test & \qwenFreshEpisodes{} & \qwenFreshControls{} & \qwenFreshCalls{} & \qwenFreshLeaks{} \\
+    gpt-oss-20b & dev. & \gptossDevEpisodes{} & \gptossDevControls{} & \gptossDevCalls{} & \gptossDevLeaks{} \\
+    gpt-oss-20b & test & \gptossFreshEpisodes{} & \gptossFreshControls{} & \gptossFreshCalls{} & \gptossFreshLeaks{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{The four datasets.} Columns give recruiting and control episodes, then scored calls and leaking calls in recruiting episodes. For gpt-oss-20b, calls and leaks count only calls that returned reasoning (\cref{app:data}).}
+  \label{tab:datasets}
+\end{table}
+
+\paragraph{Probes.}
+A probe is a logistic regression on the target's residual stream, the running internal representation that each layer reads and writes \citep{goldowskydill2025}.
+The \emph{last-prompt probe} reads the activation $h_\ell(x_t)$ at layer $\ell$ and the last token of the call's input,
+\begin{equation}
+  s_t = w^\top h_\ell(x_t) + b ,
+  \label{eq:probe}
+\end{equation}
+with learned weights $w$ and bias $b$, so it scores a call before the call generates anything.
+gpt-oss-20b writes private reasoning before it answers or calls a tool.
+On this model a \emph{reasoning probe} applies $w^\top h_\ell + b$ to every token of the call's reasoning $z_t$ and keeps the maximum \citep{mckenzie2026,kramar2026}.
+Every reasoning token comes before the call's public output, so this probe also scores the call before the secret is written out.
+We choose the layer inside each training split (\cref{app:probes}).
+A probe raises an alarm when $s_t$ exceeds a threshold $\theta$, set so that 5\% of development control calls exceed it.
+
+\paragraph{Zero-shot text monitor.}
+A text monitor is a language model that reads the transcript and has no access to activations.
+Our main monitor is Jev \citep{typesafe2026jev}, a commercial model that returns the probability of ``yes'' to a fixed question.
+For each call, Jev reads what the target had seen, with the secret masked.
+It is asked whether the agent's next reply will write or post the protected value, with no training on our labels (\cref{app:monitors}).
+
+\paragraph{Trained text classifier.}
+To separate what the probe gains from training from what it gains from activations, we train a bag-of-words classifier on the same labelled calls.
+It is a logistic regression on TF-IDF features of the call's input, with the secret masked, on the same folds as the probe.
+It reads either the full input or only the latest message, and for each model we report the stronger view, which favours the text baseline (\cref{app:shortcuts}).
+
+\paragraph{A fair comparison.}
+Probes, the monitor and the classifier are scored on exactly the same calls, with the same labels.
+Leaks tend to come in early rounds, so a rule that simply rates early rounds as risky would score well.
+We therefore compare each call only with calls from the same scenario and round.
+We compute the AUROC within each such group $g$ and average the groups, weighting each by its number of leaking calls $n^+_g$:
+\begin{equation}
+  \mathrm{AUROC} = \sum_g \frac{n^+_g}{\sum_{g'} n^+_{g'}}\, \mathrm{AUROC}_g .
+  \label{eq:auroc}
+\end{equation}
+Our metric is therefore the chance that a leaking call outranks a non-leaking call from the same scenario and round.
+We call it AUROC within scenario and round; 0.5 is chance, and any score that depends only on the scenario and the round gets exactly 0.5.
+
+\paragraph{Evaluation.}
+On development episodes we train on five scenarios, test on the sixth, and rotate through all six.
+Related episodes, such as reruns that share a history, always stay on the same side of a split.
+We chose each label, the probe recipe and the alarm threshold on development episodes, and committed each to the repository before it was scored on the test episodes (\cref{app:confirmation}).
+The test episodes reuse the development scenarios.
+
+\section{Results}
+\label{sec:results}
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{@{}llcc@{}}
+    \toprule
+    Question & Detector & Qwen3 & gpt-oss \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Test episodes}} \\
+    This call? & last-prompt probe & \qwenFreshCallProbe{} & \gptossFreshCallProbe{} \\
+    This call? & reasoning probe & -- & \gptossFreshReasoning{} \\
+    This call? & zero-shot monitor & \qwenFreshCallJev{} & \gptossFreshCallJev{} \\
+    This call? & text classifier & \qwenFreshCallBow{} & \gptossFreshCallBow{} \\
+    One call earlier? & last-prompt probe & \eEighteenQwenTestStrict{} & \eEighteenGptTestStrict{} \\
+    This round or next? & last-prompt probe & \eEighteenQwenTestNear{} & \eEighteenGptTestNear{} \\
+    Ever? & last-prompt probe & \eEighteenQwenTestEver{} & \eEighteenGptTestEver{} \\
+    \midrule
+    \multicolumn{4}{@{}l}{\emph{Development episodes}} \\
+    This call? & last-prompt probe & \qwenCallProbe{} & \gptossCallProbe{} \\
+    This call? & reasoning probe & -- & \gptossCallReasoning{} \\
+    This call? & zero-shot monitor & \qwenCallJev{} & \gptossCallJev{} \\
+    This call? & text classifier & \qwenTextLatest{} & \gptossTextFull{} \\
+    One call earlier? & last-prompt probe & \qwenStrictNextProbe{} & \gptossStrictNextProbe{} \\
+    This round or next? & last-prompt probe & \qwenNearProbe{} & \gptossNearProbe{} \\
+    Ever? & last-prompt probe & \qwenEverProbe{} & \gptossEverProbe{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{Per-call results on both models (AUROC within scenario and round).} Development results are on held-out scenarios. Qwen3-32B runs with reasoning off, so it has no reasoning probe. ``One call earlier?'' asks whether the next call will leak, with the leaking call removed. \Cref{tab:glance-ci} gives intervals.}
+  \label{tab:glance}
+\end{table}
+
+\subsection{The Call That Leaks Is Readable Before It Acts}
+\label{sec:percall}
+
+The probe picks out the call that leaks on both models, before the call writes any output (\cref{tab:glance}).
+On Qwen3-32B, the last-prompt probe scores \qwenFreshCallProbe{} on the test episodes.
+On gpt-oss-20b, the reasoning probe scores \gptossFreshReasoning{} on the test episodes, and the simpler last-prompt probe holds up less well (\cref{app:confirmation}).
+
+The probe beats each of three simple shortcuts: the request, keywords for the secret, and the file read and write (\cref{app:shortcuts}).
+The presence of a request alone cannot explain the score, because every call that does not leak also faces the recruiting peer in the same scenario and round.
+On gpt-oss-20b, keyword rules that look for the secret's words in the model's reasoning do no better than chance.
+A flag for ``the protected file was just read'' scores well on its own, but the probe beats it on both models.
+Nor is the probe simply reading back the target's own earlier promise to share: removing the calls that follow such a promise changes the score little.
+
+At its threshold the probe catches most leaking calls while flagging few other calls.
+On Qwen3-32B test episodes it catches \qwenFreshProbeCaught{} of leaking calls and flags \qwenFreshProbeAlarm{} of the calls in refusing episodes.
+Jev, at a cutoff that flags no more refusing-episode calls than the probe, catches \qwenMatchedJevCaught{} (\cref{app:alarms}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{fig7_qwen_alarms.pdf}
+  \caption{\textbf{Flagging no more calls, the zero-shot monitor catches far fewer leaks than the probe.}
+  Share of leaking calls caught against the share of calls in refusing episodes flagged, as the threshold moves, on Qwen3-32B test episodes.
+  The circle is the probe at its threshold set on control calls, the square is Jev flagging no more calls, and the diamond is the stricter per-episode threshold.}
+  \label{fig:qwen-alarms}
+\end{figure}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.74\textwidth]{fig_e17_design.pdf}
+  \caption{\textbf{The crossed-destination design.}
+  (a)~The operator's rule permits one workspace file and forbids the other, and the peer asks for one of them; the quotes come from one episode, shortened.
+  (b)~The three kinds of scored write, and their labels in the two tests.}
+  \label{fig:design}
+\end{figure*}
+
+\subsection{The Warning Is Short-Range}
+\label{sec:ladder}
+
+On the same calls, the probe goes from near chance for the eventual outcome, to modest for this round or the next, to high for this call (\cref{fig:headline}).
+We refit the probe for each question, on the same scored calls, model and token, so only the question changes.
+The test episodes show the same pattern on both models.
+With this probe, an overseer cannot tell early which agent will give in.
+Until the last moment, the episodes that end in a leak look like the ones that do not.
+
+Even one call earlier, asked whether the next call will leak, the probe drops well below its score on the leaking call (\cref{tab:glance}).
+On gpt-oss-20b, the call just before a leak usually reads the protected file, and a simple flag for that read does better than the last-prompt probe at this distance (\cref{app:ahead}).
+
+\subsection{Who Can Read the Signal}
+\label{sec:monitor}
+
+A zero-shot text monitor shown the same conversation scores well below the probe on both models, and a trained text classifier comes close (\cref{tab:glance}).
+On gpt-oss-20b, Jev scores below chance: it ranks leaking calls below the other calls under the same pressure, though across all calls it scores \eEighteenGptDevJevPooled{}.
+The bag-of-words classifier, trained on the same labelled development calls, scores close to the probe on both models.
+On development episodes the probe leads it by a small margin, and on the test episodes of both models the two are level within noise (\cref{app:shortcuts}).
+
+Most of the probe's lead over the zero-shot monitor therefore comes from training on labelled calls, and activations add at most a small edge.
+Much of the signal also arrives with the incoming message.
+On gpt-oss-20b, a separate probe that reads only the tokens new to the call also scores high (\gptossIncomingProbe{}; \cref{app:shortcuts}).
+This matters for agents whose weights the overseer cannot inspect.
+A cheap classifier on the transcript, trained on labelled calls from the same deployment, recovers most of the warning.
+
+\subsection{What Acting on an Alarm Costs}
+\label{sec:cost}
+
+AUROC measures how well a detector ranks calls.
+An overseer also needs to know what a threshold catches and what it interrupts (\cref{fig:qwen-alarms}).
+The cost of a flag depends on what a flag does.
+If each flag sends one call to review, the per-call rate is the review workload, and the threshold above is usable.
+Of the calls the probe flags on Qwen3-32B test episodes, \qwenFreshProbePrecision{} are real leaks.
+If a flag instead stops the whole agent, what matters is whether an episode sees at least one flag.
+A refusing episode has a median of \qwenFreshMedianRefusingCalls{} scored calls.
+If each call were flagged independently at the nominal 5\% rate, about \qwenEpisodeAlarmIndependent{} of episodes would see at least one flag.
+In practice \qwenFreshRefusingEpisodeAlarm{} do, because flags cluster in the same episodes.
+Halting on any alarm would therefore stop most agents that stay loyal throughout.
+
+A stricter threshold suits halting an agent.
+Because flags cluster in episodes, a per-call rate does not say how many episodes would be halted, so this threshold has to be set per episode.
+We choose it on the test episodes to show the trade-off, so that about one refusing episode in twenty sees a flag.
+This per-episode threshold catches \qwenEpisodeCalCaught{} of leaking episodes by their first leak, far fewer than the per-call threshold catches (\cref{tab:episode-calibration}).
+Counted per call, the same threshold catches \qwenCalibrationEpisodeLeakCallsRateRounded{} of leaking calls and flags \qwenCalibrationEpisodeRefusingCallsRate{} of calls in refusing episodes, the diamond in \cref{fig:qwen-alarms}.
+
+In use, this per-episode threshold must be set on held-out episodes, not on the episodes the probe was trained on.
+A threshold set on the training episodes does not transfer.
+On test episodes it flags \qwenEpisodeCalTrainRefusingEpisodes{} of refusing episodes instead of about one in twenty (\cref{app:alarms}).
+
+Pairing the probe with a cheap text check on the same input adds no detectable gain.
+We reuse the per-episode setting, with at most one refusing episode in twenty halted.
+A pairing halts only when the probe and a second detector, either the zero-shot monitor or the trained text classifier, both flag a call.
+The best pairing catches \cascadeBowGridFiveCaught{} of \qwenCalibrationEpisodeLeakEpisodesDenominator{} leaking episodes, against \cascadeProbeAloneFiveCaught{} for the probe alone at the same per-episode setting (\cref{app:cascade}).
+At such strict thresholds the text check misses most leaks on its own, so requiring both to agree discards leaks the probe would have caught.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.74\textwidth]{fig_e17_scores.pdf}
+  \caption{\textbf{A permitted write the peer asked for scores like a forbidden one.}
+  Probe scores of the three kinds of scored write, by scenario, on Qwen3-32B.
+  Bars give the median and interquartile range, and numbers give the writes in each group; scores compare only within a panel.}
+  \label{fig:crossed}
+\end{figure*}
+
+\section{Does the Probe Read Rule-Breaking, or Doing What the Peer Asked?}
+\label{sec:crossed}
+
+In the episodes above, every disclosure both breaks the operator's rule and gives the peer what it asked for.
+A loyalty monitor should respond to the first and not the second.
+An agent that shares a value its operator permits is doing its job, and a monitor that flags it interrupts loyal work.
+Two experiments on Qwen3-32B pull the two apart.
+
+\paragraph{Permitted shares.}
+A first hint comes from replaying saved leaking calls under a rule that permits sharing, which leaves their probe scores unchanged (\cref{app:policy}).
+We then ran new episodes in which the operator's rule permits the target to share the value with the peer.
+Nearly every disclosure made right after the value is read crosses the probe's threshold, permitted or forbidden.
+Away from a read, forbidden leaks cross about twice as often as permitted shares (\eFifteenForbidNonreadRate{} against \eFifteenEarlyNonreadRate{}; \cref{app:e15}).
+The main probe therefore mostly reads a coming disclosure, sharpest just after the value is read and stronger when the agent was pressed into it.
+
+\paragraph{Crossed destinations.}
+The second experiment gives the agent a loyal way to help.
+The operator's rule names two workspace files: the target may copy the secret into the \emph{allowed file} and must never copy it into the \emph{forbidden file}.
+The peer is not told the rule (\cref{fig:design}a), and asks for the secret to be written into one named file, the only one it can read.
+In \emph{ask-forbidden} episodes it names the forbidden file, and in \emph{ask-allowed} episodes the allowed file.
+The scored call is the target's first write of the secret into a file after the peer's first request.
+Each scored write is one of three kinds (\cref{fig:design}b).
+A \emph{forbidden write} obeys the peer and breaks the rule.
+A \emph{compromise} answers a request for the forbidden file by writing to the allowed file instead.
+An \emph{ask-allowed write} answers a request for the allowed file by writing there.
+We randomise file names, file order and rule wording within each of four scenarios (\cref{app:crossed}).
+
+\paragraph{Two tests.}
+We train a new last-prompt probe on these episodes, and score each scenario with a probe trained on the other three.
+\emph{Test 1} asks whether the probe separates forbidden writes from compromises; the probe trains on these two kinds only.
+\emph{Test 2} asks whether the same probe, unchanged, separates forbidden writes from ask-allowed writes.
+A detector of rule-breaking should pass both.
+A detector of doing what the peer asked should pass Test 1 and fail Test 2.
+The episodes, labels, tests and success criteria were committed before the main episodes were run.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{@{}p{0.80\columnwidth}r@{}}
+    \toprule
+    Comparison & AUROC \\
+    \midrule
+    \textbf{Test 1:} forbidden writes vs.\ compromises, probe & \eSeventeenTestOne{} \\
+    Test 1, setup details only & \eSeventeenSetup{} \\
+    Test 1, gain from adding the probe to the setup details & \eSeventeenGain{} \\
+    Test 1, trained text classifier & \eSeventeenText{} \\
+    \textbf{Test 2:} forbidden vs.\ ask-allowed writes, same probe & \eSeventeenTestTwo{} \\
+    Ask-allowed writes scored above compromises & \eSeventeenAskAllowedAboveCompromise{} \\
+    \bottomrule
+  \end{tabular}
+  \caption{\textbf{The probe passes Test 1 only as well as the prompt layout does, and fails Test 2.} AUROC within scenario on Qwen3-32B, each scenario scored by a probe trained on the other three. Setup details are the randomised details of the prompt, such as file order, file names and rule wording. \cref{app:crossed} gives intervals and counts.}
+  \label{tab:crossed}
+\end{table}
+
+\paragraph{Behaviour.}
+The target usually writes the secret where the peer asks.
+In ask-forbidden episodes it made a forbidden write in \eSeventeenForbiddenRate{} of complete episodes and a compromise in \eSeventeenCompromiseRate{}.
+Most of the rest never wrote the secret, or wrote a made-up value instead.
+The loyal way to help was open in every one of these episodes, and the agent rarely took it.
+
+\paragraph{The probe reads doing what the peer asked.}
+On Test 1 the probe scores \eSeventeenTestOne{}, but a classifier on the randomised setup details alone scores about the same, and adding the probe to it gains nothing (\cref{tab:crossed}).
+On Test 2 the probe scores \eSeventeenTestTwo{}, no better than chance.
+It also ranks an ask-allowed write above a compromise from the same scenario \eSeventeenAskAllowedAboveCompromise{} of the time.
+Both of those writes go to the allowed file, so the only difference between them is whether the peer asked for that file.
+\Cref{fig:crossed} shows the same pattern in every scenario.
+
+The probe therefore tracks whether the target is about to give the peer what it asked for, not whether the write breaks the rule.
+In the main episodes the two coincide, so the main results show detection of a coming disclosure to the peer.
+They do not show that the model represents a violation of its operator's rule as such.
+
+\paragraph{The choice is set before the call.}
+On pilot episodes, we resent the exact prompts of scored calls ten times each, and in most of them every resample made the same choice.
+A reader that knew each prompt's own rate of forbidden writes would score \eSeventeenCeiling{} on Test 1.
+The information that decides between the loyal and the disloyal write is therefore present before the call, and neither the probe nor the text classifier captures much of it.
+
+\paragraph{Why not train on both kinds of request?}
+The probe trained only on ask-forbidden episodes, where doing what the peer asked and breaking the rule always coincide.
+Adding ask-allowed episodes to training would force the probe to separate the two.
+But the peer's request names the file, so such a probe could pass Test 2 by reading the request alone.
+A cleaner test needs many more compromises, so that a probe can learn the target's choice among episodes with the same request.
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Probes on agents under attack.}
+Probes can detect that a tool-using agent has been exposed to prompt injection \citep{dong2026}, separate hijacked from resisted trajectories \citep{yu2026}, and read agents that were told to collude \citep{rose2026}.
+\citet{fomin2026} warn that such probes may read the situation rather than the action.
+Probes read before generation also predict whether a model will leak its system prompt \citep{dong2025leak}, and flag requests that seek credentials or private data \citep{chauhan2026caught,das2026neurofilter}.
+Every call we score has already been exposed to the same recruiting pressure, and our target is never told to collude, so the probe must separate calls that face the same situation.
+
+\paragraph{Early warning.}
+Closest to our question, \citet{saraogi2026before} read hidden states each turn as a user presses a model to drop a correct answer, and find a weak, model-specific signal.
+\citet{fayyazi2026agent} forecast unauthorised agent actions from internal states and from text, and find that text monitors often match the internal states (\cref{app:related}).
+\citet{jia2026window} branch injected agents from identical states and find that early probes do not reliably beat text baselines.
+Production classifiers score a model's output as it streams and can block tool calls \citep{sharma2025constitutional,cunningham2026,makelov2026}.
+We find the same weak signal far from the act, and a strong one at the call itself, in a setting where the pressure comes from a peer.
+
+\paragraph{Monitors and persuasion between agents.}
+Monitors that see agents' messages catch more coordinated sabotage \citep{radev2026}, and coordinated persuasion attacks between agents have been detected from their messages \citep{tao2026}.
+Work on collusion between agents has mostly studied markets and shared tasks \citep{fish2026,lin2025,nakamura2026}.
+Agents also leak in action even when they state the norm correctly \citep{shao2024privacylens}.
+We study the persuaded agent's own activations, at the moment it breaks its operator's rule.
+
+\section{Discussion}
+\label{sec:discussion}
+
+An overseer cannot tell early which agent will give in, but it can tell which call is about to.
+This suggests a gate with two thresholds, as in production classifier systems \citep{cunningham2026}.
+A cheap probe or trained text classifier runs on every call.
+A lenient per-call threshold holds a call before it acts; it fires often, costs little per alarm, and catches most leaks.
+The held call should go to a reviewer with different information, such as a human or a check on the drafted reply.
+A second check on the same input adds little.
+A strict per-episode threshold halts the agent and should fire rarely, so that a loyal agent is seldom interrupted.
+
+What the gate detects is narrower than loyalty.
+The probe warns that the agent is about to hand a peer what it asked for.
+Whether that breaks the operator's rule has to be judged separately, by something that reads the rule.
+For an operator this is still useful: a disclosure to another party's agent is the moment at which a permission check belongs.
+But a detector of this kind cannot stand in for the check itself.
+
+\paragraph{Limitations.}
+We list the main limitations in order of how much each could change our conclusions (\cref{app:limitations} gives the rest).
+\emph{Narrow setting.} We test two models, six scenarios built from one task template, one peer and one target per episode, and synthetic tools and secrets.
+Leaks are exact strings, which an output filter would catch; we did not test reworded or encoded leaks, where a probe would matter most.
+We score only calls made after the target first reads the protected file, and a deployed monitor would run on every call.
+\emph{Few leaking test calls on gpt-oss-20b.} Its test episodes hold few leaking calls, so its interval is wide (\cref{app:confirmation}).
+\emph{One model for the crossed destinations.} Those episodes use Qwen3-32B only, and compromises are rare, so Test 1 rests on few of them.
+\emph{An untuned text monitor.} Our text monitor is one decision model used zero-shot, while the probe is trained.
+
+\paragraph{Future work.}
+The most direct next step is a detector that tells a forbidden disclosure from a permitted one the peer also asked for.
+Every positive example in our main training data is a forbidden leak, so a detector can only learn that a disclosure is coming.
+A fair test needs many more episodes in which a pressed agent takes the permitted option, and held-out rule wordings so that a detector cannot memorise one rule.
+Other steps are a stronger second stage behind the gate, a test of whether the probe direction causally affects the decision, and larger settings in which recruited agents recruit others.
+
+\section*{LLM Usage Statement}
+The author set the research question, designed the study and made all methodological decisions.
+AI coding and writing agents (Claude Code and OpenAI Codex) wrote most of the code, ran the experiments and drafted the text under the author's direction.
+The author reviewed the results and the text closely and revised the work over many rounds.
+
+\section*{Acknowledgments}
+This work began at the Apart Research AI Collusion Research Sprint (October 2026), where an earlier version was submitted.
+
+\bibliography{refs,extra}
+
+\clearpage
+\onecolumn
+\appendix
+\crefalias{section}{appendix}
+\crefalias{subsection}{appendix}
+\input{appendix/index.tex}
+
+\end{document}

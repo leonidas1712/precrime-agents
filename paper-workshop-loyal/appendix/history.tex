@@ -1,0 +1,32 @@
+\section{Analysis history}
+\label{app:history}
+
+This section records, once, how the analyses developed: what was planned before scoring, what was added after which result, and what was confirmed (\cref{tab:history}), and which numbers changed from the sprint version of this paper (\cref{tab:changed}).
+
+The study began with the round-level questions on Qwen3-32B.
+The eventual label was planned first.
+The near-term label was added after the eventual label proved near chance, and it was then confirmed on test episodes under a written plan.
+gpt-oss-20b was added as a second target, with its peer strategy chosen on behaviour alone.
+Its round-level results, with a channel-only label, were near chance.
+The per-call question came next, first as a reasoning probe on gpt-oss-20b, which was then confirmed on test episodes, and then as a last-prompt probe on both models.
+
+For this version we recomputed several numbers from saved activations and scores, without new model runs, so that every comparison in a figure uses the same calls and label.
+The Qwen3-32B per-call results now use the same leak label as gpt-oss-20b, and they are fit on development episodes only.
+The Qwen3-32B per-call probe was then fixed, committed and scored once on the test episodes.
+No result fixed in a committed plan was changed.
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/history.tex}
+  \caption{Analysis history. ``Planned'' means fixed in a committed plan before any detector's predictions were compared with the labels; the table gives each plan's timing relative to collection.}
+  \label{tab:history}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \small
+  \input{tables/changed_numbers.tex}
+  \caption{Numbers that changed from the sprint version, and why.}
+  \label{tab:changed}
+\end{table}
